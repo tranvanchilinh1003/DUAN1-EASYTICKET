@@ -1,5 +1,5 @@
 <?php
-require "../global.php";
+// require "../global.php";
 ?>
 <!DOCTYPE html>
 <html lang="zxx">
@@ -10,8 +10,8 @@ require "../global.php";
     <meta name="keywords" content="Anime, unica, creative, html">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Anime | Template</title>
-
+    <title>EASY TICKET</title>
+    <link rel="shortcut icon" type="image/x-icon" href="<?= $CONTENT_URL ?>/assets/img/logo_url.png">
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -26,7 +26,32 @@ require "../global.php";
     <link rel="stylesheet" href="<?= $CONTENT_URL ?>/assets/css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="<?= $CONTENT_URL ?>/assets/css/style.css" type="text/css">
 </head>
+<style>
+    .header__menu  ul {
+  list-style-type: none;
+  /* color: yellow; */
+  margin: 0;
+  padding: 0;
+}
+.header__menu li {
+  display: inline-block;
+  
+  margin-right: 10px;
+}
 
+.header__menu li a {
+  text-decoration: none;
+  color: red;
+}
+
+.header__menu li a:hover {
+    
+    text-decoration: none;
+  border-bottom: 3px solid yellow;
+  
+}
+
+</style>
 <body>
     <!-- Page Preloder -->
     <div id="preloder">
@@ -37,38 +62,81 @@ require "../global.php";
     <header class="header">
         <div class="container">
             <div class="row">
-                <div class="col-lg-2">
+                <div class="col-lg-2 d-flex align-items-center ">
                     <div class="header__logo">
                         <a href="./index.html">
                             <img src="<?= $CONTENT_URL ?>/assets/img/studio.png" height="30px" alt="">
                         </a>
                     </div>
                 </div>
-                <div class="col-lg-8">
+                <div class="col-lg-8 d-flex align-items-center justify-content-center">
                     <div class="header__nav">
                         <nav class="header__menu mobile-menu">
-                            <ul>
-                                <li class="active"><a href="./index.html">Trang Chủ</a></li>
-                                <li><a href="./categories.html">Thể Loại <span class="arrow_carrot-down"></span></a>
-                                    <ul class="dropdown">
-                                        <li><a href="./categories.html">Tin Tức</a></li>
-                                        <li><a href="./anime-details.html">Anime Details</a></li>
+                            <ul class='home_nav'>
+                                <li class=""><a href="#">Trang Chủ</a></li>
+                                <li ><a href="#">Thể Loại <span class="arrow_carrot-down"></span></a>
+                                    <ul class="dropdown mt-1">
+                                        <li><a href="#">?</a></li>
+                                        <!-- Mã Loại -->
+                                        <!-- <li><a href="./anime-details.html">Anime Details</a></li>
                                         <li><a href="./anime-watching.html">Anime Watching</a></li>
                                         <li><a href="./blog-details.html">Blog Details</a></li>
                                         <li><a href="./signup.html">Sign Up</a></li>
-                                        <li><a href="./login.html">Login</a></li>
+                                        <li><a href="./login.html">Login</a></li> -->
                                     </ul>
                                 </li>
-                                <li><a href="./blog.html">Tin Tức</a></li>
+                                <li><a href="#">Tin Tức</a></li>
                                 <li><a href="#">Liên Hệ</a></li>
                             </ul>
                         </nav>
                     </div>
                 </div>
-                <div class="">
-                    <div class="header__right">
-                        <a href="#" class="search-switch"><span class="icon_search"></span></a>
-                        <a href="./login.html"><span class="icon_profile"></span></a>
+                <div class="dropdow">
+                    <div class="header__right ">
+                        <nav class="header__menu mobile-menu">
+                            <ul>
+                                <li><a href="#" class="search-switch"><span class="icon_search"></span></a></li>
+                                <?php
+                                if (isset($_SESSION["user"])) {
+
+
+                                ?>
+                                    <img style="border-radius: 50%;" src="../../img/<?= $_SESSION['user']['hinh']  ?>" width="50px" alt="">
+
+                                    <label for=""><?= $_SESSION["user"]['ma_kh'] ?></label>
+
+                                    <ul class="dropdown mt-1">
+                                        <li><a href="<?= $SITE_URL ?>/login/xu_ly_thong_tin.php?btn_edit">Tài Khoản</a></li>
+                                        <li><a href="<?= $SITE_URL ?>/login/dang-nhap.php?btn_logout" name='btn_logout'> <i class="bi bi-power  text-danger"></i></a></li>
+                                    </ul>
+
+                                <?php
+
+                                } else {
+                                ?>
+
+
+                                    <li><a href="#"><span class="icon_profile"></span></a>
+                                        <ul class="dropdown">
+                                            <li><a href="<?= $SITE_URL ?>/login/dang-nhap.php">Đăng Nhập</a></li>
+                                            <li><a href="<?= $SITE_URL ?>/login/dang-ky.php">Đăng Ký</a></li>
+                                            <!-- Mã Loại -->
+                                            <!-- <li><a href="./anime-details.html">Anime Details</a></li>
+                                        <li><a href="./anime-watching.html">Anime Watching</a></li>
+                                        <li><a href="./blog-details.html">Blog Details</a></li>
+                                        <li><a href="./signup.html">Sign Up</a></li>
+                                        <li><a href="./login.html">Login</a></li> -->
+                                        </ul>
+                                    </li>
+                                <?php
+                                }
+                                ?>
+                            </ul>
+                        </nav>
+
+
+
+
                     </div>
                 </div>
             </div>
@@ -85,7 +153,7 @@ require "../global.php";
         <div class="container">
             <div class="row">
                 <?php
-                // require "$VIEW_NAME";
+                require $VIEW_NAME;
 
                 ?>
             </div>
@@ -121,7 +189,7 @@ require "../global.php";
                     <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                         Copyright &copy;<script>
                             document.write(new Date().getFullYear());
-                        </script> All rights reserved | This template is made &#128525 <i class="fa fa-heart" aria-hidden="true"></i> by <a href="#" target="_blank">EASY TICKET</a>
+                        </script> All rights reserved | This template is made &#128525 <i class="fa fa-heart" aria-hidden="true"></i> by <a href="#" class="text-warning" target="_blank">EASY TICKET</a>
                         <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
 
                 </div>
