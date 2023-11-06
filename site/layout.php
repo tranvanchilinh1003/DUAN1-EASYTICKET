@@ -27,31 +27,32 @@
     <link rel="stylesheet" href="<?= $CONTENT_URL ?>/assets/css/style.css" type="text/css">
 </head>
 <style>
-    .header__menu  ul {
-  list-style-type: none;
-  /* color: yellow; */
-  margin: 0;
-  padding: 0;
-}
-.header__menu li {
-  display: inline-block;
-  
-  margin-right: 10px;
-}
+    .header__menu ul {
+        list-style-type: none;
+        /* color: yellow; */
+        margin: 0;
+        padding: 0;
+    }
 
-.header__menu li a {
-  text-decoration: none;
-  color: red;
-}
+    .header__menu li {
+        display: inline-block;
 
-.header__menu li a:hover {
-    
-    text-decoration: none;
-  border-bottom: 3px solid yellow;
-  
-}
+        margin-right: 10px;
+    }
 
+    .header__menu li a {
+        text-decoration: none;
+        color: red;
+    }
+
+    .header__menu li a:hover {
+
+        text-decoration: none;
+        border-bottom: 3px solid yellow;
+
+    }
 </style>
+
 <body>
     <!-- Page Preloder -->
     <div id="preloder">
@@ -64,17 +65,17 @@
             <div class="row">
                 <div class="col-lg-2 d-flex align-items-center ">
                     <div class="header__logo">
-                        <a href="./index.html">
+                        <a href="../trang-chinh/index.php">
                             <img src="<?= $CONTENT_URL ?>/assets/img/studio.png" height="30px" alt="">
                         </a>
                     </div>
                 </div>
-                <div class="col-lg-8 d-flex align-items-center justify-content-center">
+                <div class="col-lg-6 d-flex align-items-center justify-content-center">
                     <div class="header__nav">
                         <nav class="header__menu mobile-menu">
                             <ul class='home_nav'>
-                                <li class=""><a href="#">Trang Chủ</a></li>
-                                <li ><a href="#">Thể Loại <span class="arrow_carrot-down"></span></a>
+                                <li class="active"><a href="../trang-chinh/index.php">Trang Chủ</a></li>
+                                <li><a href="#">Thể Loại <span class="arrow_carrot-down"></span></a>
                                     <ul class="dropdown mt-1">
                                         <li><a href="#">?</a></li>
                                         <!-- Mã Loại -->
@@ -85,6 +86,7 @@
                                         <li><a href="./login.html">Login</a></li> -->
                                     </ul>
                                 </li>
+                                <!-- <li><a href="#">Giới Thiệu</a></li> -->
                                 <li><a href="#">Tin Tức</a></li>
                                 <li><a href="#">Liên Hệ</a></li>
                             </ul>
@@ -95,7 +97,18 @@
                     <div class="header__right ">
                         <nav class="header__menu mobile-menu">
                             <ul>
-                                <li><a href="#" class="search-switch"><span class="icon_search"></span></a></li>
+                                <li>
+                                    <form class="navbar-form" action="../hang-hoa/liet-ke.php" method="POST">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control search-input " placeholder="Tìm Kiếm...">
+                                            <div class="input-group-append">
+                                                <button class="btn btn-outline-warning search-button" type="button" onmouseover="showSearchInput()" onmouseout="hideSearchInput()">
+                                                    <i class="fa fa-search"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </li>
                                 <?php
                                 if (isset($_SESSION["user"])) {
 
@@ -169,7 +182,7 @@
             <div class="row">
                 <div class="col-lg-3">
                     <div class="footer__logo">
-                        <a href="#"><img src="<?= $CONTENT_URL ?>/assets/img/studio.png" alt=""></a>
+                        <a href="../trang-chinh/index.php"><img src="<?= $CONTENT_URL ?>/assets/img/studio.png" alt=""></a>
                     </div>
                 </div>
                 <div class="col-lg-6">
