@@ -15,8 +15,6 @@
     <link rel="stylesheet" href="<?= $ADMIN_URL ?>/assets/vendors/flag-icon-css/css/flag-icon.min.css">
     <link rel="stylesheet" href="<?= $ADMIN_URL ?>/assets/vendors/owl-carousel-2/owl.carousel.min.css">
     <link rel="stylesheet" href="<?= $ADMIN_URL ?>/assets/vendors/owl-carousel-2/owl.theme.default.min.css">
-    <!-- link boostrap  -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <!-- End plugin css for this page -->
     <!-- inject:css -->
     <!-- endinject -->
