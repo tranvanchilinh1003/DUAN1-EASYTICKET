@@ -74,13 +74,22 @@
                 <span class="menu-icon">
                     <i class="bi bi-receipt-cutoff"></i>
                 </span>
-                <span class="menu-title">Quản lý hóa đơn</span>
+                <span class="menu-title">Quản lý khách hàng</span>
+                <i class="menu-arrow"></i>
             </a>
         </li>
         <li class="nav-item menu-items">
             <a class="nav-link" href="<?= $ADMIN_URL?>/binh-luan/">
                 <span class="menu-icon">
-                    <i class="mdi mdi-forum text-dribbble"></i>
+                    <i class="bi bi-receipt-cutoff"></i>
+                </span>
+                <span class="menu-title">Quản lý hóa đơn</span>
+            </a>
+        </li>
+        <li class="nav-item menu-items">
+            <a class="nav-link" data-toggle="collapse" href="#">
+                <span class="menu-icon">
+                    <i class="mdi mdi-forum text-"></i>
                 </span>
                 <span class="menu-title">Quản lý bình luận</span>
             </a>
