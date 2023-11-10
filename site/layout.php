@@ -1,0 +1,238 @@
+<?php
+// require "../global.php";
+?>
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Anime Template">
+    <meta name="keywords" content="Anime, unica, creative, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>EASY TICKET</title>
+    <link rel="shortcut icon" type="image/x-icon" href="<?= $CONTENT_URL ?>/assets/img/logo_url.png">
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="<?= $CONTENT_URL ?>/assets/css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="<?= $CONTENT_URL ?>/assets/css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="<?= $CONTENT_URL ?>/assets/css/elegant-icons.css" type="text/css">
+    <link rel="stylesheet" href="<?= $CONTENT_URL ?>/assets/css/plyr.css" type="text/css">
+    <link rel="stylesheet" href="<?= $CONTENT_URL ?>/assets/css/nice-select.css" type="text/css">
+    <link rel="stylesheet" href="<?= $CONTENT_URL ?>/assets/css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="<?= $CONTENT_URL ?>/assets/css/slicknav.min.css" type="text/css">
+    <link rel="stylesheet" href="<?= $CONTENT_URL ?>/assets/css/style.css" type="text/css">
+</head>
+<style>
+    .header__menu ul {
+        list-style-type: none;
+        /* color: yellow; */
+        margin: 0;
+        padding: 0;
+    }
+
+    .header__menu li {
+        display: inline-block;
+
+        margin-right: 10px;
+    }
+
+    .header__menu li a {
+        text-decoration: none;
+        color: red;
+    }
+
+    .header__menu li a:hover {
+
+        text-decoration: none;
+        border-bottom: 3px solid yellow;
+
+    }
+</style>
+
+<body>
+    <!-- Page Preloder -->
+    <div id="preloder">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Header Section Begin -->
+    <header class="header">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-2 d-flex align-items-center ">
+                    <div class="header__logo">
+                        <a href="../trang-chinh/index.php">
+                            <img src="<?= $CONTENT_URL ?>/assets/img/studio.png" height="30px" alt="">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-6 d-flex align-items-center justify-content-center">
+                    <div class="header__nav">
+                        <nav class="header__menu mobile-menu">
+                            <ul class='home_nav'>
+                                <li class="active"><a href="../trang-chinh/index.php">Trang Chủ</a></li>
+                                <li><a href="#">Thể Loại <span class="arrow_carrot-down"></span></a>
+                                    <ul class="dropdown mt-1">
+                                        <li><a href="#">?</a></li>
+                                        <!-- Mã Loại -->
+                                        <!-- <li><a href="./anime-details.html">Anime Details</a></li>
+                                        <li><a href="./anime-watching.html">Anime Watching</a></li>
+                                        <li><a href="./blog-details.html">Blog Details</a></li>
+                                        <li><a href="./signup.html">Sign Up</a></li>
+                                        <li><a href="./login.html">Login</a></li> -->
+                                    </ul>
+                                </li>
+                                <!-- <li><a href="#">Giới Thiệu</a></li> -->
+                                <li><a href="#">Tin Tức</a></li>
+                                <li><a href="#">Liên Hệ</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+                <div class="dropdow">
+                    <div class="header__right ">
+                        <nav class="header__menu mobile-menu">
+                            <ul>
+                                <li>
+                                    <form class="navbar-form" action="../hang-hoa/liet-ke.php" method="POST">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control search-input " placeholder="Tìm Kiếm...">
+                                            <div class="input-group-append">
+                                                <button class="btn btn-outline-warning search-button" type="button" onmouseover="showSearchInput()" onmouseout="hideSearchInput()">
+                                                    <i class="fa fa-search"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </li>
+                                <?php
+                                if (isset($_SESSION["user"])) {
+
+
+                                ?>
+                                    <img style="border-radius: 50%;" src="../../img/<?= $_SESSION['user']['hinh']  ?>" width="50px" alt="">
+
+                                    <label for=""><?= $_SESSION["user"]['ma_kh'] ?></label>
+
+                                    <ul class="dropdown mt-1">
+                                        <li><a href="<?= $SITE_URL ?>/login/xu_ly_thong_tin.php?btn_edit">Tài Khoản</a></li>
+                                        <li><a href="<?= $SITE_URL ?>/login/dang-nhap.php?btn_logout" name='btn_logout'> <i class="bi bi-power  text-danger"></i></a></li>
+                                    </ul>
+
+                                <?php
+
+                                } else {
+                                ?>
+
+
+                                    <li><a href="#"><span class="icon_profile"></span></a>
+                                        <ul class="dropdown">
+                                            <li><a href="<?= $SITE_URL ?>/login/dang-nhap.php">Đăng Nhập</a></li>
+                                            <li><a href="<?= $SITE_URL ?>/login/dang-ky.php">Đăng Ký</a></li>
+                                            <!-- Mã Loại -->
+                                            <!-- <li><a href="./anime-details.html">Anime Details</a></li>
+                                        <li><a href="./anime-watching.html">Anime Watching</a></li>
+                                        <li><a href="./blog-details.html">Blog Details</a></li>
+                                        <li><a href="./signup.html">Sign Up</a></li>
+                                        <li><a href="./login.html">Login</a></li> -->
+                                        </ul>
+                                    </li>
+                                <?php
+                                }
+                                ?>
+                            </ul>
+                        </nav>
+
+
+
+
+                    </div>
+                </div>
+            </div>
+            <div id="mobile-menu-wrap"></div>
+        </div>
+    </header>
+    <!-- Header End -->
+
+
+    <!-- Hero Section End -->
+
+    <!-- Product Section Begin -->
+    <section class="product spad">
+        <div class="container">
+            <div class="row">
+                <?php
+                require $VIEW_NAME;
+
+                ?>
+            </div>
+    </section>
+    <!-- Product Section End -->
+
+    <!-- Footer Section Begin -->
+    <footer class="footer">
+        <div class="page-up">
+            <a href="#" id="scrollToTopButton"><span class="arrow_carrot-up"></span></a>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="footer__logo">
+                        <a href="../trang-chinh/index.php"><img src="<?= $CONTENT_URL ?>/assets/img/studio.png" alt=""></a>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="footer__nav">
+                        <ul>
+                            <li class="active"><a href="#">Về Chúng Tôi</a>
+
+                            </li>
+                            <li><a href="#">Categories</a></li>
+                            <li><a href="#">Our Blog</a></li>
+                            <li><a href="#">Contacts</a></li>
+                        </ul>
+                    </div>
+
+                </div>
+                <div class="col-lg-3">
+                    <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        Copyright &copy;<script>
+                            document.write(new Date().getFullYear());
+                        </script> All rights reserved | This template is made &#128525 <i class="fa fa-heart" aria-hidden="true"></i> by <a href="#" class="text-warning" target="_blank">EASY TICKET</a>
+                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer Section End -->
+
+    <!-- Search model Begin -->
+    <div class="search-model">
+        <div class="h-100 d-flex align-items-center justify-content-center">
+            <div class="search-close-switch"><i class="icon_close"></i></div>
+            <form class="search-model-form">
+                <input type="text" id="search-input" placeholder="Search here.....">
+            </form>
+        </div>
+    </div>
+    <!-- Search model end -->
+
+    <!-- Js Plugins -->
+    <script src="<?= $CONTENT_URL ?>/assets/js/jquery-3.3.1.min.js"></script>
+    <script src="<?= $CONTENT_URL ?>/assets/js/bootstrap.min.js"></script>
+    <script src="<?= $CONTENT_URL ?>/assets/js/player.js"></script>
+    <script src="<?= $CONTENT_URL ?>/assets/js/jquery.nice-select.min.js"></script>
+    <script src="<?= $CONTENT_URL ?>/assets/js/mixitup.min.js"></script>
+    <script src="<?= $CONTENT_URL ?>/assets/js/jquery.slicknav.js"></script>
+    <script src="<?= $CONTENT_URL ?>/assets/js/owl.carousel.min.js"></script>
+    <script src="<?= $CONTENT_URL ?>/assets/js/main.js"></script>
+
+
+</body>
+
+</html>
