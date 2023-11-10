@@ -98,7 +98,7 @@
                         <nav class="header__menu mobile-menu">
                             <ul>
                                 <li>
-                                    <form class="navbar-form" action="../hang-hoa/liet-ke.php" method="POST">
+                                    <form class="navbar-form" action="#" method="POST">
                                         <div class="input-group">
                                             <input type="text" class="form-control search-input " placeholder="Tìm Kiếm...">
                                             <div class="input-group-append">
