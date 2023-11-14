@@ -31,15 +31,13 @@
                                 </td>
                                 <td> Herman Beck </td>
                                 <td>
-                                    <div class="progress">
-                                        <div class="progress-bar bg-success" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
+                                /
                                 </td>
                                 <td> $ 77.99 </td>
                                 <td> May 15, 2015 </td>
                                 <td>
 
-                                    <a href="index.php?btn_edit&ma_kh=<?= $ma_kh ?>" class="btn btn-success " name='btn_edit'><i class="bi bi-pencil-square"></i></a>
+                                    <a href="index.php?btn_edit" class="btn btn-success " name='btn_edit'><i class="bi bi-pencil-square"></i></a>
 
                                     <a href="index.php?btn_delete&ma_kh=<?= $ma_kh ?>" class="btn btn-danger"><i class="bi bi-trash"></i></a>
                                 </td>

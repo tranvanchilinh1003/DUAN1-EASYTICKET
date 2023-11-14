@@ -62,7 +62,15 @@
             </div>
         </li>
         <li class="nav-item menu-items">
-            <a class="nav-link" data-toggle="collapse" href="#">
+            <a class="nav-link" href="<?= $ADMIN_URL?>/ghe/">
+                <span class="menu-icon">
+                <i class="bi bi-easel2"></i>
+                </span>
+                <span class="menu-title">Quản Lý Ghế</span>
+            </a>
+        </li>
+        <li class="nav-item menu-items">
+            <a class="nav-link"  href="<?= $ADMIN_URL?>/hoa-don/">
                 <span class="menu-icon">
                     <i class="bi bi-receipt-cutoff"></i>
                 </span>
@@ -70,7 +78,7 @@
             </a>
         </li>
         <li class="nav-item menu-items">
-            <a class="nav-link" data-toggle="collapse" href="#">
+            <a class="nav-link" href="<?= $ADMIN_URL?>/binh-luan/">
                 <span class="menu-icon">
                     <i class="mdi mdi-forum text-dribbble"></i>
                 </span>
@@ -78,7 +86,7 @@
             </a>
         </li>
         <li class="nav-item menu-items">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="<?= $ADMIN_URL?>/thong-ke/">
                 <span class="menu-icon">
                     <i class="mdi mdi-chart-bar"></i>
                 </span>

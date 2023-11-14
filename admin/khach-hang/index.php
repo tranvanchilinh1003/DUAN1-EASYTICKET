@@ -43,7 +43,7 @@ if (exist_param("btn_insert")) {
 
 //     $items = khach_hang_sellect_all();
 //     $VIEW_NAME = "list.php";
-// } else if (exist_param("btn_edit")) {
+} else if (exist_param("btn_edit")) {
 
 //     //  lấy dữ liệu form
 //     $ma_kh = $_REQUEST['ma_kh'];
@@ -51,7 +51,7 @@ if (exist_param("btn_insert")) {
 //     extract($khach_hang_info);
 //     $items = khach_hang_sellect_all();
 
-//     $VIEW_NAME = "edit.php";
+    $VIEW_NAME = "edit.php";
 // } else if (exist_param("btn_update")) {
 //     $ma_kh = $_REQUEST['ma_kh'];
 //     $mat_khau1 = $_POST['mat_khau'];
