@@ -24,8 +24,8 @@
             </a>
             <div class="collapse" id="ui-basic">
                 <ul class="nav flex-column sub-menu">
-                    <li class="nav-item"> <a class="nav-link" href="#">Thêm Loại</a></li>
-                    <li class="nav-item"> <a class="nav-link" href="#">Danh sách</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="<?=$ADMIN_URL ?>/loai-phim/">Thêm Loại</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="<?=$ADMIN_URL ?>/loai-phim?btn_list">Danh sách</a></li>
                 </ul>
             </div>
         </li>
@@ -40,8 +40,8 @@
             </a>
             <div class="collapse" id="auth">
                 <ul class="nav flex-column sub-menu">
-                    <li class="nav-item"> <a class="nav-link" href="#">Thêm phim</a></li>
-                    <li class="nav-item"> <a class="nav-link" href="#">Danh sách</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="<?=$ADMIN_URL ?>/phim/">Thêm phim</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="<?=$ADMIN_URL ?>/phim?btn_list">Danh sách</a></li>
                 </ul>
             </div>
         </li>
@@ -87,7 +87,7 @@
             </a>
         </li>
         <li class="nav-item menu-items">
-            <a class="nav-link" data-toggle="collapse" href="#">
+            <a class="nav-link" href="#">
                 <span class="menu-icon">
                     <i class="mdi mdi-forum text-"></i>
                 </span>
