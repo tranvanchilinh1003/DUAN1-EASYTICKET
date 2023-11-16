@@ -1,6 +1,6 @@
 <style>
     .form-control:focus {
-  color: white;
+color: white;
 }
 </style>
 <div class="container">
@@ -9,11 +9,10 @@
         <div class="card">
             <div class="card-header card-header-primary">
                 <h3 class="card-title p-2 text-warning">Quảng Lý Khách Hàng</h3>
-
             </div>
             <div class="card-body">
                 <div class="table">
-                    <form class="form" action="./index.php" method="post" id="isert_form" enctype="multipart/form-data">
+                    <form class="form" action="./index.php" method="post" id="form_control" enctype="multipart/form-data">
                         <div class='row mt-2'>
                             <div class="col-sm-4">
                                 <label for="username" class="fw-bold col-form-label text-white">Tài Khoản</label>
@@ -100,7 +99,7 @@
     </div>
 </div>
 <script>
-    var form_insert = document.getElementById("isert_form");
+    var form_insert = document.getElementById("form_control");
     form_insert.addEventListener('submit', function(e) {
         var user = document.getElementById('username').value;
         var name = document.getElementById('full_name').value;

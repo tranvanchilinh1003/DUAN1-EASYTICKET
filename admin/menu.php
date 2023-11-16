@@ -6,7 +6,7 @@
     </div>
     <ul class="nav">
         <li class="nav-item menu-items">
-            <a class="nav-link" href="<?=$ADMIN_URL?>/trang-chinh/">
+            <a class="nav-link" href="<?= $ADMIN_URL ?>/trang-chinh/">
                 <span class="menu-icon">
                     <!-- <i class="mdi mdi-speedometer"></i> -->
                     <i class="mdi mdi-home text-warning"></i>
@@ -24,8 +24,8 @@
             </a>
             <div class="collapse" id="ui-basic">
                 <ul class="nav flex-column sub-menu">
-                    <li class="nav-item"> <a class="nav-link" href="<?=$ADMIN_URL ?>/loai-phim/">Thêm Loại</a></li>
-                    <li class="nav-item"> <a class="nav-link" href="<?=$ADMIN_URL ?>/loai-phim?btn_list">Danh sách</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="<?= $ADMIN_URL ?>/loai-phim/">Thêm Loại</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="<?= $ADMIN_URL ?>/loai-phim?btn_list">Danh sách</a></li>
                 </ul>
             </div>
         </li>
@@ -40,13 +40,30 @@
             </a>
             <div class="collapse" id="auth">
                 <ul class="nav flex-column sub-menu">
-                    <li class="nav-item"> <a class="nav-link" href="<?=$ADMIN_URL ?>/phim/">Thêm phim</a></li>
-                    <li class="nav-item"> <a class="nav-link" href="<?=$ADMIN_URL ?>/phim?btn_list">Danh sách</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="<?= $ADMIN_URL ?>/phim/">Thêm phim</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="<?= $ADMIN_URL ?>/phim?btn_actor">Thêm diễn viên</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="<?= $ADMIN_URL ?>/phim?btn_list">Danh sách</a></li>
                 </ul>
             </div>
         </li>
-        <li class="nav-item menu-items">
+        <!-- <li class="nav-item menu-items">
             <a class="nav-link" data-toggle="collapse" href="#aut" aria-expanded="false" aria-controls="aut">
+                <span class="menu-icon">
+                    
+                    <i class="bi bi-film"></i>
+                </span>
+                <span class="menu-title">Quản lý diễn viên</span>
+                <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="aut">
+                <ul class="nav flex-column sub-menu">
+                    <li class="nav-item"> <a class="nav-link" href="<?= $ADMIN_URL ?>/dien-vien/">Thêm diễn viên</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="<?= $ADMIN_URL ?>/dien-vien?btn_list">Danh sách</a></li>
+                </ul>
+            </div>
+        </li> -->
+        <li class="nav-item menu-items">
+            <a class="nav-link" data-toggle="collapse" href="#d" aria-expanded="false" aria-controls="d">
                 <span class="menu-icon">
                     <!-- <i class="mdi mdi-laptop"></i> -->
                     <i class="bi bi-person-circle text-primary"></i>
@@ -54,32 +71,23 @@
                 <span class="menu-title">Quản lý khách hàng</span>
                 <i class="menu-arrow"></i>
             </a>
-            <div class="collapse" id="aut">
+            <div class="collapse" id="d">
                 <ul class="nav flex-column sub-menu">
-                    <li class="nav-item"> <a class="nav-link" href="<?=$ADMIN_URL ?>/khach-hang/">Thêm khách hàng</a></li>
-                    <li class="nav-item"> <a class="nav-link" href="<?=$ADMIN_URL ?>/khach-hang?btn_list">Danh sách</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="<?= $ADMIN_URL ?>/khach-hang/">Thêm khách hàng</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="<?= $ADMIN_URL ?>/khach-hang?btn_list">Danh sách</a></li>
                 </ul>
             </div>
         </li>
         <li class="nav-item menu-items">
-            <a class="nav-link" href="<?= $ADMIN_URL?>/ghe/">
+            <a class="nav-link" href="<?= $ADMIN_URL ?>/ghe/">
                 <span class="menu-icon">
-                <i class="bi bi-easel2"></i>
+                    <i class="bi bi-easel2"></i>
                 </span>
                 <span class="menu-title">Quản Lý Ghế</span>
             </a>
         </li>
         <li class="nav-item menu-items">
-            <a class="nav-link"  href="<?= $ADMIN_URL?>/hoa-don/">
-                <span class="menu-icon">
-                    <i class="bi bi-receipt-cutoff"></i>
-                </span>
-                <span class="menu-title">Quản lý khách hàng</span>
-                <i class="menu-arrow"></i>
-            </a>
-        </li>
-        <li class="nav-item menu-items">
-            <a class="nav-link" href="<?= $ADMIN_URL?>/binh-luan/">
+            <a class="nav-link" href="<?= $ADMIN_URL ?>/binh-luan/">
                 <span class="menu-icon">
                     <i class="bi bi-receipt-cutoff"></i>
                 </span>
@@ -95,7 +103,7 @@
             </a>
         </li>
         <li class="nav-item menu-items">
-            <a class="nav-link" href="<?= $ADMIN_URL?>/thong-ke/">
+            <a class="nav-link" href="<?= $ADMIN_URL ?>/thong-ke/">
                 <span class="menu-icon">
                     <i class="mdi mdi-chart-bar"></i>
                 </span>

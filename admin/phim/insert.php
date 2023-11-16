@@ -12,7 +12,6 @@
                             <div class="col-sm-4">
                                 <label for="id" class="fw-bold col-form-label text-white">Id</label>
                                 <input type="text" class="form-control" style="background-color: #2A3038;" id="id" name="id" placeholder="Auto Number..." disabled>
-                                <span class="error text-danger"></span>
                             </div>
                             <div class="col-sm-4">
                                 <label for="name_movie" class="fw-bold col-form-label text-white">Tên phim</label>
@@ -38,8 +37,8 @@
                             </div>
                             <div class="col-sm-4">
                                 <div class="form-group">
-                                    <label for="categories" class="fw-bold col-form-label text-white">Thể loại</label>
-                                    <select class="form-control" id="categories">
+                                    <label for="categories_id" class="fw-bold col-form-label text-white">Thể loại</label>
+                                    <select class="form-control" id="categories_id">
                                         <option>1</option>
                                         <option>2</option>
                                         <option>3</option>
@@ -67,7 +66,20 @@
                                 <input type="text" class="form-control" id="categories" name="categories">
                                 <span class="error text-danger"></span>
                             </div>
-
+                        </div>
+                        <div class='row mt-3'>
+                            <div class="col-sm-4">
+                                <div class="form-group">
+                                    <label for="actor" class="fw-bold col-form-label text-white">Diễn Viên</label>
+                                    <select class="form-control" id="actor">
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                    </select>
+                                </div>
+                            </div>
                         </div>
                         <div class='row mt-3'>
                             <div class='col-sm-12'>
@@ -82,63 +94,52 @@
                             <div class="card-body d-flex justify-content-end">
                                 <input type="submit" class="btn btn-outline-warning p-3" name="btn_insert" value="Thêm mới">
                                 <button type="reset" class="btn btn-outline-pinterest p-3 mx-xl-3" name="clear_form">Nhập lại</button>
-
                             </div>
                         </div>
-
                     </form>
-
-
-
-
                 </div>
-
             </div>
-
         </div>
     </div>
 </div>
-<!-- <script>
-    function unsubmut() {
-        // event.preventDefault();
-        var ma_kh = document.getElementById("ma_kh").value;
-        var pass = document.getElementById("mat_khau").value;
-        var confim_pass = document.getElementById("mat_khau2").value;
-var ho_ten =document.getElementById("ho_ten").value;
-        var err = document.getElementsByClassName("error");
-
-        err[0].innerHTML = "";
-        err[1].innerHTML = "";
-        err[2].innerHTML = "";
-        err[3].innerHTML = "";
-        if (ma_kh.trim() === '') {
-
-            err[0].innerHTML = 'Mã Khách Hàng Không Được Rỗng';
-            return false;
+<script>
+    var form_insert = document.getElementById("isert_form");
+    form_insert.addEventListener('submit', function(e) {
+        var name_movie = document.getElementById('name_movie').value;
+        var price = document.getElementById("price").value;
+        var time = document.getElementById("time").value;
+        var image = document.getElementById('image');
+        var selectedDate = new Date(document.getElementById("date_movie").value);
+        var currenDate = new Date();
+        var error = document.getElementsByClassName("error");
+        var has_error = true;
+        error[0].innerHTML = '';
+        error[1].innerHTML = '';
+        error[2].innerHTML = '';
+        error[3].innerHTML = '';
+        error[4].innerHTML = '';
+        if (name_movie.trim() == " " || name_movie.length < 5) {
+            error[0].innerHTML = "không để trống hoặc dưới 5 ký tự";
+            has_error = false;
         }
-        else if(ho_ten.trim()=='' || ho_ten.length < 3 ){
-
-            err[1].innerHTML = 'Họ tên không để trống và dưới 3 ký tự';
-            return false;
+        if (price.trim() === '' || isNaN(price) || price < 0) {
+            error[1].innerHTML = 'Giá Không Để Trống chỉ chứa chữ số';
+            has_error = false;
         }
-        
-        else if (pass.trim() === ' ' || pass.length < 5) {
-
-            err[2].innerHTML = 'Vui Lòng Nhập Pass Từ 5 kí tự';
-            return false;
-
-        } else if (confim_pass.trim() === '' || confim_pass != pass) {
-
-            err[3].innerHTML = 'Xác Nhận Pass Chưa Giống Hoặc Trống';
-            return false;
-
-
+        if (time.trim() == " " || time.length < 5) {
+            error[2].innerHTML = "không để trống hoặc dưới 5 ký tự";
+            has_error = false;
         }
-
-
-        return true;
-    }
-    // this.submit();
-
-    // });
-</script> -->
+        if (image.files.length === 0) {
+            error[3].innerHTML = "Vui Lòng Chọn Hình";
+            has_error = false;
+        }
+        if (selectedDate > currenDate) {
+            error[4].innerHTML = 'Ngày Nhập Lớn Hơn hiện tại';
+            has_error = false;
+        }
+        if (has_error == false) {
+            e.preventDefault();
+        }
+    });
+</script>

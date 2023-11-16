@@ -1,12 +1,11 @@
-
 <style>
     .form-control:focus {
-  color: white;
-}
+        color: white;
+    }
 </style>
 <div class="container">
     <div class="container-fluid">
-    <i class=" text-danger"><?= (isset($MESSAGE) && (strlen($MESSAGE) > 0)) ? $MESSAGE : "" ?></i>
+        <i class=" text-danger"><?= (isset($MESSAGE) && (strlen($MESSAGE) > 0)) ? $MESSAGE : "" ?></i>
         <div class="card">
             <div class="card-header card-header-primary">
                 <h3 class="card-title p-2 text-warning">Quảng Lý Khách Hàng</h3>
@@ -28,7 +27,7 @@
                             </div>
                             <div class="col-sm-4">
                                 <label for="password" class="fw-bold col-form-label text-white">Mật Khẩu</label>
-                                <input type="password" class="form-control " id="password" name="password" >
+                                <input type="password" class="form-control " id="password" name="password">
                                 <span class="error text-danger"></span>
                             </div>
                         </div>
@@ -46,7 +45,7 @@
                             </div>
                             <div class="col-sm-4">
                                 <label for="mat_khau2" class="fw-bold col-form-label text-white">Xác Nhận Mật Khẩu</label>
-                                <input type="password" class="form-control" id="mat_khau2" name="mat_khau2" >
+                                <input type="password" class="form-control" id="mat_khau2" name="mat_khau2">
                                 <span class="error text-danger"></span>
                             </div>
 
@@ -56,7 +55,7 @@
 
                         </div>
                         <div class='row mt-3'>
-                        <div class="col-sm-4">
+                            <div class="col-sm-4">
                                 <label for="phone" class="fw-bold col-form-label text-white">Số Điện Thoại</label>
                                 <input type="text" class="form-control" id="phone" name="phone" placeholder='Số Điện Thoại...'>
                                 <span class="error text-danger"></span>
@@ -76,9 +75,7 @@
                         <div class="border-top">
                             <div class="card-body d-flex justify-content-end">
                                 <input type="submit" class="btn btn-outline-warning p-3" name="btn_update" value="Cập Nhật">
-                                
                                 <a href="index.php?btn_list" class="btn btn-outline-warning p-3 mx-xl-3" name="list">Danh sách</a>
-                        
                             </div>
                         </div>
 
@@ -100,7 +97,7 @@
         var ma_kh = document.getElementById("ma_kh").value;
         var pass = document.getElementById("mat_khau").value;
         var confim_pass = document.getElementById("mat_khau2").value;
-var ho_ten =document.getElementById("ho_ten").value;
+        var ho_ten =document.getElementById("ho_ten").value;
         var err = document.getElementsByClassName("error");
 
         err[0].innerHTML = "";

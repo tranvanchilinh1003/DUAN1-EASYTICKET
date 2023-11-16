@@ -1,7 +1,7 @@
 <div class="col-lg-12 grid-margin stretch-card">
     <div class="card">
         <div class="card-body">
-            <h3 class="card-title text-warning">Danh Sách Thể Phim</h3>
+            <h3 class="card-title text-warning">Danh Sách Tài Khoản</h3>
             <!-- <p class="card-description"> Add class <code>.table-striped</code> -->
             <!-- </p> -->
             <form action="#" method="post" id="form_delete_loai">
@@ -9,17 +9,11 @@
                     <table class="table table-striped">
                         <thead>
                             <tr>
-                                <th> <input type="checkbox" onclick="selectAll(); " ondblclick="remove_selectAll()" name="check[]" value="<?= $id ?>" id="<?= $id ?>" value="<?= $id ?>" class="check_button"></th>
+                                <th>     <input type="checkbox" onclick="selectAll(); " ondblclick="remove_selectAll()" name="check[]" value="<?= $id ?>" id="<?= $id ?>" value="<?= $id ?>" class="check_button"></th>
                                 <th>ID</th>
-                                <th>Tên phim</th>
-                                <th>Giá</th>
-                                <th>Thể loại</th>
-                                <th>Hình</th>
-                                <th>Thể loại</th>
-                                <th>Trạng thái</th>
-                                <th>Ngày</th>
-                                <th>Trailer</th>
-                                <th>Diễn viên</th>
+                                <th>Tên diễn viên</th>
+                                <th>Đạo diễn</th>
+                                <th>Nhà sản xuất</th>
                                 <th></th>
                             </tr>
                         </thead>
@@ -27,25 +21,25 @@
                             <tr>
                                 <td>
                                     <input type="checkbox" name="check[]" value="<?= $id ?>" id="<?= $id ?>" value="<?= $id ?>" class="check_button">
+
                                 </td>
-                                <td>1</td>
-                                <td> Conan </td>
-                                <td> 65.000đ </td>
-                                <td> anime </td>
-                                <td>
+                                <td></td>
+                                <td class="py-1">
                                     <img src="<?= $ADMIN_URL ?>/assets/images/faces-clipart/pic-1.png" alt="image" />
                                 </td>
-                                <td> 1 </td>
-                                <td> Hiện </td>
-                                <td> 16/11/2023 </td>
-                                <td> </td>
-                                <td> Linh Lỏ </td>
+                                <td> Herman Beck </td>
                                 <td>
-                                    <a href="index.php?btn_edit&ma_kh=<?= $ma_kh ?>" class="btn btn-success " name='btn_edit'><i class="bi bi-pencil-square"></i></a>
+                                /
+                                </td>
+                                <td>
+
+                                    <a href="index.php?btn_edit" class="btn btn-success " name='btn_edit'><i class="bi bi-pencil-square"></i></a>
 
                                     <a href="index.php?btn_delete&ma_kh=<?= $ma_kh ?>" class="btn btn-danger"><i class="bi bi-trash"></i></a>
                                 </td>
+
                             </tr>
+
                         </tbody>
                     </table>
                 </div>
