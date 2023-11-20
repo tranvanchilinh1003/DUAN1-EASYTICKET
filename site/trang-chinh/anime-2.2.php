@@ -106,10 +106,10 @@
                 <div class="muc-luc">
                      <ul>
                         <li>
-                            <a href="#">0.1 - Có những tình tiết chỉ phù hợp với phim hoạt hình</a><br>
-                            <a href="#">0.2 - Anime là nét văn hóa của người Nhật</a><br>
-                            <a href="#">0.3 - Lựa chọn dàn diễn viên khó khăn</a><br>
-                            <a href="#">0.4 - Phần lớn những tác phẩm livie-acction đều thất bại</a><br>
+                            <a href="#">1 - Có những tình tiết chỉ phù hợp với phim hoạt hình</a><br>
+                            <a href="#">2 - Anime là nét văn hóa của người Nhật</a><br>
+                            <a href="#">3 - Lựa chọn dàn diễn viên khó khăn</a><br>
+                            <a href="#">4 - Phần lớn những tác phẩm livie-acction đều thất bại</a><br>
                          
                           
                         </li>

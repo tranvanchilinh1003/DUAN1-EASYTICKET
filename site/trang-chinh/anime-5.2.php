@@ -93,8 +93,6 @@
    padding-left: 1rem;
    margin-top: 0.5rem;
    }
-
-
  </style>
    <section>
         <div class="container">

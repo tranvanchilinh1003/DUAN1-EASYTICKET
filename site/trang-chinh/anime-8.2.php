@@ -93,8 +93,6 @@
    padding-left: 1rem;
    margin-top: 0.5rem;
    }
-
-
  </style>
    <section>
         <div class="container">
@@ -194,9 +192,7 @@
                    đảm nhận vị trí lồng tiếng cho nhân vật Meechee trong Smallfoot.</p>
                    <p>Bộ phim hoạt hình Smallfoot dự kiến sẽ chính thức được ra mắt khán giả vào ngày
                    28/8/2018.   </p>
-                </div>
-
-                
+                </div>        
         </div>
         <div class="box1">
               <div class="titel">

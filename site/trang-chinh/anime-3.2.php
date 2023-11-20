@@ -105,10 +105,10 @@
                 <div class="muc-luc">
                      <ul>
                         <li>
-                            <a href="#">0.1 - Your Name – một bức tranh tuyệt đẹp về cuộc sống</a><br>
-                            <a href="#">0.2 - Your Name – bộ phim anime có doanh thu cao nhất mọi thời đại</a><br>
-                            <a href="#">0.3 - Nhật Bản – Thị trường đang được Hollywood đánh giá cao</a><br>
-                            <a href="#">0.4 - Ý kiến phản hồi của khán giả</a><br>
+                            <a href="#">1 - Your Name – một bức tranh tuyệt đẹp về cuộc sống</a><br>
+                            <a href="#">2 - Your Name – bộ phim anime có doanh thu cao nhất mọi thời đại</a><br>
+                            <a href="#">3 - Nhật Bản – Thị trường đang được Hollywood đánh giá cao</a><br>
+                            <a href="#">4 - Ý kiến phản hồi của khán giả</a><br>
                           
                         </li>
                      </ul>
