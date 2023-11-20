@@ -1,4 +1,6 @@
- <style>
+<style>
+   
+  
    .container{
     width: 100%;
    }
@@ -28,6 +30,7 @@
     padding-left: 1rem;
     
    }
+   
    .box  p{
     width: 100%;
     color: #333;
@@ -115,75 +118,57 @@
                         </li>
                      </ul>
                 </div>
-               <p><strong>Những thông tin mới đây nhất về dự án chuyển thể Your Name sang phiên bản live action đã khiến khán giả
+               <p>Những thông tin mới đây nhất về dự án chuyển thể Your Name sang phiên bản live action đã khiến khán giả
                     hâm mộ bộ phim hoang mang về sự thành bại của tác phẩm, và không chỉ Your Nam mà có kha khá tác phẩm 
-                   đang được Hollywood lên kế hoạch chuyển thành phim do người đóng.</strong><br>
-
-                   Bên cạnh số ít bộ phim anime chuyển thể thành công, thì phần lớn các dự án đều thất bại thảm hại như Ghost in
+                   đang được Hollywood lên kế hoạch chuyển thành phim do người đóng.</p>
+                  <p> Bên cạnh số ít bộ phim anime chuyển thể thành công, thì phần lớn các dự án đều thất bại thảm hại như Ghost in
                    the Shell, Dragon Ball và mới đây nhất là Death Note. Chính vì vậy khi có thông tin 7 bộ phim hoạt hình đình đám
                    của Nhật chuẩn bị được chuyển sang bản live action, khán giả hâm mộ vô cùng lo ngại Hollywood sẽ tiếp tục
                    hủy hoại thương hiệu bộ phim đã xây dựng được. Liệu trong bảy dự án phim dưới đây, tác phẩm nào tiếp tục tỏa
-                   sáng tại rạp chiếu phim.
-                </p>
-                
-                <div class="product__item__pic set-bg" data-setbg="<?= $CONTENT_URL?>/assets/img/blog/blog-14.jpg">  </div>
-               
+                   sáng tại rạp chiếu phim.</p>       
+                <div class="product__item__pic set-bg" data-setbg="<?= $CONTENT_URL?>/assets/img/blog/blog-14.jpg">   </div>    
                 <div class="noi-dung">
-                <h4>Alita: Battle Angel</h4>
-                <p>
-                   Năm 2005, đạo diễn James Cameron đã xác nhận sẽ chuyển thể bộ truyện Alita: Battle Angel thành phiên bản
+                <h4>Alita: Battle Angel</h4>        
+                 <p>  Năm 2005, đạo diễn James Cameron đã xác nhận sẽ chuyển thể bộ truyện Alita: Battle Angel thành phiên bản
                    live action. Tuy nhiên vị đạo diễn này quá bận rộn với dự án Avatar và sau khi phần một của bộ phim thành
                    công gấp nhiều lần so với tưởng tượng, ông lại bận rộn thực hiện tiếp phần 2, phần 3 và phần 4 của bộ phim. 
-                   Vì vậy Alita: Battle Angel được lùi lại lịch thực hiện và đến tháng 7/2018 bộ phim mới được ra mắt. 
-                    <br>
-                   Alita: Battle Ange là bộ truyện tranh viễn tưởng được rất nhiều fan manga trên toàn thế giới yêu thích.
+                   Vì vậy Alita: Battle Angel được lùi lại lịch thực hiện và đến tháng 7/2018 bộ phim mới được ra mắt. </p>           
+                 <p>  Alita: Battle Ange là bộ truyện tranh viễn tưởng được rất nhiều fan manga trên toàn thế giới yêu thích.
                    Thông tin bộ truyện được chuyển thành bản live action khiến nhiều khán giả háo hức, nhưng cũng không ít 
-                   người lo lắng về khả năng thành công của bộ phim.
-                </p>
+                   người lo lắng về khả năng thành công của bộ phim.</p>   
                 <div class="noi-dung">
-                <h4>Naruto</h4>
-                <p>
-                   Naruto là bộ truyện tranh kinh điển của Nhật Bản, thu hút được hàng triệu khán giả yêu thích cả phiên bản truyện
+                <h4>Naruto</h4> 
+                  <p> Naruto là bộ truyện tranh kinh điển của Nhật Bản, thu hút được hàng triệu khán giả yêu thích cả phiên bản truyện
                    lẫn điện ảnh. Chính tác giả của bộ truyện Kishimoto Masashi đã xác nhận Naruto sẽ được đạo diễn Michael Gracey cầm 
-                   chịch – ông nổi tiếng với vai trò visual effects và animation nhào nặn cùng Lionsgate sản xuất.
-                    <br>
-                   Đến thời điểm hiện tại những thông tin chính xác về dự án phim vẫn chưa được tiết lộ với khán giả. Vì vậy khán giả 
-                   vẫn đang chờ đợi và hi vọng bộ phim sẽ thành công và không đi vào vết xe đổ của Death Note.
-                </p>
-                <div class="product__item__pic set-bg" data-setbg="<?= $CONTENT_URL?>/assets/img/blog/blog-15.jpg">  </div>
-                
-
+                   chịch – ông nổi tiếng với vai trò visual effects và animation nhào nặn cùng Lionsgate sản xuất.</p>
+                 <p>  Đến thời điểm hiện tại những thông tin chính xác về dự án phim vẫn chưa được tiết lộ với khán giả. Vì vậy khán giả 
+                   vẫn đang chờ đợi và hi vọng bộ phim sẽ thành công và không đi vào vết xe đổ của Death Note.</p>
+                <div class="product__item__pic set-bg" data-setbg="<?= $CONTENT_URL?>/assets/img/blog/blog-15.jpg"> 
+               </div>
                 </div>
                 <div class="noi-dung">
                 <h4>Bleach</h4>
-                <p>
-                   Một trong những bộ manga để lại nhiều nuối tiếc nhất trong lòng khán giả chính là Bleach. Nhằm đáp lại tình
+                  <p> Một trong những bộ manga để lại nhiều nuối tiếc nhất trong lòng khán giả chính là Bleach. Nhằm đáp lại tình
                    cảm của khán giả đối với bộ truyện, nhà xuất bản tác phẩm này đã thông báo Bleach sẽ quay trở lại với khán giả
                    qua hai bản điện ảnh; một do Nhật Bản sản xuất, một do Hollywood chịu trách nhiệm chuyển thế. Phiên bản 
                    Nhật sẽ ra mắt khán giả trong năm 2018. Phiên bản của Hollywood hiện nay vẫn được giữ bí mật và chưa hề có
-                   bất cứ thông tin nào về bộ phim này.
-                </p>
+                   bất cứ thông tin nào về bộ phim này</p>
                 </div>
                   <div class="noi-dung">
                 <h4>Beyblade</h4>
-                <p>
-                   Năm 2015, hãng phim Paramount Pictures đã ra thông báo chính thức hãng đang tiến hành sản xuất bản live
+                  <p> Năm 2015, hãng phim Paramount Pictures đã ra thông báo chính thức hãng đang tiến hành sản xuất bản live
                    action của bộ phim này. Đã hai năm trôi qua và khán giả vẫn chưa được tiết lộ thêm bất cứ thông tin gì về dự án
-                   này.
-                </p>
+                   này.</p>
                 </div>
                 <div class="noi-dung">
                 <h4>One Piece</h4>
-                <p>
-                   Câu chuyện One Piece của tác giả Eiichiro Oda đã chính thức ra mắt được 20 năm và trở thành một trong những
+                  <p> Câu chuyện One Piece của tác giả Eiichiro Oda đã chính thức ra mắt được 20 năm và trở thành một trong những
                    bộ manga gây tiếng vang lớn nhất với khán giả thuộc mọi lứa tuổi từ lứa 8x của thế kỷ 20 cho đến những thế hệ
-                   đầu tiên của thế kỷ 21.
-                   <br>
-                    Nhân dịp kỷ niệm tròn 20 năm bộ truyện được ra mắt, Tomorrow Studios – hãng phim nổi tiếng tạo dựng nên
+                   đầu tiên của thế kỷ 21.</P>   
+                  <p>  Nhân dịp kỷ niệm tròn 20 năm bộ truyện được ra mắt, Tomorrow Studios – hãng phim nổi tiếng tạo dựng nên
                     thương hiệu Prison Break sẽ chịu trách nhiệm giám sát dự án chuyển thể đình đám này. Bộ phim được xây dựng
-                    dưới hình thức TV series và Marty Adelstein sẽ là người chịu trách nhiệm sản xuất One Piece live action.
-                </p>
-                <div class="product__item__pic set-bg" data-setbg="<?= $CONTENT_URL?>/assets/img/blog/blog-16.jpg">  </div>
+                    dưới hình thức TV series và Marty Adelstein sẽ là người chịu trách nhiệm sản xuất One Piece live action.</p>
+                <div class="product__item__pic set-bg" data-setbg="<?= $CONTENT_URL?>/assets/img/blog/blog-16.jpg"> </div>
                 </div>
                 <div class="noi-dung">
                 <h4>Your Name</h4>
@@ -215,10 +200,10 @@
                 </div>
            </div>
         </div>
-            <div class="box1">
+        <div class="box1">
               <div class="titel">
                   <h5> Bài viết liên quan</h5>
-                 
+
               </div>
               <div class="danh-sach">
               <div class="hinh">
@@ -227,44 +212,44 @@
               <div class="noi-dung">
                   <ul>
                     <li>
-                        <a href="#">Your Name Sắp Có Phiên Bản Live-Action</a>
+                        <a href="anime-5.php">Your Name Sắp Có Phiên Bản Live-Action</a>
                     </li>
                   </ul>
               </div>
               </div>
               <div class="danh-sach">
               <div class="hinh">
-              <div class="product__item__pic set-bg" data-setbg="<?= $CONTENT_URL?>/assets/img/blog/blog-16.jpg">  </div>
+              <div class="product__item__pic set-bg" data-setbg="<?= $CONTENT_URL?>/assets/img/blog/blog-21.jpg">  </div>
               </div>
               <div class="noi-dung">
                   <ul>
                     <li>
-                        <a href="#">3 bộ phim hoạt hình của Hollywood khiến cả thế giới bấn loạn</a>
-                    </li>
-                  </ul>
-               </div>
-              </div>
-              <div class="danh-sach">
-              <div class="hinh">
-              <div class="product__item__pic set-bg" data-setbg="<?= $CONTENT_URL?>/assets/img/blog/blog-18.jpg">  </div>
-              </div>
-              
-              <div class="noi-dung">
-                  <ul>
-                    <li>
-                        <a href="#">Công Bố Dàn Diễn Viên Của Lion King Phiên Bản Live-Action</a>
+                        <a href="anime-4.php">Top 10 TV series phim anime đáng xem trên EASY TICKET</a>
                     </li>
                   </ul>
                </div>
               </div>
               <div class="danh-sach">
               <div class="hinh">
-              <div class="product__item__pic set-bg" data-setbg="<?= $CONTENT_URL?>/assets/img/blog/blog-20.jpg">  </div>
+              <div class="product__item__pic set-bg" data-setbg="<?= $CONTENT_URL?>/assets/img/blog/blog-50.jpg">  </div>
+              </div>
+
+              <div class="noi-dung">
+                  <ul>
+                    <li>
+                        <a href="anime-8.php">Smallfoot tung teaser trailer cực ngầu</a>
+                    </li>
+                  </ul>
+               </div>
+              </div>
+              <div class="danh-sach">
+              <div class="hinh">
+              <div class="product__item__pic set-bg" data-setbg="<?= $CONTENT_URL?>/assets/img/blog/blog-23.jpg">  </div>
               </div>
               <div class="noi-dung">
                   <ul>
                     <li>
-                        <a href="#">Cha đẻ Your Name không “mặn mà” với phiên bản live-action</a>
+                        <a href="anime-6.php">Bok no Hero Academia Season 4 – 18</a>
                     </li>
                   </ul>
                </div>

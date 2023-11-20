@@ -157,7 +157,7 @@
                                 </li>
                                 <!-- <li><a href="#">Giới Thiệu</a></li> -->
                                 <li><a href="../trang-chinh/tin-tuc.php">Tin Tức</a></li>
-                                <li><a href="../lien-he.php">Liên Hệ</a></li>
+                                <li><a href="lien-he.php">Liên Hệ</a></li>
                             </ul>
                         </nav>
                     </div>
@@ -262,10 +262,10 @@
                     <div class="footer__nav">
                         <ul>
                             <li class="active"><p><strong>TRUY CẬP NHANH</strong></p>
-                                <a href="">Trang Chủ </a>
+                                <a href="index.php">Trang Chủ </a>
                                 <a href="">Thể Loại</a> 
-                                <a href="">Tin Tức</a> 
-                                <a href="">Liên Hệ</a> 
+                                <a href="tin-tuc.php">Tin Tức</a> 
+                                <a href="lien-he.php">Liên Hệ</a> 
                             </li>
                                
                             <li class="active-box1"><p><strong>Thể Loại</strong> </p>

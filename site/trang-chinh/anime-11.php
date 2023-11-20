@@ -5,23 +5,12 @@ require "../../global.php";
 require "../../model/pdo.php";
 // require "../../dao/hang-hoa.php";
 extract($_REQUEST);
-if(exist_param("gioi-thieu", $_REQUEST)){
+if(exist_param("tin-tuc.php", $_REQUEST)){
 
-$VIEW_NAME = 'gioi-thieu.php';
+//$VIEW_NAME = 'tin-tuc.php';
 
-}else if(exist_param("lien-he", $_REQUEST)){
-    
-   $VIEW_NAME = 'lien-he.php';
-
-}
-
-else if(exist_param("tin-tuc", $_REQUEST)){
-
-    $VIEW_NAME = 'tin-tuc.php';
-    
 }
 else if(exist_param("san-pham", $_REQUEST)){
-   
 
 // $VIEW_NAME = 'san-pham.php';
 // $dsloai = loai_selectall();
@@ -31,16 +20,14 @@ else if(exist_param("san-pham", $_REQUEST)){
 }
 
 
-
-
-
-
 else{
+
 // $home  =  hang_hoa_seclect_all_home();
 // $random = hang_hoa_select_all_detail();
-    $VIEW_NAME = 'home.php';
+    $VIEW_NAME = 'anime-11.2.php';
 
 }
 // $dsloai = loai_selectall();
 
 require "../layout.php";
+
