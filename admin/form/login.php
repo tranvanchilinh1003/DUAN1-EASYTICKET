@@ -30,26 +30,29 @@ require "../../global.php";
             <div class="card col-lg-4 mx-auto">
               <div class="card-body px-5 py-5">
                 <h3 class="card-title text-left mb-3">Đăng Nhập Admin</h3>
-                <form>
+                <form action="index.php" method="post" onsubmit="return check_form();">
                   <div class="form-group">
                     <label>Tài Khoản</label>
-                    <input type="text" class="form-control p_input" placeholder="Tài Khoản admin...">
-                  </div>
+                    <input type="text" class="form-control p_input mb-3" id="username" name="username" placeholder="Tài Khoản admin...">
+                    <span class='text-danger err mb-3 font-weight-bold form-control-range' ></span>
                   <div class="form-group">
                     <label>Mật Khẩu</label>
-                    <input type="password" class="form-control p_input" placeholder="Nhập Mật Khẩu...">
+                    <input type="password" class="form-control p_input mb-3" id="password" name="password" placeholder="Nhập Mật Khẩu...">
+                    <span class='text-danger err mb-3 font-weight-bold form-control-range' ></span>
+                    
                   </div>
             
                   <div class="text-center">
-                    <button type="submit" class="btn btn-primary btn-block enter-btn">Đăng Nhập</button>
+                    <button type="submit" name='btn_login' class="btn btn-primary btn-block enter-btn">Đăng Nhập</button>
                   </div>
+                  <i class=" text-danger"><?= (isset($MESSAGE) && (strlen($MESSAGE) > 0)) ? $MESSAGE : "" ?></i>
                   <div class="d-flex">
                     <button class="btn btn-facebook mr-2 col">
                       <i class="mdi mdi-facebook"></i> Facebook </button>
                     <button class="btn btn-google col">
                       <i class="mdi mdi-google-plus"></i> Google plus </button>
                   </div>
-                  <p class="sign-up">Don't have an Account?<a href="#"> Sign Up</a></p>
+                
                 </form>
               </div>
             </div>
@@ -75,3 +78,25 @@ require "../../global.php";
     <!-- endinject -->
   </body>
 </html>
+<script>
+	function check_form() {
+
+		var err = document.getElementsByClassName("err");
+		var username = document.getElementById("username").value;
+		var password = document.getElementById("password").value;
+		err[0].innerHTML = "";
+		err[1].innerHTML = "";
+		
+		if (username.trim() == " " || username.length < 5) {
+			err[0].innerHTML = "Không Để Trống Hoặc Dưới 5 Ký Tự";
+			return false;
+
+		}
+		if(password.trim() == " " || password.length < 5){
+
+			err[1].innerHTML = "Không Để Trống Hoặc Dưới 5 Ký Tự";
+			return false;
+		}
+		return true;
+	}
+</script>

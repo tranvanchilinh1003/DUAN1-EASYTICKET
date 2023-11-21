@@ -18,8 +18,9 @@
                     <form class="form" action="<?= $ADMIN_URL ?>/loai-phim/index.php?btn_insert" method="post" id="isert_form" enctype="multipart/form-data">
                         <div class=''>
                             <div class="col-sm-12">
-                                <!-- <label for="username" class="fw-bold col-form-label text-white">Mã loại</label> -->
-                                <input type="hidden" class="form-control  m-auto " style="background-color: #2A3038;" name="id" placeholder="Auto number">
+                                <label for="id" class="fw-bold col-form-label text-white">Mã loại</label>
+                                <input type="text" class="form-control  m-auto " style="background-color: #2A3038;" id="id" name="id" placeholder="Auto Munber" disabled>
+                                <span class="error text-danger"></span>
                             </div>
                             <div class="col-sm-12">
                                 <label for="type_name" class="fw-bold col-form-label text-white">Tên loại</label>

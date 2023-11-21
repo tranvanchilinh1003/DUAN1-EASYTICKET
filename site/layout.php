@@ -25,6 +25,7 @@
     <link rel="stylesheet" href="<?= $CONTENT_URL ?>/assets/css/owl.carousel.min.css" type="text/css">
     <link rel="stylesheet" href="<?= $CONTENT_URL ?>/assets/css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="<?= $CONTENT_URL ?>/assets/css/style.css" type="text/css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 </head>
 <style>
     .header__menu ul {
@@ -68,16 +69,19 @@
                         <a href="../trang-chinh/index.php">
                             <img src="<?= $CONTENT_URL ?>/assets/img/studio.png" height="30px" alt="">
                         </a>
+                        
                     </div>
                 </div>
                 <div class="col-lg-6 d-flex align-items-center justify-content-center">
                     <div class="header__nav">
                         <nav class="header__menu mobile-menu">
                             <ul class='home_nav'>
-                                <li class="active"><a href="../trang-chinh/index.php">Trang Chủ</a></li>
+                                <li class="active"><a href="<?=$SITE_URL?>/trang-chinh/index.php">Trang Chủ</a></li>
+                                <!-- <li><a href="<?= $SITE_URL ?>/form/login_xuly.php?btn_logout" name='btn_logout'> <i class="bi bi-power  text-danger"></i></a></li> -->
                                 <li><a href="#">Thể Loại <span class="arrow_carrot-down"></span></a>
                                     <ul class="dropdown mt-1">
                                         <li><a href="#">?</a></li>
+                                        
                                         <!-- Mã Loại -->
                                         <!-- <li><a href="./anime-details.html">Anime Details</a></li>
                                         <li><a href="./anime-watching.html">Anime Watching</a></li>
@@ -110,19 +114,22 @@
                                     </form>
                                 </li>
                                 <?php
-                                if (isset($_SESSION["user"])) {
+                                if (isset($_SESSION["username"])) {
 
 
                                 ?>
-                                    <img style="border-radius: 50%;" src="../../img/<?= $_SESSION['user']['hinh']  ?>" width="50px" alt="">
+                                    
+                                <li>
+                                    <img style="border-radius: 50%;" src="../../img/<?=$_SESSION['img'] ?>"width="40px" alt="">
 
-                                    <label for=""><?= $_SESSION["user"]['ma_kh'] ?></label>
+                                    <label for="hover" class="text-white"><?= $_SESSION["username"] ?></label>
 
-                                    <ul class="dropdown mt-1">
-                                        <li><a href="<?= $SITE_URL ?>/login/xu_ly_thong_tin.php?btn_edit">Tài Khoản</a></li>
-                                        <li><a href="<?= $SITE_URL ?>/login/dang-nhap.php?btn_logout" name='btn_logout'> <i class="bi bi-power  text-danger"></i></a></li>
+                                    <ul class="dropdown " id='hover'> 
+                                        <li><a href="<?= $SITE_URL ?>/login/xu_ly_thong_tin.php?btn_edit"><i class="bi bi-person h5"></i> Tài Khoản</a></li>
+                                        <li><a href="<?= $SITE_URL ?>/form/login_xuly.php?btn_logout" name='btn_logout'> <i class="bi bi-power h5  text-danger"></i> Đăng Xuất </a></li>
                                     </ul>
 
+                                </li>
                                 <?php
 
                                 } else {
@@ -131,8 +138,8 @@
 
                                     <li><a href="#"><span class="icon_profile"></span></a>
                                         <ul class="dropdown">
-                                            <li><a href="<?= $SITE_URL ?>/login/dang-nhap.php">Đăng Nhập</a></li>
-                                            <li><a href="<?= $SITE_URL ?>/login/dang-ky.php">Đăng Ký</a></li>
+                                            <li><a href="<?= $SITE_URL ?>/form/login_xuly.php">Đăng Nhập</a></li>
+                                            <li><a href="<?= $SITE_URL ?>/form/signup_xuly.php">Đăng Ký</a></li>
                                             <!-- Mã Loại -->
                                             <!-- <li><a href="./anime-details.html">Anime Details</a></li>
                                         <li><a href="./anime-watching.html">Anime Watching</a></li>
@@ -162,7 +169,7 @@
     <!-- Hero Section End -->
 
     <!-- Product Section Begin -->
-    <section class="product spad">
+    <section class="product spad "  style="background-color: #0B0C2A;">
         <div class="container">
             <div class="row">
                 <?php
@@ -200,6 +207,7 @@
                 </div>
                 <div class="col-lg-3">
                 <p>
+                    
                         Bản Quyền &copy;<script>
                                 document.write(new Date().getFullYear());
                             </script> mọi quyền truy cập  thuộc về team LÀNG ĐÁ&#128525<i class="fa fa-heart" aria-hidden="true"></i>: <a href="<?=$CONTENT?>/index.php" class="text-warning" >EASY TICKET</a>
