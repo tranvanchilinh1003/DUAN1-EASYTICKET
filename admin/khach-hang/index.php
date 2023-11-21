@@ -1,97 +1,96 @@
 <?php
 // session_start();
 require "../../global.php";
-// require_once '../../dao/loai.php';
-// require_once "../../dao/pdo.php";
-// require_once "../../dao/khach-hang.php";
+require "../../model/user.php";
+// require "../../model/pdo.php";
 
 extract($_REQUEST);
 if (exist_param("btn_insert")) {
-//     $ma_kh = $_POST['ma_kh'];
-//     $mat_khau1 = $_POST['mat_khau'];
-//     $ho_ten = $_POST['ho_ten'];
-//     $kich_hoat = $_POST['kich_hoat'];
-//     $hinh = save_file('hinh', $UPLOAD_URL);
-//     $email = $_POST['email'];
-//     $vai_tro = $_POST['vai_tro'];
-
-// $mat_khau = md5($_POST['mat_khau']);
-// $_SESSION['mat_khau'] = $mat_khau1;
-//     // $items = khach_hang_sellect_all();
-//     // $loi = khach_hang_exist($ma_kh);
 
 
-//     if ($loi) {
-//         $MESSAGE = "Tài Khoản Đã Tồn Tại";
-//         $VIEW_NAME = "add.php";
-//     } else {
+    $username = $_POST['username'];
+    $password1 = $_POST['password'];
+    $full_name = $_POST['full_name'];
+    $image = save_file('image', $UPLOAD_URL);
+    $information = $_POST['information'];
 
 
+    $password = md5($password1);
+    $role = $_POST['role'];
+    $gender = $_POST['gender'];
+    $items = khach_hang_sellect_all();
+    khach_hang_select_by_id($username);
+    $loi = khach_hang_exist($username);
+    if (!empty($loi)) {
+        $MESSAGE = "Tài Khoản Đã Tồn Tại";
+        $VIEW_NAME = 'insert.php';
+    } else {
 
-
-//     khach_hang_insert($ma_kh, $mat_khau , $ho_ten, $kich_hoat, $hinh, $email, $vai_tro);
-//     $VIEW_NAME = "list.php";
-//     }
-    
+        if ($image != '') {
+            $VIEW_NAME = "list.php";
+            khach_hang_insert($username, $information, $password, $image, $role, $full_name, $gender);
+        } else {
+            khach_hang_insert($username, $information, $password, $image = 'anh_dai_dien.jpg', $role, $full_name, $gender);
+            $VIEW_NAME = "list.php";
+        }
+    }
 } else if (exist_param("btn_list")) {
 
     $VIEW_NAME = "list.php";
-// } else if (exist_param("btn_delete")) {
-//     $ma_kh = $_REQUEST['ma_kh'];
-//     khach_hang_delete($ma_kh);
+} else if (exist_param("btn_delete")) {
+    khach_hang_delete($id);
 
 
-//     $items = khach_hang_sellect_all();
-//     $VIEW_NAME = "list.php";
+    $items = khach_hang_sellect_all();
+    $VIEW_NAME = "list.php";
 } else if (exist_param("btn_edit")) {
 
-//     //  lấy dữ liệu form
-//     $ma_kh = $_REQUEST['ma_kh'];
-//     $khach_hang_info = khach_hang_select_by_id($ma_kh);
-//     extract($khach_hang_info);
-//     $items = khach_hang_sellect_all();
+    //     //  lấy dữ liệu form
+    $username = $_REQUEST['username'];
+    $info_user = khach_hang_select_by_id($username);
+
+    $items = khach_hang_sellect_all();
 
     $VIEW_NAME = "edit.php";
-// } else if (exist_param("btn_update")) {
-//     $ma_kh = $_REQUEST['ma_kh'];
-//     $mat_khau1 = $_POST['mat_khau'];
-//     $ho_ten = $_POST['ho_ten'];
-//     $kich_hoat = $_POST['kich_hoat'];
-//     $hinh = save_file('hinh', $UPLOAD_URL);
-//     $email = $_POST['email'];
-//     $vai_tro = $_POST['vai_tro'];
+} else if (exist_param("btn_update")) {
+    $username = $_POST['username'];
 
-//     $mat_khau = md5($_POST['mat_khau']);
-//     if( empty($hinh) ){
-//         $hinh = $_POST['hinh_old'];
-//         khach_hang_update($ma_kh,$mat_khau,$ho_ten,$kich_hoat,$hinh,$email,$vai_tro);
-//     }else{
-//         $hinh = save_file('hinh', $UPLOAD_URL);
-//         khach_hang_update($ma_kh,$mat_khau,$ho_ten,$kich_hoat,$hinh,$email,$vai_tro);
-        
-//     }
-    
-//     $items = khach_hang_sellect_all();
-//     $VIEW_NAME = 'list.php';
-// } 
-// elseif (exist_param("delete_box")) {
+    $password1 = $_POST['password'];
+    $full_name = $_POST['full_name'];
+    $image = save_file('image', $UPLOAD_URL);
+    $information = $_POST['information'];
+khach_hang_select_by_id($username);
 
-//     if (isset($_POST['delete_all'])) {
+    $password = md5($password1);
+    $role = $_POST['role'];
+    $gender = $_POST['gender'];
+    if (empty($image)) {
+        $image = $_POST['image_old'];
+        khach_hang_update($information,$password,$image,$role,$full_name,$gender,$username);
+    } else {
+        $image = save_file('image', $UPLOAD_URL);
+        khach_hang_update($information,$password,$image,$role,$full_name,$gender,$username);
+    }
 
-//         $get_id = $_POST['check'];
-//         if (isset($get_id)) {
-//             foreach ($get_id as $id) {
-//                 khach_hang_delete($id);
-//             }
-//             header("location: index.php?btn_list");
-//         } else {
+    // $items = khach_hang_sellect_all();
+    $VIEW_NAME = 'list.php';
 
-//             header("location: index.php?btn_list");
-//         }
+    // elseif (exist_param("delete_box")) {
+
+    //     if (isset($_POST['delete_all'])) {
+
+    //         $get_id = $_POST['check'];
+    //         if (isset($get_id)) {
+    //             foreach ($get_id as $id) {
+    //                 khach_hang_delete($id);
+    //             }
+    //             header("location: index.php?btn_list");
+    //         } else {
+
+    //             header("location: index.php?btn_list");
+    //         }
     // }
-} 
-
-else {
+} else {
     // $loai_hang = loai_selectall();
     $VIEW_NAME = "insert.php";
 }

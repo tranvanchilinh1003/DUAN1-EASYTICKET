@@ -5,7 +5,7 @@ color: white;
 </style>
 <div class="container">
     <div class="container-fluid">
-        <i class=" text-danger"><?= (isset($MESSAGE) && (strlen($MESSAGE) > 0)) ? $MESSAGE : "" ?></i>
+        
         <div class="card">
             <div class="card-header card-header-primary">
                 <h3 class="card-title p-2 text-warning">Quảng Lý Khách Hàng</h3>
@@ -18,6 +18,7 @@ color: white;
                                 <label for="username" class="fw-bold col-form-label text-white">Tài Khoản</label>
                                 <input type="text" class="form-control" id="username" name="username" placeholder="Tài Khoản...">
                                 <span class="error text-danger"></span>
+                                <i class=" text-danger"><?= (isset($MESSAGE) && (strlen($MESSAGE) > 0)) ? $MESSAGE : "" ?></i>
                             </div>
                             <div class="col-sm-4">
                                 <label for="full_name" class="fw-bold col-form-label text-white">Họ Và Tên</label>
@@ -32,8 +33,8 @@ color: white;
                         </div>
                         <div class='row mt-3'>
                             <div class="col-sm-4">
-                                <label for="email" class="fw-bold col-form-label text-white">Địa Chỉ Email</label>
-                                <input type="text" class="form-control" id="email" name="email" placeholder='Gmail...'>
+                                <label for="thong_tin" class="fw-bold col-form-label text-white">Email Hoặc SĐT</label>
+                                <input type="text" class="form-control" id='thong_tin' name='information' placeholder='Gmail Hoặc Số Điện Thoại...'>
                                 <span class="error text-danger"></span>
                             </div>
                             <div class="col-sm-4">
@@ -53,11 +54,7 @@ color: white;
 
                         </div>
                         <div class='row mt-3'>
-                            <div class="col-sm-4">
-                                <label for="phone" class="fw-bold col-form-label text-white">Số Điện Thoại</label>
-                                <input type="text" class="form-control" id="phone" name="phone" placeholder='Số Điện Thoại...'>
-                                <span class="error text-danger"></span>
-                            </div>
+                            
                             <div class="col-sm-4">
                                 <label class="fw-bold col-form-label text-white">Vai Trò </label>
                                 <div class=' p-2 rounded-right rounded-left' style="background-color: #2A3038;">
@@ -104,12 +101,12 @@ color: white;
         var user = document.getElementById('username').value;
         var name = document.getElementById('full_name').value;
         var password = document.getElementById('password').value;
-        var gmail = document.getElementById('email').value;
+        var thong_tin = document.getElementById('thong_tin').value;
         var comfirm_password = document.getElementById('comfirm_password').value;
         var gender = document.querySelectorAll('.gender');
-        var img = document.getElementById('image');
+        
         var error = document.getElementsByClassName("error");
-        var number_phone = document.getElementById('phone').value;
+
 
         var has_error = true;
         const emailRegex = /^[a-zA-Z0-9._%+-]+@(gmail\.(com|vn|org|gov|co)|fpt\.edu\.vn)$/;
@@ -120,8 +117,8 @@ color: white;
         error[3].innerHTML = '';
         error[4].innerHTML = '';
         error[5].innerHTML = '';
-        error[6].innerHTML = '';
-        error[7].innerHTML = '';
+    
+        
         if (user.trim() == " " || user.length < 5) {
             error[0].innerHTML = "không để trống hoặc dưới 5 ký tự";
             has_error = false
@@ -132,14 +129,12 @@ color: white;
             has_error = false
 
         }
-        if (!emailRegex.test(gmail)) {
-            error[3].innerHTML = "Email không Hợp lệ";
-            has_error = false;
+        if(!sdtRegex.test(thong_tin) && !emailRegex.test(thong_tin)){
+            error[3].innerHTML = "Vui Lòng Nhập Đúng";
+            hass_error =false;
+
         }
-        if (img.files.length === 0) {
-            error[4].innerHTML = "Vui Lòng Chọn Hình";
-            has_error = false;
-        }
+    
 
         if (password.trim() == '' || password.length < 5) {
             error[2].innerHTML = "không để trống hoặc dưới 5 ký tự";
@@ -150,12 +145,9 @@ color: white;
             has_error = false;
         }
 
-        if (!sdtRegex.test(number_phone)) {
-            error[6].innerHTML = "Nhập Đúng Số Điện Thoại";
-            has_error = false;
-        }
+    
         if (!gender[0].checked && !gender[1].checked) {
-            error[7].innerHTML = "Chọn Giới Tính";
+            error[6].innerHTML = "Chọn Giới Tính";
             has_error = false;
         }
 
