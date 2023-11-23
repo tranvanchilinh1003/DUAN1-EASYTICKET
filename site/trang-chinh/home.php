@@ -63,7 +63,7 @@
                         <div class="row">
                             <div class="col-lg-4 col-md-6 col-sm-6">
                                 <div class="product__item">
-                                    <div class="product__item__pic set-bg" data-setbg="<?= $CONTENT_URL?>/assets/img/trending/trend-1.jpg">
+                                    <div class="product__item__pic set-bg" data-setbg="<?= $CONTENT_URL?>/assets/img/trending/trend-1.2.jpg">
 
                                         <div class="ep">18 / 18</div>
                                         <div class="comment"><i class="fa fa-comments"></i> 11</div>
@@ -74,13 +74,13 @@
                                             <li>Tịch Cực</li>
                                             <li>Bộ Phim</li>
                                         </ul>
-                                        <h5><a href="#">The Seven Deadly Sins: Wrath of the Gods</a></h5>
+                                        <h5><a href="phim1.php">THÁM TỬ LỪNG DANH CONAN: NÀNG DÂU HALLOWEEN</a></h5>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-lg-4 col-md-6 col-sm-6">
                                 <div class="product__item">
-                                    <div class="product__item__pic set-bg" data-setbg="<?= $CONTENT_URL?>/assets/img/trending/trend-2.jpg">
+                                    <div class="product__item__pic set-bg" data-setbg="<?= $CONTENT_URL?>/assets/img/trending/trend-2.1.jpg">
                                         <div class="ep">18 / 18</div>
                                         <div class="comment"><i class="fa fa-comments"></i> 11</div>
                                         <div class="view"><i class="fa fa-eye"></i> 9141</div>
@@ -90,13 +90,13 @@
                                             <li>Tích Cực</li>
                                             <li>Bộ Phim</li>
                                         </ul>
-                                        <h5><a href="#">Gintama Movie 2: Kanketsu-hen - Yorozuya yo Eien</a></h5>
+                                        <h5><a href="phim2.php">ONE PIECE FILM: RED</a></h5>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-lg-4 col-md-6 col-sm-6">
                                 <div class="product__item">
-                                    <div class="product__item__pic set-bg" data-setbg="<?= $CONTENT_URL?>/assets/img/trending/trend-3.jpg">
+                                    <div class="product__item__pic set-bg" data-setbg="<?= $CONTENT_URL?>/assets/img/trending/trend-3.2.webp">
                                         <div class="ep">18 / 18</div>
                                         <div class="comment"><i class="fa fa-comments"></i> 11</div>
                                         <div class="view"><i class="fa fa-eye"></i> 9141</div>
@@ -106,13 +106,13 @@
                                             <li>Tích Cực</li>
                                             <li>Bộ Phim</li>
                                         </ul>
-                                        <h5><a href="#">Shingeki no Kyojin Season 3 Part 2</a></h5>
+                                        <h5><a href="phim3.php">Quỷ Lùn Tinh Nghịch: Đồng Tâm Hiệp Nhạc</a></h5>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-lg-4 col-md-6 col-sm-6">
                                 <div class="product__item">
-                                    <div class="product__item__pic set-bg" data-setbg="<?= $CONTENT_URL?>/assets/img/trending/trend-4.jpg">
+                                    <div class="product__item__pic set-bg" data-setbg="<?= $CONTENT_URL?>/assets/img/trending/trend-4.2.webp">
                                         <div class="ep">18 / 18</div>
                                         <div class="comment"><i class="fa fa-comments"></i> 11</div>
                                         <div class="view"><i class="fa fa-eye"></i> 9141</div>
@@ -122,7 +122,7 @@
                                             <li>Tích Cực</li>
                                             <li>Bộ Phim</li>
                                         </ul>
-                                        <h5><a href="#">Fullmetal Alchemist: Brotherhood</a></h5>
+                                        <h5><a href="phim4.php">Thiếu Niên Và Chim Diệc</a></h5>
                                     </div>
                                 </div>
                             </div>
@@ -138,7 +138,7 @@
                                             <li>Tích Cực</li>
                                             <li>Bộ Phim</li>
                                         </ul>
-                                        <h5><a href="#">Shiratorizawa Gakuen Koukou</a></h5>
+                                        <h5><a href="phim5.php">Shiratorizawa Gakuen Koukou</a></h5>
                                     </div>
                                 </div>
                             </div>
@@ -154,7 +154,7 @@
                                             <li>Tích Cực</li>
                                             <li>Bộ Phim</li>
                                         </ul>
-                                        <h5><a href="#">Code Geass: Hangyaku no Lelouch R2</a></h5>
+                                        <h5><a href="phim6.php">Code Geass: Hangyaku no Lelouch R2</a></h5>
                                     </div>
                                 </div>
                             </div>
@@ -186,7 +186,7 @@
                                             <li>Tích Cực</li>
                                             <li>Bộ Phim</li>
                                         </ul>
-                                        <h5><a href="#">Sen to Chihiro no Kamikakushi</a></h5>
+                                        <h5><a href="phim7.php">Sen to Chihiro no Kamikakushi</a></h5>
                                     </div>
                                 </div>
                             </div>
@@ -202,7 +202,7 @@
                                             <li>Tích Cực</li>
                                             <li>Bộ Phim</li>
                                         </ul>
-                                        <h5><a href="#">Kizumonogatari III: Reiket su-hen</a></h5>
+                                        <h5><a href="phim8.php">Kizumonogatari III: Reiket su-hen</a></h5>
                                     </div>
                                 </div>
                             </div>
@@ -218,7 +218,7 @@
                                             <li>Tích Cực</li>
                                             <li>Bộ Phim</li>
                                         </ul>
-                                        <h5><a href="#">Shirogane Tamashii hen Kouhan sen</a></h5>
+                                        <h5><a href="phim9.php">Shirogane Tamashii hen Kouhan sen</a></h5>
                                     </div>
                                 </div>
                             </div>
@@ -234,7 +234,7 @@
                                             <li>Tích Cực</li>
                                             <li>Bộ Phim</li>
                                         </ul>
-                                        <h5><a href="#">Rurouni Kenshin: Meiji Kenkaku Romantan</a></h5>
+                                        <h5><a href="phim10.php">Rurouni Kenshin: Meiji Kenkaku Romantan</a></h5>
                                     </div>
                                 </div>
                             </div>
@@ -250,7 +250,7 @@
                                             <li>Tích Cực</li>
                                             <li>Bộ Phim</li>
                                         </ul>
-                                        <h5><a href="#">Mushishi Zoku Shou 2nd Season</a></h5>
+                                        <h5><a href="phim11.php">Mushishi Zoku Shou 2nd Season</a></h5>
                                     </div>
                                 </div>
                             </div>
@@ -266,7 +266,7 @@
                                             <li>Tích Cực</li>
                                             <li>Bộ Phim</li>
                                         </ul>
-                                        <h5><a href="#">Monogatari Series: Second Season</a></h5>
+                                        <h5><a href="phim12.php">Monogatari Series: Second Season</a></h5>
                                     </div>
                                 </div>
                             </div>
@@ -298,7 +298,7 @@
                                             <li>Tích Cực</li>
                                             <li>Bộ Phim</li>
                                         </ul>
-                                        <h5><a href="#">Great Teacher Onizuka</a></h5>
+                                        <h5><a href="phim13.php">Great Teacher Onizuka</a></h5>
                                     </div>
                                 </div>
                             </div>

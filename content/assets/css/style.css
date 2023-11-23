@@ -999,16 +999,10 @@ ol {
 	margin-bottom: 20px;
 }
 
-.anime__details__title h3 {
+.anime__details__title h {
 	color: #ffffff;
 	font-weight: 700;
 	margin-bottom: 13px;
-}
-
-.anime__details__title span {
-	font-size: 15px;
-	color: #b7b7b7;
-	display: block;
 }
 
 .anime__details__rating {

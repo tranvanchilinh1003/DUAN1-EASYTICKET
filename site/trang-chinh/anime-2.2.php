@@ -94,8 +94,6 @@
    padding-left: 1rem;
    margin-top: 0.5rem;
    }
-
-
  </style>
    <section>
         <div class="container">
@@ -110,8 +108,6 @@
                             <a href="#">2 - Anime là nét văn hóa của người Nhật</a><br>
                             <a href="#">3 - Lựa chọn dàn diễn viên khó khăn</a><br>
                             <a href="#">4 - Phần lớn những tác phẩm livie-acction đều thất bại</a><br>
-                         
-                          
                         </li>
                      </ul>
                 </div>

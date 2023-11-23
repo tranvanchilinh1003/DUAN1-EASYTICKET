@@ -1,6 +1,3 @@
-
-
-
 <style>
    .container{
     width: 100%;
