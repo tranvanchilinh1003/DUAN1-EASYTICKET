@@ -21,6 +21,7 @@ if (exist_param("btn_insert")) {
     $items = khach_hang_sellect_all();
     khach_hang_select_by_id($username);
     $loi = khach_hang_exist($username);
+    $is_hidden = 1;
     if (!empty($loi)) {
         $MESSAGE = "Tài Khoản Đã Tồn Tại";
         $VIEW_NAME = 'insert.php';
@@ -28,9 +29,9 @@ if (exist_param("btn_insert")) {
 
         if ($image != '') {
             $VIEW_NAME = "list.php";
-            khach_hang_insert($username, $information, $password, $image, $role, $full_name, $gender);
+            khach_hang_insert($username,$information,$password,$image,$role,$full_name,$gender);
         } else {
-            khach_hang_insert($username, $information, $password, $image = 'anh_dai_dien.jpg', $role, $full_name, $gender);
+            khach_hang_insert($username,$information,$password,$image='anh_dai_dien.jpg',$role,$full_name,$gender);
             $VIEW_NAME = "list.php";
         }
     }
@@ -38,7 +39,7 @@ if (exist_param("btn_insert")) {
 
     $VIEW_NAME = "list.php";
 } else if (exist_param("btn_delete")) {
-    khach_hang_delete($id);
+    remove_hidden_user($id);
 
 
     $items = khach_hang_sellect_all();
@@ -59,17 +60,17 @@ if (exist_param("btn_insert")) {
     $full_name = $_POST['full_name'];
     $image = save_file('image', $UPLOAD_URL);
     $information = $_POST['information'];
-khach_hang_select_by_id($username);
+    khach_hang_select_by_id($username);
 
     $password = md5($password1);
     $role = $_POST['role'];
     $gender = $_POST['gender'];
     if (empty($image)) {
         $image = $_POST['image_old'];
-        khach_hang_update($information,$password,$image,$role,$full_name,$gender,$username);
+        khach_hang_update($information, $password, $image, $role, $full_name, $gender, $username);
     } else {
         $image = save_file('image', $UPLOAD_URL);
-        khach_hang_update($information,$password,$image,$role,$full_name,$gender,$username);
+        khach_hang_update($information, $password, $image, $role, $full_name, $gender, $username);
     }
 
     // $items = khach_hang_sellect_all();
@@ -90,6 +91,17 @@ khach_hang_select_by_id($username);
     //             header("location: index.php?btn_list");
     //         }
     // }
+} else if (exist_param("history")) {
+
+    $VIEW_NAME = 'history.php';
+} else if (exist_param("reset_user")) {
+    reset_user($id);
+    $VIEW_NAME = 'history.php';
+} else if (exist_param("remove_vv")) {
+
+    khach_hang_delete($id);
+
+    $VIEW_NAME = 'history.php';
 } else {
     // $loai_hang = loai_selectall();
     $VIEW_NAME = "insert.php";

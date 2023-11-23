@@ -2,20 +2,18 @@
 
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="<?= $ADMIN_URL ?>/khach-hang/">Nhập Thêm</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Danh Sách</li>
+            <li class="breadcrumb-item"><a href="<?= $ADMIN_URL ?>/khach-hang/index.php?btn_list">Danh Sách</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Lịch Sử</li>
         </ol>
-
     </nav>
-    <a href="<?= $ADMIN_URL ?>/khach-hang/index.php?history" class='text-danger m-sm-2'>Lịch Sử Xóa</a>
 </div>
 <div class="col-lg-12 grid-margin stretch-card">
     <div class="card">
         <div class="card-body">
-            <h3 class="card-title text-warning">Danh Sách Tài Khoản</h3>
+            <h3 class="card-title text-warning">Lịch Sử Xóa</h3>
             <!-- <p class="card-description"> Add class <code>.table-striped</code> -->
             <!-- </p> -->
-            <form action="index.php?delete" method="post" id="form_delete_loai">
+            <form method="post" class="history" id='history'>
                 <div class="table-responsive">
                     <table class="table table-striped">
                         <thead>
@@ -31,7 +29,7 @@
                         </thead>
                         <tbody>
                             <?php
-                            $items = khach_hang_sellect_all();
+                            $items = delete_history();
                             foreach ($items as $id) {
                                 // extract($id);
                             ?>
@@ -40,7 +38,7 @@
                                         <input type="checkbox" name="check[]" value="<?= $id ?>" id="<?= $id ?>" value="<?= $id ?>" class="check_button">
 
                                     </td>
-                                    <td><?= $id['id'] ?></td>
+                                    <td name='id' id='id'><?= $id['id'] ?></td>
                                     <td class="py-1">
                                         <img src="../../img/<?= $id['image'] ?>" alt="image" />
                                     </td>
@@ -54,9 +52,9 @@
                                     </td>
                                     <td>
 
-                                        <a href="index.php?btn_edit&username=<?= $id['username'] ?>" class="btn btn-success " name='btn_edit'><i class="bi bi-pencil-square"></i>Chi Tiết</a>
-
-                                        <a href="index.php?btn_delete&id=<?= $id['id'] ?>" name='btn_delete' class="btn btn-danger "><i class="bi bi-trash"></i>Xóa</a>
+                                        <a href="index.php?reset_user&id=<?= $id['id'] ?>" class="btn btn-success " name='reset'><i class="bi bi-cloud-download"></i>Khôi Phục</a>
+                                        <a href="#" onclick="confirmDelete()"  class="btn btn-danger "><i class="bi bi-trash"></i>Xóa Vĩnh Viễn</a>
+                                    
                                     </td>
 
                                 </tr>
@@ -76,6 +74,8 @@
         </div>
     </div>
 </div>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 <script>
     function selectAll() {
         var checkboxes = document.getElementsByClassName('check_button');
@@ -94,5 +94,36 @@
                 checkboxes[i].checked = false;
             }
         }
+    }
+
+    function confirmDelete() {
+        var username = $('#id').val();
+
+        Swal.fire({
+            title: 'Xác nhận xóa',
+            text: 'Bạn chắc chắn muốn xóa tài khoản này?',
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#d33',
+            cancelButtonColor: '#3085d6',
+            confirmButtonText: 'Xóa',
+            cancelButtonText: 'Hủy bỏ'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                // Người dùng đã nhấn Xóa, gọi hàm để thực hiện xóa tài khoản
+                deleteAccount(username);
+                window.location.href = 'index.php?history';
+            }
+        });
+    }
+
+    function deleteAccount(username) {
+        $.ajax({
+            type: 'POST',
+            url: 'index.php?remove_vv&id=<?=$id['id']  ?>', // Đường dẫn tới tập tin PHP xử lý xóa tài khoản
+            data: { username: username },
+            
+            
+        });
     }
 </script>
