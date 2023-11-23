@@ -12,7 +12,7 @@ if (isset ($_POST['btn_login'])) {
     $password = $_POST['password'];
     $user = khach_hang_select_by_id($username);
 
-    if ($user) {
+    if ($user && $user['is_hidden'] == 1) {
         if ($user['password'] == md5($password)) {
             header("Location: ".$ADMIN_URL."/form/login.php");
             $_SESSION['img'] = $user['image'];

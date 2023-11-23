@@ -11,7 +11,7 @@ if (exist_param("btn_login")) {
     $username = $_POST['username'];
     $user = khach_hang_select_by_id($username);
 $_SESSION['img'] = $user['image'];
-    if ($user) {
+    if ($user && $user['is_hidden'] == 1) {
         if ($user['password'] == md5($password)) {
 
 ?>

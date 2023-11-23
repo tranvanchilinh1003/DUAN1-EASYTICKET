@@ -3,8 +3,8 @@ require_once "pdo.php";
 
 function khach_hang_insert($username,$information,$password,$image,$role,$full_name,$gender)
 {
-    $sql = "INSERT INTO `users`( `username`, `information`, `password`, `image`, `role`, `full_name`, `gender`)
-     VALUES ('$username','$information','$password','$image','$role','$full_name','$gender')";
+    $sql = "INSERT INTO `users`( `username`, `information`, `password`, `image`, `role`, `full_name`, `gender`, `is_hidden`) 
+    VALUES ('$username','$information','$password','$image','$role','$full_name','$gender', 1)";
     pdo_execute($sql);
 }
 
@@ -18,11 +18,20 @@ pdo_execute($sql);
 }
 
 function khach_hang_sellect_all (){
-$sql = "SELECT * FROM users";
+$sql = "SELECT * FROM users WHERE is_hidden = 1";
 
 return pdo_query($sql);
 }
+function delete_history(){
+    $sql = "SELECT * FROM users WHERE is_hidden = 0";
 
+return pdo_query($sql);
+}
+function remove_hidden_user($id){
+$sql = "UPDATE users SET is_hidden = 0 WHERE id = '$id' ";
+pdo_execute($sql);
+
+}
 function khach_hang_delete($id){
 $sql = "DELETE FROM users WHERE id = ?";
 if(is_array($id)){
@@ -32,16 +41,14 @@ pdo_execute($sql, $ma);
 }else{
 pdo_execute($sql, $id);
 
-
 }
-
-
-
-
 }
-
+function reset_user($id){
+    $sql = "UPDATE users SET is_hidden = 1 WHERE id = '$id' ";
+    pdo_execute($sql);
+}
 function khach_hang_select_by_id($username){
-    $sql = "SELECT * FROM users WHERE username = '$username'";
+    $sql = "SELECT * FROM users WHERE username = '$username'  ";
     return pdo_query_one($sql);
     }
 
