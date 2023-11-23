@@ -9,9 +9,25 @@
                 <div class="table">
                     <form class="form" action="./index.php" method="post" id="isert_form" enctype="multipart/form-data">
                         <div class='row mt-2'>
+                            <input type="hidden" class="form-control" style="background-color: #2A3038;" id="id" name="id" placeholder="Auto Number...">
                             <div class="col-sm-4">
-                                <label for="id" class="fw-bold col-form-label text-white">Id</label>
-                                <input type="text" class="form-control" style="background-color: #2A3038;" id="id" name="id" placeholder="Auto Number..." disabled>
+                                <div class="form-group">
+                                    <label for="categories_id" class="fw-bold col-form-label text-white">Thể loại</label>
+                                    <select class="form-control" id="categories_id" name="categories_id">
+                                        <?php
+                                        $move = categories_select_all();
+                                        foreach ($move as $categories) {
+
+
+                                        ?>
+
+                                            <option class='text-white boder' value="<?= $categories['id'] ?>"><?= $categories['type_name'] ?></option>
+                                        <?php
+
+                                        }
+                                        ?>
+                                    </select>
+                                </div>
                             </div>
                             <div class="col-sm-4">
                                 <label for="name_movie" class="fw-bold col-form-label text-white">Tên phim</label>
@@ -19,8 +35,8 @@
                                 <span class="error text-danger"></span>
                             </div>
                             <div class="col-sm-4">
-                                <label for="price" class="fw-bold col-form-label text-white">Giá</label>
-                                <input type="number" class="form-control " id="price" name="price" placeholder='Giá'>
+                                <label for="categories" class="fw-bold col-form-label text-white">Trailer</label>
+                                <input type="text" class="form-control" id="categories" name="categories">
                                 <span class="error text-danger"></span>
                             </div>
                         </div>
@@ -36,47 +52,35 @@
                                 <span class="error text-danger"></span>
                             </div>
                             <div class="col-sm-4">
-                                <div class="form-group">
-                                    <label for="categories_id" class="fw-bold col-form-label text-white">Thể loại</label>
-                                    <select class="form-control" id="categories_id">
-                                        <option>1</option>
-                                        <option>2</option>
-                                        <option>3</option>
-                                        <option>4</option>
-                                        <option>5</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-                        <div class='row mt-3'>
-                            <div class="col-sm-4">
                                 <label class="fw-bold col-form-label text-white">Trạng thái</label>
                                 <div class=' p-2 rounded-right rounded-left' style="background-color: #2A3038;">
                                     <input type="radio" class="" name="status" value="0">Ẩn
                                     <input type="radio" class="ml-md-2" name="status" value="1" checked>Hiện
                                 </div>
                             </div>
+                        </div>
+                        <div class='row mt-3'>
                             <div class="col-sm-4">
                                 <label for="date_movie" class="fw-bold col-form-label text-white">Ngày</label>
                                 <input type="date" class="form-control" id="date_movie" name="date_movie">
                                 <span class="error text-danger"></span>
                             </div>
                             <div class="col-sm-4">
-                                <label for="categories" class="fw-bold col-form-label text-white">Trailer</label>
-                                <input type="text" class="form-control" id="categories" name="categories">
-                                <span class="error text-danger"></span>
-                            </div>
-                        </div>
-                        <div class='row mt-3'>
-                            <div class="col-sm-4">
                                 <div class="form-group">
                                     <label for="actor" class="fw-bold col-form-label text-white">Diễn Viên</label>
-                                    <select class="form-control" id="actor">
-                                        <option>1</option>
-                                        <option>2</option>
-                                        <option>3</option>
-                                        <option>4</option>
-                                        <option>5</option>
+                                    <select class="form-control" id="actor" name="actor_id">
+                                    <?php
+
+                                        $actor = actor_select_all();
+                                        foreach ($actor as $actor) {
+
+                                        ?>
+                                            <option class='text-white boder' value="<?= $actor['id'] ?>"><?= $actor['actor'] ?></option>
+                                        <?php
+
+                                        }
+                                        ?>
+                                    
                                     </select>
                                 </div>
                             </div>
@@ -84,8 +88,8 @@
                         <div class='row mt-3'>
                             <div class='col-sm-12'>
                                 <div class="form-group">
-                                    <label for="descrition">Mô tả</label>
-                                    <textarea class="form-control" id="descrition" naem="descrition" rows="4"></textarea>
+                                    <label for="discretion">Mô tả</label>
+                                    <textarea class="form-control" id="discretion" naem="discretion" rows="4"></textarea>
                                 </div>
                             </div>
                         </div>
@@ -106,7 +110,7 @@
     var form_insert = document.getElementById("isert_form");
     form_insert.addEventListener('submit', function(e) {
         var name_movie = document.getElementById('name_movie').value;
-        var price = document.getElementById("price").value;
+        var categories = document.getElementById("categories").value;
         var time = document.getElementById("time").value;
         var image = document.getElementById('image');
         var selectedDate = new Date(document.getElementById("date_movie").value);
@@ -122,12 +126,12 @@
             error[0].innerHTML = "không để trống hoặc dưới 5 ký tự";
             has_error = false;
         }
-        if (price.trim() === '' || isNaN(price) || price < 0) {
-            error[1].innerHTML = 'Giá Không Để Trống chỉ chứa chữ số';
+        if (categories.trim() === '' || categories.length < 5) {
+            error[1].innerHTML = 'không để trống hoặc dưới 5 ký tự';
             has_error = false;
         }
-        if (time.trim() == " " || time.length < 5) {
-            error[2].innerHTML = "không để trống hoặc dưới 5 ký tự";
+        if (time.trim() == " ") {
+            error[2].innerHTML = "không để trống";
             has_error = false;
         }
         if (image.files.length === 0) {

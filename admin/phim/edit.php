@@ -1,8 +1,3 @@
-<style>
-    .form-control:focus {
-        color: white;
-    }
-</style>
 <div class="container">
     <div class="container-fluid">
         <i class=" text-danger"><?= (isset($MESSAGE) && (strlen($MESSAGE) > 0)) ? $MESSAGE : "" ?></i>
@@ -14,9 +9,18 @@
                 <div class="table">
                     <form class="form" action="./index.php" method="post" id="isert_form" enctype="multipart/form-data">
                         <div class='row mt-2'>
+                            <input type="hidden" class="form-control" style="background-color: #2A3038;" id="id" name="id" placeholder="Auto Number...">
                             <div class="col-sm-4">
-                                <label for="id" class="fw-bold col-form-label text-white">Id</label>
-                                <input type="text" class="form-control" style="background-color: #2A3038;" id="id" name="id" placeholder="Auto Number..." disabled>
+                                <div class="form-group">
+                                    <label for="categories_id" class="fw-bold col-form-label text-white">Thể loại</label>
+                                    <select class="form-control" id="categories_id">
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                    </select>
+                                </div>
                             </div>
                             <div class="col-sm-4">
                                 <label for="name_movie" class="fw-bold col-form-label text-white">Tên phim</label>
@@ -24,8 +28,8 @@
                                 <span class="error text-danger"></span>
                             </div>
                             <div class="col-sm-4">
-                                <label for="price" class="fw-bold col-form-label text-white">Giá</label>
-                                <input type="number" class="form-control " id="price" name="price" placeholder='Giá'>
+                                <label for="categories" class="fw-bold col-form-label text-white">Trailer</label>
+                                <input type="text" class="form-control" id="categories" name="categories">
                                 <span class="error text-danger"></span>
                             </div>
                         </div>
@@ -41,38 +45,19 @@
                                 <span class="error text-danger"></span>
                             </div>
                             <div class="col-sm-4">
-                                <div class="form-group">
-                                    <label for="categories" class="fw-bold col-form-label text-white">Thể loại</label>
-                                    <select class="form-control" id="categories">
-                                        <option>1</option>
-                                        <option>2</option>
-                                        <option>3</option>
-                                        <option>4</option>
-                                        <option>5</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-                        <div class='row mt-3'>
-                            <div class="col-sm-4">
                                 <label class="fw-bold col-form-label text-white">Trạng thái</label>
                                 <div class=' p-2 rounded-right rounded-left' style="background-color: #2A3038;">
                                     <input type="radio" class="" name="status" value="0">Ẩn
                                     <input type="radio" class="ml-md-2" name="status" value="1" checked>Hiện
                                 </div>
                             </div>
+                        </div>
+                        <div class='row mt-3'>
                             <div class="col-sm-4">
                                 <label for="date_movie" class="fw-bold col-form-label text-white">Ngày</label>
                                 <input type="date" class="form-control" id="date_movie" name="date_movie">
                                 <span class="error text-danger"></span>
                             </div>
-                            <div class="col-sm-4">
-                                <label for="categories" class="fw-bold col-form-label text-white">Trailer</label>
-                                <input type="text" class="form-control" id="categories" name="categories">
-                                <span class="error text-danger"></span>
-                            </div>
-                        </div>
-                        <div class='row mt-3'>
                             <div class="col-sm-4">
                                 <div class="form-group">
                                     <label for="actor" class="fw-bold col-form-label text-white">Diễn Viên</label>
@@ -97,7 +82,7 @@
                         <br>
                         <div class="border-top">
                             <div class="card-body d-flex justify-content-end">
-                                <input type="submit" class="btn btn-outline-warning p-3" name="btn_update" value="Cập nhập">
+                                <input type="submit" class="btn btn-outline-warning p-3" name="btn_insert" value="Thêm mới">
                                 <button type="reset" class="btn btn-outline-pinterest p-3 mx-xl-3" name="clear_form">Nhập lại</button>
                             </div>
                         </div>
@@ -107,3 +92,44 @@
         </div>
     </div>
 </div>
+<script>
+    var form_insert = document.getElementById("isert_form");
+    form_insert.addEventListener('submit', function(e) {
+        var name_movie = document.getElementById('name_movie').value;
+        var categories = document.getElementById("categories").value;
+        var time = document.getElementById("time").value;
+        var image = document.getElementById('image');
+        var selectedDate = new Date(document.getElementById("date_movie").value);
+        var currenDate = new Date();
+        var error = document.getElementsByClassName("error");
+        var has_error = true;
+        error[0].innerHTML = '';
+        error[1].innerHTML = '';
+        error[2].innerHTML = '';
+        error[3].innerHTML = '';
+        error[4].innerHTML = '';
+        if (name_movie.trim() == " " || name_movie.length < 5) {
+            error[0].innerHTML = "không để trống hoặc dưới 5 ký tự";
+            has_error = false;
+        }
+        if (categories.trim() === '' || categories.length < 5) {
+            error[1].innerHTML = 'không để trống hoặc dưới 5 ký tự';
+            has_error = false;
+        }
+        if (time.trim() == " " || time.length < 5) {
+            error[2].innerHTML = "không để trống hoặc dưới 5 ký tự";
+            has_error = false;
+        }
+        if (image.files.length === 0) {
+            error[3].innerHTML = "Vui Lòng Chọn Hình";
+            has_error = false;
+        }
+        if (selectedDate > currenDate) {
+            error[4].innerHTML = 'Ngày Nhập Lớn Hơn hiện tại';
+            has_error = false;
+        }
+        if (has_error == false) {
+            e.preventDefault();
+        }
+    });
+</script>

@@ -1,3 +1,11 @@
+<div class="page-header">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="<?= $ADMIN_URL ?>/loai-phim/index.php">Thêm Loại </a></li>
+            <li class="breadcrumb-item active" aria-current="page">Danh Sách</li>
+        </ol>
+    </nav>
+</div>
 <div class="col-lg-12 grid-margin stretch-card">
     <div class="card">
         <div class="card-body">
@@ -15,30 +23,36 @@
                                 <th>Chỉnh sửa</th>
                             </tr>
                         </thead>
-                        <tbody>
-                            <tr>
-                                <td>
-                                    <input type="checkbox" name="check[]" value="<?= $id ?>" id="<?= $id ?>" value="<?= $id ?>" class="check_button">
-                                </td>
-                                <td>12321</td>
+                        <?php
+                        $items = categories_select_all();
+                        foreach ($items as $categories) {
+                            extract($categories);
+                            $id = $categories['id'];
+                            $type_name = $categories['type_name'];
+                        ?>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <input type="checkbox" name="check[]" value="<?= $id ?>" id="<?= $id ?>" value="<?= $id ?>" class="check_button">
+                                    </td>
+                                    <td><?= $id ?></td>
+                                    <td><?= $type_name ?> </td>
+                                    <td>
+                                        <a href="index.php?btn_edit&id=<?= $id ?>" class="btn btn-success " name='btn_edit'><i class="bi bi-pencil-square"> Chi tiết</i></a>
 
-                                <td> Herman Beck </td>
-                                <td>
-                                    <a href="index.php?btn_edit&ma_kh=<?= $ma_kh ?>" class="btn btn-success " name='btn_edit'><i class="bi bi-pencil-square"></i></a>
+                                        <a href="index.php?btn_delete&id=<?= $id ?>" class="btn btn-danger"><i class="bi bi-trash"> Xóa</i></a>
+                                    </td>
 
-                                    <a href="index.php?btn_delete&ma_kh=<?= $ma_kh ?>" class="btn btn-danger"><i class="bi bi-trash"></i></a>
-                                </td>
-
-                            </tr>
-
-                        </tbody>
+                                </tr>
+                            <?php } ?>
+                            </tbody>
                     </table>
                 </div>
                 <div class='mt-4 d-flex justify-content-end'>
                     <button type="button" onclick="selectAll()" ; class="btn btn-outline-warning mx-xl-2 py-2">Chọn Tất Cả</button>
                     <button type="button" onclick="remove_selectAll()" ; class="btn btn-outline-warning mx-xl-2 py-2">Bỏ Chọn Tất Cả</button>
                     <button type="submit" class="btn btn-outline-warning py-2 mx-xl-2" name="delete_all" id="xoa">Xóa Các Mục Con</button>
-                    <a href="index.php" class='btn btn-outline-warning py-2 mx-xl-2'>Nhập Thêm</a>
+                    <!-- <a href="index.php" class='btn btn-outline-warning py-2 mx-xl-2'>Nhập Thêm</a> -->
                 </div>
             </form>
         </div>

@@ -7,38 +7,35 @@
             </div>
             <div class="card-body">
                 <div class="table">
-                    <form class="form" action="./index.php" method="post" id="isert_form" enctype="multipart/form-data">
+                    <form class="form" action="./index.php?insert_actor" method="post" id="isert_form" enctype="multipart/form-data">
                         <div class='row mt-2'>
-                            <!-- <div class="col-sm-4">
-                                <label for="id" class="fw-bold col-form-label text-white">Id</label>
-                                <input type="text" class="form-control" style="background-color: #2A3038;" id="id" name="id" placeholder="Auto Number..." disabled>                               
+                            <!-- <div class="col-sm-4"> -->
+                                <!-- <label for="id" class="fw-bold col-form-label text-white">Id</label> -->
+                                <input type="hidden" class="form-control" style="background-color: #2A3038;" id="id" name="id" placeholder="Auto Number..." >                               
                                 <span class="error text-danger"></span>
-                            </div> -->
-                            <div class="col-sm-4">
-                                <label for="actor" class="fw-bold col-form-label text-white">Tên diễn viên</label>
-                                <input type="text" class="form-control" id="actor" name="actor" placeholder='Tên diễn viên...'>
-                                <span class="error text-danger"></span>
-                            </div>
-                            <div class="col-sm-4">
-                                <label for="director" class="fw-bold col-form-label text-white">Đạo diễn</label>
-                                <input type="text" class="form-control " id="director" name="director" placeholder='Đạo diễn...'>
-                                <span class="error text-danger"></span>
-                            </div>
-                            <div class="col-sm-4">
-                                <label for="producer" class="fw-bold col-form-label text-white">Nhà sản xuất</label>
-                                <input type="text" class="form-control" id="producer" name="producer" placeholder='Nhà sản xuất...'>
-                                <span class="error text-danger"></span>
-                            </div>
-                        </div>
+                            <!-- </div> -->
+                                <div class="col-sm-4">
+                                    <label for="actor" class="fw-bold col-form-label text-white">Tên diễn viên</label>
+                                    <input type="text" class="form-control" id="actor" name="actor" placeholder='Tên diễn viên...'>
+                                    <span class="error text-danger"></span>
+                                </div>
+                                <div class="col-sm-4">
+                                    <label for="director" class="fw-bold col-form-label text-white">Đạo diễn</label>
+                                    <input type="text" class="form-control " id="director" name="director" placeholder='Đạo diễn...'>
+                                    <span class="error text-danger"></span>
+                                </div>
+                                <div class="col-sm-4">
+                                    <label for="producer" class="fw-bold col-form-label text-white">Nhà sản xuất</label>
+                                    <input type="text" class="form-control" id="producer" name="producer" placeholder='Nhà sản xuất...'>
+                                    <span class="error text-danger"></span>
+                                </div>
+                            </div> 
                         <div class='row mt-3'>
-
-
-
                         </div>
                         <br>
                         <div class="border-top">
                             <div class="card-body d-flex justify-content-end">
-                                <input type="submit" class="btn btn-outline-warning p-3" name="btn_insert" value="Thêm mới">
+                                <input type="submit" class="btn btn-outline-warning p-3" name="insert_actor" value="Thêm mới">
                                 <button type="reset" class="btn btn-outline-pinterest p-3 mx-xl-3" name="clear_form">Nhập lại</button>
 
                             </div>

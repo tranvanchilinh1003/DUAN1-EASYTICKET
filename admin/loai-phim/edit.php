@@ -1,23 +1,27 @@
+<div class="page-header">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="<?= $ADMIN_URL ?>/loai-phim/index.php?btn_list">Danh Sách</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Chi Tiết</li>
+        </ol>
+    </nav>
+</div>
 <div class="container">
     <div class="container-fluid">
-        <i class=" text-danger"><?= (isset($MESSAGE) && (strlen($MESSAGE) > 0)) ? $MESSAGE : "" ?></i>
+        <!-- <i class=" text-danger"><?= (isset($MESSAGE) && (strlen($MESSAGE) > 0)) ? $MESSAGE : "" ?></i> -->
         <div class="card">
             <div class="card-header card-header-primary">
-                <h3 class="card-title p-2 text-warning">Quản lý loại</h3>
+                <h3 class="card-title p-2 text-warning">Cập nhập loại</h3>
             </div>
             <div class="card-body">
                 <div class="table">
-                    <form class="form" action="./index.php" method="post" id="isert_form" enctype="multipart/form-data">
+                    <form class="form" action="./index.php" method="post" id="isert_form" enctype="multipart/form-data" novalidate>
                         <div class=''>
+                                <input type="hidden" class="form-control  m-auto " style="background-color: #2A3038;" name="id" value="<?= $id ?>">
                             <div class="col-sm-12">
-                                <label for="username" class="fw-bold col-form-label text-white">Mã loại</label>
-                                <input type="text" class="form-control  m-auto " style="background-color: #2A3038;" id="id" name="id" placeholder="Auto Munber" disabled>
-                                <span class="error text-danger"></span>
-                            </div>
-                            <div class="col-sm-12">
-                                <label for="full_name" class="fw-bold col-form-label text-white">Tên loại</label>
-                                <input type="text" class="form-control  m-auto" id="type_name" name="type_name" placeholder='Tên loại...'>
-                                <span class="error text-danger"></span>
+                                <label for="type_name" class="fw-bold col-form-label text-white">Tên loại</label>
+                                <input type="text" class="form-control  m-auto" id="type_name" name="type_name" value="<?= $type_name ?>">
+                                <span class='text-danger '><? (isset($loi)) ? $loi : "";  ?></span>
                             </div>
                         </div>
                         <br>

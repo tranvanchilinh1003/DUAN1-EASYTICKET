@@ -11,14 +11,13 @@
                             <tr>
                                 <th> <input type="checkbox" onclick="selectAll(); " ondblclick="remove_selectAll()" name="check[]" value="<?= $id ?>" id="<?= $id ?>" value="<?= $id ?>" class="check_button"></th>
                                 <th>ID</th>
+                                <th>Hình</th>
                                 <th>Tên phim</th>
                                 <th>Giá</th>
                                 <th>Thể loại</th>
-                                <th>Hình</th>
-                                <th>Thể loại</th>
+                                <th>Diễn viên</th>
                                 <th>Trạng thái</th>
                                 <th>Ngày</th>
-                                <th>Trailer</th>
                                 <th>Diễn viên</th>
                                 <th></th>
                             </tr>
@@ -29,21 +28,20 @@
                                     <input type="checkbox" name="check[]" value="<?= $id ?>" id="<?= $id ?>" value="<?= $id ?>" class="check_button">
                                 </td>
                                 <td>1</td>
-                                <td> Conan </td>
-                                <td> 65.000đ </td>
-                                <td> anime </td>
                                 <td>
                                     <img src="<?= $ADMIN_URL ?>/assets/images/faces-clipart/pic-1.png" alt="image" />
                                 </td>
+                                <td> Conan </td>
+                                <td> 65.000đ </td>
+                                <td> anime </td>
                                 <td> 1 </td>
                                 <td> Hiện </td>
                                 <td> 16/11/2023 </td>
                                 <td> </td>
-                                <td> Linh Lỏ </td>
                                 <td>
-                                    <a href="index.php?btn_edit&ma_kh=<?= $ma_kh ?>" class="btn btn-success " name='btn_edit'><i class="bi bi-pencil-square"></i></a>
+                                    <a href="index.php?btn_edit&id=<?= $id ?>" class="btn btn-success " name='btn_edit'><i class="bi bi-pencil-square"></i></a>
 
-                                    <a href="index.php?btn_delete&ma_kh=<?= $ma_kh ?>" class="btn btn-danger"><i class="bi bi-trash"></i></a>
+                                    <a href="index.php?btn_delete&id=<?= $id ?>" class="btn btn-danger"><i class="bi bi-trash"></i></a>
                                 </td>
                             </tr>
                         </tbody>
