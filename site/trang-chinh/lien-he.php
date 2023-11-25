@@ -411,7 +411,6 @@
         </div>
     </div>
 </section>
-
 <script>
     var form_insert = document.getElementById("contactForm");
     form_insert.addEventListener('submit', function(event) {
@@ -430,7 +429,7 @@
             error[0].innerHTML = 'Vui lòng nhập tên.';
             has_error = false;
         }
-        if (!emailRegex.test(emailInput)) {
+        if (!emailRegex.test(emailInput.value.trim())) {
             error[1].innerHTML = 'Vui lòng nhập email .';
             has_error = false;
         }

@@ -131,7 +131,7 @@ color: white;
         }
         if(!sdtRegex.test(thong_tin) && !emailRegex.test(thong_tin)){
             error[3].innerHTML = "Vui Lòng Nhập Đúng";
-            hass_error =false;
+            has_error =false;
 
         }
     
