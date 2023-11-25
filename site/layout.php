@@ -1,5 +1,7 @@
 <?php
 // require "../global.php";
+// require "../../model/user.php";
+require_once "../../model/categories.php";
 ?>
 <!DOCTYPE html>
 <html lang="zxx">
@@ -52,13 +54,81 @@
         border-bottom: 3px solid yellow;
 
     }
+
+    .footer__nav {
+        float: left;
+        width: 100%;
+    }
+
+    .footer__nav .active {
+        float: left;
+        width: 25%;
+
+    }
+
+    .footer__nav .active strong {
+        color: orange;
+        text-align: left;
+        width: 100%;
+
+
+    }
+
+    .footer__nav .active a {
+        text-align: left;
+        width: 100%;
+    }
+
+    .footer__nav .active li a {
+        text-align: left;
+
+    }
+
+    .footer__nav .active-box1 {
+        float: left;
+        width: 20%;
+        text-align: left;
+
+    }
+
+    .footer__nav .active-box1 strong {
+        text-align: left;
+        color: orange;
+        width: 100%;
+    }
+
+    .footer__nav .active-box1 a {
+        width: 100%;
+        text-align: left;
+    }
+
+
+
+    .footer__nav .active-box3 {
+        float: left;
+        width: 40%;
+        text-align: left;
+
+    }
+
+    .footer__nav .active-box3 strong {
+        color: orange;
+        width: 100%;
+    }
+
+    .active-box3 i {
+        text-align: left;
+        width: 100%;
+        color: #fff;
+
+    }
 </style>
 
 <body>
     <!-- Page Preloder -->
-    <div id="preloder">
+    <!-- <div id="preloder">
         <div class="loader"></div>
-    </div>
+    </div> -->
 
     <!-- Header Section Begin -->
     <header class="header">
@@ -69,30 +139,29 @@
                         <a href="../trang-chinh/index.php">
                             <img src="<?= $CONTENT_URL ?>/assets/img/studio.png" height="30px" alt="">
                         </a>
-                        
+
                     </div>
                 </div>
                 <div class="col-lg-6 d-flex align-items-center justify-content-center">
                     <div class="header__nav">
                         <nav class="header__menu mobile-menu">
                             <ul class='home_nav'>
-                                <li class="active"><a href="<?=$SITE_URL?>/trang-chinh/index.php">Trang Chủ</a></li>
+                                <li class="active"><a href="<?= $SITE_URL ?>/trang-chinh/index.php">Trang Chủ</a></li>
                                 <!-- <li><a href="<?= $SITE_URL ?>/form/login_xuly.php?btn_logout" name='btn_logout'> <i class="bi bi-power  text-danger"></i></a></li> -->
                                 <li><a href="#">Thể Loại <span class="arrow_carrot-down"></span></a>
                                     <ul class="dropdown mt-1">
-                                        <li><a href="#">?</a></li>
-                                        
-                                        <!-- Mã Loại -->
-                                        <!-- <li><a href="./anime-details.html">Anime Details</a></li>
-                                        <li><a href="./anime-watching.html">Anime Watching</a></li>
-                                        <li><a href="./blog-details.html">Blog Details</a></li>
-                                        <li><a href="./signup.html">Sign Up</a></li>
-                                        <li><a href="./login.html">Login</a></li> -->
+                                        <?php
+                                        $move = categories_select_all();
+                                        foreach ($move as $categories) {
+                                        ?>
+                                            <li><a href="#" value="<?= $categories['id'] ?>"><?= $categories['type_name'] ?></a></li>
+                                        <?php
+                                        }
+                                        ?>
                                     </ul>
                                 </li>
-                                <!-- <li><a href="#">Giới Thiệu</a></li> -->
-                                <li><a href="#">Tin Tức</a></li>
-                                <li><a href="#">Liên Hệ</a></li>
+                                <li><a href="<?= $SITE_URL ?>/trang-chinh/index.php?tin-tuc">Tin Tức</a></li>
+                                <li><a href="<?= $SITE_URL ?>/trang-chinh/index.php?lien-he">Liên Hệ</a></li>
                             </ul>
                         </nav>
                     </div>
@@ -118,18 +187,18 @@
 
 
                                 ?>
-                                    
-                                <li>
-                                    <img style="border-radius: 50%;" src="../../img/<?=$_SESSION['img'] ?>"width="40px" alt="">
 
-                                    <label for="hover" class="text-white"><?= $_SESSION["username"] ?></label>
+                                    <li>
+                                        <img style="border-radius: 50%;" src="../../img/<?= $_SESSION['img'] ?>" width="40px" alt="">
 
-                                    <ul class="dropdown " id='hover'> 
-                                        <li><a href="<?= $SITE_URL ?>/login/xu_ly_thong_tin.php?btn_edit"><i class="bi bi-person h5"></i> Tài Khoản</a></li>
-                                        <li><a href="<?= $SITE_URL ?>/form/login_xuly.php?btn_logout" name='btn_logout'> <i class="bi bi-power h5  text-danger"></i> Đăng Xuất </a></li>
-                                    </ul>
+                                        <label for="hover" class="text-white"><?= $_SESSION["username"] ?></label>
 
-                                </li>
+                                        <ul class="dropdown " id='hover'>
+                                            <li><a href="<?= $SITE_URL ?>/form/login_xu_ly_thong_tin.php?btn_edit"><i class="bi bi-person h5"></i> Tài Khoản</a></li>
+                                            <li><a href="<?= $SITE_URL ?>/form/login_xuly.php?btn_logout" name='btn_logout'> <i class="bi bi-power h5  text-danger"></i> Đăng Xuất </a></li>
+                                        </ul>
+
+                                    </li>
                                 <?php
 
                                 } else {
@@ -169,15 +238,14 @@
     <!-- Hero Section End -->
 
     <!-- Product Section Begin -->
-    <section class="product spad "  style="background-color: #0B0C2A;">
+    <!-- <section class="product spad "  style="background-color: #0B0C2A;">
         <div class="container">
-            <div class="row">
-                <?php
-                require $VIEW_NAME;
-
-                ?>
-            </div>
-    </section>
+            <div class="row"> -->
+    <?php
+    require $VIEW_NAME;
+    ?>
+    <!-- </div>
+    </section> -->
     <!-- Product Section End -->
 
     <!-- Footer Section Begin -->
@@ -195,23 +263,42 @@
                 <div class="col-lg-6">
                     <div class="footer__nav">
                         <ul>
-                            <li class="active"><a href="#">Về Chúng Tôi</a>
-
+                            <li class="active">
+                                <p><strong>TRUY CẬP NHANH</strong></p>
+                                <a href="<?= $SITE_URL ?>/trang-chinh/index.php">Trang Chủ </a>
+                                <a href="#">Thể Loại</a>
+                                <a href="<?= $SITE_URL ?>/trang-chinh/index.php?tin-tuc">Tin Tức</a>
+                                <a href="<?= $SITE_URL ?>/trang-chinh/index.php?lien-he">Liên Hệ</a>
                             </li>
-                            <li><a href="#">Categories</a></li>
-                            <li><a href="#">Our Blog</a></li>
-                            <li><a href="#">Contacts</a></li>
+
+                            <li class="active-box1">
+                                <p><strong>Thể Loại</strong> </p>
+                                <?php
+                                $move = categories_select_all();
+                                foreach ($move as $categories) {
+                                ?>
+                                    <a href="#" value="<?= $categories['id'] ?>"><?= $categories['type_name'] ?></a>
+                                <?php
+                                }
+                                ?>
+                            </li>
+                            <li class="active-box3">
+                                <p><strong>Liên Hệ</strong></p>
+                                <i>SĐT: 1234567890</i>
+                                <i>Email:vexemphim@gmail.com</i>
+                                <i>Địa Chỉ: Đ.Số 22, Thường Thạnh, Cái Răng, Cần Thơ.</i>
+                            </li>
                         </ul>
                     </div>
 
                 </div>
                 <div class="col-lg-3">
-                <p>
-                    
+                    <p>
+
                         Bản Quyền &copy;<script>
-                                document.write(new Date().getFullYear());
-                            </script> mọi quyền truy cập  thuộc về team LÀNG ĐÁ&#128525<i class="fa fa-heart" aria-hidden="true"></i>: <a href="<?=$CONTENT?>/index.php" class="text-warning" >EASY TICKET</a>
-                        </p>
+                            document.write(new Date().getFullYear());
+                        </script> mọi quyền truy cập thuộc về team LÀNG ĐÁ&#128525<i class="fa fa-heart" aria-hidden="true"></i>: <a href="<?= $CONTENT ?>/index.php" class="text-warning">EASY TICKET</a>
+                    </p>
 
                 </div>
             </div>

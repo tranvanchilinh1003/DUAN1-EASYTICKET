@@ -6,8 +6,6 @@ require "../../model/user.php";
 
 extract($_REQUEST);
 if (exist_param("btn_insert")) {
-
-
     $username = $_POST['username'];
     $password1 = $_POST['password'];
     $full_name = $_POST['full_name'];
@@ -29,9 +27,9 @@ if (exist_param("btn_insert")) {
 
         if ($image != '') {
             $VIEW_NAME = "list.php";
-            khach_hang_insert($username,$information,$password,$image,$role,$full_name,$gender);
+            khach_hang_insert($username, $information, $password, $image, $role, $full_name, $gender);
         } else {
-            khach_hang_insert($username,$information,$password,$image='anh_dai_dien.jpg',$role,$full_name,$gender);
+            khach_hang_insert($username, $information, $password, $image = 'anh_dai_dien.jpg', $role, $full_name, $gender);
             $VIEW_NAME = "list.php";
         }
     }

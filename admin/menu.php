@@ -41,7 +41,7 @@
             <div class="collapse" id="auth">
                 <ul class="nav flex-column sub-menu">
                     <li class="nav-item"> <a class="nav-link" href="<?= $ADMIN_URL ?>/phim/">Thêm phim</a></li>
-                    <li class="nav-item"> <a class="nav-link" href="<?= $ADMIN_URL ?>/phim/index.php?btn_actor">Thêm diễn viên</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="<?= $ADMIN_URL ?>/phim?btn_actor">Thêm diễn viên</a></li>
                     <li class="nav-item"> <a class="nav-link" href="<?= $ADMIN_URL ?>/phim?btn_list">Danh sách</a></li>
                 </ul>
             </div>

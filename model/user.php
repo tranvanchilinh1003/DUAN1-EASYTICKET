@@ -51,7 +51,10 @@ function khach_hang_select_by_id($username){
     $sql = "SELECT * FROM users WHERE username = '$username'  ";
     return pdo_query_one($sql);
     }
-
+    function user_id($username){
+        $sql = "SELECT * FROM users WHERE username = '$username' AND is_hidden = 1 ";
+        return pdo_query_one($sql);
+        }
     function khach_hang_exist($username)
 {
     $sql = "SELECT count(*) FROM users WHERE username=?";
