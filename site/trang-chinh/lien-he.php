@@ -370,7 +370,7 @@
                                         <span class="fa fa-map-marker"></span>
                                     </div>
                                     <div class="text pl-3">
-                                        <p><span>Address:</span>Đ.Số 22, Thường Thạnh, Cái Răng, Cần Thơ.</p>
+                                        <p><span>Địa Chỉ:</span>Đ.Số 22, Thường Thạnh, Cái Răng, Cần Thơ.</p>
                                     </div>
                                 </div>
                                 <div class="dbox w-100 d-flex align-items-center">
@@ -378,7 +378,7 @@
                                         <span class="fa fa-phone"></span>
                                     </div>
                                     <div class="text pl-3">
-                                        <p><span>Phone:</span> <a href="#">+1234567890</a></p>
+                                        <p><span>Số Điện Thoại:</span> <a href="#">+1234567890</a></p>
                                     </div>
                                 </div>
                                 <div class="dbox w-100 d-flex align-items-center">
@@ -394,7 +394,7 @@
                                         <span class="fa fa-globe"></span>
                                     </div>
                                     <div class="text pl-3">
-                                        <p><span>Website</span> <a href="#">vexemphim.com</a></p>
+                                        <p><span>Website:</span> <a href="<?=$SITE_URL?>/trang-chinh/">EASY TICKET</a></p>
                                     </div>
                                 </div>
                             </div>
