@@ -823,6 +823,8 @@ ol {
 .product__sidebar__comment__item__pic {
 	float: left;
 	margin-right: 15px;
+	
+	
 }
 
 .product__sidebar__comment__item__text {
@@ -997,16 +999,10 @@ ol {
 	margin-bottom: 20px;
 }
 
-.anime__details__title h3 {
+.anime__details__title h {
 	color: #ffffff;
 	font-weight: 700;
 	margin-bottom: 13px;
-}
-
-.anime__details__title span {
-	font-size: 15px;
-	color: #b7b7b7;
-	display: block;
 }
 
 .anime__details__rating {
@@ -1328,6 +1324,7 @@ ol {
 -----------------------*/
 
 .normal-breadcrumb {
+	
 	height: 300px;
 	display: -webkit-box;
 	display: -ms-flexbox;
@@ -1361,10 +1358,11 @@ ol {
 .blog {
 	padding-top: 70px;
 	padding-bottom: 90px;
+	width: 100%;
 }
 
 .blog__item {
-	height: 580px;
+	height: 400px;
 	position: relative;
 	margin-left: -10px;
 	margin-right: -10px;
@@ -1373,6 +1371,7 @@ ol {
 
 .blog__item.small__item {
 	height: 285px;
+
 }
 
 .blog__item.small__item .blog__item__text {
@@ -1489,7 +1488,7 @@ ol {
 }
 
 .blog__details__text {
-	margin-bottom: 40px;
+	margin-top: 40px;
 }
 
 .blog__details__text p {
@@ -1543,10 +1542,14 @@ ol {
 }
 
 .blog__details__btns {
+	
 	border-top: 1px solid rgba(255, 255, 255, 0.2);
 	border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 	padding: 20px 0 15px;
 	margin-bottom: 65px;
+	
+	
+  
 }
 
 .blog__details__btns__item {

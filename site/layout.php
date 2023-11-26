@@ -17,6 +17,7 @@ require_once "../../model/categories.php";
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+   
 
     <!-- Css Styles -->
     <link rel="stylesheet" href="<?= $CONTENT_URL ?>/assets/css/bootstrap.min.css" type="text/css">
@@ -30,6 +31,8 @@ require_once "../../model/categories.php";
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 </head>
 <style>
+  
+
     .header__menu ul {
         list-style-type: none;
         /* color: yellow; */
@@ -139,7 +142,6 @@ require_once "../../model/categories.php";
                         <a href="../trang-chinh/index.php">
                             <img src="<?= $CONTENT_URL ?>/assets/img/studio.png" height="30px" alt="">
                         </a>
-
                     </div>
                 </div>
                 <div class="col-lg-6 d-flex align-items-center justify-content-center">
@@ -258,6 +260,7 @@ require_once "../../model/categories.php";
                 <div class="col-lg-3">
                     <div class="footer__logo">
                         <a href="../trang-chinh/index.php"><img src="<?= $CONTENT_URL ?>/assets/img/studio.png" alt=""></a>
+                        
                     </div>
                 </div>
                 <div class="col-lg-6">
