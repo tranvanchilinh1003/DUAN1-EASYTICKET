@@ -17,10 +17,7 @@
                                         <?php
                                         $move = categories_select_all();
                                         foreach ($move as $categories) {
-
-
                                         ?>
-
                                             <option class='text-white boder' value="<?= $categories['id'] ?>"><?= $categories['type_name'] ?></option>
                                         <?php
 
@@ -69,18 +66,16 @@
                                 <div class="form-group">
                                     <label for="actor" class="fw-bold col-form-label text-white">Diễn Viên</label>
                                     <select class="form-control" id="actor" name="actor_id">
-                                    <?php
+                                        <?php
 
                                         $actor = actor_select_all();
                                         foreach ($actor as $actor) {
-
                                         ?>
                                             <option class='text-white boder' value="<?= $actor['id'] ?>"><?= $actor['actor'] ?></option>
                                         <?php
-
                                         }
                                         ?>
-                                    
+
                                     </select>
                                 </div>
                             </div>
