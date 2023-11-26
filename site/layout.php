@@ -338,6 +338,7 @@ require_once "../../model/categories.php";
     <script src="<?= $CONTENT_URL ?>/assets/js/jquery.slicknav.js"></script>
     <script src="<?= $CONTENT_URL ?>/assets/js/owl.carousel.min.js"></script>
     <script src="<?= $CONTENT_URL ?>/assets/js/main.js"></script>
+    
 
 
 </body>

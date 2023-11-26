@@ -58,8 +58,6 @@
 		color: #bcd0f7;
 	}
 </style>
-
-
 <div class="container my-5">
 	<div class="row gutters">
 		<div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12">
@@ -74,11 +72,8 @@
 							</div>
 							<h5 class="text-light">Tên đăng nhập</5>
 								<h5 class="user-name text-warning"><?= $user['username'] ?></h5>
-								<!-- <h6 class="user-email">yuki@Maxwell.com</h6> -->
 						</div>
 						<div class="about">
-							<!-- <h5 class="mb-2 text-primary">About</h5> -->
-							<!-- <p>I'm Yuki. Full Stack Designer I enjoy creating user-centric, delightful and human experiences.</p> -->
 						</div>
 					</div>
 				</div>
@@ -176,8 +171,6 @@
 			</div>
 		</div>
 	</div>
-</div>
-</div>
 </div>
 <!-- Modal image đại diện-->
 <div class="modal fade" id="informationModal" tabindex="-1" role="dialog" aria-labelledby="informationModal" aria-hidden="true">

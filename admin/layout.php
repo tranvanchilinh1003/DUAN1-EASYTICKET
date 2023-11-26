@@ -212,6 +212,8 @@
     <script src="<?= $ADMIN_URL ?>/assets/js/misc.js"></script>
     <script src="<?= $ADMIN_URL ?>/assets/js/settings.js"></script>
     <script src="<?= $ADMIN_URL ?>/assets/js/todolist.js"></script>
+    <script src="<?= $ADMIN_URL ?>/assets/js/chart.js"></script>
+    <script src="<?= $ADMIN_URL ?>/assets/js/chartist.js"></script>
     <!-- endinject -->
     <!-- Custom js for this page -->
     <script src="<?= $ADMIN_URL ?>/assets/js/dashboard.js"></script>

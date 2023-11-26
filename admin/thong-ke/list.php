@@ -4,7 +4,7 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header card-header-primary">
-                        <h4 class="card-title p-2 text-center">Thống Kê Movie</h4>
+                        <h4 class="card-title p-2 text-center">Thống Kê Phim Từng Loại</h4>
                         <p class="card-category"> </p>
                     </div>
 

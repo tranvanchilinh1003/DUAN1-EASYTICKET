@@ -20,6 +20,7 @@ if (exist_param("btn_insert")) {
     $image = save_file('image', $UPLOAD_URL);
     //    insert database 
     movies_insert($name_movie, $discretion, $time, $status, $date_movie, $actor_id, $trailer, $categories_id, $image);
+  
     // movies_select_all();
     $VIEW_NAME = "list.php";
 } else if (exist_param("btn_list")) {
