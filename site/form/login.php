@@ -82,10 +82,11 @@
 						<i class="fa fa-twitter"></i>
 					</a>
 
-					<a href="#" class="login100-social-item bg3">
-						<i class="fa fa-google"></i>
-					</a>
-				</div>
+					<div class="text-right p-t-8 p-b-31">
+						<a href="<?= $SITE_URL ?>/form/quen_mk_xuly.php" name='btn_forgot'>
+							Quên Mật Khẩu?
+						</a>
+					</div>
 
 				<i class=" text-danger"><?= (isset($MESSAGE) && (strlen($MESSAGE) > 0)) ? $MESSAGE : "" ?></i>
 			</form>
