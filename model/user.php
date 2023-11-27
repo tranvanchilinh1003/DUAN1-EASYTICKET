@@ -67,15 +67,14 @@ return pdo_query_value($sql, $role);
 
 
 }
-
-function khach_hang_change_password($ma_kh, $mat_khau_moi){
-$sql = "UPDATE  khach_hang SET `mat_khau` = ? WHERE `ma_kh` = ?";
-pdo_execute($sql, $mat_khau_moi, $ma_kh);
+function update_otp($otp,$username){
+    $sql = "UPDATE `users` SET `otp`='$otp' WHERE username = '$username'";
+    pdo_execute($sql);
+}
+function khach_hang_change_password($username, $mat_khau_moi){
+$sql = "UPDATE  users SET `password` = ? WHERE `username` = ?";
+pdo_execute($sql, $mat_khau_moi, $username);
 
 }
 
 
-function update_otp($ma, $username){
-    $sql = "UPDATE `khach_hang` SET `otp`= ? WHERE `username` = ?";
-    pdo_execute($sql, $ma, $username);
-}

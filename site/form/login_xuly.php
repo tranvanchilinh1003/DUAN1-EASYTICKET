@@ -45,6 +45,8 @@ $_SESSION['img'] = $user['image'];
     $id = get_cookie("id");
     $password = get_cookie("password");
 }
+
+
 $VIEW_NAME = "form/login.php";
 // $dsloai = loai_selectall();
 require '../layout.php';

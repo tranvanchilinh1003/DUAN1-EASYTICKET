@@ -287,8 +287,8 @@ require_once "../../model/categories.php";
                             </li>
                             <li class="active-box3">
                                 <p><strong>Liên Hệ</strong></p>
-                                <i>SĐT: 1234567890</i>
-                                <i>Email:vexemphim@gmail.com</i>
+                                <i>SĐT: 0987654123</i>
+                                <i>Email:Easyticket@gmail.com</i>
                                 <i>Địa Chỉ: Đ.Số 22, Thường Thạnh, Cái Răng, Cần Thơ.</i>
                             </li>
                         </ul>
