@@ -201,6 +201,8 @@
     <!-- endinject -->
     <!-- Custom js for this page -->
     <script src="<?= $ADMIN_URL ?>/assets/js/dashboard.js"></script>
+    <script src="<?= $ADMIN_URL ?>/assets/js/chart.js"></script>
+    <script src="<?= $ADMIN_URL ?>/assets/js/chartist.js"></script>
     <!-- End custom js for this page -->
 </body>
 
