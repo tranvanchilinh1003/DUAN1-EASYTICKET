@@ -96,6 +96,7 @@ if (exist_param("btn_insert")) {
     reset_user($id);
     $VIEW_NAME = 'history.php';
 } else if (exist_param("remove_vv")) {
+    
 
     khach_hang_delete($id);
 

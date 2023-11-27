@@ -19,7 +19,16 @@ if (exist_param("btn_insert")) {
     $VIEW_NAME = "list.php";
 } else if (exist_param("btn_delete")) {
     $id = $_REQUEST['id'];
-    categories_delete($id);
+    
+    $check =check_ma_categories();
+    if (empty($check)) {
+        categories_delete($id);
+        $MESSAGE = " ";
+    } else {
+        
+        $MESSAGE = "Không Thể Xóa Mã Loại Này";
+        // $VIEW_NAME = "list.php";
+    }
     $items = categories_select_all();
     $VIEW_NAME = "list.php";
 } else if (exist_param("btn_edit")) {

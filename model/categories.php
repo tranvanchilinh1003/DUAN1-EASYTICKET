@@ -4,7 +4,7 @@
 
 function categories_select_all()
 {
-    $sql = "SELECT * FROM categories order by type_name DESC";
+    $sql = "SELECT * FROM categories ";
     return pdo_query($sql);
 }
 // thêm mới loại 

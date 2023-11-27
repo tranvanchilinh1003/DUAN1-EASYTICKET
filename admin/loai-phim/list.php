@@ -12,6 +12,7 @@
             <h3 class="card-title text-warning">Danh Sách Thể Loại</h3>
             <!-- <p class="card-description"> Add class <code>.table-striped</code> -->
             <!-- </p> -->
+            <i class=" text-danger"><?= (isset($MESSAGE) && (strlen($MESSAGE) > 0)) ? $MESSAGE : "" ?></i>
             <form action="#" method="post" id="form_delete_loai">
                 <div class="table-responsive">
                     <table class="table table-striped">

@@ -1,3 +1,14 @@
+<div class="page-header">
+
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a  href="<?= $ADMIN_URL ?>/phim/">Nhập Thêm</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Danh Sách</li>
+        </ol>
+
+    </nav>
+    <a href="<?= $ADMIN_URL ?>/phim/index.php?history_movie" class='text-danger m-sm-2'>Lịch Sử Xóa</a>
+</div>
 <div class="col-lg-12 grid-margin stretch-card">
     <div class="card">
         <div class="card-body">
@@ -13,37 +24,42 @@
                                 <th>ID</th>
                                 <th>Hình</th>
                                 <th>Tên phim</th>
-                                <th>Giá</th>
-                                <th>Thể loại</th>
-                                <th>Diễn viên</th>
-                                <th>Trạng thái</th>
+                    
                                 <th>Ngày</th>
-                                <th>Diễn viên</th>
-                                <th></th>
+                        
+                                <th>Thời Gian</th>
+                                <th>Trạng thái</th>
+                                <th>Chỉnh Sửa</th>
                             </tr>
                         </thead>
                         <tbody>
+                            <?php
+                            $items = movies_select_all();
+                            foreach($items as $item){
+                            ?>
                             <tr>
                                 <td>
                                     <input type="checkbox" name="check[]" value="<?= $id ?>" id="<?= $id ?>" value="<?= $id ?>" class="check_button">
                                 </td>
-                                <td>1</td>
+                                <td><?=$item['id'] ?></td>
                                 <td>
-                                    <img src="<?= $ADMIN_URL ?>/assets/images/faces-clipart/pic-1.png" alt="image" />
+                                    <img src="../../img/<?=$item['image'] ?>" alt="image" />
                                 </td>
-                                <td> Conan </td>
-                                <td> 65.000đ </td>
-                                <td> anime </td>
-                                <td> 1 </td>
-                                <td> Hiện </td>
-                                <td> 16/11/2023 </td>
-                                <td> </td>
+                                <td> <?=$item['name_movie'] ?> </td>
+                                <td> <?=$item['date_movie'] ?> </td>
+                                <td> <?=$item['time'] ?> </td>
+                                <td> <?=$item['status'] == 1? "Hiện" : "Ẩn"; ?> </td>
+                                
                                 <td>
-                                    <a href="index.php?btn_edit&id=<?= $id ?>" class="btn btn-success " name='btn_edit'><i class="bi bi-pencil-square"></i></a>
+                                    <a href="index.php?btn_edit&id=<?= $item['id'] ?>" class="btn btn-success " name='btn_edit'><i class="bi bi-pencil-square">Chi Tiết</i></a>
 
-                                    <a href="index.php?btn_delete&id=<?= $id ?>" class="btn btn-danger"><i class="bi bi-trash"></i></a>
+                                    <a href="index.php?btn_delete&id=<?= $item['id'] ?>" class="btn btn-danger"><i class="bi bi-trash"></i>Xóa</a>
                                 </td>
                             </tr>
+                            <?php
+
+                            }
+?>
                         </tbody>
                     </table>
                 </div>
@@ -51,7 +67,6 @@
                     <button type="button" onclick="selectAll()" ; class="btn btn-outline-warning mx-xl-2 py-2">Chọn Tất Cả</button>
                     <button type="button" onclick="remove_selectAll()" ; class="btn btn-outline-warning mx-xl-2 py-2">Bỏ Chọn Tất Cả</button>
                     <button type="submit" class="btn btn-outline-warning py-2 mx-xl-2" name="delete_all" id="xoa">Xóa Các Mục Con</button>
-                    <a href="index.php" class='btn btn-outline-warning py-2 mx-xl-2'>Nhập Thêm</a>
                 </div>
             </form>
         </div>

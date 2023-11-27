@@ -35,8 +35,8 @@
                                 <span class="error text-danger"></span>
                             </div>
                             <div class="col-sm-4">
-                                <label for="categories" class="fw-bold col-form-label text-white">Trailer</label>
-                                <input type="text" class="form-control" id="categories" name="categories">
+                                <label for="trailer" class="fw-bold col-form-label text-white">Trailer</label>
+                                <input type="text" class="form-control" id="trailer" name="trailer">
                                 <span class="error text-danger"></span>
                             </div>
                         </div>
@@ -89,7 +89,7 @@
                             <div class='col-sm-12'>
                                 <div class="form-group">
                                     <label for="discretion">Mô tả</label>
-                                    <textarea class="form-control" id="discretion" naem="discretion" rows="4"></textarea>
+                                    <textarea class="form-control" id="discretion" name="discretion" rows="4"></textarea>
                                 </div>
                             </div>
                         </div>
@@ -110,7 +110,7 @@
     var form_insert = document.getElementById("isert_form");
     form_insert.addEventListener('submit', function(e) {
         var name_movie = document.getElementById('name_movie').value;
-        var categories = document.getElementById("categories").value;
+        var categories = document.getElementById("trailer").value;
         var time = document.getElementById("time").value;
         var image = document.getElementById('image');
         var selectedDate = new Date(document.getElementById("date_movie").value);
@@ -130,7 +130,7 @@
             error[1].innerHTML = 'không để trống hoặc dưới 5 ký tự';
             has_error = false;
         }
-        if (time.trim() == " ") {
+        if (time.trim() == "") {
             error[2].innerHTML = "không để trống";
             has_error = false;
         }

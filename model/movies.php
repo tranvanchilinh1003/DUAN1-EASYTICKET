@@ -6,33 +6,43 @@ function movies_select_all()
     $sql = "SELECT * FROM movies WHERE status = 1 ";
     return pdo_query($sql);
 }
+function movies_select_history()
+{
+    $sql = "SELECT * FROM movies WHERE status = 0 ";
+    return pdo_query($sql);
+}
 // thêm mới hàng hóa 
 function movies_insert($name_movie, $discretion, $time, $status, $date_movie, $actor_id, $trailer, $categories_id, $image)
 {
-    $sql = "INSERT INTO `movies`(`name_movie`, `view`, `discretion`, `time`, `status`, `date_movie`, `actor_id`, `trailer`, `categories_id`, `image`) 
+    $sql = "INSERT INTO `movies`(`name_movie`, `discretion`, `time`, `status`, `date_movie`, `actor_id`, `trailer`, `categories_id`, `image`) 
     VALUES ('$name_movie','$discretion','$time','$status','$date_movie','$actor_id','$trailer','$categories_id','$image')";
     pdo_execute($sql);
 }
-function   movies_update($ma_hh, $ten_hh, $don_gia, $giam_gia, $mo_ta, $ngay_nhap, $dac_biet, $ma_loai, $hinh)
+function   movies_update($name_movie, $discretion, $time, $status, $date_movie, $actor_id, $trailer, $categories_id, $image, $id)
 {
-    if (!$hinh) {
-        $sql = "UPDATE movies SET  ten_hh = '$ten_hh',don_gia = '$don_gia',giam_gia = '$giam_gia',mo_ta = '$mo_ta',ngay_nhap = '$ngay_nhap',dac_biet = '$dac_biet', ma_loai = '$ma_loai' WHERE ma_hh=$ma_hh;";
-    } else {
-        $sql = "UPDATE movies SET  ten_hh = '$ten_hh',don_gia = '$don_gia',giam_gia = '$giam_gia', hinh = '$hinh' ,mo_ta = '$mo_ta',ngay_nhap = '$ngay_nhap',dac_biet = '$dac_biet', ma_loai = '$ma_loai' WHERE ma_hh=$ma_hh;";
-    }
+$sql = "UPDATE `movies` SET `name_movie`='$name_movie',`discretion`='$discretion',`time`='$time',`status`='$status',
+`date_movie`='$date_movie',`actor_id`='$actor_id',`trailer`='$trailer',`categories_id`='$categories_id',`image`='$image' WHERE id  = '$id'";
     pdo_execute($sql);
 }
 // xóa
-function movies_delete($ma_hh)
+function movies_delete_status($id)
 {
-    $sql = "DELETE FROM movies WHERE ma_hh = ?";
-    pdo_execute($sql, $ma_hh);
+    $sql = "UPDATE movies SET status = 0 WHERE id = '$id'";
+    pdo_execute($sql);
 }
-
-// lấy thông tin 1 mã hàng hóa
-function movies_select_by_id($ma_hh)
+function movie_reset($id)
 {
-    $sql = "SELECT * FROM movies WHERE ma_hh =" . $ma_hh;
+    $sql = "UPDATE movies SET status = 1 WHERE id = '$id'";
+    pdo_execute($sql);
+}
+function delete_vv($id){
+    $sql = "DELETE FROM movies WHERE id = $id";
+    pdo_execute($sql);
+    }
+// lấy thông tin 1 mã hàng hóa
+function movies_select_by_id($id)
+{
+    $sql = "SELECT * FROM movies WHERE id =" . $id;
 
     return  pdo_query_one($sql);
 }
