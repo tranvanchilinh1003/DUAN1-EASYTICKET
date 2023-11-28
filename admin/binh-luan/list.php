@@ -12,7 +12,6 @@
                         <div class="table-responsive">
                             <table class="table">
                                 <thead class=" text-primary">
-
                                     <th>
                                         Phim
                                     </th>
@@ -25,7 +24,7 @@
                                     <th>
                                         Củ Nhất
                                     </th>
-                                    
+
                                     <th>
 
                                     </th>
@@ -37,32 +36,32 @@
 
 
                                 ?>
-                                    <tbody>
-                                        <tr>
+                                <tbody>
+                                    <tr>
 
-                                            <td>
-                                            
-                                            </td>
-                                            <td>
-                                            
-                                            </td>
-                                            <td>
-                                            
-                                            </td>
-                                            <td>
-                                        
-                                            </td>
-                        
+                                        <td>
 
-                                            <td>
-                                                <a href="../binh-luan/index.php" class='btn btn-outline-google btn-sm '>Xem Chi Tiết</a>
-                                            </td>
-                                        </tr>
+                                        </td>
+                                        <td>
+
+                                        </td>
+                                        <td>
+
+                                        </td>
+                                        <td>
+
+                                        </td>
+
+
+                                        <td>
+                                            <a href="../binh-luan/index.php" class='btn btn-outline-google btn-sm '>Xem Chi Tiết</a>
+                                        </td>
+                                    </tr>
                                     <?php
 
-                                // }
+                                    // }
                                     ?>
-                                    </tbody>
+                                </tbody>
                             </table>
                         </div>
                     </div>

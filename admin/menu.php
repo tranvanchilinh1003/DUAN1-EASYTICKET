@@ -87,7 +87,7 @@
             </a>
         </li>
         <li class="nav-item menu-items">
-            <a class="nav-link" href="<?= $ADMIN_URL ?>/binh-luan/">
+            <a class="nav-link" href="#">
                 <span class="menu-icon">
                     <i class="bi bi-receipt-cutoff"></i>
                 </span>
@@ -95,7 +95,7 @@
             </a>
         </li>
         <li class="nav-item menu-items">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="<?= $ADMIN_URL ?>/binh-luan/">
                 <span class="menu-icon">
                     <i class="mdi mdi-forum text-"></i>
                 </span>

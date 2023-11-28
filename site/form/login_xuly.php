@@ -17,10 +17,8 @@ if (exist_param("btn_login")) {
 ?>
             <script>
                 var thong_bao = alert("Đăng Nhập Thành Công!");
-
                 window.location.href = "<?= $SITE_URL ?>/trang-chinh/";
             </script>
-
 <?php
             $_SESSION["username"] = $username;
             if ($user['role'] == 1) {

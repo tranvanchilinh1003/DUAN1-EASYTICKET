@@ -5,7 +5,7 @@ require  "../../model/categories.php";
 
 extract($_REQUEST);
 if (exist_param("btn_insert")) {
-    $VIEW_NAME = "loai-phim/insert.php";
+    $VIEW_NAME = "loai-phim/insert.php";    
     if (isset($_POST['btn_insert'])) {
         $type_name = $_POST['type_name'];
         if ($type_name != '' && empty(check_ten_categories($type_name))) {
