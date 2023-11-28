@@ -32,7 +32,6 @@ function   categories_update($type_name, $id)
 
     pdo_execute($sql);
 }
-
 function categories_exist_ten_categories_add($type_name)
 {
     $sql = "SELECT count(*) FROM categories WHERE type_name=?";
@@ -43,7 +42,6 @@ function categories_exist_ten_categories_update($id, $type_name)
     $sql = "SELECT count(*) FROM categories WHERE  id!=? and type_name=?";
     return pdo_query_value($sql, $id, $type_name) > 0;
 }
-
 function categories_exist($id)
 {
     $sql = "SELECT count(*) FROM categories WHERE id=?";

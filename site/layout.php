@@ -134,6 +134,72 @@ require_once "../../model/categories.php";
         color: #fff;
 
     }
+
+    .rate {
+
+        border-bottom-right-radius: 12px;
+        border-bottom-left-radius: 12px;
+
+    }
+
+
+
+    .rating {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: center
+    }
+
+    .rating>input {
+        display: none
+    }
+
+    .rating>label {
+        position: relative;
+        width: 1em;
+        font-size: 30px;
+        font-weight: 300;
+        color: #FFD600;
+        cursor: pointer
+    }
+
+    .rating>label::before {
+        content: "\2605";
+        position: absolute;
+        opacity: 0
+    }
+
+    .rating>label:hover:before,
+    .rating>label:hover~label:before {
+        opacity: 1 !important
+    }
+
+    .rating>input:checked~label:before {
+        opacity: 1
+    }
+
+    .rating:hover>input:checked~label:before {
+        opacity: 0.4
+    }
+
+
+    .buttons {
+        top: 36px;
+        position: relative;
+    }
+
+
+    .rating-submit {
+        border-radius: 15px;
+        color: #fff;
+        height: 49px;
+    }
+
+
+    .rating-submit:hover {
+
+        color: #fff;
+    }
 </style>
 
 <body>
@@ -195,27 +261,18 @@ require_once "../../model/categories.php";
                                 </li>
                                 <?php
                                 if (isset($_SESSION["username"])) {
-
-
                                 ?>
-
                                     <li>
                                         <img style="border-radius: 50%;" src="../../img/<?= $_SESSION['img'] ?>" width="30px" alt="">
-
                                         <label for="hover" class="text-white"><?= $_SESSION["username"] ?></label>
-
                                         <ul class="dropdown " id='hover'>
                                             <li><a href="<?= $SITE_URL ?>/form/login_xu_ly_thong_tin.php?btn_edit"><i class="bi bi-person h5"></i> Tài Khoản</a></li>
                                             <li><a href="<?= $SITE_URL ?>/form/login_xuly.php?btn_logout" name='btn_logout'> <i class="bi bi-power h5  text-danger"></i> Đăng Xuất </a></li>
                                         </ul>
-
                                     </li>
                                 <?php
-
                                 } else {
                                 ?>
-
-
                                     <li><a href="#"><span class="icon_profile"></span></a>
                                         <ul class="dropdown">
                                             <li><a href="<?= $SITE_URL ?>/form/login_xuly.php">Đăng Nhập</a></li>
@@ -233,10 +290,6 @@ require_once "../../model/categories.php";
                                 ?>
                             </ul>
                         </nav>
-
-
-
-
                     </div>
                 </div>
             </div>
@@ -282,7 +335,6 @@ require_once "../../model/categories.php";
                                 <a href="<?= $SITE_URL ?>/trang-chinh/index.php?tin-tuc">Tin Tức</a>
                                 <a href="<?= $SITE_URL ?>/trang-chinh/index.php?lien-he">Liên Hệ</a>
                             </li>
-
                             <li class="active-box1">
                                 <p><strong>Thể Loại</strong> </p>
                                 <?php
@@ -302,16 +354,13 @@ require_once "../../model/categories.php";
                             </li>
                         </ul>
                     </div>
-
                 </div>
                 <div class="col-lg-3">
                     <p>
-
                         Bản Quyền &copy;<script>
                             document.write(new Date().getFullYear());
                         </script> mọi quyền truy cập thuộc về team LÀNG ĐÁ&#128525<i class="fa fa-heart" aria-hidden="true"></i>: <a href="<?= $CONTENT ?>/index.php" class="text-warning">EASY TICKET</a>
                     </p>
-
                 </div>
             </div>
         </div>
@@ -338,8 +387,6 @@ require_once "../../model/categories.php";
     <script src="<?= $CONTENT_URL ?>/assets/js/jquery.slicknav.js"></script>
     <script src="<?= $CONTENT_URL ?>/assets/js/owl.carousel.min.js"></script>
     <script src="<?= $CONTENT_URL ?>/assets/js/main.js"></script>
-    
-
 
 </body>
 

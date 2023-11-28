@@ -11,7 +11,7 @@
             <div class="row d-flex justify-content-center">
                 <div class="col-md-12">
                     <div class="card">
-                        <form action="index.php?ma_hh=<?= $ma_hh ?>" method='post'>
+                        <form action="index.php?movies_id=<?= $movies_id ?>" method='post'>
                             <div class="card-header card-header-primary">
                                 <h4 class="card-title text-center">Chi Tiết Bình Luận</h4>
                                 <p id='ten_sp' class="card-category ">Sản Phẩm: <?= ($items[0]['ten_hh'])   ?></p>
@@ -79,7 +79,7 @@
                                         <button type="button" onclick="selectAll()" ; class="btn btn-outline-warning mx-xl-2 py-2">Chọn Tất Cả</button>
                                         <button type="button" onclick="remove_selectAll()" ; class="btn btn-outline-warning mx-xl-2 py-2">Bỏ Chọn Tất Cả</button>
                                         <button type="submit" class="btn btn-outline-warning py-2 mx-xl-2" name="delete_all" id="xoa">Xóa Các Mục Con</button>
-                                
+
                                     </div>
                                 </div>
                         </form>
