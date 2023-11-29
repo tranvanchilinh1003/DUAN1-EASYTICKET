@@ -86,60 +86,60 @@
     <div class="container">
         <div class="anime__details__content">
             <div class="row">
-                <div class="col-lg-3">
-                    <div class="anime__details__pic set-bg" data-setbg="<?= $CONTENT_URL ?>/assets/img/hero/hero-3.jpg">
-                        <div class="comment"><i class="fa fa-comments"></i> 11</div>
-                        <div class="view"><i class="fa fa-eye"></i> 9141</div>
-                    </div>
-                </div>
-                <div class="col-lg-9">
-                    <div class="anime__details__text">
-                        <div class="anime__details__title">
-                            <h3>Fate Stay Night: Unlimited Blade</h3>
-                            <span>フェイト／ステイナイト, Feito／sutei naito</span>
-                        </div>
-                        <div class="anime__details__rating">
-                            <div class="rating">
-                                <a href="#"><i class="fa fa-star"></i></a>
-                                <a href="#"><i class="fa fa-star"></i></a>
-                                <a href="#"><i class="fa fa-star"></i></a>
-                                <a href="#"><i class="fa fa-star"></i></a>
-                                <a href="#"><i class="fa fa-star-half-o"></i></a>
-                            </div>
-                            <span>1.029 Votes</span>
-                        </div>
-                        <p>Every human inhabiting the world of Alcia is branded by a “Count” or a number written on
-                            their body. For Hina’s mother, her total drops to 0 and she’s pulled into the Abyss,
-                            never to be seen again. But her mother’s last words send Hina on a quest to find a
-                            legendary hero from the Waste War - the fabled Ace!</p>
-                        <div class="anime__details__widget">
-                            <div class="row">
-                                <div class="col-lg-6 col-md-6">
-                                    <ul>
-                                        <li><span>Type:</span> TV Series</li>
-                                        <li><span>Studios:</span> Lerche</li>
-                                        <li><span>Date aired:</span> Oct 02, 2019 to ?</li>
-                                        <li><span>Status:</span> Airing</li>
-                                        <li><span>Genre:</span> Action, Adventure, Fantasy, Magic</li>
-                                    </ul>
-                                </div>
-                                <div class="col-lg-6 col-md-6">
-                                    <ul>
-                                        <li><span>Scores:</span> 7.31 / 1,515</li>
-                                        <li><span>Rating:</span> 8.5 / 161 times</li>
-                                        <li><span>Duration:</span> 24 min/ep</li>
-                                        <li><span>Quality:</span> HD</li>
-                                        <li><span>Views:</span> 131,541</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="anime__details__btn">
-                            <a href="<?= $SITE_URL ?>/trang-chinh/index.php?trailer" class="follow-btn">TRAILER</a>
-                            <a href="#" class="watch-btn"><span>ĐẶT VÉ</span> <i class="fa fa-angle-right"></i></a>
+        
+                    <div class="col-lg-3">
+                        <div class="anime__details__pic set-bg" data-setbg="../../img/<?= $item['image'] ?>">
+                            <div class="comment"><i class="fa fa-comments"></i> 11</div>
+                            <div class="view"><i class="fa fa-eye"></i> 9141</div>
                         </div>
                     </div>
-                </div>
+                    <div class="col-lg-9">
+                        <div class="anime__details__text">
+                            <div class="anime__details__title">
+                                <h3><?= $item['name_movie'] ?></h3>
+                                <span>フェイト／ステイナイト, Feito／sutei naito</span>
+                            </div>
+                            <div class="anime__details__rating">
+                                <div class="rating">
+                                    <a href="#"><i class="fa fa-star"></i></a>
+                                    <a href="#"><i class="fa fa-star"></i></a>
+                                    <a href="#"><i class="fa fa-star"></i></a>
+                                    <a href="#"><i class="fa fa-star"></i></a>
+                                    <a href="#"><i class="fa fa-star-half-o"></i></a>
+                                </div>
+                                <span>1.029 Votes</span>
+                            </div>
+                            <h4 class="text-light">Mô tả phim: <?= $item['discretion'] ?></h4>
+                            <p></p>
+                            <div class="anime__details__widget">
+                                <div class="row">
+                                    <div class="col-lg-6 col-md-6">
+                                        <ul>
+                                            <li><span>Type:</span> TV Series</li>
+                                            <li><span>Studios:</span> Lerche</li>
+                                            <li><span>Date aired:</span> <?= $item['date_movie'] ?></li>
+                                            <li><span>Status:</span> <?= $item['status'] ?>Đang chiếu</li>
+                                            <li><span>Genre:</span> <?= $item['actor_id'] ?></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-lg-6 col-md-6">
+                                        <ul>
+                                            <li><span>Scores:</span> 7.31 / 1,515</li>
+                                            <li><span>Rating:</span> 8.5 / 161 times</li>
+                                            <li><span>Duration:</span> 24 min/ep</li>
+                                            <li><span>Quality:</span> HD</li>
+                                            <li><span>Views:</span> 131,541</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="anime__details__btn">
+                                <a href="<?= $SITE_URL ?>/trang-chinh/index.php?trailer" class="follow-btn">TRAILER</a>
+                                <a href="#" class="watch-btn"><span>ĐẶT VÉ</span> <i class="fa fa-angle-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
             </div>
         </div>
         <div class="row">
@@ -158,7 +158,6 @@
                                 "demons" LOL</p>
                         </div>
                     </div>
-
                     <div class="anime__details__form mt-5">
                         <div class="section-title">
                             <h5>BÌNH LUẬN CỦA BẠN</h5>
@@ -180,7 +179,7 @@
                                     <input type="radio" name="ratings" value="2" id="2"><label for="2">☆</label>
                                     <input type="radio" name="ratings" value="1" id="1"><label for="1">☆</label>
                                 </div>
-                                <textarea placeholder="Bình luận của bạn" name="message" id="message"></textarea> <span class="error text-danger"></span><br>
+                                <textarea placeholder="Bình luận của bạn" name="content" id="content"></textarea> <span class="error text-danger"></span><br>
                                 <button type="submit"><i class="fa fa-location-arrow" name="pull_comment"></i>ĐĂNG</button>
                             </form>
                         <?php
@@ -193,18 +192,18 @@
 </section>
 <!-- Anime Section End -->
 <script>
-     var form_message = document.getElementById("comment-form");
-     form_message.addEventListener('submit', function(event) {
-         var message = document.getElementById("message");
-         var error = document.getElementsByClassName("error");
-         var has_error = true;
-         error[0].innerHTML = '';
-         if (message.value.trim() === "") {
-             error[0].innerHTML = 'Vui lòng nhập bình luận của bạn.';
-             has_error = false;
-         }
-         if (has_error == false) {
-             event.preventDefault();
-         }
-     });
- </script>
+    var form_content = document.getElementById("comment-form");
+    form_content.addEventListener('submit', function(event) {
+        var content = document.getElementById("content");
+        var error = document.getElementsByClassName("error");
+        var has_error = true;
+        error[0].innerHTML = '';
+        if (content.value.trim() === "") {
+            error[0].innerHTML = 'Vui lòng nhập bình luận của bạn.';
+            has_error = false;
+        }
+        if (has_error == false) {
+            event.preventDefault();
+        }
+    });
+</script>

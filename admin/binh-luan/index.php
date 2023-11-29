@@ -1,45 +1,45 @@
 <?php
 require "../../global.php";
+require "../../model/pdo.php";
 require "../../model/statistical.php";
+// kiểm tra lỗi php 
+ini_set('display_errors', '1');
+ini_set('display_startup_errors', '1');
+error_reporting(E_ALL);
 
 extract($_REQUEST);
-if (exist_param("movies_id", $_REQUEST)) {
+if (exist_param("ma_hh")) {
 
-    // $items = binh_luan_select_by_hang_hoa($ma_hh);
-
-    $VIEW_NAME = 'detail.php';
-} else if (exist_param("delete", $_REQUEST)) {
-    $ma_bl = $_GET['delete'];
-    $productId = $_GET['productId'];
-    echo $ma_bl;
-    echo $productId;
-
-    // $ma_hh die();
-    // binh_luan_delete($ma_bl);
-
-    // $items =   binh_luan_select_all();
-    header("location: index.php?ma_hh=" . $productId);
-} elseif (exist_param("delete_box")) {
-
-    if (isset($_POST['delete_all'])) {
-
-        $get_id = $_POST['check'];
-        if (isset($get_id)) {
-            foreach ($get_id as $id) {
-                // binh_luan_delete($id);
-            }
-            header("location: index.php?btn_list");
-        } else {
-
-            header("location: index.php?btn_list");
+    if (exist_param("btn_delete")) {
+        try {
+            comments_delete($ma_bl);
+            $MESSAGE = "Xóa thành công";
+        } catch (Exception $exc) {
+            $MESSAGE = "Xóa thất bại";
         }
+    } else if (exist_param("btn_delete_all")) {
+        try {
+            $arr_ma_bl = $_POST['ma_bl'];
+            comments_delete($arr_ma_bl);
+            $MESSAGE = "Xóa thành công!";
+        } catch (Exception $exc) {
+            $MESSAGE = "Xóa thất bại!";
+        }
+        // $items = binh_luan_select_by_hang_hoa($ma_hh);
+        $VIEW_NAME = "detail.php";
+    }
+
+    $items = comments_select_by_movies($movies);
+
+    if (count($items) == 0) {
+        $items = thong_ke_comments();
+        $VIEW_NAME = "list.php";
+    } else {
+        $VIEW_NAME = "detail.php";
     }
 } else {
-
-    // $items = thong_ke_binh_luan();
+    // $items = thong_ke_comments();
     $VIEW_NAME = "list.php";
 }
 
-// $VIEW_NAME = 'detail.php';
-
-require '../layout.php';
+require "../layout.php";

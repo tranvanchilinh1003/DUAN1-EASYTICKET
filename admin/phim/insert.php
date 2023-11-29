@@ -133,7 +133,7 @@
             error[3].innerHTML = "Vui Lòng Chọn Hình";
             has_error = false;
         }
-        if (selectedDate > currenDate) {
+        if (selectedDate > currenDate || selectedDate.length === "") {
             error[4].innerHTML = 'Ngày Nhập Lớn Hơn hiện tại';
             has_error = false;
         }
