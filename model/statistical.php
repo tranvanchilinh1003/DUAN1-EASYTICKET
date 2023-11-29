@@ -1,10 +1,11 @@
 <?php
 require_once "pdo.php";
 
+
 // thêm mới bình luận
-function comments_insert($id,  $users_id, $movies_id, $content, $comment_date, $ratings)
+function comments_insert($content, $comment_date, $ratings, $movies_id, $users_id)
 {
-    $sql = "INSERT INTO `comments`(`id`, `users_id`,`movies_id`, `content`, `comment_date`, `ratings`) VALUES ( '$id', '$users_id', $movies_id, '$content', '$comment_date',`$ratings`)";
+    $sql = "INSERT INTO `comments`( `content`, `comment_date`, `ratings`, `movies_id`, `users_id`) VALUES ('$content','$comment_date','$ratings','$movies_id','$users_id')";
     pdo_execute($sql);
 }
 // cập nhập bình luận 
@@ -42,9 +43,16 @@ function comments_exist($id)
     $sql = "SELECT count(*) FROM comments WHERE id = ? ";
     return pdo_query_value($sql, $id) > 0;
 }
-function comments_select_by_movies($movies_id)
+
+function comments_select_by_id_movies($id)
 {
-    $sql = "SELECT b.*, h.ten_hh FROM comments b JOIN movies h ON h.movies_id = b.movies_id WHERE b.movies_id = ? ORDER By comment_date DESC";
+    $sql = "SELECT cmt.*, mv.name_movie, users.username,users.image FROM comments cmt  JOIN movies mv ON mv.id = cmt.movies_id JOIN users ON cmt.users_id = users.id WHERE cmt.movies_id = ? ORDER By comment_date DESC";
+    return pdo_query($sql, $id);
+}
+function comments_movies($movies_id)
+{
+    $sql = "SELECT comments.*, users.full_name, users.image
+     FROM comments JOIN users ON comments.ma_kh = khach_hang.ma_kh WHERE comments.ma_hh = ?";
     return pdo_query($sql, $movies_id);
 }
 // thống kê phim 
@@ -56,7 +64,7 @@ function thong_ke_movies()
         . " MAX(hh.don_gia) gia_max,"
         . " AVG(hh.don_gia) gia_avg"
         . " FROM hang_hoa hh "
-        . " JOIN loai lo ON lo.ma_loai = hh.ma_loai "
+        . " JOIN categories lo ON lo.ma_loai = hh.ma_loai "
         . " GROUP BY lo.ma_loai, lo.ten_loai ";
     return pdo_query($sql);
 }
@@ -68,8 +76,8 @@ function thong_ke_comments()
         . " MIN(bl.comment_date) cu_nhat,"
         . " MAX(bl.comment_date) moi_nhat"
         . " FROM comments bl "
-        . " JOIN movies hh ON hh.movies_id = bl.movies_id "
-        . " GROUP BY hh.movies_id, hh.name_movie "
+        . " JOIN movies mv ON mv.movies_id = bl.movies_id "
+        . " GROUP BY mv.movies_id, hh.name_movie "
         . " HAVING so_luong > 0";
 
     return pdo_query($sql);

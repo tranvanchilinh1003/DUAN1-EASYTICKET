@@ -1,5 +1,13 @@
 <?php
 require_once "pdo.php";
+function detail_movies($id)
+{
+    $sql = "SELECT movies.*, categories.type_name , actor.actor, actor.director, actor.producer
+FROM movies
+JOIN categories ON movies.categories_id = categories.id
+JOIN actor ON movies.actor_id = actor.id WHERE movies.id = '$id' ";
+    return pdo_query_one($sql);
+}
 // load lại ds hàng hóa
 function movies_select_all()
 {
@@ -20,7 +28,7 @@ function movies_insert($name_movie, $discretion, $time, $status, $date_movie, $a
 }
 function   movies_update($name_movie, $discretion, $time, $status, $date_movie, $actor_id, $trailer, $categories_id, $image, $id)
 {
-$sql = "UPDATE `movies` SET `name_movie`='$name_movie',`discretion`='$discretion',`time`='$time',`status`='$status',
+    $sql = "UPDATE `movies` SET `name_movie`='$name_movie',`discretion`='$discretion',`time`='$time',`status`='$status',
 `date_movie`='$date_movie',`actor_id`='$actor_id',`trailer`='$trailer',`categories_id`='$categories_id',`image`='$image' WHERE id  = '$id'";
     pdo_execute($sql);
 }
@@ -35,10 +43,11 @@ function movie_reset($id)
     $sql = "UPDATE movies SET status = 1 WHERE id = '$id'";
     pdo_execute($sql);
 }
-function delete_vv($id){
+function delete_vv($id)
+{
     $sql = "DELETE FROM movies WHERE id = $id";
     pdo_execute($sql);
-    }
+}
 // lấy thông tin 1 mã hàng hóa
 function movies_select_by_id($id)
 {
@@ -64,10 +73,10 @@ function movies_exist_update($ma_hh, $ten_hh)
     return pdo_query_value($sql, $ma_hh, $ten_hh) > 0;
 }
 
-function movies_tang_so_luot_xem($ma_hh)
+function movies_view($id)
 {
-    $sql = "UPDATE movies SET so_luot_xem = so_luot_xem + 1 WHERE ma_hh=?";
-    pdo_execute($sql, $ma_hh);
+    $sql = "UPDATE movies SET view = view + 1 WHERE id=?";
+    pdo_execute($sql, $id);
 }
 
 function movies_select_top10()
