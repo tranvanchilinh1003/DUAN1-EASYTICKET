@@ -1,69 +1,3 @@
-<!-- <link rel="stylesheet" href="css/style.css"> -->
-
-<!-- <section class="ftco-section"> -->
-<!-- <div class="container ">
-
-	<div class="row justify-content-center">
-		<div class="col-md-8 col-lg-6">
-			<div class="login-wrap">
-
-				<div class="img" style="background-image: url(<?= $CONTENT_URL ?>/assets/img/logo_url.png)"></div>
-				<h3 class="text-center   mb-4">Đăng Ký Tài Khoản</h3>
-				<form method="post" enctype="multipart/form-data" action="<?= $SITE_URL ?>/form/signup_xuly.php" id='my_form' class="signup-form">
-					<div class='row'>
-						<div class="col-sm-6 form-group   mb-4">
-							<input type="text" class="form-control" id='username' name='username' placeholder="Tài Khoản">
-							<span class='text-danger err'><?= (isset($loi)) ? $loi : ""; ?></span>
-						</div>
-
-						<div class="col-sm-6 form-group  mb-4">
-							<input type="text" class="form-control" id="full_name" name='full_name' placeholder="Họ Tên">
-							<span class='text-danger err'></span>
-						</div>
-					</div>
-
-
-
-					<div class="form-group  mb-4">
-						<input type="text" class="form-control" id='thong_tin' name='information' placeholder="Gmail Hoặc Số Điện Thoại">
-						<span class='text-danger err'></span>
-					</div>
-					<div class="form-group  mb-4">
-						<input type="password" id="password" class="form-control" name='password' placeholder="Mật Khẩu">
-						<span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
-						<span class='text-danger err'></span>
-					</div>
-					<div class="form-group  mb-4">
-						<input type="password" id="confirm_pass" class="form-control" name='confirm_pass' placeholder="Xác Nhận Mật Khẩu">
-						<span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
-						<span class='text-danger err'></span>
-					</div>
-					<div class="form-group  mb-4">
-						<input type="file" class="form-control" id="image" name="image">
-
-						<span class='text-danger err'></span>
-					</div>
-					<div class='form-group '>
-						<label class="fw-bold col-form-label">Giới Tính </label>
-						<div class=' p-2 rounded-pill form-control '>
-							<input type="radio" class="gender mx-lg-2" name="gender" value="0"> Nam
-							<input type="radio" class="ml-md-2 gender mx-lg-2" name="gender" value="1"> Nữ
-
-						</div>
-						<span class='text-danger err'></span>
-					</div>
-					<span class="error text-danger"></span>
-					<div class="form-group">
-						<button type="submit" name="submit_insert" class="form-control btn btn-primary submit px-3">Đăng
-							Ký</button>
-					</div>
-					<i class=" text-danger"><?= (isset($MESSAGE) && (strlen($MESSAGE) > 0)) ? $MESSAGE : "" ?></i>
-				</form>
-				<p>Bạn Đã Có Tài Khoản! <a href="<?= $SITE_URL ?>/form/login_xuly.php">Đăng Nhập</a></p>
-			</div>
-		</div>
-	</div>
-</div> -->
 
 <!--===============================================================================================-->
 <link rel="stylesheet" type="text/css" href="css/util.css">
@@ -108,38 +42,40 @@
 				</div>
 				<span class='text-danger err'></span>
 
-				<div class="wrap-input100 validate-input mb-4" data-validate="Password is required">
+				<div class="wrap-input100 validate-input mb-4" ">
 					<!-- <span class="label-input100">Mật Khẩu</span> -->
 					<input class="input100" type="text" class="form-control" id='thong_tin' name='information' placeholder="Gmail Hoặc Số Điện Thoại">
 					<span class="focus-input100" data-symbol="&#xf190;"></span>
 				</div>
 				<span class='text-danger err'></span>
 
-				<div class="wrap-input100 validate-input mb-4" data-validate="Password is required">
+				<div class="wrap-input100 validate-input mb-4" >
 					<!-- <span class="label-input100">Mật Khẩu</span> -->
 					<input class="input100" type="password" id="password" class="form-control" name='password' placeholder="Mật Khẩu">
 					<span class="focus-input100" data-symbol="&#xf190;"></span>
 				</div>
 				<span class='text-danger err'></span>
 
-				<div class="wrap-input100 validate-input mb-4" data-validate="Password is required">
+				<div class="wrap-input100 validate-input mb-5" >
 					<!-- <span class="label-input100">Mật Khẩu</span> -->
 					<input class="input100" type="password" id="confirm_pass" class="form-control" name='confirm_pass' placeholder="Xác Nhận Mật Khẩu">
 					<span class="focus-input100" data-symbol="&#xf190;"></span>
 				</div>
 				<span class='text-danger err'></span>
 
-				<div class="wrap-input100 validate-input mb-4" data-validate="Password is required">
+				<div class="wrap-input100 validate-input mb-5">
 					<input type="file"  id="image" name="image">
 				</div>
 
 				<span class='text-danger err'></span>
-				<div class="wrap-input100 validate-input mb-4" data-validate="Password is required">
+				<div class="wrap-input100 validate-input mb-5">
 					<label class="fw-bold col-form-label">Giới Tính </label>
 					<input type="radio" class="gender mx-lg-2" name="gender" value="0"> Nam
 					<input type="radio" class="ml-md-2 gender mx-lg-2" name="gender" value="1"> Nữ
+					<br>
+					<span class='text-danger err'></span>
 				</div>
-				<span class='text-danger err'></span>
+				
 
 				<div class="container-login100-form-btn">
 					<div class="wrap-login100-form-btn">

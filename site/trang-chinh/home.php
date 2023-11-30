@@ -1,115 +1,3 @@
-<!-- Hero Section Begin -->
-<style>
-    .rate {
-
-border-bottom-right-radius: 12px;
-border-bottom-left-radius: 12px;
-
-}
-
-
-
-.rating {
-display: flex;
-flex-direction: row-reverse;
-justify-content: center
-}
-
-.rating>input {
-display: none
-}
-
-.rating>label {
-position: relative;
-width: 1em;
-font-size: 30px;
-font-weight: 300;
-color: #FFD600;
-cursor: pointer
-}
-
-.rating>label::before {
-content: "\2605";
-position: absolute;
-opacity: 0
-}
-
-.rating>label:hover:before,
-.rating>label:hover~label:before {
-opacity: 1 !important
-}
-
-.rating>input:checked~label:before {
-opacity: 1
-}
-
-.rating:hover>input:checked~label:before {
-opacity: 0.4
-}
-
-
-.buttons {
-top: 36px;
-position: relative;
-}
-
-
-.rating-submit {
-border-radius: 15px;
-color: #fff;
-height: 49px;
-}
-
-
-.rating-submit:hover {
-
-color: #fff;
-}
-</style>
-<section class="hero">
-    <div class="container">
-        <div class="hero__slider owl-carousel">
-            <div class="hero__items set-bg" data-setbg="<?= $CONTENT_URL ?>/assets/img/hero/hero-2.jpg">
-                <div class="row">
-                    <div class="col-lg-6">
-                        <div class="hero__text">
-                            <div class="label">Adventure</div>
-                            <h2>Fate / Stay Night: Unlimited Blade Works</h2>
-                            <p>After 30 days of travel across the world...</p>
-                            <a href="#"><span>Đặt vé</span> <i class="fa fa-angle-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="hero__items set-bg" data-setbg="<?= $CONTENT_URL ?>/assets/img/hero/hero-0.jpg">
-                <div class="row">
-                    <div class="col-lg-6">
-                        <div class="hero__text">
-                            <div class="label">Adventure</div>
-                            <h2>Fate / Stay Night: Unlimited Blade Works</h2>
-                            <p>After 30 days of travel across the world...</p>
-                            <a href="#"><span>Đặt vé</span> <i class="fa fa-angle-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="hero__items set-bg" data-setbg="<?= $CONTENT_URL ?>/assets/img/hero/hero-3.jpg">
-                <div class="row">
-                    <div class="col-lg-6">
-                        <div class="hero__text">
-                            <div class="label">Adventure</div>
-                            <h2>Fate / Stay Night: Unlimited Blade Works</h2>
-                            <p>After 30 days of travel across the world...</p>
-                            <a href="#"><span>Đặt vé</span> <i class="fa fa-angle-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- Hero Section End -->
-
 <!-- Product Section Begin -->
 <section class="product spad">
     <div class="container">
@@ -129,30 +17,35 @@ color: #fff;
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-lg-4 col-md-6 col-sm-6">
-                            <a href="<?= $SITE_URL ?>/phim/chi-tiet.php">
-                                <div class="product__item">
-                                    <div class="product__item__pic set-bg" data-setbg="<?= $CONTENT_URL ?>/assets/img/hero/hero-3.jpg">
-                                        <div class="ep">18 / 18</div>
-                                        <div class="comment"><i class="fa fa-comments"></i> 11</div>
-                                        <div class="view"><i class="fa fa-eye"></i> 9141</div>
+                        <?php
+                        $items = movies_select_all();
+                        foreach ($items as $item) :
+                        ?>
+                            <div class="col-lg-4 col-md-6 col-sm-6">
+                                <a href="<?= $SITE_URL . '/phim/chi-tiet.php?id=' .  $item['id']  ?>">
+                                    <div class="product__item">
+                                        <div class="product__item__pic set-bg" data-setbg="../../img/<?= $item['image'] ?>">
+                                            <!-- <div class="ep">18 / 18</div> -->
+                                            <div class="comment"><i class="fa fa-comments"></i> 11</div>
+                                            <div class="view"><i class="fa fa-eye"></i><?= $item['view'] ?></div>
+                                        </div>
+                                        <div class="product__item__text">
+                                            <ul>
+                                                <li>Active</li>
+                                                <li>Movie</li>
+                                            </ul>
+                                            <h5><a href="<?= $SITE_URL . '/phim/chi-tiet.php?id=' .  $item['id']  ?>"><?= $item['name_movie'] ?></a></h5>
+                                        </div>
                                     </div>
-                                    <div class="product__item__text">
-                                        <ul>
-                                            <li>Active</li>
-                                            <li>Movie</li>
-                                        </ul>
-                                        <h5><a href="#">The Seven Deadly Sins: Wrath of the Gods</a></h5>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-
+                                </a>
+                            </div>
+                        <?php endforeach ?>
                     </div>
                 </div>
 
 
             </div>
+
             <div class="col-lg-4 col-md-6 col-sm-8">
                 <div class="product__sidebar">
                     <div class="product__sidebar__view">
@@ -197,3 +90,4 @@ color: #fff;
         </div>
     </div>
 </section>
+<!-- Product Section End -->
