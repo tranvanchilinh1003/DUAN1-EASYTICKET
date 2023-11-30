@@ -71,9 +71,9 @@ function update_otp($otp,$username){
     $sql = "UPDATE `users` SET `otp`='$otp' WHERE username = '$username'";
     pdo_execute($sql);
 }
-function khach_hang_change_password($username, $mat_khau_moi){
-$sql = "UPDATE  users SET `password` = ? WHERE `username` = ?";
-pdo_execute($sql, $mat_khau_moi, $username);
+function khach_hang_change_password($username, $password){
+$sql = "UPDATE  users SET `password` = '$password' WHERE `username` = '$username'";
+pdo_execute($sql);
 
 }
 

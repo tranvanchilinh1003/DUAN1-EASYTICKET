@@ -15,10 +15,11 @@ $VIEW_NAME="form/quen_mk.php";
 
 if(exist_param("btn_forgot")){
 $username = $_POST["username"];
+$_SESSION['tai_khoan'] = $username;
 $information = $_POST["information"];
 $user = khach_hang_select_by_id($username);
 // extract($user);
-// $_SESSION['username'] = $user['username'];
+
 if($user){
 if($user['information'] != $information){
 $MESSAGE = "Sai địa chỉ email Hoặc Số Điện Thoại!";

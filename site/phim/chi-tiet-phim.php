@@ -1,19 +1,3 @@
-<!-- Breadcrumb Begin -->
-<!-- <div class="breadcrumb-option">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="breadcrumb__links">
-                    <a href="<?= $SITE_URL ?>/trang-chinh/index.php"><i class="fa fa-home"></i> TRANG CHỦ</a>
-                    <a href="#">THỂ LOẠI</a>
-                    <span>CHI TIẾT</span>
-                </div>
-            </div>
-        </div>
-    </div>
-</div> -->
-<!-- Breadcrumb End -->
-
 <!-- Anime Section Begin -->
 <section class="anime-details spad">
     <div class="container">
@@ -23,13 +7,13 @@
                 <div class="col-lg-3">
                     <div class="anime__details__pic set-bg" data-setbg="../../img/<?= $item['image'] ?>">
                         <div class="comment"><i class="fa fa-comments"></i> 11</div>
-                        <div class="view"><i class="fa fa-eye"></i> 9141</div>
+                        <div class="view"><i class="fa fa-eye"></i> <?= $item['view'] ?></div>
                     </div>
                 </div>
                 <div class="col-lg-9">
                     <div class="anime__details__text">
                         <div class="anime__details__title">
-                            <h3><?= $item['name_movie'] ?></h3>
+                            <h3 class='text-warning'><?= $item['name_movie'] ?></h3>
                             <!-- <span>フェイト／ステイナイト, Feito／sutei naito</span> -->
                         </div>
                         <div class="anime__details__rating">
@@ -62,13 +46,13 @@
                                         <li><span>Đánh giá:</span> 8.5 / 161 times</li>
                                         <!-- <li><span>Duration:</span> 24 min/ep</li> -->
                                         <li><span>Chất lượng:</span> HD</li>
-                                        <li><span>Lượt xem:</span> <?= $item['view'] ?></li>
+<li><span>Lượt xem:</span> <?= $item['view'] ?></li>
                                     </ul>
                                 </div>
                             </div>
                         </div>
                         <div class="anime__details__btn">
-                            <a href="<?= $SITE_URL ?>/trang-chinh/index.php?trailer" class="follow-btn">TRAILER</a>
+                            <!-- <a href="<?= $SITE_URL ?>/trang-chinh/index.php?trailer" class="follow-btn">TRAILER</a> -->
                             <a href="#" class="watch-btn"><span>ĐẶT VÉ</span> <i class="fa fa-angle-right"></i></a>
                         </div>
                     </div>
@@ -77,12 +61,26 @@
             </div>
         </div>
         <!-- trailer  -->
+        <section class="anime-details spad">
+            <div class="container">
+                <div class="row">
+                    <div class="section-title">
+                        <h5>TRAILER</h5>
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="anime__video__player">
+                            <iframe width="100%" height="600" src="<?= $item['trailer'] ?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
+                <!-- binh luan  -->
+                <?php require "binh-luan.php"; ?>
+                <!-- end binh luan -->
+            </div>
+        </section>
+        <!-- trailer End -->
 
 
-
-        <!-- binh luan  -->
-        <?php require "binh-luan.php"; ?>
-        <!-- end binh luan -->
     </div>
 </section>
 <!-- Anime Section End -->

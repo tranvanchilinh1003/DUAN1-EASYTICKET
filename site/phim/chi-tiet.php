@@ -21,7 +21,7 @@ if (exist_param("id")) {
 } else if (exist_param("pull_comment")) {
     $movies_id = $_SESSION['id'];
     $content = $_POST['content'];
-    $users_id = $_SESSION['users_id'];
+    $users_id = $_SESSION['customers'];
     $comment_date = date_format(date_create(), 'Y-m-d');
     $ratings = $_POST['ratings'];
 

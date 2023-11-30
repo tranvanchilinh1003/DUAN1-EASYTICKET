@@ -100,7 +100,7 @@
                             <div class='col-sm-12'>
                                 <div class="form-group">
                                     <label for="discretion">Mô tả</label>
-                                    <textarea class="form-control" id="discretion" name="discretion" rows="4"></textarea>
+                                    <textarea class="form-control" id="discretion" name="discretion" rows="4"><?= $item['discretion'] ?></textarea>
                                 </div>
                             </div>
                         </div>
