@@ -12,6 +12,8 @@
             <h3 class="card-title text-warning">Danh Sách Thể Loại</h3>
             <!-- <p class="card-description"> Add class <code>.table-striped</code> -->
             <!-- </p> -->
+            
+
             <i class=" text-danger"><?= (isset($MESSAGE) && (strlen($MESSAGE) > 0)) ? $MESSAGE : "" ?></i>
             <form action="#" method="post" id="form_delete_loai">
                 <div class="table-responsive">
@@ -41,7 +43,7 @@
                                     <td>
                                         <a href="index.php?btn_edit&id=<?= $id ?>" class="btn btn-success " name='btn_edit'><i class="bi bi-pencil-square"> Chi tiết</i></a>
 
-                                        <a href="index.php?btn_delete&id=<?= $id ?>" class="btn btn-danger"><i class="bi bi-trash"> Xóa</i></a>
+                                       <a href="index.php?btn_delete&id=<?= $id ?>"   class="btn btn-danger"><i class="bi bi-trash"> Xóa</i></a>
                                     </td>
 
                                 </tr>
@@ -78,4 +80,5 @@
             }
         }
     }
+
 </script>

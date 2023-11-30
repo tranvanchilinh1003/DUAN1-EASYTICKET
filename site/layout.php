@@ -17,7 +17,7 @@ require_once "../../model/categories.php";
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-   
+
 
     <!-- Css Styles -->
     <link rel="stylesheet" href="<?= $CONTENT_URL ?>/assets/css/bootstrap.min.css" type="text/css">
@@ -29,9 +29,18 @@ require_once "../../model/categories.php";
     <link rel="stylesheet" href="<?= $CONTENT_URL ?>/assets/css/slicknav.min.css" type="text/css">
     <link rel="stylesheet" href="<?= $CONTENT_URL ?>/assets/css/style.css" type="text/css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@1&family=Roboto:ital,wght@0,400;1,300&display=swap" rel="stylesheet">
+
 </head>
 <style>
-  
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display&family=Roboto:ital,wght@0,400;1,300&display=swap');
+
+    body {
+        font-family: 'Roboto Slab', sans-serif;
+    }
+
 
     .header__menu ul {
         list-style-type: none;
@@ -191,7 +200,7 @@ require_once "../../model/categories.php";
                                 ?>
 
                                     <li>
-                                        <img style="border-radius: 50%;" src="../../img/<?= $_SESSION['img'] ?>" width="40px" alt="">
+                                        <img style="border-radius: 50%;" src="../../img/<?= $_SESSION['img'] ?>" width="30px" alt="">
 
                                         <label for="hover" class="text-white"><?= $_SESSION["username"] ?></label>
 
@@ -260,7 +269,7 @@ require_once "../../model/categories.php";
                 <div class="col-lg-3">
                     <div class="footer__logo">
                         <a href="../trang-chinh/index.php"><img src="<?= $CONTENT_URL ?>/assets/img/studio.png" alt=""></a>
-                        
+
                     </div>
                 </div>
                 <div class="col-lg-6">

@@ -19,6 +19,7 @@ $confirm_pass = $_POST['confirm_pass'];
 $gender = $_POST['gender'];
 $password = $_POST['password'];
 $image = save_file('image', $UPLOAD_URL);
+$full_name = $_POST['full_name'];
 if(md5($confirm_pass) != $_POST['password_old']){
 
   $MESSAGE = "Mật Khẩu Không Trùng!";

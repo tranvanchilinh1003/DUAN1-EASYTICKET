@@ -23,8 +23,22 @@
     <!-- Layout styles -->
     <link rel="stylesheet" href="<?= $ADMIN_URL ?>/assets/css/style.css">
     <!-- End layout styles -->
+    <!-- Toatsjs  Thư Viện-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+<script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+
     <link rel="shortcut icon" type="image/x-icon" href="<?= $CONTENT_URL ?>/assets/img/logo_url.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@1&family=Roboto:ital,wght@0,400;1,300&display=swap" rel="stylesheet">
 </head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display&family=Roboto:ital,wght@0,400;1,300&display=swap');
+
+    body {
+        font-family: 'Roboto Slab', sans-serif;
+    }
+</style>
 
 <body>
     <div class="container-scroller">
@@ -46,10 +60,10 @@
                             <form class="nav-link mt-2 mt-md-0 d-none d-lg-flex search">
                                 <input type="text" class="form-control w-50" placeholder="Tìm kiếm...">
                                 <div class="input-group-append">
-                                                <button class="btn btn-outline-warning ms-3" type="button" onmouseover="showSearchInput()" onmouseout="hideSearchInput()">
-                                                <i class="bi bi-search"></i>
-                                                </button>
-                                            </div>
+                                    <button class="btn btn-outline-warning ms-3"  type="button" onmouseover="showSearchInput()" onmouseout="hideSearchInput()">
+                                        <i class="bi bi-search"></i>
+                                    </button>
+                                </div>
                             </form>
                         </li>
                     </ul>
@@ -104,20 +118,20 @@
                                 <i class="mdi mdi-email"></i>
                                 <span class="count bg-success"></span>
                             </a>
-                            
+
                         </li>
                         <li class="nav-item dropdown border-lseft">
                             <a class="nav-link count-indicator dropdown-toggle" id="notificationDropdown" href="#" data-toggle="dropdown">
                                 <i class="mdi mdi-bell"></i>
                                 <span class="count bg-danger"></span>
                             </a>
-                           
+
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link" id="profileDropdown" href="#" data-toggle="dropdown">
                                 <div class="navbar-profile">
                                     <!-- <img class="img-xs rounded-circle" src="assets/images/faces/face15.jpg" alt=""> -->
-                                    <img class="img-xs rounded-circle" src="../../img/<?=$_SESSION['img']  ?>" alt="">
+                                    <img class="img-xs rounded-circle" src="../../img/<?= $_SESSION['img']  ?>" alt="">
                                     <p class="mb-0 d-none d-sm-block navbar-profile-name"><?= $_SESSION["username"] ?></p>
                                     <i class="mdi mdi-menu-down d-none d-sm-block"></i>
                                 </div>
@@ -125,7 +139,7 @@
                             <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="profileDropdown">
                                 <h6 class="p-3 mb-0">Hồ sơ</h6>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item preview-item">
+                                <a href="<?=$ADMIN_URL?>/trang-chinh/index.php?profile" class="dropdown-item preview-item">
                                     <div class="preview-thumbnail">
                                         <div class="preview-icon bg-dark rounded-circle">
                                             <i class="mdi mdi-settings text-success"></i>
@@ -136,14 +150,14 @@
                                     </div>
                                 </a>
                                 <div class="dropdown-divider"></div>
-                                <a href="<?= $SITE_URL ?>/form/login_xuly.php?btn_logout" name='btn_logout'  class="dropdown-item preview-item">
+                                <a href="<?= $SITE_URL ?>/form/login_xuly.php?btn_logout" name='btn_logout' class="dropdown-item preview-item">
                                     <div class="preview-thumbnail">
                                         <div class="preview-icon bg-dark rounded-circle">
                                             <i class="mdi mdi-logout text-danger"></i>
                                         </div>
                                     </div>
                                     <div class="preview-item-content">
-                                    <p class="preview-subject mb-1 ">Đăng xuất</p> 
+                                        <p class="preview-subject mb-1 ">Đăng xuất</p>
                                     </div>
                                 </a>
 
@@ -167,9 +181,9 @@
                 <footer class="footer">
                     <div class="d-sm-flex justify-content-end ">
                         <p>
-                        Bản Quyền &copy;<script>
+                            Bản Quyền &copy;<script>
                                 document.write(new Date().getFullYear());
-                            </script> mọi quyền truy cập  thuộc về team LÀNG ĐÁ&#128525<i class="fa fa-heart" aria-hidden="true"></i>: <a href="<?=$ADMIN_URL?>/index.php" class="text-warning" >EASY TICKET</a>
+                            </script> mọi quyền truy cập thuộc về team LÀNG ĐÁ&#128525<i class="fa fa-heart" aria-hidden="true"></i>: <a href="<?= $ADMIN_URL ?>/trang-chinh/" class="text-warning">EASY TICKET</a>
                         </p>
                     </div>
                 </footer>
@@ -204,6 +218,18 @@
     <script src="<?= $ADMIN_URL ?>/assets/js/chart.js"></script>
     <script src="<?= $ADMIN_URL ?>/assets/js/chartist.js"></script>
     <!-- End custom js for this page -->
+    <script>
+    function showdeleteToast() {
+        Toastify({
+            text: "Xóa thành công!",
+            duration: 2000, // Thời gian hiển thị toast (3 giây)
+            close: true,
+            gravity: "top",
+            position: "center",
+            backgroundColor: 'red',
+        }).showToast();
+    }
+</script>
 </body>
 
 </html>

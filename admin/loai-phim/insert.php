@@ -13,6 +13,7 @@
             <div class="card-header card-header-primary">
                 <h3 class="card-title p-2 text-warning">Quản lý loại</h3>
             </div>
+            
             <div class="card-body">
                 <div class="table">
                     <form class="form" action="<?= $ADMIN_URL ?>/loai-phim/index.php?btn_insert" method="post" id="isert_form" enctype="multipart/form-data">

@@ -1,9 +1,5 @@
 
-<!DOCTYPE html>
-<html>
-<head>
-  <!-- <link rel="stylesheet" type="text/css" href="styles.css"> -->
-</head>
+
 <style>
     .seats {
   display: flex;
@@ -80,8 +76,7 @@
   <button class="checkout-button">Thanh toán</button>
   
   <script src="script.js"></script>
-</body>
-</html>
+
 <script>
     const seats = document.querySelectorAll('.seat');
 const totalPrice = document.getElementById('total-price');
@@ -102,7 +97,7 @@ function selectSeat() {
 
 // Tính toán tổng tiền
 function calculateTotalPrice() {
-  const pricePerSeat = 100; // Giá vé mỗi ghế
+  const pricePerSeat = 1000; // Giá vé mỗi ghế
   const total = selectedSeats.length * pricePerSeat;
   totalPrice.textContent = total;
 }

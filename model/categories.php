@@ -52,9 +52,9 @@ function categories_exist($id)
 function check_ma_categories()
 {
     $sql = "SELECT categories.id, categories.type_name
-            FROM categories
-            LEFT JOIN movies ON categories.id = movies.id
-            WHERE movies.id IS NULL";
+    FROM categories
+    LEFT JOIN movies ON categories.id = movies.categories_id
+    WHERE movies.categories_id IS NOT null ";
     return pdo_query_one($sql);
 }
 function check_ten_categories($type_name)

@@ -35,6 +35,7 @@
                             $items = movies_select_history();
                             foreach ($items as $item) {
                                 $id =    $item['id'];
+                                
                             ?>
                                 <tr>
                                     <td>
