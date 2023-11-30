@@ -130,7 +130,7 @@ color: #fff;
                     </div>
                     <div class="row">
                         <div class="col-lg-4 col-md-6 col-sm-6">
-                            <a href="<?= $SITE_URL ?>/trang-chinh/index.php?chi-tiet-phim">
+                            <a href="<?= $SITE_URL ?>/phim/chi-tiet.php">
                                 <div class="product__item">
                                     <div class="product__item__pic set-bg" data-setbg="<?= $CONTENT_URL ?>/assets/img/hero/hero-3.jpg">
                                         <div class="ep">18 / 18</div>

@@ -8,7 +8,7 @@
         <div class="row">
           <div class="col-9">
             <div class="d-flex align-items-center align-self-start">
-              <h3 class="mb-0"><?= $movies ?></h3>
+              <h3 class="mb-0"><?= $count_movie ?></h3>
               <!-- <p class="text-success ml-2 mb-0 font-weight-medium">+3.5%</p> -->
             </div>
           </div>
@@ -28,7 +28,7 @@
         <div class="row">
           <div class="col-9">
             <div class="d-flex align-items-center align-self-start">
-              <h3 class="mb-0"><?= $categories ?></h3>
+              <h3 class="mb-0"><?= $count_categories ?></h3>
               <!-- <p class="text-success ml-2 mb-0 font-weight-medium">+11%</p> -->
             </div>
           </div>
@@ -113,7 +113,7 @@
         <div class="row">
           <div class="col-8 col-sm-12 col-xl-8 my-auto">
             <div class="d-flex d-sm-block d-md-flex align-items-center">
-              <h2 class="mb-0"><?= $users ?></h2>
+              <h2 class="mb-0"><?= $count_user ?></h2>
               <!-- <p class="text-success ml-2 mb-0 font-weight-medium">+8.3%</p> -->
             </div>
             <!-- <h6 class="text-muted font-weight-normal"> 9.61% Since last month</h6> -->

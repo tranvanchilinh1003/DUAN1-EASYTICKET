@@ -1,8 +1,6 @@
 <?php
 // kiểm tra lỗi php 
-ini_set('display_errors', '1');
-ini_set('display_startup_errors', '1');
-error_reporting(E_ALL);
+
 require '../../global.php';
 require "../../model/pdo.php";
 require '../../model/movies.php';
