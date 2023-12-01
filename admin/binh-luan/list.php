@@ -1,3 +1,4 @@
+
 <div class="content">
     <div class="container-fluid">
         <div class="row d-flex justify-content-center">
@@ -8,9 +9,9 @@
                         <p class="card-category"> </p>
                     </div>
 
-                    <div class="card-body">
-                        <div class="table-responsive">
-                            <table class="table">
+                    <div class="card-body text-center">
+                        <div class="table-responsive ">
+                            <table class="table ">
                                 <thead class=" text-primary">
                                     <th>
                                         Phim
@@ -31,35 +32,35 @@
                                 </thead>
                                 <?php
 
-                                // foreach ($items as $item) {
-                                //     extract($item);
+                                foreach ($items as $item) {
+                                    extract($item);
 
 
                                 ?>
                                 <tbody>
                                     <tr>
 
-                                        <td>
-
+                                    <td>
+                                                <?=$name_movie ?>
+                                            </td>
+                                            <td>
+                                                <?= $so_luong ?>
+                                            </td>
+                                            <td>
+                                            <?= $cu_nhat ?>
                                         </td>
                                         <td>
-
-                                        </td>
-                                        <td>
-
-                                        </td>
-                                        <td>
-
+                                            <?= $moi_nhat ?>
                                         </td>
 
 
                                         <td>
-                                            <a href="../binh-luan/index.php" class='btn btn-outline-google btn-sm '>Xem Chi Tiết</a>
+                                            <a href="../binh-luan/index.php?id=<?= $id ?>"" class='btn btn-outline-google btn-sm '>Xem Chi Tiết</a>
                                         </td>
                                     </tr>
                                     <?php
 
-                                    // }
+                                    }
                                     ?>
                                 </tbody>
                             </table>

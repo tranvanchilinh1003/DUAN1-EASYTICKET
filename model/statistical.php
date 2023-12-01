@@ -1,7 +1,10 @@
 <?php
 require_once "pdo.php";
 
-
+function avr_ratings($movies_id){
+    $sql = "SELECT AVG(ratings) as averageRating, COUNT(*) as totalRatings FROM comments WHERE movies_id = $movies_id";
+    return pdo_query_value($sql);
+}
 // thêm mới bình luận
 function comments_insert($content, $comment_date, $ratings, $movies_id, $users_id)
 {
@@ -13,6 +16,11 @@ function comments_update($id,  $users_id, $movies_id, $content, $comment_date, $
 {
     $sql = "UPDATE comments SET users_id=?,movies_id=?,content=?,comment_date=? ,ratings=? WHERE id=?";
     pdo_execute($sql, $id,  $users_id, $movies_id, $content, $comment_date, $ratings);
+}
+
+function count_comment($movies_id){
+    $sql = "SELECT COUNT(*)   FROM `comments` WHERE movies_id = $movies_id";
+    return pdo_query_value($sql);
 }
 function comments_delete($id)
 {
@@ -69,16 +77,16 @@ function thong_ke_movies()
     return pdo_query($sql);
 }
 // thống kê bình luận 
-function thong_ke_comments()
+function thong_ke_comment()
 {
-    $sql = "SELECT hh.movies_id, hh.name_movie,"
-        . " COUNT(*) so_luong,"
-        . " MIN(bl.comment_date) cu_nhat,"
-        . " MAX(bl.comment_date) moi_nhat"
-        . " FROM comments bl "
-        . " JOIN movies mv ON mv.movies_id = bl.movies_id "
-        . " GROUP BY mv.movies_id, hh.name_movie "
-        . " HAVING so_luong > 0";
+    $sql = "SELECT mv.id, mv.name_movie,
+    COUNT(*) so_luong,
+    MIN(cmt.comment_date) cu_nhat,
+    MAX(cmt.comment_date) moi_nhat
+    FROM comments cmt 
+    JOIN movies mv ON mv.id = cmt.movies_id 
+    GROUP BY mv.id, mv.name_movie 
+    HAVING so_luong > 0";
 
     return pdo_query($sql);
 }

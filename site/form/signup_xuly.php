@@ -17,12 +17,21 @@ if (exist_param("submit_insert")) {
         khach_hang_select_by_id($username);
         $loi = khach_hang_exist($username);
         if (!empty($loi)) {
-            $loi = "Tài Khoản Đã Tồn Tại";
+            $MESSAGE = "Tài Khoản Đã Tồn Tại";
         } else {
 
             if ($image != '') {
 
                 khach_hang_insert($username, $information, $password, $image, $role = '0', $full_name, $gender);
+?>
+                <script>
+                    var tb = alert("Đăng Ký Thành Công");
+                    window.location.href = "<?= $SITE_URL ?>/form/login_xuly.php";
+                </script>
+
+            <?php
+
+
             } else {
                 khach_hang_insert($username, $information, $password, $image = 'anh_dai_dien.jpg', $role = '0', $full_name, $gender);
 
@@ -30,7 +39,7 @@ if (exist_param("submit_insert")) {
 
 
 
-?>
+            ?>
                 <script>
                     var tb = alert("Đăng Ký Thành Công");
                     window.location.href = "<?= $SITE_URL ?>/form/login_xuly.php";

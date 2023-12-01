@@ -11,13 +11,18 @@ require '../../model/categories.php';
 extract($_REQUEST);
 if (exist_param("id")) {
     // Truy vấn mặt hàng theo mã lấy nó ra để hiện thị
-    // $id = $_GET['id'];
+    $movies_id = $_GET['id'];
     // $item = movies_select_by_id($id);
     // Tăng số lượt xem lên 1
     movies_view($id);
-
+    
     $item = detail_movies($id);
-    $_SESSION['id'] = $item['id'];
+    // $movies_id = $_SESSION['id'];
+    $cmt = count_comment($movies_id);
+    $avr_ratings = avr_ratings($id);
+
+
+    // $_SESSION['id'] = $item['id'];
 } else if (exist_param("pull_comment")) {
     $movies_id = $_SESSION['id'];
     $content = $_POST['content'];

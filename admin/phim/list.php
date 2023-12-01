@@ -16,7 +16,7 @@
             <!-- <p class="card-description"> Add class <code>.table-striped</code> -->
             <!-- </p> -->
             <form action="#" method="post" id="form_delete_loai">
-                <div class="table-responsive">
+                <div class="table-responsive" style="max-height: 500px; overflow-y: auto;">
                     <table class="table table-striped">
                         <thead>
                             <tr>

@@ -13,7 +13,10 @@
                     </div>
                     <div class="anime__review__item__text">
 
-                        <h6><?= $bl['username'] ?> - <span><?= $bl['comment_date'] ?></span></h6>
+                        <h6><?= $bl['username'] ?>  <span>(<?=$bl['ratings'] ?><i class="bi bi-star-fill text-warning"></i>)</span><br>
+                        
+                        
+                        <span>  <?= $bl['comment_date'] ?></span></h6>
                         <p><?= $bl['content'] ?></p>
 
                     </div>
@@ -32,7 +35,7 @@
                     echo '</div>';
                 } else {
                 ?>
-                    <form method="POST" action="chi-tiet.php?pull_comment" id="comment-form" name="comment-form" class="comment-form">
+                <form method="POST" action="chi-tiet.php?pull_comment" id="comment-form" name="comment-form" class="comment-form">
                         <div class="rating">
                             <input type="radio" class="ratings" name="ratings" value="5" id="5"><label for="5">☆</label>
                             <input type="radio" class="ratings" name="ratings" value="4" id="4"><label for="4">☆</label>

@@ -6,7 +6,7 @@
 
                 <div class="col-lg-3">
                     <div class="anime__details__pic set-bg" data-setbg="../../img/<?= $item['image'] ?>">
-                        <div class="comment"><i class="fa fa-comments"></i> 11</div>
+                        <div class="comment"><i class="fa fa-comments"></i><?= $cmt  ?></div>
                         <div class="view"><i class="fa fa-eye"></i> <?= $item['view'] ?></div>
                     </div>
                 </div>
@@ -18,13 +18,14 @@
                         </div>
                         <div class="anime__details__rating">
                             <div class="rating">
-                                <a href="#"><i class="fa fa-star"></i></a>
-                                <a href="#"><i class="fa fa-star"></i></a>
-                                <a href="#"><i class="fa fa-star"></i></a>
-                                <a href="#"><i class="fa fa-star"></i></a>
                                 <a href="#"><i class="fa fa-star-half-o"></i></a>
+                                <a href="#"><i class="fa fa-star"></i></a>
+                                <a href="#"><i class="fa fa-star"></i></a>
+                                <a href="#"><i class="fa fa-star"></i></a>
+                                <a href="#"><i class="fa fa-star"></i></a>
+
                             </div>
-                            <span>1.029 Votes</span>
+                            <span><?= round($avr_ratings, 1); ?> / 5</span>
                         </div>
                         <h5 class="text-light">Mô tả: </h5>
                         <p><?= $item['discretion'] ?></p>
@@ -46,7 +47,7 @@
                                         <li><span>Đánh giá:</span> 8.5 / 161 times</li>
                                         <!-- <li><span>Duration:</span> 24 min/ep</li> -->
                                         <li><span>Chất lượng:</span> HD</li>
-<li><span>Lượt xem:</span> <?= $item['view'] ?></li>
+                                        <li><span>Lượt xem:</span> <?= $item['view'] ?></li>
                                     </ul>
                                 </div>
                             </div>

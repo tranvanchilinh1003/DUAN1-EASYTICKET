@@ -11,8 +11,7 @@ if (exist_param("btn_login")) {
     $username = $_POST['username'];
     
     $user = khach_hang_select_by_id($username);
-    $_SESSION['img'] = $user['image'];
-    $_SESSION['customers'] = $user['id'];
+
     if ($user && $user['is_hidden'] == 1) {
         if ($user['password'] == md5($password)) {
 
@@ -22,6 +21,8 @@ if (exist_param("btn_login")) {
                 window.location.href = "<?= $SITE_URL ?>/trang-chinh/";
             </script>
 <?php
+    $_SESSION['img'] = $user['image'];
+    $_SESSION['customers'] = $user['id'];
             $_SESSION["username"] = $username;
             if ($user['role'] == 1) {
                 header('location: ' . $ADMIN_URL . '/trang-chinh/');

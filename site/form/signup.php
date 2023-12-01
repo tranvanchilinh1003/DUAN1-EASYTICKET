@@ -24,7 +24,7 @@
 	<div class="container-login100" style="border: grey;">
 		<div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54 border bg-light my-5">
 			<form class="login100-form validate-form" method='post' action="<?= $SITE_URL ?>/form/signup_xuly.php" id="my_form" enctype="multipart/form-data">
-				<span class="login100-form-title p-b-49">
+				<span class="login100-form-title p-b-49 font-weight-bold">
 					Đăng Ký
 				</span>
 
@@ -32,7 +32,8 @@
 					<!-- <span class="label-input100">Tên Đăng Nhập</span> -->
 					<input class="input100" type="text" class="form-control" id='username' name='username' placeholder="Tài Khoản">
 					<span class="focus-input100" data-symbol="&#xf206;"></span>
-				</div>
+				
+				</div><i class=" text-danger"><?= (isset($MESSAGE) && (strlen($MESSAGE) > 0)) ? $MESSAGE : "" ?></i>
 				<span class='text-danger err'></span>
 
 				<div class="wrap-input100 validate-input  mb-4" data-validate="Password is required">
@@ -45,7 +46,7 @@
 				<div class="wrap-input100 validate-input mb-4" ">
 					<!-- <span class="label-input100">Mật Khẩu</span> -->
 					<input class="input100" type="text" class="form-control" id='thong_tin' name='information' placeholder="Gmail Hoặc Số Điện Thoại">
-					<span class="focus-input100" data-symbol="&#xf190;"></span>
+					<span class="focus-input100" data-symbol="&#xf2bc;"></span>
 				</div>
 				<span class='text-danger err'></span>
 
@@ -67,7 +68,7 @@
 					<input type="file"  id="image" name="image">
 				</div>
 
-				<span class='text-danger err'></span>
+				
 				<div class="wrap-input100 validate-input mb-5">
 					<label class="fw-bold col-form-label">Giới Tính </label>
 					<input type="radio" class="gender mx-lg-2" name="gender" value="0"> Nam
@@ -102,7 +103,7 @@
 					<a href="#" class="login100-social-item bg3">
 						<i class="fa fa-google"></i>
 					</a>
-					<i class=" text-danger"><?= (isset($MESSAGE) && (strlen($MESSAGE) > 0)) ? $MESSAGE : "" ?></i>
+					
 			</form>
 		</div>
 	</div>
@@ -140,7 +141,7 @@
 
 		const password = document.getElementById('password').value;
 		const confirm_password = document.getElementById('confirm_pass').value;
-		var gender = document.querySelectorAll('.gender');
+		var gender = document.getElementsByName('gender');
 		// var img = document.getElementById('image');
 		const err = document.getElementsByClassName('err');
 		const emailRegex = /^[a-zA-Z0-9._%+-]+@(gmail\.(com|vn|org|gov|co)|fpt\.edu\.vn)$/;
@@ -149,8 +150,8 @@
 		var img = document.getElementById('image');
 
 
-		if (username.trim() == " " || username.length < 5) {
-			err[0].innerHTML = "Tài khoản Phải trên 5 Ký Tự";
+		if (username.trim() == " " || username.length < 5 || username.length > 8) {
+			err[0].innerHTML = "Tài khoản Phải trên 5 và dưới 8 Ký Tự";
 			haserr = false;
 
 		} else {
@@ -187,10 +188,10 @@
 
 
 		if (!gender[0].checked && !gender[1].checked) {
-			err[6].innerHTML = "Chọn Giới Tính";
-			has_error = false;
+			err[5].innerHTML = "Chọn Giới Tính";
+			haserr = false;
 		} else {
-			err[6].innerHTML = '';
+			err[5].innerHTML = '';
 		}
 
 		if (haserr == false) {

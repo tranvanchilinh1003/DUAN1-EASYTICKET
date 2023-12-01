@@ -27,7 +27,7 @@
 		<div class="container-login100" style="border: grey;">
 			<div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54 border bg-light my-5">
 				<form class="login100-form validate-form" method='post' action="<?=$SITE_URL?>/form/quen_mk_xuly.php" onsubmit="return check_form();">
-					<span class="login100-form-title p-b-49">
+					<span class="login100-form-title p-b-49 font-weight-bold">
 						Quên Mật Khẩu
 					</span>
 

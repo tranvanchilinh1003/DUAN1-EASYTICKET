@@ -359,7 +359,7 @@ require_once "../../model/categories.php";
                     <p>
                         Bản Quyền &copy;<script>
                             document.write(new Date().getFullYear());
-                        </script> mọi quyền truy cập thuộc về team LÀNG ĐÁ&#128525<i class="fa fa-heart" aria-hidden="true"></i>: <a href="<?= $CONTENT ?>/index.php" class="text-warning">EASY TICKET</a>
+                        </script> mọi quyền truy cập thuộc về team LÀNG ĐÁ&#128525<i class="fa fa-heart" aria-hidden="true"></i>: <a href="<?= $SITE_URL ?>/trang-chinh/" class="text-warning">EASY TICKET</a>
                     </p>
                 </div>
             </div>
