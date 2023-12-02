@@ -302,7 +302,7 @@
                                         </div>
                                         <div class="col-md-12">
                                             <div class="form-group">
-                                                <input type="submit" class="btn btn-primary" name="lien-he" value="Gửi lời nhắn">
+                                                <input type="submit" class="btn btn-primary " name="lien-he" value="Gửi lời nhắn">
                                             </div>
                                         </div>
                                     </div>

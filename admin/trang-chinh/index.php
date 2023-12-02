@@ -4,11 +4,13 @@ require_once "../../model/pdo.php";
 require_once "../../model/movies.php";
 require_once "../../model/categories.php";
 require_once "../../model/user.php";
+require_once "../../model/statistical.php";
 
 
 $count_categories = count(categories_select_all());
 $count_movie = count(movies_select_all());
 $count_user = count(khach_hang_sellect_all ());
+$count_statistical = count(comments_select_all());
 $VIEW_NAME = "trang-chinh/home.php";
 
 

@@ -248,11 +248,11 @@ require_once "../../model/categories.php";
                         <nav class="header__menu mobile-menu">
                             <ul>
                                 <li>
-                                    <form class="navbar-form" action="#" method="POST">
+                                    <form class="navbar-form" action="<?= $SITE_URL?>/phim/tim-kiem.php" method="POST">
                                         <div class="input-group">
-                                            <input type="text" class="form-control search-input " placeholder="Tìm Kiếm...">
+                                            <input type="text" class="form-control search-input " name= "keyword" placeholder="Tìm Kiếm...">
                                             <div class="input-group-append">
-                                                <button class="btn btn-outline-warning search-button" type="button" onmouseover="showSearchInput()" onmouseout="hideSearchInput()">
+                                                <button class="btn btn-outline-warning search-button" name="search" type="submit"  >
                                                     <i class="fa fa-search"></i>
                                                 </button>
                                             </div>

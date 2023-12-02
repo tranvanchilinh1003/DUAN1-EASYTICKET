@@ -23,7 +23,6 @@
                                 <a href="#"><i class="fa fa-star"></i></a>
                                 <a href="#"><i class="fa fa-star"></i></a>
                                 <a href="#"><i class="fa fa-star"></i></a>
-
                             </div>
                             <span><?= round($avr_ratings, 1); ?> / 5</span>
                         </div>

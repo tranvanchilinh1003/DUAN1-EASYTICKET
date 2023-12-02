@@ -41,7 +41,7 @@
                                     <td>
                                         <a href="index.php?btn_edit&id=<?= $id ?>" class="btn btn-success " name='btn_edit'><i class="bi bi-pencil-square"> Chi tiết</i></a>
 
-                                       <a href="index.php?btn_delete&id=<?= $id ?>"   class="btn btn-danger"><i class="bi bi-trash"> Xóa</i></a>
+                                        <a href="index.php?btn_delete&id=<?= $id ?>" class="btn btn-danger"><i class="bi bi-trash"> Xóa</i></a>
                                     </td>
 
                                 </tr>
@@ -78,5 +78,4 @@
             }
         }
     }
-
 </script>

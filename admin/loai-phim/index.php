@@ -5,12 +5,12 @@ require  "../../model/categories.php";
 
 extract($_REQUEST);
 if (exist_param("btn_insert")) {
-    $VIEW_NAME = "loai-phim/insert.php";    
+    $VIEW_NAME = "loai-phim/insert.php";
     if (isset($_POST['btn_insert'])) {
         $type_name = $_POST['type_name'];
         if ($type_name != '' && empty(check_ten_categories($type_name))) {
             categories_insert($type_name);
-        
+
 
             $VIEW_NAME = 'list.php';
         } else {
@@ -21,7 +21,7 @@ if (exist_param("btn_insert")) {
     $VIEW_NAME = "list.php";
 } else if (exist_param("btn_delete")) {
     $id = $_REQUEST['id'];
-    
+
     $check_value = check_ma_categories();
     // var_dump(empty($check));
     if (!empty($check_value)) {
@@ -29,14 +29,14 @@ if (exist_param("btn_insert")) {
     } else {
 
         categories_delete($id);
-    
+
         $MESSAGE = " ";
-        
+
 
         // $VIEW_NAME = "list.php";
     }
 
-    
+
     $items = categories_select_all();
     $VIEW_NAME = "list.php";
 } else if (exist_param("btn_edit")) {
