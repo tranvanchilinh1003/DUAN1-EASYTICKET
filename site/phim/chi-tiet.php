@@ -22,7 +22,7 @@ if (exist_param("id")) {
     $avr_ratings = avr_ratings($id);
 
 
-    // $_SESSION['id'] = $item['id'];
+    $_SESSION['id'] = $item['id'];
 } else if (exist_param("pull_comment")) {
     $movies_id = $_SESSION['id'];
     $content = $_POST['content'];

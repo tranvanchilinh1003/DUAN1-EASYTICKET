@@ -204,9 +204,9 @@ require_once "../../model/categories.php";
 
 <body>
     <!-- Page Preloder -->
-    <!-- <div id="preloder">
+    <div id="preloder">
         <div class="loader"></div>
-    </div> -->
+    </div>
 
     <!-- Header Section Begin -->
     <header class="header">
@@ -277,12 +277,7 @@ require_once "../../model/categories.php";
                                         <ul class="dropdown">
                                             <li><a href="<?= $SITE_URL ?>/form/login_xuly.php">Đăng Nhập</a></li>
                                             <li><a href="<?= $SITE_URL ?>/form/signup_xuly.php">Đăng Ký</a></li>
-                                            <!-- Mã Loại -->
-                                            <!-- <li><a href="./anime-details.html">Anime Details</a></li>
-                                        <li><a href="./anime-watching.html">Anime Watching</a></li>
-                                        <li><a href="./blog-details.html">Blog Details</a></li>
-                                        <li><a href="./signup.html">Sign Up</a></li>
-                                        <li><a href="./login.html">Login</a></li> -->
+                                    
                                         </ul>
                                     </li>
                                 <?php

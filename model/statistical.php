@@ -79,7 +79,7 @@ function thong_ke_movies()
 // thống kê bình luận 
 function thong_ke_comment()
 {
-    $sql = "SELECT mv.id, mv.name_movie,
+    $sql = "SELECT mv.id, mv.name_movie, mv.image,
     COUNT(*) so_luong,
     MIN(cmt.comment_date) cu_nhat,
     MAX(cmt.comment_date) moi_nhat

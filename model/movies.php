@@ -11,7 +11,7 @@ JOIN actor ON movies.actor_id = actor.id WHERE movies.id = '$id' ";
 // load lại ds hàng hóa
 function movies_select_all()
 {
-    $sql = "SELECT * FROM movies WHERE status = 1 ";
+    $sql = "SELECT * FROM movies  WHERE status = 1 ";
     return pdo_query($sql);
 }
 function movies_select_history()
@@ -33,6 +33,21 @@ function   movies_update($name_movie, $discretion, $time, $status, $date_movie, 
     pdo_execute($sql);
 }
 // xóa
+function movie_randum(){
+    $sql = "SELECT mv.*, categories.type_name FROM movies mv JOIN categories WHERE categories.id = mv.categories_id ORDER BY RAND() DESC limit 9";
+    return pdo_query($sql);
+}
+function movie_top_comment(){
+    $sql = "SELECT mv.id, mv.name_movie, mv.image,
+    COUNT(*) so_luong,
+    MIN(cmt.comment_date) cu_nhat,
+    MAX(cmt.comment_date) moi_nhat
+    FROM comments cmt 
+    JOIN movies mv ON mv.id = cmt.movies_id 
+    GROUP BY mv.id, mv.name_movie 
+    HAVING  so_luong > 0  ORDER BY so_luong DESC   limit 3";
+    return pdo_query($sql);
+}
 function movies_delete_status($id)
 {
     $sql = "UPDATE movies SET status = 0 WHERE id = '$id'";
@@ -79,17 +94,12 @@ function movies_view($id)
     pdo_execute($sql, $id);
 }
 
-function movies_select_top10()
+function movies_select_topview()
 {
-    $sql = "SELECT * FROM movies WHERE so_luot_xem > 0 ORDER BY so_luot_xem DESC LIMIT 0, 10";
+    $sql = "SELECT mv.*, categories.type_name   FROM movies mv JOIN categories  WHERE mv.view > 0 AND categories.id = mv.categories_id ORDER BY mv.view DESC LIMIT 0,5;";
     return pdo_query($sql);
 }
 
-function movies_select_dac_biet()
-{
-    $sql = "SELECT * FROM movies WHERE dac_biet=1";
-    return pdo_query($sql);
-}
 
 function movies_select_by_loai($ma_loai)
 {

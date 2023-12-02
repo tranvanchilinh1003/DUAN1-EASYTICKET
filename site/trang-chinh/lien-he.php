@@ -5,54 +5,12 @@
             <div class="col-lg-12 text-center">
                 <div class="normal__breadcrumb__text">
                     <h2>LIÊN HỆ</h2>
-                    <p>Chào mừng đến với liện hệ Anime chính thức.</p>
+                    <p>Chào mừng đến với liện hệ chính thức của East Ticket.</p>
                 </div>
             </div>
         </div>
     </div>
 </section>
-<!-- Normal Breadcrumb End -->
-
-<!-- Login Section Begin -->
-<!-- <section class="login spad">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-6">
-                <div class="login__form">
-                    <form action="#">
-                        <div class="form-group">
-                            <label for="" class="text-light fw-bold">Email</label>
-                            <input type="email" class="form-control" id="email" name="email" placeholder="Email của bạn...">
-                        </div>
-                        <div class="form-group">
-                            <label for="" class="text-light fw-bold">Tiêu đề</label>
-                            <input type="text" class="form-control" id="title" name="title" placeholder="Tiêu đề của bạn...">
-                        </div>
-                        <div class="form-group">
-                            <label for="" class="text-light fw-bold">Lời nhắn</label>
-                            <textarea name="message" class="form-control" placeholder="Lời nhắn của bạn..."></textarea>
-                        </div>
-                        <button class="btn btn-danger rounded-lg" name="btnGoiLoiNhan ">Gởi lời nhắn</button>
-                </div>
-            </div>
-            <div class="col-lg-6">
-                <div class="login__register">
-                    <h3 class="mt-md-4">Bạn mong đợi gì từ chúng tôi hãy 
-                        liên hệ với chúng tôi để biết thêm chi tiết?</h3>
-                    <a href="#" class="primary-btn">Register Now</a>
-                </div>
-            </div>
-        </div>
-        <div class="row mt-2">
-                <div class="col col-md-12">
-                    <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3928.752748004251!2d105.77503307481068!3d10.03725057239308!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31a0881ebde20ebd%3A0x3a38b82dd5f06c94!2zMTQwIMSQLiBMw70gVOG7sSBUcuG7jW5nLCBBbiBDxrAsIE5pbmggS2nhu4F1LCBD4bqnbiBUaMahLCBWaeG7h3QgTmFt!5e0!3m2!1svi!2s!4v1700838848385!5m2!1svi!2s" 
-                        width="100%" height="450" frameborder="0" style="border:0" allowfullscreen=""></iframe>
-                </div>
-            </div>
-    </div>
-</section> -->
-<!-- Login Section End -->
 <style>
     a {
         -webkit-transition: .3s all ease;
@@ -315,7 +273,7 @@
                     <div class="row no-gutters">
                         <div class="col-md-6 d-flex align-items-stretch">
                             <div class="contact-wrap w-100 p-md-5 p-4 py-5">
-                                <h3 class="mb-4">Viết cho chúng tôi</h3>
+                                <h3 class="mb-4">Viết Cho Chúng Tôi</h3>
                                 <form method="POST" action="./index.php?lien-he" id="contactForm" name="contactForm" class="contactForm" enctype="multipart/form-data">
                                     <div class="row">
                                         <div class="col-md-12">
@@ -361,7 +319,7 @@
                                         <span class="fa fa-map-marker"></span>
                                     </div>
                                     <div class="text pl-3">
-                                        <p><span>Địa Chỉ:</span>Đ.Số 22, Thường Thạnh, Cái Răng, Cần Thơ.</p>
+                                        <p><span>Địa Chỉ: </span>Đ.Số 22, Thường Thạnh, Cái Răng, Cần Thơ.</p>
                                     </div>
                                 </div>
                                 <div class="dbox w-100 d-flex align-items-center">
@@ -377,7 +335,7 @@
                                         <span class="fa fa-paper-plane"></span>
                                     </div>
                                     <div class="text pl-3">
-                                        <p><span>Email:</span> <a href="#"><span class="__cf_email__ text-warning" data-cfemail="bdd4d3dbd2fdc4d2c8cfced4c9d893ded2d0">vexemphim@gmail.com</span></a></p>
+                                        <p><span>Email:</span> <a href="#"><span class="__cf_email__ text-warning" data-cfemail="bdd4d3dbd2fdc4d2c8cfced4c9d893ded2d0">EasyTicket@gmail.com</span></a></p>
                                     </div>
                                 </div>
                                 <div class="dbox w-100 d-flex align-items-center">
