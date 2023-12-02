@@ -13,14 +13,14 @@
             <div class="card-header card-header-primary">
                 <h3 class="card-title p-2 text-warning">Quản lý loại</h3>
             </div>
-            
+
             <div class="card-body">
                 <div class="table">
                     <form class="form" action="<?= $ADMIN_URL ?>/loai-phim/index.php?btn_insert" method="post" id="isert_form" enctype="multipart/form-data">
                         <div class=''>
                             <div class="col-sm-12">
-                                <label for="id" class="fw-bold col-form-label text-white">Mã loại</label>
-                                <input type="text" class="form-control  m-auto " style="background-color: #2A3038;" id="id" name="id" placeholder="Auto Munber" disabled>
+                                <!-- <label for="id" class="fw-bold col-form-label text-white">Mã loại</label> -->
+                                <input type="hidden" class="form-control  m-auto " style="background-color: #2A3038;" id="id" name="id" placeholder="Auto Munber">
                                 <span class="error text-danger"></span>
                             </div>
                             <div class="col-sm-12">

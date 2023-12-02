@@ -18,11 +18,11 @@
                         </div>
                         <div class="anime__details__rating">
                             <div class="rating">
-                                <a href="#"><i class="fa fa-star"></i></a>
-                                <a href="#"><i class="fa fa-star"></i></a>
-                                <a href="#"><i class="fa fa-star"></i></a>
-                                <a href="#"><i class="fa fa-star"></i></a>
                                 <a href="#"><i class="fa fa-star-half-o"></i></a>
+                                <a href="#"><i class="fa fa-star"></i></a>
+                                <a href="#"><i class="fa fa-star"></i></a>
+                                <a href="#"><i class="fa fa-star"></i></a>
+                                <a href="#"><i class="fa fa-star"></i></a>
                             </div>
                             <span>1.029 Votes</span>
                         </div>
@@ -46,7 +46,7 @@
                                         <li><span>Đánh giá:</span> 8.5 / 161 times</li>
                                         <!-- <li><span>Duration:</span> 24 min/ep</li> -->
                                         <li><span>Chất lượng:</span> HD</li>
-<li><span>Lượt xem:</span> <?= $item['view'] ?></li>
+                                        <li><span>Lượt xem:</span> <?= $item['view'] ?></li>
                                     </ul>
                                 </div>
                             </div>

@@ -25,11 +25,6 @@ if (exist_param("submit_insert")) {
                 khach_hang_insert($username, $information, $password, $image, $role = '0', $full_name, $gender);
             } else {
                 khach_hang_insert($username, $information, $password, $image = 'anh_dai_dien.jpg', $role = '0', $full_name, $gender);
-
-
-
-
-
 ?>
                 <script>
                     var tb = alert("Đăng Ký Thành Công");

@@ -5,7 +5,7 @@
             <div class="col-lg-12 text-center">
                 <div class="normal__breadcrumb__text">
                     <h2>LIÊN HỆ</h2>
-                    <p>Chào mừng đến với liện hệ Anime chính thức.</p>
+                    <p>Chào mừng đến với liện hệ chính thức của East Ticket.</p>
                 </div>
             </div>
         </div>
@@ -344,7 +344,7 @@
                                         </div>
                                         <div class="col-md-12">
                                             <div class="form-group">
-                                                <input type="submit" class="btn btn-primary" name="lien-he" value="Gửi lời nhắn">
+                                                <input type="submit" class="btn btn-primary " name="lien-he" value="Gửi lời nhắn">
                                             </div>
                                         </div>
                                     </div>

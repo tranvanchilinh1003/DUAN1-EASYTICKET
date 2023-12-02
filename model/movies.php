@@ -98,11 +98,12 @@ function movies_select_by_loai($ma_loai)
 }
 function movies_select_keyword($keyword)
 {
-    $sql = "SELECT * FROM movies hh "
-        . " JOIN loai lo ON lo.ma_loai=hh.ma_loai "
-        . " WHERE ten_hh LIKE ? OR ten_loai LIKE ?";
+    $sql = "SELECT * FROM movies mv
+    JOIN categories cate ON cate.id=mv.categories_id 
+    WHERE mv.name_movie LIKE ? OR cate.type_name LIKE ?";
     return pdo_query($sql, '%' . $keyword . '%', '%' . $keyword . '%');
 }
+
 function movies_select_page($order, $limit)
 {
     if (!isset($_REQUEST['page'])) {

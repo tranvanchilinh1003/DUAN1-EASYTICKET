@@ -1,8 +1,8 @@
 <!-- partial:partials/_sidebar.html -->
 <nav class="sidebar sidebar-offcanvas" id="sidebar">
     <div class="sidebar-brand-wrapper d-none d-lg-flex align-items-center justify-content-center fixed-top">
-        <a class="sidebar-brand brand-logo" href="<?= $ADMIN_URL ?>/index.php"><img src="<?= $CONTENT_URL ?>/assets/img/studio.png" alt="logo" /></a>
-        <a class="sidebar-brand brand-logo-mini " href="<?= $ADMIN_URL ?>/index.php"><img src="<?= $CONTENT_URL ?>/assets/img/logo_url.png" class="h-75 w-75" /></a>
+        <a class="sidebar-brand brand-logo" href="<?= $ADMIN_URL ?>/trang-chinh/"><img src="<?= $CONTENT_URL ?>/assets/img/studio.png" alt="logo" /></a>
+        <a class="sidebar-brand brand-logo-mini " href="<?= $ADMIN_URL ?>/trang-chinh/"><img src="<?= $CONTENT_URL ?>/assets/img/logo_url.png" class="h-75 w-75" /></a>
     </div>
     <ul class="nav">
         <li class="nav-item menu-items">

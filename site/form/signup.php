@@ -1,4 +1,3 @@
-
 <!--===============================================================================================-->
 <link rel="stylesheet" type="text/css" href="css/util.css">
 <link rel="stylesheet" type="text/css" href="css/main.css">
@@ -32,39 +31,40 @@
 					<!-- <span class="label-input100">Tên Đăng Nhập</span> -->
 					<input class="input100" type="text" class="form-control" id='username' name='username' placeholder="Tài Khoản">
 					<span class="focus-input100" data-symbol="&#xf206;"></span>
+					<i class=" text-danger"><?= (isset($MESSAGE) && (strlen($MESSAGE) > 0)) ? $MESSAGE : "" ?></i>
+
 				</div>
 				<span class='text-danger err'></span>
 
 				<div class="wrap-input100 validate-input  mb-4" data-validate="Password is required">
 					<!-- <span class="label-input100">Mật Khẩu</span> -->
 					<input class="input100" type="text" class="form-control" id="full_name" name='full_name' placeholder="Họ Tên">
-					<span class="focus-input100" data-symbol="&#xf190;"></span>
+					<span class="focus-input100" data-symbol="&#xf206;"></span>
 				</div>
 				<span class='text-danger err'></span>
 
-				<div class="wrap-input100 validate-input mb-4" ">
+				<div class="wrap-input100 validate-input mb-4">
 					<!-- <span class="label-input100">Mật Khẩu</span> -->
 					<input class="input100" type="text" class="form-control" id='thong_tin' name='information' placeholder="Gmail Hoặc Số Điện Thoại">
-					<span class="focus-input100" data-symbol="&#xf190;"></span>
+					<span class="focus-input100" data-symbol="&#xf2bc;"></span>
 				</div>
 				<span class='text-danger err'></span>
 
-				<div class="wrap-input100 validate-input mb-4" >
+				<div class="wrap-input100 validate-input mb-4">
 					<!-- <span class="label-input100">Mật Khẩu</span> -->
 					<input class="input100" type="password" id="password" class="form-control" name='password' placeholder="Mật Khẩu">
 					<span class="focus-input100" data-symbol="&#xf190;"></span>
 				</div>
 				<span class='text-danger err'></span>
 
-				<div class="wrap-input100 validate-input mb-5" >
+				<div class="wrap-input100 validate-input mb-5">
 					<!-- <span class="label-input100">Mật Khẩu</span> -->
 					<input class="input100" type="password" id="confirm_pass" class="form-control" name='confirm_pass' placeholder="Xác Nhận Mật Khẩu">
 					<span class="focus-input100" data-symbol="&#xf190;"></span>
 				</div>
 				<span class='text-danger err'></span>
-
 				<div class="wrap-input100 validate-input mb-5">
-					<input type="file"  id="image" name="image">
+					<input type="file" id="image" name="image">
 				</div>
 
 				<span class='text-danger err'></span>
@@ -75,7 +75,7 @@
 					<br>
 					<span class='text-danger err'></span>
 				</div>
-				
+
 
 				<div class="container-login100-form-btn">
 					<div class="wrap-login100-form-btn">
@@ -102,7 +102,6 @@
 					<a href="#" class="login100-social-item bg3">
 						<i class="fa fa-google"></i>
 					</a>
-					<i class=" text-danger"><?= (isset($MESSAGE) && (strlen($MESSAGE) > 0)) ? $MESSAGE : "" ?></i>
 			</form>
 		</div>
 	</div>
@@ -151,7 +150,7 @@
 
 		if (username.trim() == " " || username.length < 5) {
 			err[0].innerHTML = "Tài khoản Phải trên 5 Ký Tự";
-			haserr = false;
+			has_error = false;
 
 		} else {
 			err[0].innerHTML = ' ';
@@ -159,7 +158,7 @@
 
 		if (name.trim() == " " || name.length < 5) {
 			err[1].innerHTML = "Tên không dưới 5 ký tự";
-			haserr = false;
+			has_error = false;
 
 		} else {
 			err[1].innerHTML = '';
@@ -174,13 +173,13 @@
 		if (password.trim() == " " || password.length < 5) {
 
 			err[3].innerHTML = "mật khẩu phải trên 5 Ký Tự";
-			haserr = false;
+			has_error = false;
 		} else {
 			err[3].innerHTML = "";
 		}
 		if (confirm_password != password) {
 			err[4].innerHTML = "Mật Khẩu Không Trùng";
-			haserr = false;
+			has_error = false;
 		} else {
 			err[4].innerHTML = '';
 		}

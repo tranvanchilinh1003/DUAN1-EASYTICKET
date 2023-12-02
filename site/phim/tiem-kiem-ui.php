@@ -1,48 +1,3 @@
-<!-- Hero Section Begin -->
-<section class="hero">
-    <div class="container">
-        <div class="hero__slider owl-carousel">
-            <div class="hero__items set-bg" data-setbg="<?= $CONTENT_URL ?>/assets/img/hero/hero-2.jpg">
-                <div class="row">
-                    <div class="col-lg-6">
-                        <div class="hero__text">
-                            <div class="label">Adventure</div>
-                            <h2>Fate / Stay Night: Unlimited Blade Works</h2>
-                            <p>After 30 days of travel across the world...</p>
-                            <a href="#"><span>Đặt vé</span> <i class="fa fa-angle-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="hero__items set-bg" data-setbg="<?= $CONTENT_URL ?>/assets/img/hero/hero-0.jpg">
-                <div class="row">
-                    <div class="col-lg-6">
-                        <div class="hero__text">
-                            <div class="label">Adventure</div>
-                            <h2>Fate / Stay Night: Unlimited Blade Works</h2>
-                            <p>After 30 days of travel across the world...</p>
-                            <a href="#"><span>Đặt vé</span> <i class="fa fa-angle-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="hero__items set-bg" data-setbg="<?= $CONTENT_URL ?>/assets/img/hero/hero-3.jpg">
-                <div class="row">
-                    <div class="col-lg-6">
-                        <div class="hero__text">
-                            <div class="label">Adventure</div>
-                            <h2>Fate / Stay Night: Unlimited Blade Works</h2>
-                            <p>After 30 days of travel across the world...</p>
-                            <a href="#"><span>Đặt vé</span> <i class="fa fa-angle-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- Hero Section End -->
-
 <!-- Product Section Begin -->
 <section class="product spad">
     <div class="container">
@@ -52,7 +7,7 @@
                     <div class="row">
                         <div class="col-lg-8 col-md-8 col-sm-8">
                             <div class="section-title">
-                                <h4>PHIM ĐẶC BIỆT</h4>
+                                <h4><?= $title_site ?></h4>
                             </div>
                         </div>
                         <div class="col-lg-4 col-md-4 col-sm-4">
@@ -63,14 +18,12 @@
                     </div>
                     <div class="row">
                         <?php
-                        $items = movies_select_all();
                         foreach ($items as $item) :
                         ?>
                             <div class="col-lg-4 col-md-6 col-sm-6">
                                 <a href="<?= $SITE_URL . '/phim/chi-tiet.php?id=' .  $item['id']  ?>">
                                     <div class="product__item">
                                         <div class="product__item__pic set-bg" data-setbg="../../img/<?= $item['image'] ?>">
-                                            <!-- <div class="ep">18 / 18</div> -->
                                             <div class="comment"><i class="fa fa-comments"></i> 11</div>
                                             <div class="view"><i class="fa fa-eye"></i><?= $item['view'] ?></div>
                                         </div>
@@ -90,7 +43,6 @@
 
 
             </div>
-
             <div class="col-lg-4 col-md-6 col-sm-8">
                 <div class="product__sidebar">
                     <div class="product__sidebar__view">
