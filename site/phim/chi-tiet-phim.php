@@ -77,7 +77,7 @@
 
                 <div class="col-lg-3">
                     <div class="anime__details__pic set-bg" data-setbg="../../img/<?= $item['image'] ?>">
-                        <div class="comment"><i class="fa fa-comments"></i> 11</div>
+                        <div class="comment"><i class="fa fa-comments"></i> <?= $cmt  ?></div>
                         <div class="view"><i class="fa fa-eye"></i> <?= $item['view'] ?></div>
                     </div>
                 </div>

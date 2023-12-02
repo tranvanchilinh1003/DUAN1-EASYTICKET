@@ -17,6 +17,11 @@ if (exist_param("id")) {
     movies_view($id);
 
     $item = detail_movies($id);
+    // $movies_id = $_SESSION['id'];
+    $cmt = count_comment($movies_id);
+    $avr_ratings = avr_ratings($id);
+
+
     $_SESSION['id'] = $item['id'];
 } else if (exist_param("pull_comment")) {
     $movies_id = $_SESSION['id'];

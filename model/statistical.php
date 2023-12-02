@@ -71,14 +71,14 @@ function thong_ke_movies()
 // thống kê bình luận 
 function thong_ke_comments()
 {
-    $sql = "SELECT hh.movies_id, hh.name_movie,"
-        . " COUNT(*) so_luong,"
-        . " MIN(bl.comment_date) cu_nhat,"
-        . " MAX(bl.comment_date) moi_nhat"
-        . " FROM comments bl "
-        . " JOIN movies mv ON mv.movies_id = bl.movies_id "
-        . " GROUP BY mv.movies_id, hh.name_movie "
-        . " HAVING so_luong > 0";
+    $sql = "SELECT mv.id, mv.name_movie, mv.image,
+    COUNT(*) so_luong,
+    MIN(cmt.comment_date) cu_nhat,
+    MAX(cmt.comment_date) moi_nhat
+    FROM comments cmt 
+    JOIN movies mv ON mv.id = cmt.movies_id 
+    GROUP BY mv.id, mv.name_movie 
+    HAVING so_luong > 0";
 
     return pdo_query($sql);
 }
