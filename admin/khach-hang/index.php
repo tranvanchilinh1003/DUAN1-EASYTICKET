@@ -70,6 +70,7 @@ if (exist_param("btn_insert")) {
         $image = save_file('image', $UPLOAD_URL);
         khach_hang_update($information, $password, $image, $role, $full_name, $gender, $username);
     }
+    
 
     // $items = khach_hang_sellect_all();
     $VIEW_NAME = 'list.php';

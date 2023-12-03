@@ -50,7 +50,7 @@
                                 <td> <?=$item['time'] ?> </td>
                                 <td> <?=$item['status'] == 1? "Hiện" : "Ẩn"; ?> </td>
                                 
-                                <td>
+                                <td >
                                     <a href="index.php?btn_edit&id=<?= $item['id'] ?>" class="btn btn-success " name='btn_edit'><i class="bi bi-pencil-square">Chi Tiết</i></a>
 
                                     <a href="index.php?btn_delete&id=<?= $item['id'] ?>" class="btn btn-danger"><i class="bi bi-trash"></i>Xóa</a>
