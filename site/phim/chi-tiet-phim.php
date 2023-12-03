@@ -1,4 +1,75 @@
 <!-- Anime Section Begin -->
+<style>
+    .movie-container {
+        text-align: center;
+    }
+
+    .movie-title {
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+
+    .showtime-selection {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: center;
+    }
+
+    .showtime-btn {
+        background-color: #3498db;
+        color: #fff;
+        border: none;
+        padding: 10px;
+        cursor: pointer;
+        border-radius: 5px;
+        font-size: 16px;
+        transition: background-color 0.3s ease;
+    }
+
+    .showtime-btn:hover {
+        background-color: #297fb8;
+    }
+
+    .selected {
+        background-color: #2ecc71;
+    }
+
+    .movie-container {
+        text-align: center;
+    }
+
+    .movie-title {
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+
+    .showtime-selection {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: center;
+    }
+
+    .showtime-btn {
+        background-color: #3498db;
+        color: #fff;
+        border: none;
+        padding: 10px;
+        cursor: pointer;
+        border-radius: 5px;
+        font-size: 16px;
+        transition: background-color 0.3s ease;
+    }
+
+    .showtime-btn:hover {
+        background-color: #297fb8;
+    }
+
+    .selected {
+        background-color: #2ecc71;
+    }
+</style>
 <section class="anime-details spad">
     <div class="container">
         <div class="anime__details__content">
@@ -53,7 +124,7 @@
                         </div>
                         <div class="anime__details__btn">
                             <!-- <a href="<?= $SITE_URL ?>/trang-chinh/index.php?trailer" class="follow-btn">TRAILER</a> -->
-                            <a href="#" class="watch-btn"><span>ĐẶT VÉ</span> <i class="fa fa-angle-right"></i></a>
+                            <a href="<?= $SITE_URL . '/phim/dat-ve.php?dat-ve&id=' .  $item['id']  ?>" class="watch-btn" name="dat-ve"><span>ĐẶT VÉ</span> <i class="fa fa-angle-right"></i></a>
                         </div>
                     </div>
                 </div>
@@ -83,7 +154,9 @@
 
     </div>
 </section>
-<!-- Anime Section End -->
+
+
+
 
 
 

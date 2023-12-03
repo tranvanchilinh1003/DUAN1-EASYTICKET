@@ -70,7 +70,7 @@
         <div class="row">
           <div class="col-9">
             <div class="d-flex align-items-center align-self-start">
-              <h3 class="mb-0"><?= $count_statistical?></h3>
+              <h3 class="mb-0"><?= $count_statistical ?></h3>
               <!-- <p class="text-success ml-2 mb-0 font-weight-medium">+3.5%</p> -->
             </div>
           </div>
@@ -93,10 +93,10 @@
         <div class="row">
           <div class="col-8 col-sm-12 col-xl-8 my-auto">
             <div class="d-flex d-sm-block d-md-flex align-items-center">
-              <h2 class="mb-0">$32123</h2>
-              <p class="text-success ml-2 mb-0 font-weight-medium">+3.5%</p>
+              <h2 class="mb-0">?đ</h2>
+              <!-- <p class="text-success ml-2 mb-0 font-weight-medium">+3.5%</p> -->
             </div>
-            <h6 class="text-muted font-weight-normal">11.38% Since last month</h6>
+            <!-- <h6 class="text-muted font-weight-normal">11.38% Since last month</h6> -->
           </div>
           <div class="col-4 col-sm-12 col-xl-4 text-center text-xl-right">
             <i class="bi bi-cash-coin icon-lg text-success ml-auto"></i>
