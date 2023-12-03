@@ -8,7 +8,7 @@ require_once "../../model/pdo.php";
 require_once "../../model/movies.php";
 require_once "../../model/actor.php";
 require_once "../../model/categories.php";
-
+require_once "../../model/showtime.php";
 extract($_REQUEST);
 if (exist_param("btn_insert")) {
     $name_movie = $_POST['name_movie'];
@@ -90,7 +90,30 @@ else if(exist_param("delete_vv")){
 $VIEW_NAME = "history.php";
 }
 
+else if(exist_param("insert_show")){
+if(isset($_POST['inser_showtime'])){
+    if(empty($_POST['start_time'])){
 
+$MESSAGE = "Không Để Trống";
+    }else{
+    $movies_id = $_POST['movies_id'];
+$item =    movies_select_by_id($movies_id);
+$time = $item['time'];
+$start_time = $_POST['start_time'];
+
+$end_time = "";
+$cinemas_id = $_POST['cinemas_id'];
+
+
+insert_time($start_time, $time, $cinemas_id, $movies_id);
+$MESSAGE = "";
+// add_time($time, $id);
+}
+}
+
+
+    $VIEW_NAME = "show.php";
+}
 
 
 

@@ -117,7 +117,7 @@
                                         <li><span>Đánh giá:</span> 8.5 / 161 times</li>
                                         <!-- <li><span>Duration:</span> 24 min/ep</li> -->
                                         <li><span>Chất lượng:</span> HD</li>
-                                        <li><span>Lượt xem:</span> <?= $item['view'] ?></li>
+                                        <li><span>Lượt Truy Cập:</span> <?= $item['view'] ?></li>
                                     </ul>
                                 </div>
                             </div>

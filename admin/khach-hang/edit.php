@@ -22,7 +22,7 @@
             </div>
             <div class="card-body">
                 <div class="table">
-                    <form class="form" action="./index.php" method="post" id="update" enctype="multipart/form-data">
+                    <form class="form" action="./index.php" method="post" id="form_update" enctype="multipart/form-data">
                         <div class='row mt-2'>
                             <div class="col-sm-4">
                                 <label for="username" class="fw-bold col-form-label text-white">Tài Khoản</label>
@@ -37,6 +37,7 @@
                             <div class="col-sm-4">
                                 <label for="password" class="fw-bold col-form-label text-white">Mật Khẩu</label>
                                 <input type="password" class="form-control " id="password" name="password">
+                                <input type="hidden" class="form-control " id="password_old" name="password_old" value='<?= $info_user['password']  ?>'>
                                 <span class="error text-danger"></span>
                             </div>
                         </div>
@@ -53,17 +54,13 @@
 
                             </div>
                             <div class="col-sm-4">
-                                <label for="mat_khau2" class="fw-bold col-form-label text-white">Xác Nhận Mật Khẩu</label>
-                                <input type="password" class="form-control" id="mat_khau2" name="mat_khau2">
+                                <label for="comfirm_password" class="fw-bold col-form-label text-white">Xác Nhận Mật Khẩu</label>
+                                <input type="password" class="form-control" id="comfirm_password" name="comfirm_password">
                                 <span class="error text-danger"></span>
                             </div>
                         </div>
                         <div class='row mt-3'>
-                            <div class="col-sm-4">
-                                <label for="phone" class="fw-bold col-form-label text-white">Số Điện Thoại</label>
-                                <input type="text" class="form-control" id="phone" name="phone" placeholder='Số Điện Thoại...'>
-                                <span class="error text-danger"></span>
-                            </div>
+                        
                             <div class="col-sm-4">
                                 <label class="fw-bold col-form-label text-white">Vai Trò </label>
                                 <div class=' p-2 rounded-right rounded-left' style="background-color: #2A3038;">
@@ -92,20 +89,19 @@
         </div>
     </div>
 </div>
-<!-- <script>
-    function unsubmut() {
-        // event.preventDefault();
-        var ma_kh = document.getElementById("ma_kh").value;
-        var pass = document.getElementById("mat_khau").value;
-        var confim_pass = document.getElementById("mat_khau2").value;
-        var ho_ten =document.getElementById("ho_ten").value;
-        var err = document.getElementsByClassName("error");
-
+<script>
+    var form_update = document.getElementById("form_update");
+    form_update.addEventListener('submit', function(e) {
+        // var user = document.getElementById('username').value;
         var name = document.getElementById('full_name').value;
         var password = document.getElementById('password').value;
         var thong_tin = document.getElementById('thong_tin').value;
         var comfirm_password = document.getElementById('comfirm_password').value;
+        var gender = document.querySelectorAll('.gender');
+        
         var error = document.getElementsByClassName("error");
+
+
         var has_error = true;
         const emailRegex = /^[a-zA-Z0-9._%+-]+@(gmail\.(com|vn|org|gov|co)|fpt\.edu\.vn)$/;
         const sdtRegex = /^\b(03|05|07|08|09)\d{8}\b/;
@@ -114,14 +110,22 @@
         error[2].innerHTML = '';
         error[3].innerHTML = '';
         error[4].innerHTML = '';
+    
+    
+        
+        
         if (name.trim() == " " || name.length < 5 || !isNaN(name)) {
             error[0].innerHTML = "không để trống hoặc dưới 5 ký tự";
             has_error = false
+
         }
-        if (!sdtRegex.test(thong_tin) && !emailRegex.test(thong_tin)) {
+        if(!sdtRegex.test(thong_tin) && !emailRegex.test(thong_tin)){
             error[2].innerHTML = "Vui Lòng Nhập Đúng";
-            hass_error = false;
+            has_error =false;
+
         }
+    
+
         if (password.trim() == '' || password.length < 5) {
             error[1].innerHTML = "không để trống hoặc dưới 5 ký tự";
             has_error = false
@@ -130,6 +134,13 @@
             error[3].innerHTML = "Mật Khẩu Không Trùng khớp";
             has_error = false;
         }
+
+    
+        if (!gender[0].checked && !gender[1].checked) {
+            error[4].innerHTML = "Chọn Giới Tính";
+            has_error = false;
+        }
+
         if (has_error == false) {
             e.preventDefault();
         }

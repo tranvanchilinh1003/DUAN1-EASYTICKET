@@ -185,8 +185,8 @@
 		}
 
 
-		if (!gender[0].checked && !gender[1].checked) {
-			err[6].innerHTML = "Chọn Giới Tính";
+		if (!gender[0].checked || !gender[1].checked) {
+			err[5].innerHTML = "Chọn Giới Tính";
 			has_error = false;
 		} else {
 			err[6].innerHTML = '';

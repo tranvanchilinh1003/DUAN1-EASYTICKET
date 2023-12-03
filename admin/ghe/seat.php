@@ -46,8 +46,8 @@
 }
 </style>
 <body>
-  <h1>Chọn ghế xem phim</h1>
-  
+<h3 class="card-title text-warning">Chọn Ghế Xem Phim</h3>
+  <input type="text" readonly disabled class="form-control  text-center py-5 px-2" style="background-color: #2A3038 ;" name="" id=""  placeholder="Màn Hình Chiếu"> 
   <div class="seats">
     <div class="row">
       <div class="seat"></div>

@@ -11,7 +11,7 @@ JOIN actor ON movies.actor_id = actor.id WHERE movies.id = '$id' ";
 // load lại ds hàng hóa
 function movies_select_all()
 {
-    $sql = "SELECT * FROM movies  WHERE status = 1 ";
+    $sql = "SELECT mv.*, categories.type_name FROM `movies` mv JOIN categories WHERE mv.categories_id = categories.id AND mv.status = 1 ";
     return pdo_query($sql);
 }
 function movies_select_history()
@@ -108,7 +108,7 @@ function movies_select_by_loai($ma_loai)
 }
 function movies_select_keyword($keyword)
 {
-    $sql = "SELECT * FROM movies mv
+    $sql = "SELECT mv.*, cate.type_name FROM movies mv
     JOIN categories cate ON cate.id=mv.categories_id 
     WHERE mv.name_movie LIKE ? OR cate.type_name LIKE ?";
     return pdo_query($sql, '%' . $keyword . '%', '%' . $keyword . '%');
@@ -131,3 +131,17 @@ function movies_select_page($order, $limit)
     $sql = "SELECT * FROM movies ORDER BY $order DESC LIMIT $begin,$limit";
     return pdo_query($sql);
 }
+function movie_page(){
+    if(isset($_GET['page'])){
+
+        $page = $_GET['page'];
+    }else{
+        $page = 1;
+    }
+
+$row = 12;
+$from = ($page - 1)*$row;
+    $sql = "SELECT  mv.*, categories.type_name FROM `movies` mv JOIN categories WHERE mv.categories_id = categories.id AND mv.status = 1 LIMIT $from, $row";
+    return pdo_query($sql);
+}
+
