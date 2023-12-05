@@ -7,7 +7,7 @@
             </div>
             <div class="card-body">
                 <div class="table">
-                    <form class="form" action="./index.php?insert_actor" method="post" id="isert_form" enctype="multipart/form-data">
+                    <form class="form" action="./index.php?btn_actor" method="post" id="isert_form" enctype="multipart/form-data">
                         <div class='row mt-2'>
                             <!-- <div class="col-sm-4"> -->
                                 <!-- <label for="id" class="fw-bold col-form-label text-white">Id</label> -->

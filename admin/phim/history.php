@@ -115,7 +115,7 @@
     function deleteAccount(username) {
         $.ajax({
             type: 'POST',
-            url: 'index.php?delete_vv&id=<?=$item['id']  ?>', // Đường dẫn tới tập tin PHP xử lý xóa tài khoản
+            url: 'index.php?delete_vv&id=<?=$id?>&actor_id=<?=$item['actor_id'] ?>', // Đường dẫn tới tập tin PHP xử lý xóa tài khoản
             data: { username: username },
             
             

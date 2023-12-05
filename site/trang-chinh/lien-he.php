@@ -70,7 +70,7 @@
         background-position: center center;
     }
 
-    .form-control {
+    .my-form {
         height: 52px;
         background: transparent;
         color: rgba(255, 255, 255, 0.8) !important;
@@ -81,33 +81,33 @@
         border: 1px solid rgba(255, 255, 255, 0.2);
     }
 
-    .form-control::-webkit-input-placeholder {
+    .my-form::-webkit-input-placeholder {
         /* Chrome/Opera/Safari */
         color: rgba(255, 255, 255, 0.5) !important;
     }
 
-    .form-control::-moz-placeholder {
+    .my-form::-moz-placeholder {
         /* Firefox 19+ */
         color: rgba(255, 255, 255, 0.5) !important;
     }
 
-    .form-control:-ms-input-placeholder {
+    .my-form:-ms-input-placeholder {
         /* IE 0+ */
         color: rgba(255, 255, 255, 0.5) !important;
     }
 
-    .form-control:-moz-placeholder {
+    .my-form:-moz-placeholder {
         /* Firefox 18- */
         color: rgba(255, 255, 255, 0.5) !important;
     }
 
-    .form-control:focus,
-    .form-control:active {
+    .my-form:focus,
+    .my-form:active {
         background: transparent;
         border-color: rgba(255, 255, 255, 0.5) !important;
     }
 
-    textarea.form-control {
+    textarea.my-form {
         height: inherit !important;
     }
 
@@ -177,7 +177,7 @@
     }
 
     .btn {
-        padding: 12px 16px;
+        /* padding: 12px 16px; */
         cursor: pointer;
         border-width: 1px;
         border-radius: 2px;
@@ -221,7 +221,7 @@
         background: #d67a0c !important;
     }
 
-    .contactForm .form-control {
+    .contactForm .my-form {
         border: none;
         border-bottom: 1px solid rgba(255, 255, 255, 0.2);
         padding: 0;
@@ -232,7 +232,7 @@
         font-size: 12px;
     }
 
-    #contactForm .form-control {
+    #contactForm .my-form {
         font-size: 16px;
     }
 
@@ -278,25 +278,25 @@
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="form-group">
-                                                <input type="text" class="form-control" name="name" id="name" placeholder="Tên...">
+                                                <input type="text" class="form-control my-form" name="name" id="name" placeholder="Tên...">
                                                 <span class="error text-danger"></span>
                                             </div>
                                         </div>
                                         <div class="col-md-12">
                                             <div class="form-group">
-                                                <input type="email" class="form-control" name="email" id="email" placeholder="Email...">
+                                                <input type="email" class="form-control my-form" name="email" id="email" placeholder="Email...">
                                                 <span class="error text-danger"></span>
                                             </div>
                                         </div>
                                         <div class="col-md-12">
                                             <div class="form-group">
-                                                <input type="text" class="form-control" name="subject" id="subject" placeholder="Tiêu đề...">
+                                                <input type="text" class="form-control my-form" name="subject" id="subject" placeholder="Tiêu đề...">
                                                 <span class="error text-danger"></span>
                                             </div>
                                         </div>
                                         <div class="col-md-12">
                                             <div class="form-group">
-                                                <textarea name="message" class="form-control" id="message" cols="30" rows="6" placeholder="Lời nhắn của bạn..."></textarea>
+                                                <textarea name="message" class="form-control my-form" id="message" cols="30" rows="6" placeholder="Lời nhắn của bạn..."></textarea>
                                                 <span class="error text-danger"></span>
                                             </div>
                                         </div>
@@ -335,7 +335,7 @@
                                         <span class="fa fa-paper-plane"></span>
                                     </div>
                                     <div class="text pl-3">
-                                        <p><span>Email:</span> <a href="#"><span class="__cf_email__ text-warning" data-cfemail="bdd4d3dbd2fdc4d2c8cfced4c9d893ded2d0">EasyTicket@gmail.com</span></a></p>
+                                        <p><span>Email:</span> <a href="#"><span class="__cf_email__ " data-cfemail="bdd4d3dbd2fdc4d2c8cfced4c9d893ded2d0">EasyTicket@gmail.com</span></a></p>
                                     </div>
                                 </div>
                                 <div class="dbox w-100 d-flex align-items-center">
@@ -343,7 +343,7 @@
                                         <span class="fa fa-globe"></span>
                                     </div>
                                     <div class="text pl-3">
-                                        <p><span>Website:</span> <a href="<?=$SITE_URL?>/trang-chinh/">EASY TICKET</a></p>
+                                        <p><span>Website:</span> <a href="<?=$SITE_URL?>/trang-chinh/" class="text-warning">EASY TICKET</a></p>
                                     </div>
                                 </div>
                             </div>

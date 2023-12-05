@@ -32,6 +32,17 @@ function   movies_update($name_movie, $discretion, $time, $status, $date_movie, 
 `date_movie`='$date_movie',`actor_id`='$actor_id',`trailer`='$trailer',`categories_id`='$categories_id',`image`='$image' WHERE id  = '$id'";
     pdo_execute($sql);
 }
+
+function   update_all($name_movie, $discretion, $time, $status, $date_movie, $actor_id, $trailer, $categories_id, $image, $id, $actor, $director, $producer)
+{
+    $sql = "START TRANSACTION;
+    UPDATE `movies` SET `name_movie`='$name_movie',`discretion`='$discretion',`time`='$time',`status`='$status',
+    `date_movie`='$date_movie',`actor_id`='$actor_id',`trailer`='$trailer',`categories_id`='$categories_id',`image`='$image' WHERE id  = '$id';
+    UPDATE `actor` SET `actor`='$actor',`director`='$director',`producer`='$producer' WHERE id = '$actor_id';
+     COMMIT;
+    ";
+    pdo_execute($sql);
+}
 // xóa
 function movie_randum(){
     $sql = "SELECT mv.*, categories.type_name FROM movies mv JOIN categories WHERE categories.id = mv.categories_id ORDER BY RAND() DESC limit 9";

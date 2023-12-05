@@ -31,24 +31,27 @@ if (exist_param("btn_insert")) {
 
     $VIEW_NAME = "list.php";
 } else if (exist_param("btn_actor")) {
-   
-    $VIEW_NAME = "actor.php";
-} else if(exist_param("insert_actor")){
+   if(isset($_POST['insert_actor'])){
+
     $actor = $_POST['actor'];
     $director = $_POST['director'];
     $producer = $_POST['producer'];
 
     actor_insert($actor, $director, $producer);
-    $VIEW_NAME = "actor.php";
+    // $VIEW_NAME = "actor.php";
 
+
+   }
+    $VIEW_NAME = "actor.php";
 }
 else if (exist_param("btn_delete")) {
     movies_delete_status($id);
     $VIEW_NAME = "list.php";
 } else if (exist_param("btn_edit")) {
     $id = $_REQUEST['id'];
+    $actor_id = $_REQUEST['actor_id'];
 $item = movies_select_by_id($id);
-
+$item_actor =  actor_select_by_id($actor_id);
 
     $VIEW_NAME = "edit.php";
 } else if (exist_param("btn_update")) {
@@ -62,16 +65,20 @@ $item = movies_select_by_id($id);
     $actor_id = $_POST['actor_id'];
     $categories_id = $_POST['categories_id'];
     // uploaded file 
+
     $status = $_POST['status'];
     $trailer = $_POST['trailer'];
     $image = save_file('image', $UPLOAD_URL);
+    $actor = $_POST['actor'];
+    $producer = $_POST['producer'];
+    $director = $_POST['director'];
     if(empty($image)){
 $image = $_POST['image_old'];
-movies_update($name_movie, $discretion, $time, $status, $date_movie, $actor_id, $trailer, $categories_id, $image, $id);
+update_all($name_movie, $discretion, $time, $status, $date_movie, $actor_id, $trailer, $categories_id, $image, $id, $actor, $director, $producer);
 
     }else{
         $image = save_file('image', $UPLOAD_URL);
-        movies_update($name_movie, $discretion, $time, $status, $date_movie, $actor_id, $trailer, $categories_id, $image, $id);
+        update_all($name_movie, $discretion, $time, $status, $date_movie, $actor_id, $trailer, $categories_id, $image, $id, $actor, $director, $producer);
     }
     $VIEW_NAME = "list.php";
 } 
@@ -85,8 +92,9 @@ else if(exist_param("reset_movie")) {
     $VIEW_NAME = "history.php";
 }
 else if(exist_param("delete_vv")){
-
+    actor_delete($actor_id);
     delete_vv($id);
+    
 $VIEW_NAME = "history.php";
 }
 

@@ -48,7 +48,7 @@
 <body>
 <h3 class="card-title text-warning">Quản Lý Ghế Xem Phim</h3>
   <input type="text" readonly disabled class="form-control  text-center py-5 px-2" style="background-color: #2A3038 ;" name="" id=""  placeholder="Màn Hình Chiếu"> 
-  <div class="seats">
+  <div class="seats d-flex justify-content-center align-items-center mt-5 ">
     <div class="row">
       <div class="seat rounded-lg">a</div>
       <div class="seat rounded-lg">a</div>
@@ -268,7 +268,7 @@
     </div>
   </div>
   
-  <div class="total">
+  <!-- <div class="total">
     <p>Tổng tiền: <span id="total-price">0</span> đồng</p>
   </div>
   
@@ -303,4 +303,4 @@ function calculateTotalPrice() {
 
 // Gắn sự kiện cho các ghế
 seats.forEach(seat => seat.addEventListener('click', selectSeat));
-</script>
+</script> -->

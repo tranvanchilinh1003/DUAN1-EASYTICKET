@@ -30,6 +30,21 @@
             </div>
         </li>
         <li class="nav-item menu-items">
+            <a class="nav-link" data-toggle="collapse" href="#door" aria-expanded="false" aria-controls="">
+                <span class="menu-icon">
+                <i class="bi bi-door-open"></i>
+                </span>
+                <span class="menu-title">Quản lý Phòng</span>
+                <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="door">
+                <ul class="nav flex-column sub-menu">
+                    <li class="nav-item"> <a class="nav-link" href="<?= $ADMIN_URL ?>/phong/">Thêm Phòng</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="<?= $ADMIN_URL ?>/phong?btn_list">Danh sách</a></li>
+                </ul>
+            </div>
+        </li>
+        <li class="nav-item menu-items">
             <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
                 <span class="menu-icon">
                     <!-- <i class="mdi mdi-laptop"></i> -->
@@ -47,22 +62,7 @@
                 </ul>
             </div>
         </li>
-        <!-- <li class="nav-item menu-items">
-            <a class="nav-link" data-toggle="collapse" href="#aut" aria-expanded="false" aria-controls="aut">
-                <span class="menu-icon">
-                    
-                    <i class="bi bi-film"></i>
-                </span>
-                <span class="menu-title">Quản lý diễn viên</span>
-                <i class="menu-arrow"></i>
-            </a>
-            <div class="collapse" id="aut">
-                <ul class="nav flex-column sub-menu">
-                    <li class="nav-item"> <a class="nav-link" href="<?= $ADMIN_URL ?>/dien-vien/">Thêm diễn viên</a></li>
-                    <li class="nav-item"> <a class="nav-link" href="<?= $ADMIN_URL ?>/dien-vien?btn_list">Danh sách</a></li>
-                </ul>
-            </div>
-        </li> -->
+        
         <li class="nav-item menu-items">
             <a class="nav-link" data-toggle="collapse" href="#d" aria-expanded="false" aria-controls="d">
                 <span class="menu-icon">
@@ -106,29 +106,12 @@
         <li class="nav-item menu-items">
             <a class="nav-link" href="<?= $ADMIN_URL ?>/thong-ke/">
                 <span class="menu-icon">
-                    <i class="mdi mdi-chart-bar"></i>
+                    <i class="mdi mdi-chart-bar text-danger"></i>
                 </span>
                 <span class="menu-title">Thống kê</span>
             </a>
         </li>
-        <!-- <li class="nav-item menu-items">
-            <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
-                <span class="menu-icon">
-                    <i class="mdi mdi-security"></i>
-                </span>
-                <span class="menu-title">User Pages</span>
-                <i class="menu-arrow"></i>
-            </a>
-            <div class="collapse" id="auth">
-                <ul class="nav flex-column sub-menu">
-                    <li class="nav-item"> <a class="nav-link" href="pages/samples/blank-page.html"> Blank Page </a></li>
-                    <li class="nav-item"> <a class="nav-link" href="pages/samples/error-404.html"> 404 </a></li>
-                    <li class="nav-item"> <a class="nav-link" href="pages/samples/error-500.html"> 500 </a></li>
-                    <li class="nav-item"> <a class="nav-link" href="pages/samples/login.html"> Login </a></li>
-                    <li class="nav-item"> <a class="nav-link" href="pages/samples/register.html"> Register </a></li>
-                </ul>
-            </div>
-        </li> -->
+        
     </ul>
 </nav>
 <!-- partial -->

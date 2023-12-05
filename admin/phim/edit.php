@@ -21,7 +21,7 @@
                     <form class="form" action="./index.php" method="post" id="isert_form" enctype="multipart/form-data">
                         <div class='row mt-2'>
                             <input type="hidden" class="form-control" style="background-color: #2A3038;" id="id" name="id" value="<?= $item['id'] ?>">
-                            <input type="hidden" class="form-control" id="actor_id" name="actor_id" value="<?= $item['actor_id'] ?>">
+                            <input type="hidden" class="form-control" id="actor_id" name="actor_id" value="<?=$item['actor_id'] ?>">
                             <div class="col-sm-4">
                                 <div class="form-group">
                                     <label for="categories_id" class="fw-bold col-form-label text-white">Thể loại</label>
@@ -58,9 +58,8 @@
                                 <span class="error text-danger"></span>
                             </div>
                             <div class="col-sm-4">
-                                <label for="image" class="fw-bold col-form-label text-white">Hình ảnh</label>
-                                <input type="file" class="form-control" id="image" name="image" value="<?= $item['image'] ?>">
-                                <input type="hidden" class="form-control" id="image_old" name="image_old" value="<?= $item['image'] ?>">
+                                <label for="date_movie" class="fw-bold col-form-label text-white">Ngày</label>
+                                <input type="date" class="form-control" id="date_movie" name="date_movie" value="<?= $item['date_movie'] ?>">
                                 <span class="error text-danger"></span>
                             </div>
                             <div class="col-sm-4">
@@ -74,20 +73,30 @@
                         <div class='row mt-3'>
                             <div class="col-sm-4">
                                 <label for="producer" class="fw-bold col-form-label text-white">Nhà Sản Xuất</label>
-                                <input type="text" class="form-control" id="producer" name="producer" value="<?= $item_actor['producer'] ?>">
+                                <input type="text" class="form-control" id="producer" name="producer" value="<?=$item_actor['producer'] ?>">
                                 <span class="error text-danger"></span>
 
                             </div>
                             <div class="col-sm-4">
                                 <label for="actor" class="fw-bold col-form-label text-white">Diễn Viên</label>
-                                <input type="text" class="form-control" id="actor" name="actor" value="<?= $item_actor['actor'] ?>">
+                                <input type="text" class="form-control" id="actor" name="actor" value="<?=$item_actor['actor'] ?>">
                                 <span class="error text-danger"></span>
                             </div>
                             <div class="col-sm-4">
                                 <label for="director" class="fw-bold col-form-label text-white">Đạo Diễn</label>
-                                <input type="text" class="form-control" id="director" name="director" value="<?= $item_actor['director'] ?>">
+                                <input type="text" class="form-control" id="director" name="director" value="<?=$item_actor['director'] ?>">
                                 <span class="error text-danger"></span>
                             </div>
+                        </div>
+                        <div class='row mt-3'>
+                            <div class="col-sm-4">
+                                <label for="image" class="fw-bold col-form-label text-white">Hình ảnh</label>
+                                <input type="file" class="form-control" id="image" name="image" value="<?= $item['image'] ?>">
+                                <input type="hidden" class="form-control" id="image_old" name="image_old" value="<?= $item['image'] ?>">
+
+
+                            </div>
+
                         </div>
                         <div class='row mt-3'>
                             <div class='col-sm-12'>
@@ -116,9 +125,9 @@
         var name_movie = document.getElementById('name_movie').value;
         var categories = document.getElementById("trailer").value;
         var time = document.getElementById("time").value;
-        const selectedDate = new Date(document.getElementById("date_movie").value);
-    const currentDate = new Date();
-    currentDate.setHours(0, 0, 0, 0);
+
+        var selectedDate = new Date(document.getElementById("date_movie").value);
+        var currenDate = new Date();
         var actor = document.getElementById("actor").value;
         var producer = document.getElementById("producer").value;
         var director = document.getElementById("director").value;
@@ -131,8 +140,8 @@
         error[4].innerHTML = '';
         error[5].innerHTML = '';
         error[6].innerHTML = '';
-
-
+        
+        
         if (name_movie.trim() == " " || name_movie.length < 5) {
             error[0].innerHTML = "không để trống hoặc dưới 5 ký tự";
             has_error = false;
@@ -146,8 +155,8 @@
             has_error = false;
         }
 
-        if (isNaN(selectedDate.getTime()) || selectedDate < currentDate) {
-            error[3].innerHTML = 'Không Nhập Ngày Nhỏ Hơn Hiện Tại';
+        if (selectedDate > currenDate) {
+            error[3].innerHTML = 'Ngày Nhập Lớn Hơn hiện tại';
             has_error = false;
         }
         if (producer.trim() == "") {

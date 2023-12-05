@@ -10,7 +10,7 @@ function actor_select_all()
 // thêm mới loại 
 function actor_insert($actor, $director, $producer)
 {
-    $sql = "INSERT INTO `actor`( `actor`, `director`, `producer`) VALUES ('$actor',' $director',' $producer')";
+    $sql = "INSERT INTO `actor`( `actor`, `director`, `producer`) VALUES ('$actor','$director','$producer')";
     pdo_execute($sql);
 }
 // xóa
@@ -26,9 +26,9 @@ function actor_select_by_id($id)
     return pdo_query_one($sql);
 }
 // cập nhật dữ liệu
-function   actor_update($type_name, $id)
+function   actor_update($actor, $director, $producer, $actor_id)
 {
-    $sql = "UPDATE `actor` SET `type_name`='$type_name'WHERE `id`='$id'";
+    $sql = "UPDATE `actor` SET `actor`='$actor',`director`='$director',`producer`='$producer' WHERE id = $actor_id ";
 
     pdo_execute($sql);
 }

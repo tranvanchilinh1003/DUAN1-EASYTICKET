@@ -107,8 +107,8 @@
                                         <!-- <li><span>Studios:</span> Lerche</li> -->
                                         <li><span>Ngày chiếu:</span> <?= $item['date_movie'] ?></li>
                                         <li><span>Trạng thái:</span> <?= $item['status'] == 1 ? "Đang chiếu" : "Xắp chiếu"; ?></li>
-                                        <li><span>Diễn viên:</span> <?= $item['actor'] ?>, <?= $item['director'] ?>, <?= $item['producer'] ?></li>
-
+                                        <li><span>Chất lượng:</span> HD</li>
+                                        <li><span>Lượt Truy Cập:</span> <?= $item['view'] ?></li>
                                     </ul>
                                 </div>
                                 <div class="col-lg-6 col-md-6">
@@ -116,8 +116,12 @@
                                         <li><span>Thời lượng:</span> <?= $item['time'] ?></li>
                                         <li><span>Đánh giá:</span> 8.5 / 161 times</li>
                                         <!-- <li><span>Duration:</span> 24 min/ep</li> -->
-                                        <li><span>Chất lượng:</span> HD</li>
-                                        <li><span>Lượt Truy Cập:</span> <?= $item['view'] ?></li>
+                                    
+                                        
+                                        <li><span>Nhà Sản Xuất:</span> <?= $item['producer'] ?></li>
+                                        <li><span>Đạo Diễn:</span> <?= $item['director'] ?></li>
+                                        <li><span>Diễn viên:</span> <?= $item['actor'] ?></li>
+                                        
                                     </ul>
                                 </div>
                             </div>
