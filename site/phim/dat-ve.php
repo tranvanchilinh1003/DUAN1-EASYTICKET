@@ -18,6 +18,11 @@ if (exist_param("dat-ve")) {
     $item = detail_movies($id);
     $_SESSION['id'] = $item['id'];
     $VIEW_NAME = "dat-ve-ui.php";
+} else if (exist_param("dat-ghe")) {
+    $item = detail_movies($id);
+    $_SESSION['id'] = $item['id'];
+    $VIEW_NAME = "dat-ghe.php";
 }
-$VIEW_NAME = "dat-ve-ui.php";
+
+// $VIEW_NAME = "dat-ve-ui.php";
 require '../layout.php';

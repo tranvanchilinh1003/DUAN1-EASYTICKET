@@ -77,8 +77,7 @@
 								<!-- <h6 class="user-email">yuki@Maxwell.com</h6> -->
 						</div>
 						<div class="about">
-							<!-- <h5 class="mb-2 text-primary">About</h5> -->
-							<!-- <p>I'm Yuki. Full Stack Designer I enjoy creating user-centric, delightful and human experiences.</p> -->
+							<h5 class="mb-2 text-primary"> <a href="<?= $SITE_URL ?>/form/login_xu_ly_thong_tin.php?lich_su_giao_dich" class="lich_su_giao_dich"> Lịch sử giao dịch</a></h5>
 						</div>
 					</div>
 				</div>
@@ -90,7 +89,7 @@
 					<form action="login_xu_ly_thong_tin.php" method="POST" enctype="multipart/form-data" id='form_update'>
 						<div class="row gutters">
 							<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-							<h4 class="mb-3 text-warning">Thông Tin Tài Khoản</h4>
+								<h4 class="mb-3 text-warning">Thông Tin Tài Khoản</h4>
 							</div>
 							<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
 								<div class="form-group text-light">
@@ -140,8 +139,8 @@
 							</div>
 							<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
 								<div class="form-group text-light">
-									
-									<input type="hidden" class="form-control" id="password_old" name="password_old" value='<?=$user['password'] ?>'>
+
+									<input type="hidden" class="form-control" id="password_old" name="password_old" value='<?= $user['password'] ?>'>
 								</div>
 							</div>
 						</div>
@@ -149,8 +148,8 @@
 							<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
 								<div class="form-group ">
 									<label for="image">Ảnh đại diện</label>
-									<input type="file" class="form-control p-1" name="image" id="image" value="<?=$user['image'] ?>">
-									<input type="hidden" class="form-control p-1" name="image_old" value="<?=$user['image'] ?>">
+									<input type="file" class="form-control p-1" name="image" id="image" value="<?= $user['image'] ?>">
+									<input type="hidden" class="form-control p-1" name="image_old" value="<?= $user['image'] ?>">
 								</div>
 							</div>
 						</div>

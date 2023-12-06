@@ -133,17 +133,17 @@
                                     <label class="small mb-2 font-weight-bold d-block text-dark">
                                         2D Phụ Đề Việt
                                     </label>
-                                    <a href="#" data-cineplex="lotte" data-cinema="lotte-can-tho" data-id="309438312" class="btn btn-sm btn-showtime btn-outline-dark is-ticketing" data-reference="c4f17d1d-ca04-45f1-bfbf-c316d182fa36">
+                                    <a href="<?= $SITE_URL . '/phim/dat-ve.php?dat-ghe&id=' .  $item['id']  ?>" data-cineplex="lotte" data-cinema="lotte-can-tho" data-id="309438312" class="btn btn-sm btn-showtime btn-outline-dark is-ticketing" data-reference="c4f17d1d-ca04-45f1-bfbf-c316d182fa36">
                                         <span class="time">14:30</span>
                                         <span class="amenity price">85K</span></a> <a href="#" data-cineplex="lotte" data-cinema="lotte-can-tho" data-id="309438313" class="btn btn-sm btn-showtime btn-outline-dark is-ticketing" data-reference="553dacde-e2fa-4d2f-9c67-65d42a7afd78">
                                         <span class="time">21:30</span>
                                         <span class="amenity price">85K</span></a>
                                 </div>
-                                <div class="showtimes">
+                                <!-- <div class="showtimes">
                                     <div class="text-center text-muted">
                                         <div class="spinner-border spinner-border-sm" role="status"></div>
                                     </div>
-                                </div>
+                                </div> -->
                             </div>
                         </div>
                     </div>

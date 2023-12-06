@@ -13,8 +13,7 @@ if (exist_param("keyword")) {
         if ($keyword == '') {
             // $title_site = "TẤT CẢ SẢN PHẨM";
             // $word = "Chào Mừng Bạn Đến Với Danh Sách Phim Của Easy-Ticket";
-            header("location:".$SITE_URL."/phim/tim-kiem.php?all&page=1");
-
+            header("location:" . $SITE_URL . "/phim/tim-kiem.php?all&page=1");
         } else {
             $title_site = "Các Sản Phẩm Có Chứa Từ Khóa: '$keyword'";
             $word = "";
@@ -31,9 +30,8 @@ if (exist_param("keyword")) {
 }
 $VIEW_NAME = "phim/tiem-kiem-ui.php";
 
-if(exist_param('all')){
+if (exist_param('all')) {
     $items = movie_page();
-
 }
 // $items = movies_select_all();
 require '../layout.php';

@@ -1,5 +1,3 @@
-
-
 <!-- Product Section Begin -->
 <!-- Hero Section Begin -->
 <section class="hero">
@@ -45,8 +43,6 @@
     </div>
 </section>
 <!-- Hero Section End -->
-
-<!-- Product Section Begin -->
 <section class="product spad">
     <div class="container">
         <div class="row">
@@ -60,7 +56,7 @@
                         </div>
                         <div class="col-lg-4 col-md-4 col-sm-4">
                             <div class="btn__all">
-                                <a href="<?=$SITE_URL?>/phim/tim-kiem.php?all&page=1" class="primary-btn">XEM TẤT CẢ <span class="arrow_right"></span></a>
+                                <a href="<?= $SITE_URL ?>/phim/tim-kiem.php?all&page=1" class="primary-btn">XEM TẤT CẢ <span class="arrow_right"></span></a>
                             </div>
                         </div>
                     </div>
@@ -68,6 +64,8 @@
                         <?php
                         $items = movie_randum();
                         foreach ($items as $item) :
+                            $movies_id = $item['id'];
+                            $cmt = count_comment($movies_id);
                         ?>
                             <div class="col-lg-4 col-md-6 col-sm-6">
                                 <a href="<?= $SITE_URL . '/phim/chi-tiet.php?id=' .  $item['id']  ?>">

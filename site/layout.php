@@ -204,9 +204,9 @@ require_once "../../model/categories.php";
 
 <body>
     <!-- Page Preloder -->
-    <!-- <div id="preloder">
+    <div id="preloder">
         <div class="loader"></div>
-    </div> -->
+    </div>
 
     <!-- Header Section Begin -->
     <header class="header">
@@ -248,11 +248,11 @@ require_once "../../model/categories.php";
                         <nav class="header__menu mobile-menu">
                             <ul>
                                 <li>
-                                    <form class="navbar-form" action="<?= $SITE_URL?>/phim/tim-kiem.php" method="POST">
+                                    <form class="navbar-form" action="<?= $SITE_URL ?>/phim/tim-kiem.php" method="POST">
                                         <div class="input-group">
-                                            <input type="text" class="form-control search-input " name= "keyword" placeholder="Tìm Kiếm...">
+                                            <input type="text" class="form-control search-input " name="keyword" placeholder="Tìm Kiếm...">
                                             <div class="input-group-append">
-                                                <button class="btn btn-outline-warning search-button" name="search" type="submit"  >
+                                                <button class="btn btn-outline-warning search-button" name="search" type="submit">
                                                     <i class="fa fa-search"></i>
                                                 </button>
                                             </div>
@@ -277,7 +277,7 @@ require_once "../../model/categories.php";
                                         <ul class="dropdown">
                                             <li><a href="<?= $SITE_URL ?>/form/login_xuly.php">Đăng Nhập</a></li>
                                             <li><a href="<?= $SITE_URL ?>/form/signup_xuly.php">Đăng Ký</a></li>
-                                    
+
                                         </ul>
                                     </li>
                                 <?php
