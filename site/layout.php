@@ -231,7 +231,8 @@ require_once "../../model/categories.php";
                                         $move = categories_select_all();
                                         foreach ($move as $categories) {
                                         ?>
-                                            <li><a href="#" value="<?= $categories['id'] ?>"><?= $categories['type_name'] ?></a></li>
+                                        
+                                           <li><a href="<?= $SITE_URL ?>/phim/the-loai.php?&ctg=<?= $categories['id'] ?>" value="<?= $categories['id'] ?>"><?= $categories['type_name'] ?></a></li>
                                         <?php
                                         }
                                         ?>

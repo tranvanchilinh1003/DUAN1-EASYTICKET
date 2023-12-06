@@ -9,9 +9,9 @@
                 <div class="row">
                     <div class="col-lg-6">
                         <div class="hero__text">
-                            <div class="label">Adventure</div>
-                            <h2>Fate / Stay Night: Unlimited Blade Works</h2>
-                            <p>After 30 days of travel across the world...</p>
+                            <!-- <div class="label">Adventure</div> -->
+                            <h2>One Piece Film Red</h2>
+                            <p>Bối cảnh One Piece Film Red diễn ra ở hòn ...</p>
                             <a href="#"><span>Đặt vé</span> <i class="fa fa-angle-right"></i></a>
                         </div>
                     </div>
@@ -21,9 +21,9 @@
                 <div class="row">
                     <div class="col-lg-6">
                         <div class="hero__text">
-                            <div class="label">Adventure</div>
-                            <h2>Fate / Stay Night: Unlimited Blade Works</h2>
-                            <p>After 30 days of travel across the world...</p>
+                            <!-- <div class="label">Adventure</div> -->
+                            <h2>Thanh Gương Diệt Quỷ Phần Kỹ Viện Trấn</h2>
+                            <p>Gia đình bị thảm sát còn em gái trúng...</p>
                             <a href="#"><span>Đặt vé</span> <i class="fa fa-angle-right"></i></a>
                         </div>
                     </div>
@@ -33,9 +33,9 @@
                 <div class="row">
                     <div class="col-lg-6">
                         <div class="hero__text">
-                            <div class="label">Adventure</div>
-                            <h2>Fate / Stay Night: Unlimited Blade Works</h2>
-                            <p>After 30 days of travel across the world...</p>
+                            <!-- <div class="label">Adventure</div> -->
+                            <h2>Conan</h2>
+                            <p>Conan...</p>
                             <a href="#"><span>Đặt vé</span> <i class="fa fa-angle-right"></i></a>
                         </div>
                     </div>

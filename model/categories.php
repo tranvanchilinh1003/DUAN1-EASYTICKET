@@ -60,3 +60,8 @@ function check_ten_categories($type_name)
     $sql = "SELECT type_name FROM categories WHERE type_name='$type_name'";
     return  pdo_query_one($sql);
 }
+function categories_select_name($id)
+{
+    $sql = "SELECT * FROM categories WHERE id = '$id';";
+    return pdo_query($sql);
+}
