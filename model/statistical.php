@@ -68,14 +68,11 @@ function comments_movies($movies_id)
 // thống kê phim 
 function thong_ke_movies()
 {
-    $sql = "SELECT lo.ma_loai, lo.ten_loai, "
-        . " COUNT(*) so_luong,"
-        . " MIN(hh.don_gia) gia_min,"
-        . " MAX(hh.don_gia) gia_max,"
-        . " AVG(hh.don_gia) gia_avg"
-        . " FROM hang_hoa hh "
-        . " JOIN categories lo ON lo.ma_loai = hh.ma_loai "
-        . " GROUP BY lo.ma_loai, lo.ten_loai ";
+    $sql = "SELECT lo.id, lo.type_name, 
+    COUNT(*) so_luong
+    FROM movies mv
+    JOIN categories lo   ON lo.id = mv.categories_id 
+     GROUP BY lo.id, lo.type_name  ";
     return pdo_query($sql);
 }
 // thống kê bình luận 

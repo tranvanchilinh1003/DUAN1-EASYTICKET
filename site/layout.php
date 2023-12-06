@@ -225,13 +225,13 @@ require_once "../../model/categories.php";
                             <ul class='home_nav'>
                                 <li class="active"><a href="<?= $SITE_URL ?>/trang-chinh/index.php">Trang Chủ</a></li>
                                 <!-- <li><a href="<?= $SITE_URL ?>/form/login_xuly.php?btn_logout" name='btn_logout'> <i class="bi bi-power  text-danger"></i></a></li> -->
-                                <li><a href="#">Thể Loại <span class="arrow_carrot-down"></span></a>
+                                <li><a href="<?=$SITE_URL?>/phim/tim-kiem.php?all&page=1">Thể Loại <span class="arrow_carrot-down"></span></a>
                                     <ul class="dropdown mt-1">
                                         <?php
                                         $move = categories_select_all();
                                         foreach ($move as $categories) {
                                         ?>
-                                            <li><a href="#" value="<?= $categories['id'] ?>"><?= $categories['type_name'] ?></a></li>
+                                            <li><a href="<?=$SITE_URL?>/phim/tim-kiem.php?categories_movies&id=<?=$categories['id']?>"><?= $categories['type_name'] ?></a></li>
                                         <?php
                                         }
                                         ?>

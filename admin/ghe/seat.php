@@ -46,26 +46,225 @@
 }
 </style>
 <body>
-<h3 class="card-title text-warning">Chọn Ghế Xem Phim</h3>
+<h3 class="card-title text-warning">Quản Lý Ghế Xem Phim</h3>
   <input type="text" readonly disabled class="form-control  text-center py-5 px-2" style="background-color: #2A3038 ;" name="" id=""  placeholder="Màn Hình Chiếu"> 
   <div class="seats">
     <div class="row">
-      <div class="seat"></div>
-      <div class="seat"></div>
-      <div class="seat"></div>
-      <div class="seat"></div>
+      <div class="seat rounded-lg">a</div>
+      <div class="seat rounded-lg">a</div>
+      <div class="seat rounded-lg">a</div>
+      <div class="seat rounded-lg">a</div>
+      <div class="seat rounded-lg">a</div>
+      <div class="seat rounded-lg">a</div>
+      <div class="seat rounded-lg">a</div>
+      <div class="seat rounded-lg">a</div>
+      <div class="seat rounded-lg">a</div>
+      <div class="seat rounded-lg">a</div>
+      <div class="seat rounded-lg">a</div>
+      <div class="seat rounded-lg">a</div>
+      <div class="seat rounded-lg">a</div>
+      <div class="seat rounded-lg">a</div>
+      <div class="seat rounded-lg">a</div>
+      <div class="seat rounded-lg">a</div>
+      <div class="seat rounded-lg">a</div>
+      
+    
+      
+    
+      
+
     </div>
     <div class="row">
-      <div class="seat"></div>
-      <div class="seat"></div>
-      <div class="seat"></div>
-      <div class="seat"></div>
+      <div class="seat rounded-lg">b</div>
+      <div class="seat rounded-lg">b</div>
+      <div class="seat rounded-lg">b</div>
+      <div class="seat rounded-lg">b</div>
+      <div class="seat rounded-lg">b</div>
+      <div class="seat rounded-lg">b</div>
+      <div class="seat rounded-lg">b</div>
+      <div class="seat rounded-lg">b</div>
+      <div class="seat rounded-lg">b</div>
+      <div class="seat rounded-lg">b</div>
+      <div class="seat rounded-lg">b</div>
+      <div class="seat rounded-lg">b</div>
+      <div class="seat rounded-lg">b</div>
+      <div class="seat rounded-lg">b</div>
+      <div class="seat rounded-lg">b</div>
+      <div class="seat rounded-lg">b</div>
+      <div class="seat rounded-lg">b</div>
+      
+      
+
+
     </div>
     <div class="row">
-      <div class="seat"></div>
-      <div class="seat"></div>
-      <div class="seat"></div>
-      <div class="seat"></div>
+    
+          <div class="seat rounded-lg">c</div>
+          <div class="seat rounded-lg">c</div>
+          <div class="seat rounded-lg">c</div>
+          <div class="seat rounded-lg">c</div> 
+          <div class="seat rounded-lg">c</div>    
+            <div class="seat rounded-lg">c</div>
+            <div class="seat rounded-lg">c</div>
+            <div class="seat rounded-lg">c</div>
+            <div class="seat rounded-lg">c</div>
+            <div class="seat rounded-lg">c</div>
+            <div class="seat rounded-lg">c</div>
+            <div class="seat rounded-lg">c</div>
+            <div class="seat rounded-lg">c</div>
+            <div class="seat rounded-lg">c</div>
+            <div class="seat rounded-lg">c</div>
+            <div class="seat rounded-lg">c</div>
+            <div class="seat rounded-lg">c</div>
+            
+
+    </div>
+    <div class="row">
+      <div class="seat rounded-lg bg-warning">d</div>
+      <div class="seat rounded-lg bg-warning">d</div>
+      <div class="seat rounded-lg bg-warning">d</div>
+      <div class="seat rounded-lg bg-warning">d</div>
+      <div class="seat rounded-lg bg-warning">d</div>
+      <div class="seat rounded-lg bg-warning">d</div>
+      <div class="seat rounded-lg bg-warning">d</div>
+      <div class="seat rounded-lg bg-warning">d</div>
+      <div class="seat rounded-lg bg-warning">d</div>
+      <div class="seat rounded-lg bg-warning">d</div>
+      <div class="seat rounded-lg bg-warning">d</div>
+      <div class="seat rounded-lg bg-warning">d</div>
+      <div class="seat rounded-lg bg-warning">d</div>
+      <div class="seat rounded-lg bg-warning">d</div>
+      <div class="seat rounded-lg bg-warning">d</div>
+
+    
+    </div>
+    <div class="row">
+      <div class="seat rounded-lg bg-warning">E</div>
+      <div class="seat rounded-lg bg-warning">E</div>
+      <div class="seat rounded-lg bg-warning">E</div>
+          <div class="seat rounded-lg bg-warning">E</div>
+      <div class="seat rounded-lg bg-warning">E</div>
+      <div class="seat rounded-lg bg-warning">E</div>
+      <div class="seat rounded-lg bg-warning">E</div>
+      <div class="seat rounded-lg bg-warning">E</div>
+      <div class="seat rounded-lg bg-warning">E</div>
+      <div class="seat rounded-lg bg-warning">E</div>
+      <div class="seat rounded-lg bg-warning">E</div>
+      <div class="seat rounded-lg bg-warning">E</div>
+      <div class="seat rounded-lg bg-warning">E</div>
+      <div class="seat rounded-lg bg-warning">E</div>
+      <div class="seat rounded-lg bg-warning">E</div>
+
+    
+    </div>
+    <div class="row">
+      <div class="seat rounded-lg bg-warning">G</div>
+      <div class="seat rounded-lg bg-warning">G</div>
+      <div class="seat rounded-lg bg-warning">G</div>
+      <div class="seat rounded-lg bg-warning">G</div>
+      <div class="seat rounded-lg bg-warning">G</div>
+      <div class="seat rounded-lg bg-warning">G</div>
+      <div class="seat rounded-lg bg-warning">G</div>
+      <div class="seat rounded-lg bg-warning">G</div>
+      <div class="seat rounded-lg bg-warning">G</div>
+      <div class="seat rounded-lg bg-warning">G</div>
+      <div class="seat rounded-lg bg-warning">G</div>
+      <div class="seat rounded-lg bg-warning">G</div>
+      <div class="seat rounded-lg bg-warning">G</div>
+      <div class="seat rounded-lg bg-warning">G</div>
+      <div class="seat rounded-lg bg-warning">G</div>
+</div>
+    <div class="row">
+      <!-- <div class="seat rounded-lg bg-warning">H</div> -->
+      <div class="seat rounded-lg bg-warning">H</div>
+      <div class="seat rounded-lg bg-warning">H</div>
+      <div class="seat rounded-lg bg-warning">H</div>
+      <div class="seat rounded-lg bg-warning">H</div>
+      <div class="seat rounded-lg bg-warning">H</div>
+      <div class="seat rounded-lg bg-warning">H</div>
+      <div class="seat rounded-lg bg-warning">H</div>
+      <div class="seat rounded-lg bg-warning">H</div>
+      <div class="seat rounded-lg bg-warning">H</div>
+      <div class="seat rounded-lg bg-warning">H</div>
+      <div class="seat rounded-lg bg-warning">H</div>
+      <div class="seat rounded-lg bg-warning">H</div>
+      <div class="seat rounded-lg bg-warning">H</div>
+      <div class="seat rounded-lg bg-warning">H</div>
+      <div class="seat rounded-lg bg-warning">H</div>
+    
+    </div>
+    <div class="row">
+      <div class="seat rounded-lg bg-warning">I</div>
+      <div class="seat rounded-lg bg-warning">I</div>
+      <div class="seat rounded-lg bg-warning">I</div>
+      <div class="seat rounded-lg bg-warning">I</div>
+      <div class="seat rounded-lg bg-warning">I</div>
+      <div class="seat rounded-lg bg-warning">I</div>
+      <div class="seat rounded-lg bg-warning">I</div>
+      <div class="seat rounded-lg bg-warning">I</div>
+      <div class="seat rounded-lg bg-warning">I</div>
+      <div class="seat rounded-lg bg-warning">I</div>
+      <div class="seat rounded-lg bg-warning">I</div>
+      <div class="seat rounded-lg bg-warning">I</div>
+      <div class="seat rounded-lg bg-warning">I</div>
+      <div class="seat rounded-lg bg-warning">I</div>
+      <div class="seat rounded-lg bg-warning">I</div>
+    
+    </div>
+    <div class="row">
+    
+      <div class="seat rounded-lg bg-warning">J</div>
+      <div class="seat rounded-lg bg-warning">J</div>
+      <div class="seat rounded-lg bg-warning">J</div>
+      <div class="seat rounded-lg bg-warning">J</div>
+      <div class="seat rounded-lg bg-warning">J</div>
+      <div class="seat rounded-lg bg-warning">J</div>
+      <div class="seat rounded-lg bg-warning">J</div>
+      <div class="seat rounded-lg bg-warning">J</div>
+      <div class="seat rounded-lg bg-warning">J</div>
+      <div class="seat rounded-lg bg-warning">J</div>
+      <div class="seat rounded-lg bg-warning">J</div>
+      <div class="seat rounded-lg bg-warning">J</div>
+      <div class="seat rounded-lg bg-warning">J</div>
+      <div class="seat rounded-lg bg-warning">J</div>
+      <div class="seat rounded-lg bg-warning">J</div>
+    
+    </div>
+    <div class="row">
+  
+      
+      <div class="seat rounded-lg">K</div>
+      <div class="seat rounded-lg">K</div>
+      <div class="seat rounded-lg">K</div>
+      <div class="seat rounded-lg">K</div>
+      <div class="seat rounded-lg">K</div>
+      <div class="seat rounded-lg">K</div>
+      <div class="seat rounded-lg">K</div>
+      <div class="seat rounded-lg">K</div>
+      <div class="seat rounded-lg">K</div>
+      <div class="seat rounded-lg">K</div>
+      <div class="seat rounded-lg">K</div>
+      <div class="seat rounded-lg">K</div>
+      <div class="seat rounded-lg">K</div>
+    
+    </div>
+    <div class="row">
+  
+    <div class="seat rounded-lg">L</div>
+    <div class="seat rounded-lg">L</div>
+    <div class="seat rounded-lg">L</div>
+    <div class="seat rounded-lg">L</div>
+      <div class="seat rounded-lg">L</div>
+      <div class="seat rounded-lg">L</div>
+      <div class="seat rounded-lg">L</div>
+      <div class="seat rounded-lg">L</div>
+      <div class="seat rounded-lg">L</div>
+      <div class="seat rounded-lg">L</div>
+      <div class="seat rounded-lg">L</div>
+      <div class="seat rounded-lg">L</div>
+      <div class="seat rounded-lg">L</div>
+  
+    
     </div>
   </div>
   

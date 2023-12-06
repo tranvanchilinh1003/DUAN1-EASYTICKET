@@ -33,5 +33,13 @@ $VIEW_NAME = "phim/tiem-kiem-ui.php";
 if (exist_param('all')) {
     $items = movie_page();
 }
+
+if(exist_param('categories_movies')){
+
+$items = movies_by_categories($id);
+// $title = "Chào Mừng Bạn Đến Với Phim Của EASY TICKET";
+
+$VIEW_NAME = "loai_phim.php";
+}
 // $items = movies_select_all();
 require '../layout.php';

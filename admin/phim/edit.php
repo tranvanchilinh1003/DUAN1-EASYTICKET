@@ -20,7 +20,8 @@
                 <div class="table">
                     <form class="form" action="./index.php" method="post" id="isert_form" enctype="multipart/form-data">
                         <div class='row mt-2'>
-                            <input type="hidden" class="form-control" style="background-color: #2A3038;" id="id" name="id" value="<?=$item['id'] ?>">
+                            <input type="hidden" class="form-control" style="background-color: #2A3038;" id="id" name="id" value="<?= $item['id'] ?>">
+                            <input type="hidden" class="form-control" id="actor_id" name="actor_id" value="<?= $item['actor_id'] ?>">
                             <div class="col-sm-4">
                                 <div class="form-group">
                                     <label for="categories_id" class="fw-bold col-form-label text-white">Thể loại</label>
@@ -72,28 +73,20 @@
                         </div>
                         <div class='row mt-3'>
                             <div class="col-sm-4">
-                                <label for="date_movie" class="fw-bold col-form-label text-white">Ngày</label>
-                                <input type="date" class="form-control" id="date_movie" name="date_movie" value="<?= $item['date_movie'] ?>">
+                                <label for="producer" class="fw-bold col-form-label text-white">Nhà Sản Xuất</label>
+                                <input type="text" class="form-control" id="producer" name="producer" value="<?= $item_actor['producer'] ?>">
+                                <span class="error text-danger"></span>
+
+                            </div>
+                            <div class="col-sm-4">
+                                <label for="actor" class="fw-bold col-form-label text-white">Diễn Viên</label>
+                                <input type="text" class="form-control" id="actor" name="actor" value="<?= $item_actor['actor'] ?>">
                                 <span class="error text-danger"></span>
                             </div>
                             <div class="col-sm-4">
-                                <div class="form-group">
-                                    <label for="actor" class="fw-bold col-form-label text-white">Diễn Viên</label>
-                                    <select class="form-control" id="actor" name="actor_id">
-
-
-                                        <?php
-                                        $actor = actor_select_all();
-                                        foreach ($actor as $actor) {
-                                            if ($actor['id'] == $item['actor_id']) {
-                                                echo '<option class="text-white" selected value="' . $actor['id'] . '">' . $actor['actor'] . '</option>';
-                                            } else {
-                                                echo '<option class="text-white" value="' . $actor['id'] . '">' . $actor['actor'] . '</option>';
-                                            }
-                                        }
-                                        ?>
-                                    </select>
-                                </div>
+                                <label for="director" class="fw-bold col-form-label text-white">Đạo Diễn</label>
+                                <input type="text" class="form-control" id="director" name="director" value="<?= $item_actor['director'] ?>">
+                                <span class="error text-danger"></span>
                             </div>
                         </div>
                         <div class='row mt-3'>
@@ -123,9 +116,12 @@
         var name_movie = document.getElementById('name_movie').value;
         var categories = document.getElementById("trailer").value;
         var time = document.getElementById("time").value;
-        var image = document.getElementById('image');
-        var selectedDate = new Date(document.getElementById("date_movie").value);
-        var currenDate = new Date();
+        const selectedDate = new Date(document.getElementById("date_movie").value);
+    const currentDate = new Date();
+    currentDate.setHours(0, 0, 0, 0);
+        var actor = document.getElementById("actor").value;
+        var producer = document.getElementById("producer").value;
+        var director = document.getElementById("director").value;
         var error = document.getElementsByClassName("error");
         var has_error = true;
         error[0].innerHTML = '';
@@ -133,6 +129,10 @@
         error[2].innerHTML = '';
         error[3].innerHTML = '';
         error[4].innerHTML = '';
+        error[5].innerHTML = '';
+        error[6].innerHTML = '';
+
+
         if (name_movie.trim() == " " || name_movie.length < 5) {
             error[0].innerHTML = "không để trống hoặc dưới 5 ký tự";
             has_error = false;
@@ -146,8 +146,20 @@
             has_error = false;
         }
 
-        if (selectedDate > currenDate) {
-            error[4].innerHTML = 'Ngày Nhập Lớn Hơn hiện tại';
+        if (isNaN(selectedDate.getTime()) || selectedDate < currentDate) {
+            error[3].innerHTML = 'Không Nhập Ngày Nhỏ Hơn Hiện Tại';
+            has_error = false;
+        }
+        if (producer.trim() == "") {
+            error[4].innerHTML = "không để trống";
+            has_error = false;
+        }
+        if (actor.trim() == "") {
+            error[5].innerHTML = "không để trống";
+            has_error = false;
+        }
+        if (director.trim() == "") {
+            error[6].innerHTML = "không để trống";
             has_error = false;
         }
         if (has_error == false) {

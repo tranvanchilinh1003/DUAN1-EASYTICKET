@@ -13,19 +13,19 @@
                             <table class=" table table-bordered ">
                                 <thead class=" text-primary">
                                     <th>
-                                        Loại Hàng
+                                        Loại Phim
                                     </th>
                                     <th>
                                         Số Lượng
                                     </th>
                                     <th>
-                                        Giá Cao Nhất
+                                        <!-- Giá Cao Nhất -->
                                     </th>
                                     <th>
-                                        Giá Thấp Nhất
+                                        <!-- Giá Thấp Nhất -->
                                     </th>
                                     <th>
-                                        Giá Trung Bình
+                                        <!-- Giá Trung Bình -->
                                     </th>
 
 
@@ -47,7 +47,7 @@
                                             <td>
                                                 <?= $so_luong ?>
                                             </td>
-                                            <td>
+                                            <!-- <td>
                                                 <?= number_format($gia_min, 2) ?> <sup>đ</sup>
                                             </td>
                                             <td>
@@ -56,7 +56,7 @@
                                             <td>
                                                 <?= number_format($gia_avg, 2) ?> <sup>đ</sup>
 
-                                            </td>
+                                            </td> -->
 
 
 

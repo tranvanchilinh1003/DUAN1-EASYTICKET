@@ -77,6 +77,7 @@ function movies_exist($ma_hh)
     return pdo_query_value($sql, $ma_hh) > 0;
 }
 
+
 function movies_exist_add($ten_hh)
 {
     $sql = "SELECT count(*) FROM movies WHERE ten_hh=?";
@@ -143,5 +144,10 @@ $row = 12;
 $from = ($page - 1)*$row;
     $sql = "SELECT  mv.*, categories.type_name FROM `movies` mv JOIN categories WHERE mv.categories_id = categories.id AND mv.status = 1 LIMIT $from, $row";
     return pdo_query($sql);
+}
+function movies_by_categories($id){
+    $sql = "SELECT mv.*, cate.type_name  from movies mv
+    JOIN categories cate on mv.categories_id = cate.id WHERE mv.categories_id = $id";
+return     pdo_query ($sql);
 }
 

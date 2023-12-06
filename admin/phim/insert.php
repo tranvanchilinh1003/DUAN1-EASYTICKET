@@ -108,8 +108,10 @@
         var categories = document.getElementById("trailer").value;
         var time = document.getElementById("time").value;
         var image = document.getElementById('image');
-        var selectedDate = new Date(document.getElementById("date_movie").value);
-        var currenDate = new Date();
+        const selectedDate = new Date(document.getElementById("date_movie").value);
+    const currentDate = new Date();
+    currentDate.setHours(0, 0, 0, 0);
+        // const inputDateObject = new Date(selectedDate);
         var error = document.getElementsByClassName("error");
         var has_error = true;
         error[0].innerHTML = '';
@@ -133,9 +135,9 @@
             error[3].innerHTML = "Vui Lòng Chọn Hình";
             has_error = false;
         }
-        if (selectedDate > currenDate || selectedDate.length === "") {
-            error[4].innerHTML = 'Ngày Nhập Lớn Hơn hiện tại';
-            has_error = false;
+        if (isNaN(selectedDate.getTime()) || selectedDate <  currentDate ) {
+            error[4].innerHTML = 'Không Nhập Ngày Nhỏ Hơn Hiện Tại';
+        has_error =false;
         }
         if (has_error == false) {
             e.preventDefault();

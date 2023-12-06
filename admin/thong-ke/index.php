@@ -6,12 +6,12 @@ require "../../model/statistical.php";
 extract($_REQUEST);
 if(exist_param("chart", $_REQUEST)){
 
-// $items = statistical_chart();
+$items = thong_ke_movies();
 $VIEW_NAME = "chart.php";
 
 }else{
 
-// $items = statistical_chart();
+    $items = thong_ke_movies();
 $VIEW_NAME = "list.php";
 
 
