@@ -155,10 +155,10 @@
             has_error = false;
         }
 
-        if (selectedDate > currenDate) {
-            error[3].innerHTML = 'Ngày Nhập Lớn Hơn hiện tại';
-            has_error = false;
-        }
+        // if (isNaN(selectedDate.getTime()) || selectedDate < currentDate) {
+        //     error[3].innerHTML = 'Không Nhập Ngày Nhỏ Hơn Hiện Tại';
+        //     has_error = false;
+        // }
         if (producer.trim() == "") {
             error[4].innerHTML = "không để trống";
             has_error = false;

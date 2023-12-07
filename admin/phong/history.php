@@ -12,7 +12,7 @@
 <div class="col-lg-12 grid-margin stretch-card">
     <div class="card">
         <div class="card-body">
-            <h3 class="card-title text-warning">Danh Sách Phòng</h3>
+            <h3 class="card-title text-warning">Danh Sách Phòng Đầy</h3>
             <!-- <p class="card-description"> Add class <code>.table-striped</code> -->
             <!-- </p> -->
             <form action="#" method="post" id="form_delete_loai">

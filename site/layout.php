@@ -249,9 +249,9 @@ require_once "../../model/categories.php";
                         <nav class="header__menu mobile-menu">
                             <ul>
                                 <li>
-                                    <form class="navbar-form" action="<?= $SITE_URL ?>/phim/tim-kiem.php" method="POST">
+                                    <form class="navbar-form" action="<?= $SITE_URL?>/phim/tim-kiem.php" method="GET">
                                         <div class="input-group">
-                                            <input type="text" class="form-control search-input " name="keyword" placeholder="Tìm Kiếm...">
+                                            <input type="text" class="form-control search-input " name= "keyword" value="<?php if(isset($_GET['search'])){ echo$_SESSION['key'];}  ?>" placeholder="Tìm Kiếm...">
                                             <div class="input-group-append">
                                                 <button class="btn btn-outline-warning search-button" name="search" type="submit">
                                                     <i class="fa fa-search"></i>
@@ -264,7 +264,13 @@ require_once "../../model/categories.php";
                                 if (isset($_SESSION["username"])) {
                                 ?>
                                     <li>
-                                        <img style="border-radius: 50%;" src="../../img/<?= $_SESSION['img'] ?>" width="30px" alt="Ảnh đại">
+                                        <img style="border-radius: 50%;" src="../../img/<?php  
+if(!empty($_SESSION['upuser'])) {
+    echo $_SESSION['img_old'];
+} else {
+    echo  $_SESSION['anh_client'];
+}
+?>" width="30px" alt="">
                                         <label for="hover" class="text-white"><?= $_SESSION["username"] ?></label>
                                         <ul class="dropdown " id='hover'>
                                             <li><a href="<?= $SITE_URL ?>/form/login_xu_ly_thong_tin.php?btn_edit"><i class="bi bi-person h5"></i> Tài Khoản</a></li>
@@ -337,7 +343,7 @@ require_once "../../model/categories.php";
                                 $move = categories_select_all();
                                 foreach ($move as $categories) {
                                 ?>
-                                    <a href="#" value="<?= $categories['id'] ?>"><?= $categories['type_name'] ?></a>
+                                    <a href="<?=$SITE_URL?>/phim/tim-kiem.php?categories_movies&id=<?=$categories['id']?>" value="<?= $categories['id'] ?>"><?= $categories['type_name'] ?></a>
                                 <?php
                                 }
                                 ?>

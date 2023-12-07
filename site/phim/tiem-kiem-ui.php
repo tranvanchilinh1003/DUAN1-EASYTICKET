@@ -62,37 +62,39 @@
 
         </div>
     </div>
-    <?php
-    if (!isset($_POST['search'])) {
-    ?>
-        <nav aria-label="Page navigation example " class="d-flex justify-content-center">
-            <ul class="pagination ">
-                <li class="page-item ">
-                    <a class="page-link bg-danger text-white rounded-circle mr-1" href="<?= $SITE_URL ?>/phim/tim-kiem.php?all&<?= $trang ?>=1" aria-label="Previous">
-                        <span aria-hidden="true">&laquo;</span>
-                    </a>
-                </li>
-                <?php
-                for ($i = 1; $i <= $page; $i++) {
-                ?>
-                    <li class="page-item "><a class="page-link text-white rounded-circle mr-1 <?php if ($_GET['page'] == $i) {
-                                                                                                    echo "bg-transparent";
-                                                                                                } else {
-                                                                                                    echo "bg-danger";
-                                                                                                } ?>" href="<?= $SITE_URL ?>/phim/tim-kiem.php?all&<?= $trang ?>=<?= $i ?>"><?php echo $i; ?></a></li>
-                <?php
-                }
-                ?>
-                <li class="page-item">
-                    <a class="page-link bg-danger text-white rounded-circle mr-1 " href="<?= $SITE_URL ?>/phim/tim-kiem.php?all&<?= $trang ?>=<?= $page ?>" aria-label="Next">
-                        <span aria-hidden="true">&raquo;</span>
-                    </a>
-                </li>
-            </ul>
-        </nav>
-    <?php
-    }
-    ?>
+<?php
+if(!isset($_GET['search'])){
+
+
+
+
+?>
+    <nav aria-label="Page navigation example " class="d-flex justify-content-center">
+        <ul class="pagination ">
+            <li class="page-item ">
+                <a class="page-link bg-secondary text-white" href="<?=$SITE_URL?>/phim/tim-kiem.php?all&<?=$trang?>=1" aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                </a>
+            </li>
+            <?php
+            for ($i = 1; $i <= $page; $i++) {
+            ?>
+                <li class="page-item "><a class="page-link text-white <?php  if($_GET['page'] == $i  ){ echo"bg-transparent"; } else{ echo"bg-secondary";} ?>" href="<?=$SITE_URL?>/phim/tim-kiem.php?all&<?=$trang?>=<?= $i ?>"><?php echo $i; ?></a></li>
+            <?php
+            }
+            ?>
+            <li class="page-item">
+                <a class="page-link bg-secondary text-white" href="<?=$SITE_URL?>/phim/tim-kiem.php?all&<?=$trang?>=<?= $page ?>" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+<?php
+}
+
+
+?>
 </section>
 
 <!-- Product Section End -->

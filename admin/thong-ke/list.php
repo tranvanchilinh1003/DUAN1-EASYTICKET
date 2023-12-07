@@ -18,6 +18,18 @@
                                     <th>
                                         Số Lượng
                                     </th>
+                                    <!-- <th>
+                                        
+                                    </th>
+                                    <th>
+                                        
+                                    </th>
+                                    <th>
+                                        
+                                    </th> -->
+
+
+
                                 </thead>
                                 <?php
 

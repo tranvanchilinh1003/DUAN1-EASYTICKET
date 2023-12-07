@@ -25,7 +25,7 @@
     <!-- End layout styles -->
     <!-- Toatsjs  Thư Viện-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
-<script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 
     <link rel="shortcut icon" type="image/x-icon" href="<?= $CONTENT_URL ?>/assets/img/logo_url.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -97,7 +97,7 @@
                             <form class="nav-link mt-2 mt-md-0 d-none d-lg-flex search">
                                 <input type="text" class="form-control w-50" placeholder="Tìm kiếm...">
                                 <div class="input-group-append">
-                                    <button class="btn btn-outline-warning ms-3"  type="button" onmouseover="showSearchInput()" onmouseout="hideSearchInput()">
+                                    <button class="btn btn-outline-warning ms-3" type="button" onmouseover="showSearchInput()" onmouseout="hideSearchInput()">
                                         <i class="bi bi-search"></i>
                                     </button>
                                 </div>
@@ -168,7 +168,7 @@
                             <a class="nav-link" id="profileDropdown" href="#" data-toggle="dropdown">
                                 <div class="navbar-profile">
                                     <!-- <img class="img-xs rounded-circle" src="assets/images/faces/face15.jpg" alt=""> -->
-                                    <img class="img-xs rounded-circle" src="../../img/<?= $_SESSION['img']  ?>" alt="">
+                                    <img class="img-xs rounded-circle" src="../../img/<?=$_SESSION['anh'] ?>" alt="">
                                     <p class="mb-0 d-none d-sm-block navbar-profile-name"><?= $_SESSION["username"] ?></p>
                                     <i class="mdi mdi-menu-down d-none d-sm-block"></i>
                                 </div>
@@ -176,7 +176,7 @@
                             <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="profileDropdown">
                                 <h6 class="p-3 mb-0">Hồ sơ</h6>
                                 <div class="dropdown-divider"></div>
-                                <a href="<?=$ADMIN_URL?>/trang-chinh/index.php?profile" class="dropdown-item preview-item">
+                                <a href="<?= $ADMIN_URL ?>/trang-chinh/index.php?profile" class="dropdown-item preview-item">
                                     <div class="preview-thumbnail">
                                         <div class="preview-icon bg-dark rounded-circle">
                                             <i class="mdi mdi-settings text-success"></i>
@@ -258,17 +258,17 @@
     <!-- <script src="<?= $ADMIN_URL ?>/assets/js/chartist.js"></script> -->
     <!-- End custom js for this page -->
     <script>
-    function showdeleteToast() {
-        Toastify({
-            text: "Xóa thành công!",
-            duration: 2000, // Thời gian hiển thị toast (3 giây)
-            close: true,
-            gravity: "top",
-            position: "center",
-            backgroundColor: 'red',
-        }).showToast();
-    }
-</script>
+        function showdeleteToast() {
+            Toastify({
+                text: "Xóa thành công!",
+                duration: 2000, // Thời gian hiển thị toast (3 giây)
+                close: true,
+                gravity: "top",
+                position: "center",
+                backgroundColor: 'red',
+            }).showToast();
+        }
+    </script>
 </body>
 
 </html>

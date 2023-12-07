@@ -54,7 +54,7 @@
                                     <td>
 
                                         <a href="index.php?reset_user&id=<?= $id['id'] ?>" class="btn btn-success " name='reset'><i class="bi bi-cloud-download"></i>Khôi Phục</a>
-                                        <a href="#" onclick="confirmDelete()"  class="btn btn-danger "><i class="bi bi-trash"></i>Xóa Vĩnh Viễn</a>
+                                        <a href="index.php?remove_vv&id=<?=$id['id']?>" onclick="confirmDelete()"  class="btn btn-danger "><i class="bi bi-trash"></i>Xóa Vĩnh Viễn</a>
                                     
                                     </td>
 
@@ -122,8 +122,8 @@
         
         $.ajax({
             type: 'POST',
-            url: 'index.php?remove_vv&id=<?=$id_user ?>', // Đường dẫn tới tập tin PHP xử lý xóa tài khoản
-            data: { username: username },
+            url: 'index.php?remove_vv&id=<?=$id['id'] ?>', // Đường dẫn tới tập tin PHP xử lý xóa tài khoản
+            // data: { username: username },
             
             
         });

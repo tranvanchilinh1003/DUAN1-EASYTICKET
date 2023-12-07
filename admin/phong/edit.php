@@ -24,6 +24,24 @@
                             
                             </div>
                             <div class="col-sm-12">
+                                <div class="form-group">
+                                    <label for="cinemas_id" class="fw-bold col-form-label text-white">Chọn Rạp</label>
+                                    <select class="form-control" id="cinemas_id" name="cinemas_id">
+                                    <?php
+                                $cinemas = cinemas();
+                                foreach ($cinemas as $cinemas) {
+                                            if ($cinemas['id'] == $item['cinemas_id']) {
+                                                echo '<option class="text-white" selected value="' . $cinemas['id'] . '">' . $cinemas['name'] . '</option>';
+                                            } else {
+                                                echo '<option class="text-white" value="' . $cinemas['id'] . '">' . $cinemas['name'] . '</option>';
+                                            }
+                                        }
+                                        ?>
+                                        
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-sm-12">
                                 <label for="hall_name" class="fw-bold col-form-label text-white">Tên Phòng</label>
                                 <input type="text" class="form-control  m-auto" id="hall_name" name="hall_name" value="<?=$item['hall_name']?>">
                                 <input type="hidden" class="form-control  m-auto" id="ten_old" name="ten_old" value="<?=$item['hall_name']?>">
@@ -48,6 +66,12 @@
                                 </select>
                             </div>
                             <div class="col-sm-12">
+                                <label for="start_time" class="fw-bold col-form-label text-white">Thời Gian Bắt Đầu</label>
+                                <input type="text" class="form-control " id="start_time" name="start_time" value="<?=$item['start_time'] ?>">
+                                <span class="error text-danger"></span>
+                                
+                            </div>
+                            <div class="col-sm-12">
                             <label class="fw-bold col-form-label text-white">Trạng thái</label>
                                 <div class=' p-2 rounded-right rounded-left' style="background-color: #2A3038;">
                                     <input type="radio" class="" name="status" value="Active" <?php echo ($item['status']=='Active')? "checked" : ''; ?> >Còn Phòng
@@ -55,6 +79,10 @@
                                 </div>
                                 <span class="error text-danger"></span>
                             </div>
+                            
+                            
+                    
+                        
                         
                         </div>
                         <br>

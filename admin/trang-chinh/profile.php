@@ -71,6 +71,7 @@
 						<div class="user-profile">
 							<div class="user-avatar">
 								<a href="#" data-toggle="modal" data-target="#informationModal"> <img src="../../img/<?= $user['image'] ?>" alt="Maxwell Admin">
+							
 									<p class="text-center text-body text-muted">Phóng to ảnh</p></img>
 								</a>
 							</div>

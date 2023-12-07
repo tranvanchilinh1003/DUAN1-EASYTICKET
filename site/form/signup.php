@@ -37,7 +37,7 @@
 
 				<div class="wrap-input100 validate-input  mb-4" data-validate="Password is required">
 					<!-- <span class="label-input100">Mật Khẩu</span> -->
-<input class="input100" type="text" class="form-control" id="full_name" name='full_name' value="<?php if(isset($loi)) {  echo $_SESSION['full_name']; }  ?>" placeholder="Họ Tên">
+					<input class="input100" type="text" class="form-control" id="full_name" name='full_name' value="<?php if(isset($loi)) {  echo $_SESSION['full_name']; }  ?>" placeholder="Họ Tên">
 					<span class="focus-input100" data-symbol="&#xf206;"></span>
 				</div>
 				<span class='text-danger err'></span>

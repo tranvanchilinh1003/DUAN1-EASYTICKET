@@ -17,9 +17,11 @@ $VIEW_NAME = "trang-chinh/home.php";
 if(exist_param('profile')){
     $username = $_SESSION['username'];
     $user = user_id($username);
-
+    $_SESSION['anh'] = $user['image'];
     $VIEW_NAME = "profile.php";
 }else if(exist_param("update_admin")){
+  if(isset($_POST['update_admin'])){
+  $_SESSION['update'] = $_POST['update_admin'];
     $username = $_POST['username'];
     $user = user_id($username);
   $information = $_POST['information'];
@@ -33,13 +35,16 @@ if(exist_param('profile')){
     $MESSAGE = "Mật Khẩu Không Trùng!";
     $VIEW_NAME = "profile.php";
   }else{
+    
   if(empty($image)){
     $image = $_POST['image_old'];
+    $_SESSION['img_old'] = $_POST['image_old'];
     khach_hang_update($information,$password,$image,$role=1,$full_name,$gender,$username);
 header("location: ".$ADMIN_URL."/trang-chinh/index.php?profile");
   }else{
     $image = save_file('image', $UPLOAD_URL);
     khach_hang_update($information,$password,$image,$role=1,$full_name,$gender,$username);
+
 header("location: ".$ADMIN_URL."/trang-chinh/index.php?profile");
     
   }
@@ -53,7 +58,10 @@ header("location: ".$ADMIN_URL."/trang-chinh/index.php?profile");
     khach_hang_update($information,$password,$image,$role=1,$full_name,$gender,$username);
     header("location: ".$ADMIN_URL."/trang-chinh/index.php?profile");
   }
-    
+  
   }
+
+}
+
 }
 require "../layout.php";

@@ -9,7 +9,8 @@ require '../../model/statistical.php';
 //-------------------------------//
 extract($_REQUEST);
 if (exist_param("keyword")) {
-    if (isset($_POST["search"])) {
+    if (isset($_GET["search"])) {
+        $_SESSION['key'] = $_GET["keyword"];
         if ($keyword == '') {
             // $title_site = "TẤT CẢ SẢN PHẨM";
             // $word = "Chào Mừng Bạn Đến Với Danh Sách Phim Của Easy-Ticket";

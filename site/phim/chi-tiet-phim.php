@@ -131,6 +131,8 @@
                                         <li><span>Thời lượng:</span> <?= $item['time'] ?></li>
                                         <li><span>Đánh giá:</span> 8.5 / 161 times</li>
                                         <!-- <li><span>Duration:</span> 24 min/ep</li> -->
+
+
                                         <li><span>Nhà Sản Xuất:</span> <?= $item['producer'] ?></li>
                                         <li><span>Đạo Diễn:</span> <?= $item['director'] ?></li>
                                         <li><span>Diễn viên:</span> <?= $item['actor'] ?></li>
@@ -140,21 +142,19 @@
                             </div>
                         </div>
                         <div class="anime__details__btn">
-                            <!-- <a href="<?= $SITE_URL ?>/trang-chinh/index.php?trailer" class="follow-btn">TRAILER</a> -->
-                            <!-- <a href="<?= $SITE_URL . '/phim/dat-ve.php?dat-ve&id=' .  $item['id']  ?>" class="watch-btn" name="dat-ve"><span>ĐẶT VÉ</span> <i class="fa fa-angle-right"></i></a> -->
                             <?php
                             if (isset($_SESSION['username'])) {
 
                             ?>
                                 <!-- <a href="<?= $SITE_URL ?>/trang-chinh/index.php?trailer" class="follow-btn">TRAILER</a> -->
-                                <a href="<?= $SITE_URL . '/phim/dat-ve.php?dat-ve&id=' .  $item['id']  ?>" class="watch-btn"><span>ĐẶT VÉ</span> <i class="fa fa-angle-right"></i></a>
+                                <a href="#" class="watch-btn"><span>ĐẶT VÉ</span> <i class="fa fa-angle-right"></i></a>
                             <?php
                             } else {
 
 
                             ?>
 
-                                <a href="<?= $SITE_URL ?>/form/login_xuly.php" class="watch-btn"><span>ĐẶT VÉ</span> <i class="fa fa-angle-right"></i></a>
+                                <a href="<?=$SITE_URL?>/form/login_xuly.php" class="watch-btn"><span>ĐẶT VÉ</span> <i class="fa fa-angle-right"></i></a>
                             <?php
 
 

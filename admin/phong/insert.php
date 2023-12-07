@@ -11,10 +11,27 @@
                 <div class="table">
                     <form class="form" action="<?= $ADMIN_URL ?>/phong/index.php" method="post" id="rum_form" enctype="multipart/form-data">
                         <div class=''>
+                            
                             <div class="col-sm-12">
                                 <!-- <label for="id" class="fw-bold col-form-label text-white">Mã loại</label> -->
                                 <input type="hidden" class="form-control  m-auto " style="background-color: #2A3038;" id="id" name="id" placeholder="Auto Munber">
                             
+                            </div>
+                            <div class="col-sm-12">
+                                <div class="form-group">
+                                    <label for="cinemas_id" class="fw-bold col-form-label text-white">Chọn Rạp</label>
+                                    <select class="form-control" id="cinemas_id" name="cinemas_id">
+                                        <?php
+                                        $cinemas = cinemas();
+                                        foreach ($cinemas as $cinemas) {
+                                        ?>
+                                            <option class='text-white boder' value="<?= $cinemas['id'] ?>"><?= $cinemas['name'] ?></option>
+                                        <?php
+
+                                        }
+                                        ?>
+                                    </select>
+                                </div>
                             </div>
                             <div class="col-sm-12">
                                 <label for="hall_name" class="fw-bold col-form-label text-white">Tên Phòng</label>
@@ -39,6 +56,12 @@
                                 </select>
                             </div>
                             <div class="col-sm-12">
+                                <label for="start_time" class="fw-bold col-form-label text-white">Thời Gian Bắt Đầu</label>
+                                <input type="text" class="form-control " id="start_time" name="start_time" placeholder='Thời Gian Bắt Đầu...'>
+                                <span class="error text-danger"></span>
+                                
+                            </div>
+                            <div class="col-sm-12">
                             <label class="fw-bold col-form-label text-white">Trạng thái</label>
                                 <div class=' p-2 rounded-right rounded-left' style="background-color: #2A3038;">
                                     <input type="radio" class="" name="status" value="Active" >Còn Phòng
@@ -46,6 +69,7 @@
                                 </div>
                                 <span class="error text-danger"></span>
                             </div>
+                    
                         
                         </div>
                         <br>
@@ -67,17 +91,23 @@
         var err =document.getElementsByClassName("error");
         var name =document.getElementById("hall_name").value;
         var status =document.getElementsByName("status");
+        var time = document.getElementById('start_time').value;
      var hass_err =false;
      err[0].innerHTML = '';
      err[1].innerHTML = '';
+     err[2].innerHTML = '';
      if(name.trim() == ""){
         err[0].innerHTML = "Vui Lòng Không Bỏ Trống";
         hass_err  = true;
      }
      if(!status[0].checked && !status[1].checked ){
-        err[1].innerHTML = "Vui Lòng Chọn";
+        err[2].innerHTML = "Vui Lòng Chọn";
         hass_err  = true;
 
+     }
+     if(time.trim() == ''){
+        err[1].innerHTML = "Vui Lòng Nhập Thời Gian";
+        hass_err  = true;
      }
 
      if(hass_err == true){
