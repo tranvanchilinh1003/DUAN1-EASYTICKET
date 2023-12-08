@@ -2,12 +2,12 @@
 
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a  href="<?= $ADMIN_URL ?>/phong/index.php?btn_list">Danh Sách Trống</a></li>
+            <li class="breadcrumb-item"><a href="<?= $ADMIN_URL ?>/phong/index.php?btn_list">Danh Sách Trống</a></li>
             <li class="breadcrumb-item active" aria-current="page">Danh Sách Phòng Đầy</li>
         </ol>
 
     </nav>
-    
+
 </div>
 <div class="col-lg-12 grid-margin stretch-card">
     <div class="card">
@@ -24,41 +24,41 @@
                                 <th>ID</th>
                                 <th>Tên Phòng</th>
                                 <th>Phim Chiếu</th>
-                    
+
                                 <th>Trạng Thái</th>
-                        
-                        
+
+
                                 <th>Chỉnh Sửa</th>
                             </tr>
                         </thead>
                         <tbody>
                             <?php
                             $items = rum_all_inactive();
-                            foreach($items as $item){
+                            foreach ($items as $item) {
                             ?>
-                            <tr>
-                                <td>
-                                    <input type="checkbox" name="check[]" value="<?= $id ?>" id="<?= $id ?>" value="<?= $id ?>" class="check_button">
-                                </td>
-                                <td><?=$item['id'] ?></td>
-                                <td><?=$item['hall_name'] ?></td>
-                                <!-- <td>
-                                    <img src="../../img/<?=$item['image'] ?>" alt="image" />
-                                </td> -->
-                                <td> <?=$item['name_movie'] ?> </td>
-                                
-                            
-                                <td> <?=($item['status'] == 'Active')? "Phòng Trống" : "Phòng Đầy"; ?> </td>
-                                
-                                <td>
-                                        <a href="index.php?reset_rum&id=<?= $item['id'] ?>" class="btn btn-success " name='reset_rum'><i class="bi bi-cloud-download"></i>Khôi Phục</a>
-                                        <a href="index.php?delete_rum&id=<?= $item['id'] ?>" onclick="confirmDelete();"  class="btn btn-danger "><i class="bi bi-trash"></i>Xóa Vĩnh Viễn</a>
+                                <tr>
+                                    <td>
+                                        <input type="checkbox" name="check[]" value="<?= $id ?>" id="<?= $id ?>" value="<?= $id ?>" class="check_button">
                                     </td>
-                            </tr>
+                                    <td><?= $item['id'] ?></td>
+                                    <td><?= $item['hall_name'] ?></td>
+                                    <!-- <td>
+                                    <img src="../../img/<?= $item['image'] ?>" alt="image" />
+                                </td> -->
+                                    <td> <?= $item['name_movie'] ?> </td>
+
+
+                                    <!-- <td> <?= ($item['status'] == 'Active') ? "Phòng Trống" : "Phòng Đầy"; ?> </td> -->
+                                    <td> <?= $item['status'] == 'Active' ? '<p class="badge bg-success text-white"> Phòng Trống</p' : '<p class="badge bg-danger text-white"> Phòng Đầy</p'; ?> </td>
+                                    <td>
+                                        <a href="index.php?reset_rum&id=<?= $item['id'] ?>" class="btn btn-success " name='reset_rum'><i class="bi bi-cloud-download"></i>Khôi Phục</a>
+                                        <a href="index.php?delete_rum&id=<?= $item['id'] ?>" onclick="confirmDelete();" class="btn btn-danger "><i class="bi bi-trash"></i>Xóa Vĩnh Viễn</a>
+                                    </td>
+                                </tr>
                             <?php
 
                             }
-?>
+                            ?>
                         </tbody>
                     </table>
                 </div>

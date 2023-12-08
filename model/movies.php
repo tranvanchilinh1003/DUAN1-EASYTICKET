@@ -125,7 +125,6 @@ function movies_select_keyword($keyword)
     WHERE mv.name_movie LIKE ? OR cate.type_name LIKE ?";
     return pdo_query($sql, '%' . $keyword . '%', '%' . $keyword . '%');
 }
-
 function movies_select_page($order, $limit)
 {
     if (!isset($_REQUEST['page'])) {
@@ -150,7 +149,6 @@ function movie_page(){
     }else{
         $page = 1;
     }
-
 $row = 12;
 $from = ($page - 1)*$row;
     $sql = "SELECT  mv.*, categories.type_name FROM `movies` mv JOIN categories WHERE mv.categories_id = categories.id AND mv.status = 1 LIMIT $from, $row";

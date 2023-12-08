@@ -47,7 +47,8 @@
                                     <td> <?= $item['name_movie'] ?> </td>
                                     <td> <?= $item['date_movie'] ?> </td>
                                     <td> <?= $item['time'] ?> </td>
-                                    <td> <?= $item['status'] == 1 ? "Hiện" : "Ẩn"; ?> </td>
+                                    <!-- <td> <?= $item['status'] == 1 ? "Hiện" : "Ẩn"; ?> </td> -->
+                                    <td> <?=$item['status'] == 1? '<p class="badge bg-success text-white"> Hiện</p' : '<p class="badge bg-danger text-white"> Ẩn</p'; ?> </td>
 
                                     <td>
                                         <a href="index.php?reset_movie&id=<?= $id ?>" class="btn btn-success " name='reset_movie'><i class="bi bi-cloud-download"></i>Khôi Phục</a>

@@ -200,6 +200,7 @@ require_once "../../model/categories.php";
 
         color: #fff;
     }
+
 </style>
 
 <body>
@@ -263,7 +264,7 @@ require_once "../../model/categories.php";
                                 if (isset($_SESSION["username"])) {
                                 ?>
                                     <li>
-                                        <img style="border-radius: 50%;" src="../../img/<?= $_SESSION['img'] ?>" width="30px" alt="">
+                                        <img style="border-radius: 50%;" src="../../img/<?= $_SESSION['img'] ?>" width="30px" alt="Ảnh đại">
                                         <label for="hover" class="text-white"><?= $_SESSION["username"] ?></label>
                                         <ul class="dropdown " id='hover'>
                                             <li><a href="<?= $SITE_URL ?>/form/login_xu_ly_thong_tin.php?btn_edit"><i class="bi bi-person h5"></i> Tài Khoản</a></li>
@@ -354,7 +355,7 @@ require_once "../../model/categories.php";
                     <p>
                         Bản Quyền &copy;<script>
                             document.write(new Date().getFullYear());
-                        </script> mọi quyền truy cập thuộc về team LÀNG ĐÁ&#128525<i class="fa fa-heart" aria-hidden="true"></i>: <a href="<?= $CONTENT ?>/index.php" class="text-warning">EASY TICKET</a>
+                        </script> mọi quyền truy cập thuộc về team LÀNG ĐÁ&#128525<i class="fa fa-heart" aria-hidden="true"></i>: <a href="<?= $SITE_URL ?>/trang-chinh/" class="text-warning">EASY TICKET</a>
                     </p>
                 </div>
             </div>

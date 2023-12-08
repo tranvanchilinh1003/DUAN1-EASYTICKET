@@ -12,12 +12,17 @@ if (exist_param("submit_insert")) {
         $password1 = $_POST['password'];
         $full_name = $_POST['full_name'];
         $image = save_file('image', $UPLOAD_URL);
+        $gender = $_POST['gender'];
         $information = $_POST['information'];
         $password = md5($password1);
         khach_hang_select_by_id($username);
         $loi = khach_hang_exist($username);
         if (!empty($loi)) {
-            $loi = "Tài Khoản Đã Tồn Tại";
+            $MESSAGE = "Tài Khoản Đã Tồn Tại";
+            $_SESSION['user'] = $username;
+            $_SESSION['full_name'] = $full_name;
+            $_SESSION['gender'] = $gender;
+            $_SESSION['infor'] = $information;
         } else {
 
             if ($image != '') {
@@ -37,9 +42,6 @@ if (exist_param("submit_insert")) {
     $VIEW_NAME = "signup.php";
 } else {
 }
-
-
-
 // $VIEW_NAME = "login.php";
 
 

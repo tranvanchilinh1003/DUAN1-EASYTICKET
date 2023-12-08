@@ -18,25 +18,11 @@
                                     <th>
                                         Số Lượng
                                     </th>
-                                    <th>
-                                        <!-- Giá Cao Nhất -->
-                                    </th>
-                                    <th>
-                                        <!-- Giá Thấp Nhất -->
-                                    </th>
-                                    <th>
-                                        <!-- Giá Trung Bình -->
-                                    </th>
-
-
-
                                 </thead>
                                 <?php
 
                                 foreach ($items as $item) {
                                     extract($item);
-
-
                                     // $delete_link = "index.php?ma_loai=" . $ma_loai;
                                 ?>
                                     <tbody>

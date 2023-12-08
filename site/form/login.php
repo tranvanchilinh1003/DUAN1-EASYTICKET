@@ -39,7 +39,7 @@
 
 				<div class="wrap-input100 validate-input m-b-23" data-validate="Username is reauired">
 					<!-- <span class="label-input100">Tên Đăng Nhập</span> -->
-					<input class="input100" type="text" id="username" name="username" placeholder="Tên Đăng Nhập">
+					<input class="input100" type="text" id="username" name="username" placeholder="Tên Đăng Nhập" >
 					<span class="focus-input100" data-symbol="&#xf206;"></span>
 				</div>
 				<span class='text-danger err'></span>

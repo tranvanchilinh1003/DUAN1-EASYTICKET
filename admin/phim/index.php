@@ -9,6 +9,7 @@ require_once "../../model/movies.php";
 require_once "../../model/actor.php";
 require_once "../../model/categories.php";
 require_once "../../model/showtime.php";
+require_once "../../model/rum.php";
 extract($_REQUEST);
 if (exist_param("btn_insert")) {
     $name_movie = $_POST['name_movie'];

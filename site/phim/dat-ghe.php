@@ -653,9 +653,9 @@
                             <div class="row">
                                 <div class="col-lg-12">
                                     <div class="breadcrumb__links">
-                                        <a href="#">Đặt ghế</a>
-                                        <a href="#" disabled readonly><span>Thanh toán</span></a>
-                                        <a href="#" disabled readonly><span>Thông tin vé</span></a>
+                                        <a href="#"> <h4 class="text-light"> Đặt ghế</h4></a>
+                                        <a href="#" disabled readonly><h4 class="text-muted">Thanh toán</h4></a>
+                                        <a href="#" disabled readonly><h4 class="text-muted">Thông tin vé</h4></a>
                                     </div>
                                 </div>
                             </div>

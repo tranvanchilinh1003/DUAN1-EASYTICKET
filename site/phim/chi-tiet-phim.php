@@ -70,6 +70,7 @@
         background-color: #2ecc71;
     }
 </style>
+<!-- Anime Section Begin -->
 <section class="anime-details spad">
     <div class="container">
         <div class="anime__details__content">
@@ -88,14 +89,28 @@
                             <!-- <span>フェイト／ステイナイト, Feito／sutei naito</span> -->
                         </div>
                         <div class="anime__details__rating">
-                            <div class="rating">
-                                <a href="#"><i class="fa fa-star-half-o"></i></a>
-                                <a href="#"><i class="fa fa-star"></i></a>
-                                <a href="#"><i class="fa fa-star"></i></a>
-                                <a href="#"><i class="fa fa-star"></i></a>
-                                <a href="#"><i class="fa fa-star"></i></a>
+                        <div class="rate d-flex ">
+                                <svg style="display:none;">
+                                    <defs>
+                                        <symbol id="fivestars" class="border-none">
+                                            <path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z M0 0 h24 v24 h-24 v-24" fill="#0b0c2a" fill-rule="evenodd" />
+                                            <path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z M0 0 h24 v24 h-24 v-24" fill="#0b0c2a" fill-rule="evenodd" transform="translate(24)" />
+                                            <path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z M0 0 h24 v24 h-24 v-24" fill="#0b0c2a" fill-rule="evenodd" transform="translate(48)" />
+                                            <path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z M0 0 h24 v24 h-24 v-24" fill="#0b0c2a" fill-rule="evenodd" transform="translate(72)" />
+                                            <path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z M0 0 h24 v24 h-24 v-24" fill="#0b0c2a" fill-rule="evenodd" transform="translate(96)" />
+                                        </symbol>
+                                    </defs>
+                                </svg>
+                                <div class="rating-1">
+                                    <progress class="rating-bg" value="<?= round($avr_ratings, 1); ?>" max="5"></progress>
+                                    <svg>
+                                        <use xlink:href="#fivestars" />
+                                    </svg>
+                                </div>
                             </div>
-                            <span>1.029 Votes</span>
+
+
+                            <span><?= round($avr_ratings, 1); ?> / 5</span>
                         </div>
                         <h5 class="text-light">Mô tả: </h5>
                         <p><?= $item['discretion'] ?></p>
@@ -116,19 +131,36 @@
                                         <li><span>Thời lượng:</span> <?= $item['time'] ?></li>
                                         <li><span>Đánh giá:</span> 8.5 / 161 times</li>
                                         <!-- <li><span>Duration:</span> 24 min/ep</li> -->
-                                    
-                                        
                                         <li><span>Nhà Sản Xuất:</span> <?= $item['producer'] ?></li>
                                         <li><span>Đạo Diễn:</span> <?= $item['director'] ?></li>
                                         <li><span>Diễn viên:</span> <?= $item['actor'] ?></li>
-                                        
+
                                     </ul>
                                 </div>
                             </div>
                         </div>
                         <div class="anime__details__btn">
                             <!-- <a href="<?= $SITE_URL ?>/trang-chinh/index.php?trailer" class="follow-btn">TRAILER</a> -->
-                            <a href="<?= $SITE_URL . '/phim/dat-ve.php?dat-ve&id=' .  $item['id']  ?>" class="watch-btn" name="dat-ve"><span>ĐẶT VÉ</span> <i class="fa fa-angle-right"></i></a>
+                            <!-- <a href="<?= $SITE_URL . '/phim/dat-ve.php?dat-ve&id=' .  $item['id']  ?>" class="watch-btn" name="dat-ve"><span>ĐẶT VÉ</span> <i class="fa fa-angle-right"></i></a> -->
+                            <?php
+                            if (isset($_SESSION['username'])) {
+
+                            ?>
+                                <!-- <a href="<?= $SITE_URL ?>/trang-chinh/index.php?trailer" class="follow-btn">TRAILER</a> -->
+                                <a href="<?= $SITE_URL . '/phim/dat-ve.php?dat-ve&id=' .  $item['id']  ?>" class="watch-btn"><span>ĐẶT VÉ</span> <i class="fa fa-angle-right"></i></a>
+                            <?php
+                            } else {
+
+
+                            ?>
+
+                                <a href="<?= $SITE_URL ?>/form/login_xuly.php" class="watch-btn"><span>ĐẶT VÉ</span> <i class="fa fa-angle-right"></i></a>
+                            <?php
+
+
+                            }
+
+                            ?>
                         </div>
                     </div>
                 </div>

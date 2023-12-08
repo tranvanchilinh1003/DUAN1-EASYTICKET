@@ -22,30 +22,29 @@
 <div class="limiter">
 	<div class="container-login100" style="border: grey;">
 		<div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54 border bg-light my-5">
-			<form class="login100-form validate-form" method='post' action="<?= $SITE_URL ?>/form/signup_xuly.php" id="my_form" enctype="multipart/form-data">
-				<span class="login100-form-title p-b-49">
+			<form class="login100-form validate-form" method='post' action="<?=$SITE_URL?>/form/signup_xuly.php" id="my_form" enctype="multipart/form-data">
+				<span class="login100-form-title p-b-49 font-weight-bold">
 					Đăng Ký
 				</span>
 
 				<div class="wrap-input100 validate-input m-b-23 " data-validate="Username is reauired">
 					<!-- <span class="label-input100">Tên Đăng Nhập</span> -->
-					<input class="input100" type="text" class="form-control" id='username' name='username' placeholder="Tài Khoản">
+					<input class="input100" type="text" class="form-control" id='username' name='username' value="<?php if(isset($loi)) {  echo $_SESSION['user']; }  ?>" placeholder="Tài Khoản...">
 					<span class="focus-input100" data-symbol="&#xf206;"></span>
-					<i class=" text-danger"><?= (isset($MESSAGE) && (strlen($MESSAGE) > 0)) ? $MESSAGE : "" ?></i>
-
-				</div>
+				
+				</div><i class=" text-danger"><?= (isset($MESSAGE) && (strlen($MESSAGE) > 0)) ? $MESSAGE : "" ?></i>
 				<span class='text-danger err'></span>
 
 				<div class="wrap-input100 validate-input  mb-4" data-validate="Password is required">
 					<!-- <span class="label-input100">Mật Khẩu</span> -->
-					<input class="input100" type="text" class="form-control" id="full_name" name='full_name' placeholder="Họ Tên">
+<input class="input100" type="text" class="form-control" id="full_name" name='full_name' value="<?php if(isset($loi)) {  echo $_SESSION['full_name']; }  ?>" placeholder="Họ Tên">
 					<span class="focus-input100" data-symbol="&#xf206;"></span>
 				</div>
 				<span class='text-danger err'></span>
 
 				<div class="wrap-input100 validate-input mb-4">
 					<!-- <span class="label-input100">Mật Khẩu</span> -->
-					<input class="input100" type="text" class="form-control" id='thong_tin' name='information' placeholder="Gmail Hoặc Số Điện Thoại">
+					<input class="input100" type="text" class="form-control" id='thong_tin' name='information' value="<?php if(isset($loi)) {  echo $_SESSION['infor']; }  ?>" placeholder="Gmail Hoặc Số Điện Thoại">
 					<span class="focus-input100" data-symbol="&#xf2bc;"></span>
 				</div>
 				<span class='text-danger err'></span>
@@ -67,10 +66,10 @@
 					<input type="file" id="image" name="image">
 				</div>
 
-				<span class='text-danger err'></span>
+				
 				<div class="wrap-input100 validate-input mb-5">
 					<label class="fw-bold col-form-label">Giới Tính </label>
-					<input type="radio" class="gender mx-lg-2" name="gender" value="0"> Nam
+					<input type="radio" class="gender mx-lg-2" name="gender" value="0" > Nam
 					<input type="radio" class="ml-md-2 gender mx-lg-2" name="gender" value="1"> Nữ
 					<br>
 					<span class='text-danger err'></span>
@@ -102,6 +101,7 @@
 					<a href="#" class="login100-social-item bg3">
 						<i class="fa fa-google"></i>
 					</a>
+					
 			</form>
 		</div>
 	</div>
@@ -133,13 +133,13 @@
 <script>
 	const check_form = document.querySelector('#my_form');
 	check_form.addEventListener('submit', function(event) {
-		let haserr = true;
+	
 		var username = document.getElementById("username").value;
 		const name = document.getElementById('full_name').value;
-
+var has_error = true;
 		const password = document.getElementById('password').value;
 		const confirm_password = document.getElementById('confirm_pass').value;
-		var gender = document.querySelectorAll('.gender');
+		var gender = document.getElementsByName('gender');
 		// var img = document.getElementById('image');
 		const err = document.getElementsByClassName('err');
 		const emailRegex = /^[a-zA-Z0-9._%+-]+@(gmail\.(com|vn|org|gov|co)|fpt\.edu\.vn)$/;
@@ -166,6 +166,7 @@
 
 		if (!sdtRegex.test(thong_tin) && !emailRegex.test(thong_tin)) {
 			err[2].innerHTML = "Vui Lòng Nhập Đúng";
+			has_error = false;
 
 		} else {
 			err[2].innerHTML = "";
@@ -185,14 +186,14 @@
 		}
 
 
-		if (!gender[0].checked || !gender[1].checked) {
+		if (!gender[0].checked && !gender[1].checked) {
 			err[5].innerHTML = "Chọn Giới Tính";
 			has_error = false;
 		} else {
-			err[6].innerHTML = '';
+			err[5].innerHTML = '';
 		}
 
-		if (haserr == false) {
+		if (has_error == false) {
 			event.preventDefault();
 		}
 	});

@@ -58,7 +58,7 @@
                     <li class="nav-item"> <a class="nav-link" href="<?= $ADMIN_URL ?>/phim/">Thêm phim</a></li>
                     <li class="nav-item"> <a class="nav-link" href="<?= $ADMIN_URL ?>/phim?btn_actor">Thêm diễn viên</a></li>
                     <li class="nav-item"> <a class="nav-link" href="<?= $ADMIN_URL ?>/phim?btn_list">Danh sách</a></li>
-                    <li class="nav-item"> <a class="nav-link" href="<?= $ADMIN_URL ?>/phim?insert_show">Xuất Chiếu</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="<?= $ADMIN_URL ?>/phim?insert_show">Suất Chiếu</a></li>
                 </ul>
             </div>
         </li>

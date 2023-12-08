@@ -2,7 +2,7 @@
 
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a  href="<?= $ADMIN_URL ?>/phim/">Nhập Thêm</a></li>
+            <li class="breadcrumb-item"><a href="<?= $ADMIN_URL ?>/phim/">Nhập Thêm</a></li>
             <li class="breadcrumb-item active" aria-current="page">Danh Sách</li>
         </ol>
 
@@ -24,9 +24,9 @@
                                 <th>ID</th>
                                 <th>Hình</th>
                                 <th>Tên phim</th>
-                    
+
                                 <th>Ngày</th>
-                        
+
                                 <th>Thời Gian</th>
                                 <th>Trạng thái</th>
                                 <th>Chỉnh Sửa</th>
@@ -35,31 +35,32 @@
                         <tbody>
                             <?php
                             $items = movies_select_all();
-                            foreach($items as $item){
+                            foreach ($items as $item) {
                             ?>
-                            <tr>
-                                <td>
-                                    <input type="checkbox" name="check[]" value="<?= $id ?>" id="<?= $id ?>" value="<?= $id ?>" class="check_button">
-                                </td>
-                                <td><?=$item['id'] ?></td>
-                                <td>
-                                    <img src="../../img/<?=$item['image'] ?>" alt="image" />
-                                </td>
-                                <td> <?=$item['name_movie'] ?> </td>
-                                <td> <?=$item['date_movie'] ?> </td>
-                                <td> <?=$item['time'] ?> </td>
-                                <td> <?=$item['status'] == 1? "Hiện" : "Ẩn"; ?> </td>
-                                
-                                <td >
-                                    <a href="index.php?btn_edit&id=<?=$item['id']?>&actor_id=<?=$item['actor_id']?>" class="btn btn-success " name='btn_edit'><i class="bi bi-pencil-square">Chi Tiết</i></a>
+                                <tr>
+                                    <td>
+                                        <input type="checkbox" name="check[]" value="<?= $id ?>" id="<?= $id ?>" value="<?= $id ?>" class="check_button">
+                                    </td>
+                                    <td><?= $item['id'] ?></td>
+                                    <td>
+                                        <img src="../../img/<?= $item['image'] ?>" alt="image" />
+                                    </td>
+                                    <td> <?= $item['name_movie'] ?> </td>
+                                    <td> <?= $item['date_movie'] ?> </td>
+                                    <td> <?= $item['time'] ?> </td>
+                                    <!-- <td> <?= $item['status'] == 1 ? "Hiện" : "Ẩn"; ?> </td> -->
+                                    <td> <?= $item['status'] == 1 ? '<p class="badge bg-success text-white"> Hiện</p' : '<p class="badge bg-danger text-white"> Ẩn</p'; ?> </td>
 
-                                    <a href="index.php?btn_delete&id=<?= $item['id'] ?>" class="btn btn-danger"><i class="bi bi-trash"></i>Xóa</a>
-                                </td>
-                            </tr>
+                                    <td>
+                                        <a href="index.php?btn_edit&id=<?= $item['id'] ?>&actor_id=<?= $item['actor_id'] ?>" class="btn btn-success " name='btn_edit'><i class="bi bi-pencil-square">Chi Tiết</i></a>
+
+                                        <a href="index.php?btn_delete&id=<?= $item['id'] ?>" class="btn btn-danger"><i class="bi bi-trash"></i>Xóa</a>
+                                    </td>
+                                </tr>
                             <?php
 
                             }
-?>
+                            ?>
                         </tbody>
                     </table>
                 </div>
