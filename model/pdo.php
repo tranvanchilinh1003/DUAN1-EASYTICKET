@@ -15,6 +15,8 @@ function pdo_get_connection()
         echo "Lỗi Kết Nối: " . $e->getMessage();
     }
 }
+
+
 function pdo_execute($sql)
 {
     $sql_args = array_slice(func_get_args(), 1);

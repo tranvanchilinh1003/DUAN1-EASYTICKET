@@ -40,6 +40,7 @@
             <div class="collapse" id="door">
                 <ul class="nav flex-column sub-menu">
                     <li class="nav-item"> <a class="nav-link" href="<?= $ADMIN_URL ?>/phong/">Thêm Phòng</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="<?= $ADMIN_URL ?>/phong?insert_seat">Thêm Ghế</a></li>
                     <li class="nav-item"> <a class="nav-link" href="<?= $ADMIN_URL ?>/phong?btn_list">Danh sách</a></li>
                 </ul>
             </div>
@@ -79,14 +80,22 @@
                 </ul>
             </div>
         </li>
-        <li class="nav-item menu-items">
-            <a class="nav-link" href="<?= $ADMIN_URL ?>/ghe/">
+        <!-- <li class="nav-item menu-items">
+            <a  class="nav-link" data-toggle="collapse" href="#seat" aria-expanded="false" aria-controls="seat">
                 <span class="menu-icon">
-                    <i class="bi bi-easel2"></i>
+                
+                <i class="bi bi-easel2"></i>
                 </span>
                 <span class="menu-title">Quản Lý Ghế</span>
+                <i class="menu-arrow"></i>
             </a>
-        </li>
+            <div class="collapse" id="seat">
+                <ul class="nav flex-column sub-menu">
+                    <li class="nav-item"> <a class="nav-link" href="<?= $ADMIN_URL ?>/ghe/">Thêm Ghế</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="<?= $ADMIN_URL ?>/ghe?btn_list">Danh sách</a></li>
+                </ul>
+            </div>
+        </li> -->
         <li class="nav-item menu-items">
             <a class="nav-link" href="#">
                 <span class="menu-icon">

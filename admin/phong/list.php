@@ -46,7 +46,8 @@
                                 <!-- <td> <?=($item['status'] == 'Active')? "Phòng Trống" : "Phòng Đầy"; ?> </td>                                 -->
                                 <td >
                                     <a href="index.php?btn_edit&id=<?=$item['id']?>" class="btn btn-success " name='btn_edit'><i class="bi bi-pencil-square">Chi Tiết</i></a>
-                                    <a href="index.php?delete_rum_status&id=<?= $item['id'] ?>" class="btn btn-danger"><i class="bi bi-trash"></i>Xóa</a>
+                                    <a href="index.php?delete_rum_status&id=<?= $item['id'] ?>" class="btn btn-danger"><i class="bi bi-trash"></i>Xóa</a> <br>
+                                    <a href="index.php?list_ghe&id=<?= $item['id'] ?>" class="btn btn-warning mt-1 me-5"><i class="bi bi-pencil-square"> Chi Tiết Ghế</i></a>
                                 </td>
                             </tr>
                             <?php

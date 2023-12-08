@@ -4,7 +4,7 @@ require_once "../../model/pdo.php";
 require  "../../model/rum.php";
 require_once "../../model/movies.php";
 require_once "../../model/categories.php";
-// require_once "../../model/showtime.php";
+require_once "../../model/seat.php";
 extract($_REQUEST);
 if (exist_param("insert_rum")) {
     if (isset($_POST['insert_rum'])) {
@@ -20,8 +20,9 @@ if (exist_param("insert_rum")) {
         
             $item =    movies_select_by_id($movies_id);
             $time = $item['time'];
-            insert_rum($hall_name, $status, $movies_id,$start_time, $time, $cinemas_id);
             
+            insert_rum($hall_name, $status, $movies_id,$start_time, $time, $cinemas_id);
+    
             $VIEW_NAME = "list.php";
         }
     }
@@ -79,7 +80,41 @@ if (exist_param("insert_rum")) {
     delete_rum($id);
 
     $VIEW_NAME = 'history.php';
-} else {
+}
+
+else if(exist_param("insert_seat")) {
+    if (isset($_POST["insert_seat"])) {
+        if(!empty(check_cinema($cinema_halls_id))){
+$MESSAGE = "Phòng Đã Có Ghế";
+$VIEW_NAME = "ghe_insert.php";
+
+        }else{
+        $cinema_halls_id = $_POST['cinema_halls_id'];
+
+        insert_seat($cinema_halls_id);
+        $VIEW_NAME = 'ghe_insert.php';
+        }
+}
+$VIEW_NAME = 'ghe_insert.php';
+} else if(exist_param("list_ghe")){
+
+
+    $VIEW_NAME = "seat.php";
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+else {
     $VIEW_NAME = 'insert.php';
 }
 require "../layout.php";
