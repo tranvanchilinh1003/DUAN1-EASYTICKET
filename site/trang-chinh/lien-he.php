@@ -274,7 +274,7 @@
                         <div class="col-md-6 d-flex align-items-stretch">
                             <div class="contact-wrap w-100 p-md-5 p-4 py-5">
                                 <h3 class="mb-4">Viết Cho Chúng Tôi</h3>
-                                <form method="POST" action="./index.php?lien-he" id="contactForm" name="contactForm" class="contactForm" enctype="multipart/form-data">
+                                <form method="POST" action="./index.php?lien-he" id="contactForm" name="contactForm" class="contactForm" >
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="form-group">
@@ -288,6 +288,7 @@
                                                 <span class="error text-danger"></span>
                                             </div>
                                         </div>
+                                    
                                         <div class="col-md-12">
                                             <div class="form-group">
                                                 <input type="text" class="form-control my-form" name="subject" id="subject" placeholder="Tiêu đề...">
@@ -352,7 +353,7 @@
                     </div>
                     <div class="row mt-2">
                         <div class="col col-md-12">
-                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3928.752748004251!2d105.77503307481068!3d10.03725057239308!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31a0881ebde20ebd%3A0x3a38b82dd5f06c94!2zMTQwIMSQLiBMw70gVOG7sSBUcuG7jW5nLCBBbiBDxrAsIE5pbmggS2nhu4F1LCBD4bqnbiBUaMahLCBWaeG7h3QgTmFt!5e0!3m2!1svi!2s!4v1700838848385!5m2!1svi!2s" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen=""></iframe>
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d18827.06969891347!2d105.76369022983218!3d9.981319133446751!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31a08906415c355f%3A0x416815a99ebd841e!2sFPT%20Polytechnic%20College!5e0!3m2!1sen!2s!4v1702029467363!5m2!1sen!2s" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen=""></iframe>
                         </div>
                     </div>
                 </div>

@@ -4,6 +4,7 @@ ini_set('display_errors', '1');
 ini_set('display_startup_errors', '1');
 error_reporting(E_ALL);
 extract($_REQUEST);
+require "../../model/mailer.php";
 require "../../global.php";
 require "../../model/categories.php";
 require "../../model/pdo.php";
@@ -14,7 +15,19 @@ if (exist_param("gioi-thieu", $_REQUEST)) {
 
     $VIEW_NAME = 'gioi-thieu.php';
 } else if (exist_param("lien-he", $_REQUEST)) {
-
+if(isset($_POST['lien-he'])){
+    $email = $_POST['email'];
+    $name = $_POST['name'];
+    $subject = $_POST['subject'];
+    $message = $_POST['message'];
+        
+    mailerr($name, $email,$subject, $message);
+    ?>
+<script>
+    alert("Gửi Thành Công");
+</script>
+    <?php
+}
     $VIEW_NAME = 'lien-he.php';
 } else if (exist_param("tin-tuc", $_REQUEST)) {
 

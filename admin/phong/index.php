@@ -21,6 +21,7 @@ if (exist_param("insert_rum")) {
             $item =    movies_select_by_id($movies_id);
             $time = $item['time'];
             insert_rum($hall_name, $status, $movies_id,$start_time, $time, $cinemas_id);
+            
             $VIEW_NAME = "list.php";
         }
     }
