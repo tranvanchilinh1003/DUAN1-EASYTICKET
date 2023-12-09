@@ -155,6 +155,14 @@
 									<input type="file" class="form-control bg-transparent" name="image" id="image" value="<?=$user['image'] ?>">
 									<input type="hidden" class="form-control p-1" name="image_old" value="<?=$user['image'] ?>">
 								</div>
+								
+							</div>
+							<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+								<div class="form-group text-light">
+									<label for="confim_password"> Xác Nhận Mật Khẩu Mới</label>
+									<input type="password" class="form-control" id="confim_password" name="confim_password" placeholder='Xác Nhận Mật Khẩu Mới'>
+									<span class='error text-danger'></span>
+								</div>
 							</div>
 						</div>
 						<hr class="tabl-light border-top">
@@ -213,6 +221,8 @@
 		var information = document.getElementById('information').value;
 		const emailRegex = /^[a-zA-Z0-9._%+-]+@(gmail\.(com|vn|org|gov|co)|fpt\.edu\.vn)$/;
 		const sdtRegex = /^\b(03|05|07|08|09)\d{8}\b/;
+		var password =document.getElementById("password").value;
+var confirm_password =document.getElementById("confim_password").value;
 		var has_err = true;
 		if (fullName.trim() == "" || fullName.length < 5) {
 			errors[0].innerHTML = "Không Để Trống Hoặc dưới 5 Ký Tự";
@@ -228,11 +238,22 @@
 		}
 		if (!sdtRegex.test(information) && !emailRegex.test(information)) {
 			errors[1].innerHTML = "Vui Lòng Nhập Đúng";
-
+			has_err = false;
 		} else {
 			errors[1].innerHTML = "";
 		}
 
+		
+
+			if( confirm_password != password){
+
+errors[3].innerHTML = "Mật Khẩu Nhập Không Trùng";
+has_err = false;
+}else{
+errors[3].innerHTML = "";
+}
+
+		
 
 
 
