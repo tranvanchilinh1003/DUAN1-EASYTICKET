@@ -15,7 +15,7 @@
             <h3 class="card-title text-warning">Danh Sách Thể Phim</h3>
             <!-- <p class="card-description"> Add class <code>.table-striped</code> -->
             <!-- </p> -->
-            <form action="#" method="post" id="form_delete_loai">
+            <form action="#" method="post" id="form_delete_loai" style="overflow: auto; max-height: 350px;">
                 <div class="table-responsive">
                     <table class="table table-striped">
                         <thead>
@@ -24,9 +24,7 @@
                                 <th>ID</th>
                                 <th>Hình</th>
                                 <th>Tên phim</th>
-
                                 <th>Ngày</th>
-
                                 <th>Thời Gian</th>
                                 <th>Trạng thái</th>
                                 <th>Chỉnh Sửa</th>
@@ -83,7 +81,6 @@
         }
 
     }
-
     function remove_selectAll() {
         var checkboxes = document.getElementsByClassName('check_button');
         for (var i = 0; i < checkboxes.length; i++) {

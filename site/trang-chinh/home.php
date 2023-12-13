@@ -1,5 +1,4 @@
 <!-- Product Section Begin -->
-<!-- Hero Section Begin -->
 <section class="hero">
     <div class="container">
         <div class="hero__slider owl-carousel">
@@ -7,10 +6,10 @@
                 <div class="row">
                     <div class="col-lg-6">
                         <div class="hero__text">
-                            <div class="label">Adventure</div>
-                            <h2>Fate / Stay Night: Unlimited Blade Works</h2>
-                            <p>After 30 days of travel across the world...</p>
-                            <a href="#"><span>Đặt vé</span> <i class="fa fa-angle-right"></i></a>
+                            <div class="label">Anime</div>
+                            <h2>One Piece Film Red</h2>
+                            <p>Bối cảnh One Piece Film Red diễn ra ở hòn ...</p>
+                            <a href="<?= $SITE_URL . '/phim/chi-tiet.php?id=10'  ?>"><span>Đặt vé</span> <i class="fa fa-angle-right"></i></a>
                         </div>
                     </div>
                 </div>
@@ -19,10 +18,10 @@
                 <div class="row">
                     <div class="col-lg-6">
                         <div class="hero__text">
-                            <div class="label">Adventure</div>
-                            <h2>Fate / Stay Night: Unlimited Blade Works</h2>
-                            <p>After 30 days of travel across the world...</p>
-                            <a href="#"><span>Đặt vé</span> <i class="fa fa-angle-right"></i></a>
+                            <div class="label">Anime</div>
+                            <h2>Thanh Gương Diệt Quỷ Phần Kỹ Viện Trấn</h2>
+                            <p>Gia đình bị thảm sát còn em gái trúng...</p>
+                            <a href="<?= $SITE_URL . '/phim/chi-tiet.php?id=18'   ?>"><span>Đặt vé</span> <i class="fa fa-angle-right"></i></a>
                         </div>
                     </div>
                 </div>
@@ -31,10 +30,10 @@
                 <div class="row">
                     <div class="col-lg-6">
                         <div class="hero__text">
-                            <div class="label">Adventure</div>
-                            <h2>Fate / Stay Night: Unlimited Blade Works</h2>
-                            <p>After 30 days of travel across the world...</p>
-                            <a href="#"><span>Đặt vé</span> <i class="fa fa-angle-right"></i></a>
+                            <div class="label">Anime</div>
+                            <h2>Conan</h2>
+                            <p>Conan...</p>
+                            <a href="<?= $SITE_URL . '/phim/chi-tiet.php?id=3'  ?>"><span>Đặt vé</span> <i class="fa fa-angle-right"></i></a>
                         </div>
                     </div>
                 </div>

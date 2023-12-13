@@ -320,7 +320,7 @@
                                         <span class="fa fa-map-marker"></span>
                                     </div>
                                     <div class="text pl-3">
-                                        <p><span>Địa Chỉ: </span>Đ.Số 22, Thường Thạnh, Cái Răng, Cần Thơ.</p>
+                                        <p><span>Địa Chỉ: </span><a href=""> Đ.Số 22, Thường Thạnh, Cái Răng, Cần Thơ.</a></p>
                                     </div>
                                 </div>
                                 <div class="dbox w-100 d-flex align-items-center">
@@ -336,7 +336,7 @@
                                         <span class="fa fa-paper-plane"></span>
                                     </div>
                                     <div class="text pl-3">
-                                        <p><span>Email:</span> <a href="#"><span class="__cf_email__ " data-cfemail="bdd4d3dbd2fdc4d2c8cfced4c9d893ded2d0">EasyTicket@gmail.com</span></a></p>
+                                        <p><span>Email:</span> <a href="#"><span class="__cf_email__ " data-cfemail="bdd4d3dbd2fdc4d2c8cfced4c9d893ded2d0">easyticket113@gmail.com</span></a></p>
                                     </div>
                                 </div>
                                 <div class="dbox w-100 d-flex align-items-center">

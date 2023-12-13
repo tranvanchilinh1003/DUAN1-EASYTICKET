@@ -168,7 +168,7 @@
                             <a class="nav-link" id="profileDropdown" href="#" data-toggle="dropdown">
                                 <div class="navbar-profile">
                                     <!-- <img class="img-xs rounded-circle" src="assets/images/faces/face15.jpg" alt=""> -->
-                                    <img class="img-xs rounded-circle" src="../../img/<?=$_SESSION['anh'] ?>" alt="">
+                                    <img class="img-xs rounded-circle" src="../../img/<?php if(isset($_POST['update_admin'])){echo $_SESSION['img'];}else{echo $_SESSION['anh'];} ?>" alt="">
                                     <p class="mb-0 d-none d-sm-block navbar-profile-name"><?= $_SESSION["username"] ?></p>
                                     <i class="mdi mdi-menu-down d-none d-sm-block"></i>
                                 </div>
@@ -250,6 +250,7 @@
     <script src="<?= $ADMIN_URL ?>/assets/js/settings.js"></script>
     <script src="<?= $ADMIN_URL ?>/assets/js/todolist.js"></script>
     <script src="<?= $ADMIN_URL ?>/assets/js/chart.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <!-- <script src="<?= $ADMIN_URL ?>/assets/js/chartist.js"></script> -->
     <!-- endinject -->
     <!-- Custom js for this page -->

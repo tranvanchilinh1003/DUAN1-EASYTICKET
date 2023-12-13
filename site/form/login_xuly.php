@@ -15,13 +15,14 @@ if (exist_param("btn_login")) {
     $_SESSION['customers'] = $user['id'];
     if ($user && $user['is_hidden'] == 1) {
         if ($user['password'] == md5($password)) {
-
+        
 ?>
             <script>
                 var thong_bao = alert("Đăng Nhập Thành Công!");
                 window.location.href = "<?= $SITE_URL ?>/trang-chinh/";
             </script>
 <?php
+    
             $_SESSION["username"] = $username;
             if ($user['role'] == 1) {
                 header('location: ' . $ADMIN_URL . '/trang-chinh/');

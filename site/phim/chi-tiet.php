@@ -6,14 +6,23 @@ require "../../model/pdo.php";
 require '../../model/movies.php';
 require '../../model/statistical.php';
 require '../../model/categories.php';
+require '../../model/seat.php';
+require '../../model/rum.php';
 //-------------------------------//
 
 extract($_REQUEST);
 if (exist_param("id")) {
     // Truy vấn mặt hàng theo mã lấy nó ra để hiện thị
+    if(isset($_GET['id'])){
+
+
+
+    
     $movies_id = $_GET['id'];
+
     // $item = movies_select_by_id($id);
     // Tăng số lượt xem lên 1
+    
     movies_view($id);
     
     $item = detail_movies($id);
@@ -21,7 +30,7 @@ if (exist_param("id")) {
     $cmt = count_comment($movies_id);
     $avr_ratings = avr_ratings($id);
 
-
+    }
     $_SESSION['id'] = $item['id'];
 } else if (exist_param("pull_comment")) {
     $movies_id = $_SESSION['id'];

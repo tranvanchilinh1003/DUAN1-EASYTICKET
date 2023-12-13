@@ -16,7 +16,7 @@ if (exist_param("btn_edit")) {
   // movies_select_all();
   $VIEW_NAME = "login_thong_tin.php";
 } else if (exist_param("update_user")) {
-  $_SESSION['upuser'] = $_POST['update_user'];
+if(isset($_POST['update_user'])){
   $username = $_POST['username'];
     $user = user_id($username);
     
@@ -55,6 +55,6 @@ header("location: ".$SITE_URL."/form/login_xu_ly_thong_tin.php?btn_edit");
   
   }
   
-  
+}
 }
 require "../layout.php";

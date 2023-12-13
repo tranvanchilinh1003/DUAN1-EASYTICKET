@@ -1,4 +1,3 @@
-
 <style>
     .movie-container {
         text-align: center;
@@ -63,7 +62,7 @@
                 <div class="row">
                     <div class="col">
                         <select class="form-control btn-select-region select2-hidden-accessible" data-toggle="select" tabindex="-1" aria-hidden="true">
-                            <option value="1">Cần thơ</option>
+                            <option value="1">Cần Thơ</option>
                         </select>
                         <span class="select2 select2-container select2-container--default select2-container--below" dir="ltr" style="width: 702.4px;">
                             <span class="selection">
@@ -77,38 +76,51 @@
                 </div>
             </div>
         </div>
+        <form method="GET" action="<?= $SITE_URL ?>/phim/dat-ve.php?selected_date&id=<?= $item['id'] ?>&selected_date=">
 
-        <div class="btn-group btn-block mb-3" id="dates">
-            <a class="btn btn-light text-muted date active" data-date="2023-12-02">
-                2/12
-                <br><span class="small text-nowrap">Th 7</span>
-            </a>
-            <a class="btn btn-light text-muted date" data-date="2023-12-03">
-                3/12
-                <br><span class="small text-nowrap">CN</span>
-            </a>
-            <a class="btn btn-light text-muted date" data-date="2023-12-04">
-                4/12
-                <br><span class="small text-nowrap">Th 2</span>
-            </a>
-            <a class="btn btn-light text-muted date" data-date="2023-12-05">
-                5/12
-                <br><span class="small text-nowrap">Th 3</span>
-            </a>
-            <a class="btn btn-light text-muted date" data-date="2023-12-06">
-                6/12
-                <br><span class="small text-nowrap">Th 4</span>
-            </a>
-            <a class="btn btn-light text-muted date" data-date="2023-12-07">
-                7/12
-                <br><span class="small text-nowrap">Th 5</span>
-            </a>
-        </div>
+            <div class="btn-group btn-block mb-3" id="dates">
+                <?php
+                // Lấy ngày hiện tại
+                $currentDate = new DateTime('now', new DateTimeZone('Asia/Ho_Chi_Minh'));
+                $currentDayOfWeek = $currentDate->format('w');
 
-        <!-- <div class="alert alert-warning mb-3">
-        <i class="fe fe-info"></i> Nhấn vào suất chiếu để tiến hành mua vé
-    </div> -->
-        <!-- Showtime  -->
+                // Hiển thị nút cho ngày hiện tại và 6 ngày tiếp theo
+                for ($i = 0; $i < 7; $i++) {
+                    $date = $currentDate->format('Y-m-d');
+                    $dayOfWeek = ($currentDayOfWeek + $i) % 7;
+                    $activeClass = ($i === 0) ? 'active' : '';
+
+                ?>
+                    <a class='btn btn-light text-muted date <?php if($_GET['selected_date'] == $date){echo 'active';}else{echo "";}  ?>' data-date='<?= $date ?>' onclick='selectDate(this)'>
+                        <?= $currentDate->format('d/m') ?><br>
+                        <span class='small text-nowrap'><?= getDayOfWeekName($dayOfWeek); ?></span>
+                    </a>
+                <?php
+
+                    $currentDate->modify('+1 day');
+                }
+
+                // Hàm chuyển đổi số thứ trong tuần sang tên thứ
+                function getDayOfWeekName($dayOfWeek)
+                {
+                    $dayOfWeekNames = array(
+                        'Chủ nhật',
+                        'Thứ hai',
+                        'Thứ ba',
+                        'Thứ tư',
+                        'Thứ năm',
+                        'Thứ sáu',
+                        'Thứ bảy'
+                    );
+
+                    return $dayOfWeekNames[$dayOfWeek];
+                }
+                ?>
+            </div>
+            <input type="hidden" name="id" id="movies_id" value="<?= $item['id'] ?>">
+            <input type="hidden" name="selected_date" id="selected_date" value="">
+        </form>
+
         <div id="showtimes">
             <div class="card">
                 <div class="list-group list-group-flush">
@@ -124,22 +136,54 @@
                             <div class="col-auto"><span class="text-muted h3"><i class="fe fe-chevron-right"></i></span></div>
                         </div>
                     </a>
+
                     <div class="list-group collapse show" id="showtime-cineplex-18789">
-                        <div class="list-group-item btn-select-cinema  ticketing-cinema-tracking ticketing-cinema ticketing-cinema-126818" data-cineplex="beta-cineplex" data-cinema="beta-cineplex-empire-binh-duong" data-cinema-id="126818" data-toggle="collapse" data-target="#showtime-cinema-126818">
-                            <h4 class="text-body mb-0 name font-weight-normal">Rạp Easyticket Cần thơ</h4>
+                        <div class="list-group-item btn-select-cinema  ticketing-cinema-tracking ticketing-cinema ticketing-cinema-126818" data-cineplex="beta-cineplex" data-cinema="beta-cineplex-empire-binh-duong" data-cinema-id="126818" data-toggle="<?php if (isset($find_cinemas['name'])) {
+                                                                                                                                                                                                                                                                echo "collapse";
+                                                                                                                                                                                                                                                            } else {
+                                                                                                                                                                                                                                                                echo "";
+                                                                                                                                                                                                                                                            } ?>" data-target="#showtime-cinema-126818">
+                            <h4 class="text-body mb-0 name font-weight-normal"><?= isset($find_cinemas['name']) ? $find_cinemas['name'] : "Chưa Có Xuất Chiếu"; ?></h4>
                             <div class="cinema collapse mt-0" id="showtime-cinema-126818">
-                                <p class="small text-muted mb-3">Đ.Số 22, Thường Thạnh, Cái Răng, Cần Thơ. <a href="#">Thông tin rạp</a> - <a href="https://maps.google.com/?q=Beta Empire Bình Dương" target="_blank">Bản đồ</a></p>
-                                <div class="mb-1">
-                                    <label class="small mb-2 font-weight-bold d-block text-dark">
-                                        2D Phụ Đề Việt
-                                    </label>
-                                    <a href="<?= $SITE_URL . '/phim/dat-ve.php?dat-ghe&id=' .  $item['id']  ?>" data-cineplex="lotte" data-cinema="lotte-can-tho" data-id="309438312" class="btn btn-sm btn-showtime btn-outline-dark is-ticketing" data-reference="c4f17d1d-ca04-45f1-bfbf-c316d182fa36">
-                                        <span class="time">14:30</span>
-                                        <span class="amenity price">85K</span></a> <a href="#" data-cineplex="lotte" data-cinema="lotte-can-tho" data-id="309438313" class="btn btn-sm btn-showtime btn-outline-dark is-ticketing" data-reference="553dacde-e2fa-4d2f-9c67-65d42a7afd78">
-                                        <span class="time">21:30</span>
-                                        <span class="amenity price">85K</span></a>
-                                </div>
-                                <!-- <div class="showtimes">
+                                <?php
+                                if (isset($_GET['selected_date']) && count($find_all) > 0) {
+                                    if (strtotime($selected_date) == strtotime($find_all[0]['date_show'])) {
+                                ?>
+
+
+
+                                        <p class="small text-muted mb-3"><?= $find_cinemas['location'] ?> </p>
+                                        <div class="mb-1">
+                                            <label class="small mb-2 font-weight-bold d-block text-dark">
+                                                3D Phụ Đề Việt
+                                            </label>
+                                            <?php
+                                            $id = $item['id'];
+                                            $selected_date = $_GET['selected_date'];
+                                            $cime = find_movie_cinemas($id, $selected_date);
+                                            date_default_timezone_set('Asia/Ho_Chi_Minh');
+                                            
+                                            $currentHour = date("H:i:s");
+                                            foreach ($cime as $movie) {
+                    
+                                            ?>
+
+                                                <a href="<?= $SITE_URL . '/phim/dat-ve.php?dat-ghe&id=' . $movie['id']   ?>" data-cineplex="lotte" data-cinema="lotte-can-tho" data-id="309438312" class="btn btn-sm btn-showtime btn-outline-dark is-ticketing <?php if($movie['start_time'] < $currentHour){echo 'disabled';}else{ echo '';} ?>" data-reference="c4f17d1d-ca04-45f1-bfbf-c316d182fa36">
+                                                    <span class="time"><?= $movie['gio_bd'] ?>:<?= $movie['phut_bd'] ?> -</span>
+                                                    <span class="amenity price"><?= $movie['gio_kt'] ?>:<?= $movie['phut_kt'] ?></span></a>
+
+
+                                    <?php
+                                            }
+                                        } else {
+
+                                            echo '<h4 class="text-body mb-0 mt-3 name font-weight-normal">Chưa Có Xuất Chiếu</h4>';
+                                        }
+                                    }
+                                    ?>
+                                        </div>
+
+                                        <!-- <div class="showtimes">
                                     <div class="text-center text-muted">
                                         <div class="spinner-border spinner-border-sm" role="status"></div>
                                     </div>
@@ -147,21 +191,40 @@
                             </div>
                         </div>
                     </div>
+
+                    <?php
+
+
+                    ?>
                 </div>
             </div>
         </div>
         <!-- End Showtime  -->
     </div>
 </div>
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 <script>
-    function selectShowtime(button) {
-        // Remove 'selected' class from all showtime buttons
-        var showtimeButtons = document.querySelectorAll('.showtime-btn');
-        showtimeButtons.forEach(function(btn) {
-            btn.classList.remove('selected');
-        });
+    function selectDate(element) {
+        // Remove the 'selected' class from all date buttons
+        let dateButtons = document.getElementsByClassName('date');
+        for (let i = 0; i < dateButtons.length; i++) {
+            dateButtons[i].classList.remove('selected');
+        }
 
-        // Add 'selected' class to the clicked showtime button
-        button.classList.add('selected');
+        // Add the 'selected' class to the clicked date button
+        
+
+        // Get the selected date and format it as 'YYYY-MM-DD'
+        let selectedDate = element.getAttribute('data-date');
+        console.log(selectedDate);
+        // Thực hiện yêu cầu AJAX đến trang PHP
+
+        // Pass the selected date to the PHP script using AJAX
+        document.getElementById('selected_date').value = selectedDate;
+        document.forms[2].submit();
+
+
+        element.classList.add('selected');
+
     }
 </script>

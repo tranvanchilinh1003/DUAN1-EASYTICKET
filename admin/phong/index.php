@@ -17,11 +17,11 @@ if (exist_param("insert_rum")) {
             $status = $_POST["status"];
             $movies_id = $_POST["movies_id"];
             $start_time = $_POST["start_time"];
-        
+        $date_show = $_POST["date_show"];
             $item =    movies_select_by_id($movies_id);
             $time = $item['time'];
             
-            insert_rum($hall_name, $status, $movies_id,$start_time, $time, $cinemas_id);
+            insert_rum($hall_name, $status, $movies_id, $date_show, $start_time, $time, $cinemas_id);
     
             $VIEW_NAME = "list.php";
         }
@@ -40,12 +40,13 @@ if (exist_param("insert_rum")) {
         $movies_id = $_POST["movies_id"];
         $id = $_POST['id'];
         $hall_name = $_POST["hall_name"];
+        $date_show = $_POST["date_show"];
         $start_time = $_POST["start_time"];
         $item =    movies_select_by_id($movies_id);
         $time = $item['time'];
         $categories_id = $_POST["categories_id"];
         if (empty(check_rum_upadte($hall_name, $id))) {
-            update_rum($hall_name, $status, $movies_id, $id, $start_time, $time, $cinemas_id);
+            update_rum($hall_name, $status, $movies_id, $id, $start_time, $time, $cinemas_id, $date_show);
             header("Location:" . $ADMIN_URL . "/phong/index.php?btn_list");
         } else {
 
@@ -98,6 +99,7 @@ $VIEW_NAME = "ghe_insert.php";
 $VIEW_NAME = 'ghe_insert.php';
 } else if(exist_param("list_ghe")){
 
+    
 
     $VIEW_NAME = "seat.php";
 }
@@ -117,4 +119,7 @@ $VIEW_NAME = 'ghe_insert.php';
 else {
     $VIEW_NAME = 'insert.php';
 }
+
+
+
 require "../layout.php";

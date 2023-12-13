@@ -12,7 +12,7 @@
                             <!-- <div class="col-sm-4"> -->
                                 <!-- <label for="id" class="fw-bold col-form-label text-white">Id</label> -->
                                 <input type="hidden" class="form-control" style="background-color: #2A3038;" id="id" name="id" placeholder="Auto Number..." >                               
-                                <span class="error text-danger"></span>
+                            
                             <!-- </div> -->
                                 <div class="col-sm-4">
                                     <label for="actor" class="fw-bold col-form-label text-white">Tên diễn viên</label>
@@ -53,47 +53,33 @@
         </div>
     </div>
 </div>
-<!-- <script>
-    function unsubmut() {
-        // event.preventDefault();
-        var ma_kh = document.getElementById("ma_kh").value;
-        var pass = document.getElementById("mat_khau").value;
-        var confim_pass = document.getElementById("mat_khau2").value;
-var ho_ten =document.getElementById("ho_ten").value;
-        var err = document.getElementsByClassName("error");
-
-        err[0].innerHTML = "";
-        err[1].innerHTML = "";
-        err[2].innerHTML = "";
-        err[3].innerHTML = "";
-        if (ma_kh.trim() === '') {
-
-            err[0].innerHTML = 'Mã Khách Hàng Không Được Rỗng';
-            return false;
+<script>
+    var form_insert = document.getElementById("isert_form");
+    form_insert.addEventListener('submit', function(e) {
+        var actor = document.getElementById('actor').value;
+        var producer = document.getElementById("producer").value;
+        var director = document.getElementById("director").value;
+        var error = document.getElementsByClassName("error");
+        var has_error = true;
+        error[0].innerHTML = '';
+        error[1].innerHTML = '';
+        error[2].innerHTML = '';
+        
+        if (actor.trim() === "") {
+            error[0].innerHTML = "không để trống";
+            has_error = false;
         }
-        else if(ho_ten.trim()=='' || ho_ten.length < 3 ){
-
-            err[1].innerHTML = 'Họ tên không để trống và dưới 3 ký tự';
-            return false;
+        if (producer.trim() === '' ) {
+            error[2].innerHTML = 'không để trống';
+            has_error = false;
+        }
+        if (director.trim() == "") {
+            error[1].innerHTML = "không để trống";
+            has_error = false;
         }
         
-        else if (pass.trim() === ' ' || pass.length < 5) {
-
-            err[2].innerHTML = 'Vui Lòng Nhập Pass Từ 5 kí tự';
-            return false;
-
-        } else if (confim_pass.trim() === '' || confim_pass != pass) {
-
-            err[3].innerHTML = 'Xác Nhận Pass Chưa Giống Hoặc Trống';
-            return false;
-
-
+        if (has_error == false) {
+            e.preventDefault();
         }
-
-
-        return true;
-    }
-    // this.submit();
-
-    // });
-</script> -->
+    });
+</script>

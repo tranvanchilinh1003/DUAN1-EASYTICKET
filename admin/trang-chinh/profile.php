@@ -160,7 +160,7 @@
 							<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
 								<div class="form-group text-light">
 									<label for="confim_password"> Xác Nhận Mật Khẩu Mới</label>
-									<input type="password" class="form-control" id="confim_password" name="confim_password" placeholder='Xác Nhận Mật Khẩu Mới'>
+									<input type="password" class="form-control bg-transparent" id="confim_password" name="confim_password" placeholder='Xác Nhận Mật Khẩu Mới'>
 									<span class='error text-danger'></span>
 								</div>
 							</div>

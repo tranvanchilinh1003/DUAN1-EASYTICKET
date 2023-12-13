@@ -66,6 +66,12 @@
                                 </select>
                             </div>
                             <div class="col-sm-12">
+                                <label for="date_show" class="fw-bold col-form-label text-white">Ngày Chiếu</label>
+                                <input type="date" class="form-control " id="date_show" name="date_show" value="<?=$item['date_show'] ?>">
+                                <span class="error text-danger"></span>
+                                
+                            </div>
+                            <div class="col-sm-12">
                                 <label for="start_time" class="fw-bold col-form-label text-white">Thời Gian Bắt Đầu</label>
                                 <input type="text" class="form-control " id="start_time" name="start_time" value="<?=$item['start_time'] ?>">
                                 <span class="error text-danger"></span>
@@ -104,19 +110,34 @@
         var err =document.getElementsByClassName("error");
         var name =document.getElementById("hall_name").value;
         var status =document.getElementsByName("status");
+        var time = document.getElementById('start_time').value;
+        var selectedDate = document.getElementById("date_show").value;
+        var currenDate = new Date();
+        currenDate.setHours(0, 0, 0, 0);
+        const inputDateObject = new Date(selectedDate);
+        
      var hass_err =false;
      err[0].innerHTML = '';
      err[1].innerHTML = '';
+     err[2].innerHTML = '';
+     err[3].innerHTML = '';
      if(name.trim() == ""){
         err[0].innerHTML = "Vui Lòng Không Bỏ Trống";
         hass_err  = true;
      }
      if(!status[0].checked && !status[1].checked ){
-        err[1].innerHTML = "Vui Lòng Chọn";
+        err[3].innerHTML = "Vui Lòng Chọn";
         hass_err  = true;
 
      }
-
+     if(time.trim() == ''){
+        err[2].innerHTML = "Vui Lòng Nhập Thời Gian";
+        hass_err  = true;
+     }
+     if (isNaN(inputDateObject.getTime()) || inputDateObject < currenDate ) {
+            err[1].innerHTML = 'Không Nhập Ngày Nhỏ Hơn Hiện Tại';
+            hass_err = true;
+        }
      if(hass_err == true){
         event.preventDefault();
      }

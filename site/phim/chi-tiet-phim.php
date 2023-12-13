@@ -89,7 +89,7 @@
                             <!-- <span>フェイト／ステイナイト, Feito／sutei naito</span> -->
                         </div>
                         <div class="anime__details__rating">
-                        <div class="rate d-flex ">
+                            <div class="rate d-flex ">
                                 <svg style="display:none;">
                                     <defs>
                                         <symbol id="fivestars" class="border-none">
@@ -129,7 +129,7 @@
                                 <div class="col-lg-6 col-md-6">
                                     <ul>
                                         <li><span>Thời lượng:</span> <?= $item['time'] ?></li>
-                                        <li><span>Đánh giá:</span> 8.5 / 161 times</li>
+                                        <li><span>Đánh giá:</span> <?= round($avr_ratings, 1); ?> / 5</li>
                                         <!-- <li><span>Duration:</span> 24 min/ep</li> -->
 
 
@@ -145,16 +145,20 @@
                             <?php
                             if (isset($_SESSION['username'])) {
 
+                                date_default_timezone_set('Asia/Ho_Chi_Minh');
+
+                                // Lấy ngày tháng năm hiện tại
+                                $currentDateTime = date('Y-m-d');
                             ?>
                                 <!-- <a href="<?= $SITE_URL ?>/trang-chinh/index.php?trailer" class="follow-btn">TRAILER</a> -->
-                                <a href="#" class="watch-btn"><span>ĐẶT VÉ</span> <i class="fa fa-angle-right"></i></a>
+                                <a href="<?= $SITE_URL ?>/phim/dat-ve.php?selected_date&id=<?= $item['id'] ?>&selected_date=<?=$currentDateTime ?>" class="watch-btn"><span>ĐẶT VÉ</span> <i class="fa fa-angle-right"></i></a>
                             <?php
                             } else {
 
 
                             ?>
 
-                                <a href="<?=$SITE_URL?>/form/login_xuly.php" class="watch-btn"><span>ĐẶT VÉ</span> <i class="fa fa-angle-right"></i></a>
+                                <a href="<?= $SITE_URL ?>/form/login_xuly.php" class="watch-btn"><span>ĐẶT VÉ</span> <i class="fa fa-angle-right"></i></a>
                             <?php
 
 

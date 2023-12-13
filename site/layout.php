@@ -204,10 +204,10 @@ require_once "../../model/categories.php";
 </style>
 
 <body>
-    <!-- Page Preloder -->
+    <!-- Page Preloder
     <div id="preloder">
         <div class="loader"></div>
-    </div>
+    </div> -->
 
     <!-- Header Section Begin -->
     <header class="header">
@@ -226,7 +226,7 @@ require_once "../../model/categories.php";
                             <ul class='home_nav'>
                                 <li class="active"><a href="<?= $SITE_URL ?>/trang-chinh/index.php">Trang Chủ</a></li>
                                 <!-- <li><a href="<?= $SITE_URL ?>/form/login_xuly.php?btn_logout" name='btn_logout'> <i class="bi bi-power  text-danger"></i></a></li> -->
-                                <li><a href="<?=$SITE_URL?>/phim/tim-kiem.php?all&page=1">Thể Loại <span class="arrow_carrot-down"></span></a>
+                                <li class='home'><a href="<?=$SITE_URL?>/phim/tim-kiem.php?all&page=1">Thể Loại <span class="arrow_carrot-down"></span></a>
                                     <ul class="dropdown mt-1">
                                         <?php
                                         $move = categories_select_all();
@@ -238,8 +238,8 @@ require_once "../../model/categories.php";
                                         ?>
                                     </ul>
                                 </li>
-                                <li><a href="<?= $SITE_URL ?>/trang-chinh/index.php?tin-tuc">Tin Tức</a></li>
-                                <li><a href="<?= $SITE_URL ?>/trang-chinh/index.php?lien-he">Liên Hệ</a></li>
+                                <li class='home'><a href="<?= $SITE_URL ?>/trang-chinh/index.php?tin-tuc">Tin Tức</a></li>
+                                <li class='home'><a href="<?= $SITE_URL ?>/trang-chinh/index.php?lien-he">Liên Hệ</a></li>
                             </ul>
                         </nav>
                     </div>
@@ -265,8 +265,8 @@ require_once "../../model/categories.php";
                                 ?>
                                     <li>
                                         <img style="border-radius: 50%;" src="../../img/<?php  
-if(!empty($_SESSION['upuser'])) {
-    echo $_SESSION['img_old'];
+if(!isset($_SESSION['upuser'])) {
+    echo $_SESSION['img'];
 } else {
     echo  $_SESSION['anh_client'];
 }
@@ -350,8 +350,8 @@ if(!empty($_SESSION['upuser'])) {
                             </li>
                             <li class="active-box3">
                                 <p><strong>Liên Hệ</strong></p>
-                                <i>SĐT: 0987654123</i>
-                                <i>Email:Easyticket@gmail.com</i>
+                                <i>SĐT: 0987654123</i> <br> 
+                                <i>Email:easyticket123@gmail.com</i>
                                 <i>Địa Chỉ: Đ.Số 22, Thường Thạnh, Cái Răng, Cần Thơ.</i>
                             </li>
                         </ul>
@@ -381,6 +381,8 @@ if(!empty($_SESSION['upuser'])) {
     <!-- Search model end -->
 
     <!-- Js Plugins -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
     <script src="<?= $CONTENT_URL ?>/assets/js/jquery-3.3.1.min.js"></script>
     <script src="<?= $CONTENT_URL ?>/assets/js/bootstrap.min.js"></script>
     <script src="<?= $CONTENT_URL ?>/assets/js/player.js"></script>
@@ -392,4 +394,7 @@ if(!empty($_SESSION['upuser'])) {
 
 </body>
 
+
+
 </html>
+

@@ -12,6 +12,12 @@ function seat_all()
     $sql = "SELECT seats.*, cinema_halls.hall_name, movies.name_movie FROM `seats` JOIN cinema_halls JOIN movies  WHERE seats.cinema_halls_id = cinema_halls.id AND cinema_halls.movies_id = movies.id";
     return pdo_query($sql);
 }
+function oder_sear($id){
+    $sql = "SELECT seats.*,HOUR(start_time) as gio_bd, LPAD(MINUTE(start_time), 2, '0') as phut_bd ,
+    HOUR(end_time) as gio_kt, LPAD(MINUTE(end_time), 2, '0') as phut_kt, cinema_halls.hall_name, cinema_halls.movies_id,cinema_halls.hall_name, cinema_halls.start_time, cinema_halls.end_time, cinema_halls.date_show, movies.name_movie, cinemas.name FROM `seats` JOIN cinema_halls JOIN movies JOIN cinemas  WHERE seats.cinema_halls_id = cinema_halls.id AND cinema_halls.movies_id = movies.id 
+    AND cinema_halls.cinemas_id = cinemas.id AND seats.cinema_halls_id = '$id'";
+return  pdo_query($sql);
+}
 function seat_id()
 {
     $sql = "SELECT seats.*, cinema_halls.hall_name, movies.name_movie FROM `seats` JOIN cinema_halls JOIN movies  WHERE seats.cinema_halls_id = cinema_halls.id AND cinema_halls.movies_id = movies.id ";
@@ -115,4 +121,10 @@ function insert_seat($cinema_halls_id)
     }
 }
 
+
+function update_status($id){
+
+    $sql = "UPDATE `seats` SET `is_available`='Inactive' WHERE id = '$id'";
+    pdo_execute($sql);
+}
 

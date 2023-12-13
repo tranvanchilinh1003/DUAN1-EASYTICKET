@@ -110,6 +110,7 @@
         var image = document.getElementById('image');
         var selectedDate = document.getElementById("date_movie").value;
         var currenDate = new Date();
+        currenDate.setHours(0, 0, 0, 0);
         const inputDateObject = new Date(selectedDate);
         var error = document.getElementsByClassName("error");
         var has_error = true;
@@ -134,9 +135,9 @@
             error[3].innerHTML = "Vui Lòng Chọn Hình";
             has_error = false;
         }
-        if (inputDateObject <  currenDate ) {
+        if (isNaN(inputDateObject.getTime()) || inputDateObject < currenDate) {
             error[4].innerHTML = 'Không Nhập Ngày Nhỏ Hơn Hiện Tại';
-        has_error =false;
+            has_error = false;
         }
         if (has_error == false) {
             e.preventDefault();

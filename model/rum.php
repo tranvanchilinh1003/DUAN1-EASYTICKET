@@ -1,15 +1,15 @@
 <?php
 require_once "pdo.php";
 
-function insert_rum($hall_name, $status, $movies_id, $start_time, $time, $cinemas_id){
-    $sql = "INSERT INTO `cinema_halls`( `hall_name`, `status`, `movies_id`, `start_time`, `end_time` , `cinemas_id`) 
-    VALUES ('$hall_name','$status','$movies_id','$start_time',ADDTIME('$start_time', '$time'),'$cinemas_id')";
+function insert_rum($hall_name, $status, $movies_id, $date_show, $start_time, $time, $cinemas_id){
+    $sql = "INSERT INTO `cinema_halls`( `hall_name`, `status`, `movies_id`, `date_show`, `start_time`, `end_time` , `cinemas_id`) 
+    VALUES ('$hall_name','$status','$movies_id','$date_show','$start_time',ADDTIME('$start_time', '$time'),'$cinemas_id')";
     pdo_execute ($sql);
 }
 
-function update_rum($hall_name, $status, $movies_id, $id, $start_time, $time, $cinemas_id){
+function update_rum($hall_name, $status, $movies_id, $id, $start_time, $time, $cinemas_id, $date_show){
     $sql = "UPDATE `cinema_halls` SET `hall_name`='$hall_name',`status`='$status',`movies_id`='$movies_id' ,
-     `start_time` = '$start_time', `cinemas_id` = '$cinemas_id', `end_time` = ADDTIME('$start_time', '$time') WHERE id = '$id'";
+    `date_show` ='$date_show', `start_time` = '$start_time', `cinemas_id` = '$cinemas_id', `end_time` = ADDTIME('$start_time', '$time') WHERE id = '$id'";
     pdo_execute($sql);
 }
 function rum_all(){
@@ -34,11 +34,22 @@ function check_rum_upadte($hall_name, $id){
 }
 function rum_sellect_id($id)
 {
-    $sql = "SELECT * FROM cinema_halls WHERE id =" . $id;
+    $sql = "SELECT * FROM cinema_halls WHERE  id =" . $id;
 
     return  pdo_query_one($sql);
 }
+function find_movie_cinemas($id, $selected_date){
 
+    $sql = "SELECT cinema_halls.*, HOUR(start_time) as gio_bd, LPAD(MINUTE(start_time), 2, '0') as phut_bd , HOUR(end_time) as gio_kt, LPAD(MINUTE(end_time), 2, '0') as phut_kt, cinemas.name, cinemas.location, movies.name_movie FROM cinema_halls JOIN cinemas ON cinema_halls.cinemas_id = cinemas.id JOIN movies ON movies.id = cinema_halls.movies_id 
+    WHERE movies_id = '$id' AND cinema_halls.date_show = '$selected_date' ";
+    return pdo_query($sql);
+}
+function find_movie($id){
+
+    $sql = "SELECT cinema_halls.*, HOUR(start_time) as gio_bd, LPAD(MINUTE(start_time), 2, '0') as phut_bd ,
+     HOUR(end_time) as gio_kt, LPAD(MINUTE(end_time), 2, '0') as phut_kt, cinemas.name, cinemas.location, movies.name_movie FROM cinema_halls JOIN cinemas ON cinema_halls.cinemas_id = cinemas.id JOIN movies ON movies.id = cinema_halls.movies_id WHERE movies_id = '$id' ";
+    return pdo_query_one($sql);
+}
 function delete_rum_status($id)
 {
     $sql = "UPDATE cinema_halls SET status = 'Inactive' WHERE id = '$id'";

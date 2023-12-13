@@ -71,37 +71,37 @@
                 <div data-v-220afe6d="" class="seats-wrapper-row ">
                   <div data-v-220afe6d="" class="seats seats-row">
                     <div data-v-220afe6d="" class="row-wrapper popover-body">
-                      <ul data-v-220afe6d="" class="seat-row">
+                      <ul data-v-220afe6d="" class="list-unstyled border text-center py-0 px-0 bg-gray-dark text-white list-unstyled border text-center py-0 px-0 bg-gray-dark text-white list-unstyled border text-center py-0 px-0 bg-gray-dark text-white rounded-circle m-2 px-3 m-1 px-3">
                         <li data-v-220afe6d="" class="rowname wide">A</li>
                       </ul>
-                      <ul data-v-220afe6d="" class="seat-row">
+                      <ul data-v-220afe6d="" class="list-unstyled border text-center py-0 px-0 bg-gray-dark text-white list-unstyled border text-center py-0 px-0 bg-gray-dark text-white list-unstyled border text-center py-0 px-0 bg-gray-dark text-white rounded-circle m-2 px-3 m-1 px-3">
                         <li data-v-220afe6d="" class="rowname wide">B</li>
                       </ul>
-                      <ul data-v-220afe6d="" class="seat-row">
+                      <ul data-v-220afe6d="" class="list-unstyled border text-center py-0 px-0 bg-gray-dark text-white list-unstyled border text-center py-0 px-0 bg-gray-dark text-white list-unstyled border text-center py-0 px-0 bg-gray-dark text-white rounded-circle m-2 px-3 m-1 px-3">
                         <li data-v-220afe6d="" class="rowname wide">C</li>
                       </ul>
-                      <ul data-v-220afe6d="" class="seat-row">
+                      <ul data-v-220afe6d="" class="list-unstyled border text-center py-0 px-0 bg-gray-dark text-white list-unstyled border text-center py-0 px-0 bg-gray-dark text-white list-unstyled border text-center py-0 px-0 bg-gray-dark text-white rounded-circle m-2 px-3 m-1 px-3">
                         <li data-v-220afe6d="" class="rowname wide">D</li>
                       </ul>
-                      <ul data-v-220afe6d="" class="seat-row">
+                      <ul data-v-220afe6d="" class="list-unstyled border text-center py-0 px-0 bg-gray-dark text-white list-unstyled border text-center py-0 px-0 bg-gray-dark text-white list-unstyled border text-center py-0 px-0 bg-gray-dark text-white rounded-circle m-2 px-3 m-1 px-3">
                         <li data-v-220afe6d="" class="rowname wide">E</li>
                       </ul>
-                      <ul data-v-220afe6d="" class="seat-row">
+                      <ul data-v-220afe6d="" class="list-unstyled border text-center py-0 px-0 bg-gray-dark text-white list-unstyled border text-center py-0 px-0 bg-gray-dark text-white list-unstyled border text-center py-0 px-0 bg-gray-dark text-white rounded-circle m-2 px-3 m-1 px-3">
                         <li data-v-220afe6d="" class="rowname wide">F</li>
                       </ul>
-                      <ul data-v-220afe6d="" class="seat-row">
+                      <ul data-v-220afe6d="" class="list-unstyled border text-center py-0 px-0 bg-gray-dark text-white list-unstyled border text-center py-0 px-0 bg-gray-dark text-white list-unstyled border text-center py-0 px-0 bg-gray-dark text-white rounded-circle m-2 px-3 m-1 px-3">
                         <li data-v-220afe6d="" class="rowname wide">G</li>
                       </ul>
-                      <ul data-v-220afe6d="" class="seat-row">
+                      <ul data-v-220afe6d="" class="list-unstyled border text-center py-0 px-0 bg-gray-dark text-white list-unstyled border text-center py-0 px-0 bg-gray-dark text-white list-unstyled border text-center py-0 px-0 bg-gray-dark text-white rounded-circle m-2 px-3 m-1 px-3">
                         <li data-v-220afe6d="" class="rowname wide">H</li>
                       </ul>
-                      <ul data-v-220afe6d="" class="seat-row">
+                      <ul data-v-220afe6d="" class="list-unstyled border text-center py-0 px-0 bg-gray-dark text-white list-unstyled border text-center py-0 px-0 bg-gray-dark text-white list-unstyled border text-center py-0 px-0 bg-gray-dark text-white rounded-circle m-2 px-3 m-1 px-3">
                         <li data-v-220afe6d="" class="rowname wide">I</li>
                       </ul>
-                      <ul data-v-220afe6d="" class="seat-row">
+                      <ul data-v-220afe6d="" class="list-unstyled border text-center py-0 px-0 bg-gray-dark text-white list-unstyled border text-center py-0 px-0 bg-gray-dark text-white list-unstyled border text-center py-0 px-0 bg-gray-dark text-white rounded-circle m-2 px-3 m-1 px-3">
                         <li data-v-220afe6d="" class="rowname wide">J</li>
                       </ul>
-                      <ul data-v-220afe6d="" class="seat-row">
+                      <ul data-v-220afe6d="" class="list-unstyled border text-center py-0 px-0 bg-gray-dark text-white list-unstyled border text-center py-0 px-0 bg-gray-dark text-white list-unstyled border text-center py-0 px-0 bg-gray-dark text-white rounded-circle m-2 px-3 m-1 px-3">
                         <li data-v-220afe6d="" class="rowname wide">K</li>
                       </ul>
                       <!-- <ul data-v-220afe6d="" class="seat-row">
@@ -116,8 +116,8 @@
                         $itemA = seat_a($id);
                         foreach ($itemA as $A) {
                         ?>
-                          <li data-v-220afe6d="" name="seat_number" class="available seat-area-1 seat-size-1 seat-odd">
-                        <a href="#" class="text-primary"><?= $A['seat_number']; ?></a>    
+                          <li data-v-220afe6d="" name="seat_number" value="<?= $A['stiff_price'] ?>" class="available seat-area-1 seat-size-1 seat-odd">
+                            <?= $A['seat_number']; ?>
 
                           </li>
                         <?php
@@ -125,40 +125,40 @@
                         ?>
                       </ul>
                       <ul data-v-220afe6d="" class="seat-row">
-                      <?php
+                        <?php
                         $itemB = seat_b($id);
                         foreach ($itemB as $B) {
                         ?>
-                          <li data-v-220afe6d="" name="seat_number" class="available seat-area-1 seat-size-1 seat-odd">
-                        <a href="" class="text-primary"><?= $B['seat_number']; ?></a>    
+                          <li data-v-220afe6d="" name="seat_number" value="<?= $B['stiff_price'] ?>" class="available seat-area-1 seat-size-1 seat-odd">
+                            <?= $B['seat_number']; ?>
 
                           </li>
                         <?php
                         }
                         ?>
-                      
+
                       </ul>
                       <ul data-v-220afe6d="" class="seat-row">
-                      <?php
+                        <?php
                         $itemC = seat_c($id);
                         foreach ($itemC as $C) {
                         ?>
-                          <li data-v-220afe6d="" name="seat_number" class="available seat-area-1 seat-size-1 seat-odd">
-                        <a href="" class="text-primary"><?= $C['seat_number']; ?></a>    
+                          <li data-v-220afe6d="" name="seat_number" value="<?= $C['stiff_price'] ?>" class="available seat-area-1 seat-size-1 seat-odd">
+                            <?= $C['seat_number']; ?>
 
                           </li>
                         <?php
                         }
                         ?>
-                      
+
                       </ul>
                       <ul data-v-220afe6d="" class="seat-row">
-                      <?php
+                        <?php
                         $itemD = seat_d($id);
                         foreach ($itemD as $D) {
                         ?>
-                          <li data-v-220afe6d="" name="seat_number" class="available seat-area-2 seat-size-1 seat-odd">
-                        <a href="" class="text-primary"><?= $D['seat_number']; ?></a>    
+                          <li data-v-220afe6d="" name="seat_number" value="<?= $D['stiff_price'] ?>" class="available seat-area-2 seat-size-1 seat-odd">
+                            <?= $D['seat_number']; ?>
 
                           </li>
                         <?php
@@ -166,12 +166,12 @@
                         ?>
                       </ul>
                       <ul data-v-220afe6d="" class="seat-row">
-                      <?php
+                        <?php
                         $itemE = seat_e($id);
                         foreach ($itemE as $E) {
                         ?>
-                          <li data-v-220afe6d="" name="seat_number" class="available seat-area-2 seat-size-1 seat-odd">
-                        <a href="" class="text-primary"><?= $E['seat_number']; ?></a>    
+                          <li data-v-220afe6d="" name="seat_number" value="<?= $E['stiff_price'] ?>" class="available seat-area-2 seat-size-1 seat-odd">
+                            <?= $E['seat_number']; ?>
 
                           </li>
                         <?php
@@ -179,12 +179,12 @@
                         ?>
                       </ul>
                       <ul data-v-220afe6d="" class="seat-row">
-                      <?php
+                        <?php
                         $itemF = seat_f($id);
                         foreach ($itemF as $F) {
                         ?>
-                          <li data-v-220afe6d="" name="seat_number" class="available seat-area-2 seat-size-1 seat-odd">
-                        <a href="" class="text-primary"><?= $F['seat_number']; ?></a>    
+                          <li data-v-220afe6d="" name="seat_number" value="<?= $F['stiff_price'] ?>" class="available seat-area-2 seat-size-1 seat-odd">
+                            <?= $F['seat_number']; ?>
 
                           </li>
                         <?php
@@ -194,12 +194,12 @@
                         <li data-v-220afe6d="" class="spacer"></li>
                       </ul>
                       <ul data-v-220afe6d="" class="seat-row">
-                      <?php
+                        <?php
                         $itemG = seat_g($id);
                         foreach ($itemG as $G) {
                         ?>
-                          <li data-v-220afe6d="" name="seat_number" class="available seat-area-2 seat-size-1 seat-odd">
-                        <a href="" class="text-primary"><?= $G['seat_number']; ?></a>    
+                          <li data-v-220afe6d="" name="seat_number" value="<?= $G['stiff_price'] ?>" class="available seat-area-2 seat-size-1 seat-odd">
+                            <?= $G['seat_number']; ?>
 
                           </li>
                         <?php
@@ -209,12 +209,12 @@
                         <li data-v-220afe6d="" class="spacer"></li>
                       </ul>
                       <ul data-v-220afe6d="" class="seat-row">
-                      <?php
+                        <?php
                         $itemH = seat_h($id);
                         foreach ($itemH as $H) {
                         ?>
-                          <li data-v-220afe6d="" name="seat_number" class="available seat-area-2 seat-size-1 seat-odd">
-                        <a href="" class="text-primary"><?= $H['seat_number']; ?></a>    
+                          <li data-v-220afe6d="" name="seat_number" value="<?= $H['stiff_price'] ?>" class="available seat-area-2 seat-size-1 seat-odd">
+                            <?= $H['seat_number']; ?>
 
                           </li>
                         <?php
@@ -224,12 +224,12 @@
                         <li data-v-220afe6d="" class="spacer"></li>
                       </ul>
                       <ul data-v-220afe6d="" class="seat-row">
-                      <?php
+                        <?php
                         $itemI = seat_i($id);
                         foreach ($itemI as $I) {
                         ?>
-                          <li data-v-220afe6d="" name="seat_number" class="available seat-area-2 seat-size-1 seat-odd">
-                        <a href="" class="text-primary"><?= $I['seat_number']; ?></a>    
+                          <li data-v-220afe6d="" name="seat_number" value="<?= $I['stiff_price'] ?>" class="available seat-area-2 seat-size-1 seat-odd">
+                            <?= $I['seat_number']; ?>
 
                           </li>
                         <?php
@@ -239,12 +239,12 @@
                         <li data-v-220afe6d="" class="spacer"></li>
                       </ul>
                       <ul data-v-220afe6d="" class="seat-row">
-                      <?php
+                        <?php
                         $itemJ = seat_j($id);
                         foreach ($itemJ as $J) {
                         ?>
-                          <li data-v-220afe6d="" name="seat_number" class="available seat-area-1 seat-size-1 seat-odd">
-                        <a href="" class="text-primary"><?= $J['seat_number']; ?></a>    
+                          <li data-v-220afe6d="" name="seat_number" value="<?= $J['stiff_price'] ?>" class="available seat-area-1 seat-size-1 seat-odd">
+                            <?= $J['seat_number']; ?>
 
                           </li>
                         <?php
@@ -254,12 +254,12 @@
                         <li data-v-220afe6d="" class="spacer"></li>
                       </ul>
                       <ul data-v-220afe6d="" class="seat-row">
-                      <?php
+                        <?php
                         $itemK = seat_k($id);
                         foreach ($itemK as $K) {
                         ?>
-                          <li data-v-220afe6d="" name="seat_number" class="available seat-area-1 seat-size-1 seat-odd">
-                        <a href="" class="text-primary"><?= $K['seat_number']; ?></a>    
+                          <li data-v-220afe6d="" name="seat_number" value="<?= $K['stiff_price'] ?>" class="available seat-area-1 seat-size-1 seat-odd">
+                            <?= $K['seat_number']; ?>
 
                           </li>
                         <?php
@@ -268,7 +268,7 @@
                         <li data-v-220afe6d="" class="spacer"></li>
                         <li data-v-220afe6d="" class="spacer"></li>
                       </ul>
-
+                      <p id='price-display' name='price'></p>
                     </div>
                   </div>
                 </div>
@@ -276,10 +276,10 @@
             </div>
             <div data-v-220afe6d="" class="legend mt-4">
               <div data-v-220afe6d=""><span data-v-220afe6d="" class="seat-area-1"></span>
-                <p data-v-220afe6d="" class="text-light">Ghế thường</p>
+                <p data-v-220afe6d="" class="text-light">Ghế thường 45K</p>
               </div>
               <div data-v-220afe6d=""><span data-v-220afe6d="" class="seat-area-2"></span>
-                <p data-v-220afe6d="" class="text-warning">Ghế VIP</p>
+                <p data-v-220afe6d="" class="text-warning">Ghế VIP 80K</p>
               </div>
             </div>
           </div>
@@ -287,3 +287,47 @@
       </div> <!----> <!---->
     </div>
   </div>
+
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const seatPrices = {
+        'seat-area-1': 45,
+        'seat-area-2': 80,
+      };
+
+      const seats = document.querySelectorAll('.seat-row li');
+      const selectedSeats = []; // Danh sách ghế đã chọn
+
+      seats.forEach(function(seat) {
+        seat.addEventListener('click', function() {
+          // Lấy loại ghế từ class
+          const seatType = seat.classList[1];
+
+          // Kiểm tra xem ghế đã được chọn chưa
+          if (!seat.classList.contains('selected')) {
+            seat.classList.add('selected');
+            selectedSeats.push({
+              type: seatType,
+              seatElement: seat
+            }); // Thêm ghế vào danh sách đã chọn
+          } else {
+            seat.classList.remove('selected');
+            // Loại bỏ ghế khỏi danh sách đã chọn
+            const index = selectedSeats.findIndex((selectedSeat) => selectedSeat.seatElement === seat);
+            if (index !== -1) {
+              selectedSeats.splice(index, 1);
+            }
+          }
+
+          // Tính tổng giá tiền
+          const totalPrice = selectedSeats.reduce((total, selectedSeat) => {
+            return total + seatPrices[selectedSeat.type];
+          }, 0);
+
+          const priceDisplay = document.getElementById('price-display');
+          priceDisplay.textContent = `Giá tiền: ${totalPrice}K`;
+        });
+      });
+    });
+  </script>

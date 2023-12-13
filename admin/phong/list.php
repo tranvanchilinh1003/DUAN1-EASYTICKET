@@ -25,6 +25,7 @@
                                 <th>Rạp</th>
                                 <th>Tên Phòng</th>
                                 <th>Phim Chiếu</th>
+                                <th>Ngày Chiếu</th>
                                 <th>Thời Gian Bắt Đầu</th>
                                 <th>Chỉnh Sửa</th>
                             </tr>
@@ -42,6 +43,7 @@
                                 <td><?=$item['name'] ?></td>
                                 <td><?=$item['hall_name'] ?></td>
                                 <td> <?=$item['name_movie'] ?> </td>
+                                <td> <?=$item['date_show'] ?> </td>
                                 <td> <?=$item['start_time'] ?> </td>                            
                                 <!-- <td> <?=($item['status'] == 'Active')? "Phòng Trống" : "Phòng Đầy"; ?> </td>                                 -->
                                 <td >
