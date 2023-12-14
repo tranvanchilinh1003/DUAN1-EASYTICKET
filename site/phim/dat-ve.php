@@ -10,6 +10,7 @@ require "../../model/movies.php";
 require "../../model/statistical.php";
 require "../../model/seat.php";
 require "../../model/rum.php";
+require "../../model/user.php";
 
 //-------------------------------//
 
@@ -28,14 +29,19 @@ if (exist_param("selected_date")) {
     $VIEW_NAME = "dat-ghe.php";
 } else if (exist_param("thanh-toan")) {
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+
+
+        $id = $_POST['id'];
+        $item = oder_sear($id);
+        $username = $_SESSION['username'];
+        $user = user_id($username);
+
         $selectedSeats = $_POST['selectedSeats'];
         $totalPrice = $_POST['totalPrice'];
         // Nhận dữ liệu từ biểu mẫu
-        
-    
-    echo $selectedSeats; echo '<br>';
-    echo $totalPrice;
-    die;
+
+
+
         // Xử lý dữ liệu và lưu vào cơ sở dữ liệu, gửi email, hoặc các bước khác tùy thuộc vào yêu cầu của bạn
         // ... (Code xử lý đặt vé của bạn)
     }
@@ -43,8 +49,12 @@ if (exist_param("selected_date")) {
     // $_SESSION['id_movies'] = $item['movies_id'];
     // $_SESSION['id'] = $item['id'];
     // $find_cinemas = find_movie($id);
-    $VIEW_NAME = "dat-ve-ui.php";
-} else {
+    $VIEW_NAME = "thanh-toan.php";
+} else if (exist_param("thong-tin")) {
+    
+
+    $VIEW_NAME = "thong-tin.php";
+}else {
     $id =  $_SESSION['id'];
     $VIEW_NAME = "dat-ve-ui.php";
 }

@@ -11,41 +11,32 @@
         </div>
     </div>
 </section>
+
 <table class="table table-dark table-hover m-auto mb-lg-5 mt-lg-5  w-75">
+    <input type="hidden" name="id" id="id" value="<?= $item[0]['cinema_halls_id'] ?>">
+
     <thead>
         <tr>
-            <th>ID</th>
+            <th>Mã giao dịch</th>
+            <th>Phim</th>
             <th>Ngày</th>
-            <th>Thời Gian</th>
-            <th>Loại vé</th>
-            <th>Số lượng</th>
+            <th>Suất</th>
+            <th>Ghế</th>
+            <th>Phòng</th>
             <th>Trạng thái</th>
             <th>Tổng</th>
         </tr>
     </thead>
     <tbody>
         <tr>
-            <td>
-                1
-            </td>
-            <td>
-                6/12/2023
-            </td>
-            <td>
-                17:27
-            </td>
-            <td>
-                Vé thường
-            </td>
-            <td>
-                1
-            </td>
-            <td>
-                Thành công
-            </td>
-            <td>
-                45.000đ
-            </td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
         </tr>
     </tbody>
 </table>

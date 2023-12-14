@@ -366,7 +366,7 @@
                                 <h6 class="card-title text-uppercase text-muted mb-2">
                                     Tổng Hóa Đơn
                                 </h6> <span class="h2 mb-0">
-                                    <p id='price-display' class="" data-date='' name='price' value="">0&nbsp;VND</p>
+                                    <p id='price-display' class="" data-date='' name='price' value="">0&nbsp;đ</p>
                                 </span>
                             </div>
                         </div>
@@ -386,7 +386,7 @@
                             </a></div>
                         <form method="POST" class="col-9" action="<?=$SITE_URL?>/phim/dat-ve.php?thanh-toan" id="bookingForm">
                             <!-- Các trường khác của biểu mẫu -->
-                            
+                            <input type="hidden" name="id" id="id" value="<?= $item[0]['cinema_halls_id'] ?>">
                             <input type="hidden" name="selectedSeats" id="selectedSeatsInput" value="">
                             <input type="hidden" name="totalPrice" id="totalPriceInput" value="">
                             <!-- Nút submit để gửi biểu mẫu -->

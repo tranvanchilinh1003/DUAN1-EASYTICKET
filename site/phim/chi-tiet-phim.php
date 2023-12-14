@@ -86,7 +86,6 @@
                     <div class="anime__details__text">
                         <div class="anime__details__title">
                             <h3 class='text-warning'><?= $item['name_movie'] ?></h3>
-                            <!-- <span>フェイト／ステイナイト, Feito／sutei naito</span> -->
                         </div>
                         <div class="anime__details__rating">
                             <div class="rate d-flex ">
