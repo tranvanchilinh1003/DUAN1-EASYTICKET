@@ -33,8 +33,8 @@ color: white;
                         </div>
                         <div class='row mt-3'>
                             <div class="col-sm-4">
-                                <label for="thong_tin" class="fw-bold col-form-label text-white">Email Hoặc SĐT</label>
-                                <input type="text" class="form-control" id='thong_tin' name='information' placeholder='Gmail Hoặc Số Điện Thoại...'>
+                                <label for="thong_tin" class="fw-bold col-form-label text-white">Email</label>
+                                <input type="email" class="form-control" id='thong_tin' name='information' placeholder='Gmail...'>
                                 <span class="error text-danger"></span>
                             </div>
                             <div class="col-sm-4">
@@ -110,7 +110,7 @@ color: white;
 
         var has_error = true;
         const emailRegex = /^[a-zA-Z0-9._%+-]+@(gmail\.(com|vn|org|gov|co)|fpt\.edu\.vn)$/;
-        const sdtRegex = /^\b(03|05|07|08|09)\d{8}\b/;
+        // const sdtRegex = /^\b(03|05|07|08|09)\d{8}\b/;
         error[0].innerHTML = '';
         error[1].innerHTML = '';
         error[2].innerHTML = '';
@@ -129,7 +129,7 @@ color: white;
             has_error = false
 
         }
-        if(!sdtRegex.test(thong_tin) && !emailRegex.test(thong_tin)){
+        if( !emailRegex.test(thong_tin)){
             error[3].innerHTML = "Vui Lòng Nhập Đúng";
             has_error =false;
 

@@ -44,7 +44,7 @@
 
 				<div class="wrap-input100 validate-input mb-4">
 					<!-- <span class="label-input100">Mật Khẩu</span> -->
-					<input class="input100" type="text" class="form-control" id='thong_tin' name='information' value="<?php if(isset($loi)) {  echo $_SESSION['infor']; }  ?>" placeholder="Gmail Hoặc Số Điện Thoại">
+					<input class="input100" type="text" class="form-control" id='thong_tin' name='information' value="<?php if(isset($loi)) {  echo $_SESSION['infor']; }  ?>" placeholder="Gmail..">
 					<span class="focus-input100" data-symbol="&#xf2bc;"></span>
 				</div>
 				<span class='text-danger err'></span>
@@ -143,7 +143,7 @@ var has_error = true;
 		// var img = document.getElementById('image');
 		const err = document.getElementsByClassName('err');
 		const emailRegex = /^[a-zA-Z0-9._%+-]+@(gmail\.(com|vn|org|gov|co)|fpt\.edu\.vn)$/;
-		const sdtRegex = /^\b(03|05|07|08|09)\d{8}\b/;
+		// const sdtRegex = /^\b(03|05|07|08|09)\d{8}\b/;
 		const thong_tin = document.getElementById('thong_tin').value;
 		var img = document.getElementById('image');
 
@@ -164,8 +164,8 @@ var has_error = true;
 			err[1].innerHTML = '';
 		}
 
-		if (!sdtRegex.test(thong_tin) && !emailRegex.test(thong_tin)) {
-			err[2].innerHTML = "Vui Lòng Nhập Đúng";
+		if ( !emailRegex.test(thong_tin)) {
+			err[2].innerHTML = "Vui Lòng Nhập Đúng Email";
 			has_error = false;
 
 		} else {

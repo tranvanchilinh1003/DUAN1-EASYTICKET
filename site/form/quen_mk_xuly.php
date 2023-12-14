@@ -3,7 +3,7 @@
 require "../../model/user.php";
 require "../../global.php";
 require "../../model/categories.php";
-
+require "../../model/mailer_otp.php";
 // require "../../model/pdo.php";
 
 
@@ -28,17 +28,14 @@ else{
 // Tạo OTP ngẫu nhiên
 $otp = mt_rand(100000, 999999);
 $_SESSION['otp'] = $otp;
+
+mailerr($information,$otp, $username);
 ?>
 <script>
-    var otp_tb = alert("Mã OTP của bạn là: <?=$otp; ?>");
-    
-    if(otp_tb){
-        <?=update_otp($otp,$username);?>
-    }else{
-        <?=update_otp($otp,$username);?>
-    }
+    alert("Vui Lòng Check Email Lấy OTP");
 </script>
 <?php
+update_otp($otp,$username);
 
 $VIEW_NAME = "form/otp.php";
 global $username, $password;

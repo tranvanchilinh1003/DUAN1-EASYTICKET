@@ -10,7 +10,8 @@ require "../../model/movies.php";
 require "../../model/statistical.php";
 require "../../model/seat.php";
 require "../../model/rum.php";
-
+require "../../model/user.php";
+// require "../../model/momo.php";
 //-------------------------------//
 
 extract($_REQUEST);
@@ -21,6 +22,7 @@ if (exist_param("selected_date")) {
     $item = detail_movies($id);
     $_SESSION['id'] = $item['id'];
     $find_cinemas = find_movie($id);
+    
     $find_all = find_movie_cinemas($id, $selected_date);
     $VIEW_NAME = "dat-ve-ui.php";
 } else if (exist_param("dat-ghe")) {
@@ -28,26 +30,26 @@ if (exist_param("selected_date")) {
     $VIEW_NAME = "dat-ghe.php";
 } else if (exist_param("thanh-toan")) {
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+
+
+        $id = $_POST['id'];
+        $item = oder_sear($id);
+        $_SESSION['cinema_halls_id'] = $item[0]['cinema_halls_id'];
+        $username = $_SESSION['username'];
+        $user = user_id($username);
+
         $selectedSeats = $_POST['selectedSeats'];
         $totalPrice = $_POST['totalPrice'];
-        // Nhận dữ liệu từ biểu mẫu
-        
-    
-    echo $selectedSeats; echo '<br>';
-    echo $totalPrice;
-    die;
-        // Xử lý dữ liệu và lưu vào cơ sở dữ liệu, gửi email, hoặc các bước khác tùy thuộc vào yêu cầu của bạn
-        // ... (Code xử lý đặt vé của bạn)
     }
-    // $item = detail_movies($id);
-    // $_SESSION['id_movies'] = $item['movies_id'];
-    // $_SESSION['id'] = $item['id'];
-    // $find_cinemas = find_movie($id);
-    $VIEW_NAME = "dat-ve-ui.php";
-} else {
+    $VIEW_NAME = "thanh-toan.php";
+} 
+
+ else {
     $id =  $_SESSION['id'];
     $VIEW_NAME = "dat-ve-ui.php";
 }
 
 // $VIEW_NAME = "dat-ve-ui.php";
 require '../layout.php';
+
+

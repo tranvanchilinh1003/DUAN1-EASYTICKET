@@ -91,7 +91,11 @@
                     $activeClass = ($i === 0) ? 'active' : '';
 
                 ?>
-                    <a class='btn btn-light text-muted date <?php if($_GET['selected_date'] == $date){echo 'active';}else{echo "";}  ?>' data-date='<?= $date ?>' onclick='selectDate(this)'>
+                    <a class='btn btn-light text-muted date <?php if ($_GET['selected_date'] == $date) {
+                                                                echo 'active';
+                                                            } else {
+                                                                echo "";
+                                                            }  ?>' data-date='<?= $date ?>' onclick='selectDate(this)'>
                         <?= $currentDate->format('d/m') ?><br>
                         <span class='small text-nowrap'><?= getDayOfWeekName($dayOfWeek); ?></span>
                     </a>
@@ -162,17 +166,21 @@
                                             $selected_date = $_GET['selected_date'];
                                             $cime = find_movie_cinemas($id, $selected_date);
                                             date_default_timezone_set('Asia/Ho_Chi_Minh');
-                                            
+                                            $currentDateTime = date('Y-m-d');
                                             $currentHour = date("H:i:s");
                                             foreach ($cime as $movie) {
-                    
+
                                             ?>
+                                                
+                                                    <a href="<?= $SITE_URL . '/phim/dat-ve.php?dat-ghe&id=' . $movie['id']   ?>" data-cineplex="lotte" data-cinema="lotte-can-tho" data-id="309438312" class="btn btn-sm btn-showtime btn-outline-dark is-ticketing <?php if ($movie['start_time'] < $currentHour && $movie['date_show'] <= $currentDateTime) {
+                                                                                                                                                                                                                                                                        echo 'disabled';
+                                                                                                                                                                                                                                                                    } else {
+                                                                                                                                                                                                                                                                        echo '';
+                                                                                                                                                                                                                                                                    } ?>" data-reference="c4f17d1d-ca04-45f1-bfbf-c316d182fa36">
+                                                        <span class="time"><?= $movie['gio_bd'] ?>:<?= $movie['phut_bd'] ?> -</span>
+                                                        <span class="amenity price"><?= $movie['gio_kt'] ?>:<?= $movie['phut_kt'] ?></span></a>
 
-                                                <a href="<?= $SITE_URL . '/phim/dat-ve.php?dat-ghe&id=' . $movie['id']   ?>" data-cineplex="lotte" data-cinema="lotte-can-tho" data-id="309438312" class="btn btn-sm btn-showtime btn-outline-dark is-ticketing <?php if($movie['start_time'] < $currentHour){echo 'disabled';}else{ echo '';} ?>" data-reference="c4f17d1d-ca04-45f1-bfbf-c316d182fa36">
-                                                    <span class="time"><?= $movie['gio_bd'] ?>:<?= $movie['phut_bd'] ?> -</span>
-                                                    <span class="amenity price"><?= $movie['gio_kt'] ?>:<?= $movie['phut_kt'] ?></span></a>
-
-
+                                                
                                     <?php
                                             }
                                         } else {
@@ -212,7 +220,7 @@
         }
 
         // Add the 'selected' class to the clicked date button
-        
+
 
         // Get the selected date and format it as 'YYYY-MM-DD'
         let selectedDate = element.getAttribute('data-date');

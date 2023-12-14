@@ -40,7 +40,7 @@ if (exist_param("id")) {
     $ratings = $_POST['ratings'];
 
     comments_insert($content, $comment_date, $ratings, $movies_id, $users_id);
-    header("location: ".$SITE_URL." /phim/chi-tiet.php?id=" . $movies_id);
+    header("location: ".$SITE_URL."/phim/chi-tiet.php?id=" . $movies_id);
     // $VIEW_NAME = "chi-tiet-phim.php";
 }
 // Lấy list bình luận ra

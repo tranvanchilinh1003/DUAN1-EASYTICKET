@@ -18,6 +18,9 @@ function oder_sear($id){
     AND cinema_halls.cinemas_id = cinemas.id AND seats.cinema_halls_id = '$id'";
 return  pdo_query($sql);
 }
+
+
+
 function seat_id()
 {
     $sql = "SELECT seats.*, cinema_halls.hall_name, movies.name_movie FROM `seats` JOIN cinema_halls JOIN movies  WHERE seats.cinema_halls_id = cinema_halls.id AND cinema_halls.movies_id = movies.id ";
@@ -128,3 +131,20 @@ function update_status($id){
     pdo_execute($sql);
 }
 
+function update_seat($selectedSeats, $id){
+    
+
+    // Tách chuỗi thành mảng các tên ghế
+    $seats = explode(" ", $selectedSeats);
+    
+    // Duyệt qua từng tên ghế và cập nhật trong MySQL
+    foreach ($seats as $seat) {
+        $sql = "UPDATE seats SET is_available ='Inactive' WHERE seat_number='$seat' AND cinema_halls_id = '$id'";
+    pdo_execute($sql);
+    
+
+    
+    }
+    }
+
+    

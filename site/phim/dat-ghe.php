@@ -146,7 +146,7 @@
                                                             $itemA = seat_a($id);
                                                             foreach ($itemA as $A) {
                                                             ?>
-                                                                <li data-v-220afe6d="" name="seat_number" data-seat-number="<?= $A['seat_number']; ?>" value="<?= $A['stiff_price'] ?>" class="available seat-area-1 seat-size-1 seat-odd">
+                                                                <li data-v-220afe6d="" name="seat_number" data-seat-number="<?= $A['seat_number']; ?>" value="<?= $A['stiff_price'] ?>" class="available seat-area-1 seat-size-1 <?php if($A['is_available'] == 'Inactive'){echo "taken";}else{echo "seat-odd";} ?>">
                                                                     <?= $A['seat_number']; ?>
 
                                                                 </li>
@@ -159,7 +159,7 @@
                                                             $itemB = seat_b($id);
                                                             foreach ($itemB as $B) {
                                                             ?>
-                                                                <li data-v-220afe6d="" name="seat_number" data-seat-number="<?= $B['seat_number']; ?>" value="<?= $B['stiff_price'] ?>" class="available seat-area-1 seat-size-1 seat-odd">
+                                                                <li data-v-220afe6d="" name="seat_number" data-seat-number="<?= $B['seat_number']; ?>" value="<?= $B['stiff_price'] ?>" class="available seat-area-1 seat-size-1 <?php if($B['is_available'] == 'Inactive'){echo "taken";}else{echo "seat-odd";} ?>">
                                                                     <?= $B['seat_number']; ?>
 
                                                                 </li>
@@ -173,7 +173,7 @@
                                                             $itemC = seat_c($id);
                                                             foreach ($itemC as $C) {
                                                             ?>
-                                                                <li data-v-220afe6d="" name="seat_number" data-seat-number="<?= $C['seat_number']; ?>" value="<?= $C['stiff_price'] ?>" class="available seat-area-1 seat-size-1 seat-odd">
+                                                                <li data-v-220afe6d="" name="seat_number" data-seat-number="<?= $C['seat_number']; ?>" value="<?= $C['stiff_price'] ?>" class="available seat-area-1 seat-size-1 <?php if($C['is_available'] == 'Inactive'){echo "taken";}else{echo "seat-odd";} ?>">
                                                                     <?= $C['seat_number']; ?>
 
                                                                 </li>
@@ -187,7 +187,7 @@
                                                             $itemD = seat_d($id);
                                                             foreach ($itemD as $D) {
                                                             ?>
-                                                                <li data-v-220afe6d="" name="seat_number" data-seat-number="<?= $D['seat_number']; ?>" value="<?= $D['stiff_price'] ?>" class="available seat-area-2 seat-size-1 seat-odd">
+                                                                <li data-v-220afe6d="" name="seat_number" data-seat-number="<?= $D['seat_number']; ?>" value="<?= $D['stiff_price'] ?>" class="available seat-area-2 seat-size-1 <?php if($D['is_available'] == 'Inactive'){echo "taken";}else{echo "seat-odd";} ?>">
                                                                     <?= $D['seat_number']; ?>
 
                                                                 </li>
@@ -200,7 +200,7 @@
                                                             $itemE = seat_e($id);
                                                             foreach ($itemE as $E) {
                                                             ?>
-                                                                <li data-v-220afe6d="" name="seat_number" data-seat-number="<?= $E['seat_number']; ?>" value="<?= $E['stiff_price'] ?>" class="available seat-area-2 seat-size-1 seat-odd">
+                                                                <li data-v-220afe6d="" name="seat_number" data-seat-number="<?= $E['seat_number']; ?>" value="<?= $E['stiff_price'] ?>" class="available seat-area-2 seat-size-1 <?php if($E['is_available'] == 'Inactive'){echo "taken";}else{echo "seat-odd";} ?>">
                                                                     <?= $E['seat_number']; ?>
 
                                                                 </li>
@@ -213,7 +213,7 @@
                                                             $itemF = seat_f($id);
                                                             foreach ($itemF as $F) {
                                                             ?>
-                                                                <li data-v-220afe6d="" name="seat_number" data-seat-number="<?= $F['seat_number']; ?>" value="<?= $F['stiff_price'] ?>" class="available seat-area-2 seat-size-1 seat-odd">
+                                                                <li data-v-220afe6d="" name="seat_number" data-seat-number="<?= $F['seat_number']; ?>" value="<?= $F['stiff_price'] ?>" class="available seat-area-2 seat-size-1 <?php if($F['is_available'] == 'Inactive'){echo "taken";}else{echo "seat-odd";} ?>">
                                                                     <?= $F['seat_number']; ?>
 
                                                                 </li>
@@ -228,7 +228,7 @@
                                                             $itemG = seat_g($id);
                                                             foreach ($itemG as $G) {
                                                             ?>
-                                                                <li data-v-220afe6d="" name="seat_number" data-seat-number="<?= $G['seat_number']; ?>" value="<?= $G['stiff_price'] ?>" class="available seat-area-2 seat-size-1 seat-odd">
+                                                                <li data-v-220afe6d="" name="seat_number" data-seat-number="<?= $G['seat_number']; ?>" value="<?= $G['stiff_price'] ?>" class="available seat-area-2 seat-size-1 <?php if($G['is_available'] == 'Inactive'){echo "taken";}else{echo "seat-odd";} ?>">
                                                                     <?= $G['seat_number']; ?>
 
                                                                 </li>
@@ -243,7 +243,7 @@
                                                             $itemH = seat_h($id);
                                                             foreach ($itemH as $H) {
                                                             ?>
-                                                                <li data-v-220afe6d="" name="seat_number" data-seat-number="<?= $H['seat_number']; ?>" value="<?= $H['stiff_price'] ?>" class="available seat-area-2 seat-size-1 seat-odd">
+                                                                <li data-v-220afe6d="" name="seat_number" data-seat-number="<?= $H['seat_number']; ?>" value="<?= $H['stiff_price'] ?>" class="available seat-area-2 seat-size-1 <?php if($H['is_available'] == 'Inactive'){echo "taken";}else{echo "seat-odd";} ?>">
                                                                     <?= $H['seat_number']; ?>
 
                                                                 </li>
@@ -258,7 +258,7 @@
                                                             $itemI = seat_i($id);
                                                             foreach ($itemI as $I) {
                                                             ?>
-                                                                <li data-v-220afe6d="" name="seat_number" data-seat-number="<?= $I['seat_number']; ?>" value="<?= $I['stiff_price'] ?>" class="available seat-area-2 seat-size-1 seat-odd">
+                                                                <li data-v-220afe6d="" name="seat_number" data-seat-number="<?= $I['seat_number']; ?>" value="<?= $I['stiff_price'] ?>" class="available seat-area-2 seat-size-1 <?php if($I['is_available'] == 'Inactive'){echo "taken";}else{echo "seat-odd";} ?>">
                                                                     <?= $I['seat_number']; ?>
 
                                                                 </li>
@@ -273,7 +273,7 @@
                                                             $itemJ = seat_j($id);
                                                             foreach ($itemJ as $J) {
                                                             ?>
-                                                                <li data-v-220afe6d="" name="seat_number" data-seat-number="<?= $J['seat_number']; ?>" value="<?= $J['stiff_price'] ?>" class="available seat-area-1 seat-size-1 seat-odd">
+                                                                <li data-v-220afe6d="" name="seat_number" data-seat-number="<?= $J['seat_number']; ?>" value="<?= $J['stiff_price'] ?>" class="available seat-area-1 seat-size-1 <?php if($J['is_available'] == 'Inactive'){echo "taken";}else{echo "seat-odd";} ?>">
                                                                     <?= $J['seat_number']; ?>
 
                                                                 </li>
@@ -288,7 +288,7 @@
                                                             $itemK = seat_k($id);
                                                             foreach ($itemK as $K) {
                                                             ?>
-                                                                <li data-v-220afe6d="" name="seat_number" data-seat-number="<?= $K['seat_number']; ?>" value="<?= $K['stiff_price'] ?>" class="available seat-area-1 seat-size-1 seat-odd">
+                                                                <li data-v-220afe6d="" name="seat_number" data-seat-number="<?= $K['seat_number']; ?>" value="<?= $K['stiff_price'] ?>" class="available seat-area-1 seat-size-1 <?php if($K['is_available'] == 'Inactive'){echo "taken";}else{echo "seat-odd";} ?>">
                                                                     <?= $K['seat_number']; ?>
 
                                                                 </li>
@@ -386,10 +386,10 @@
                             </a></div>
                         <form method="POST" class="col-9" action="<?=$SITE_URL?>/phim/dat-ve.php?thanh-toan" id="bookingForm">
                             <!-- Các trường khác của biểu mẫu -->
-                            
+
+                            <input type="hidden" name="id" id="id" value="<?= $item[0]['cinema_halls_id'] ?>">
                             <input type="hidden" name="selectedSeats" id="selectedSeatsInput" value="">
                             <input type="hidden" name="totalPrice" id="totalPriceInput" value="">
-                            <!-- Nút submit để gửi biểu mẫu -->
                             <button class="btn btn-lg btn-danger btn-block" type="submit">Tiếp Tục</button>
                         </form>
                         <!-- <div class="col-9"><a href="<?= $SITE_URL ?>/phim/dat-ve.php?thanh-toan&id=<?= $item[0]['id'] ?>" class="btn btn-lg btn-danger btn-block"><span class="d-md-none">0&nbsp;đ |</span>
@@ -407,7 +407,7 @@
             'seat-area-1': 45000,
             'seat-area-2': 80000,
         };
-        const seats = document.querySelectorAll('.seat-row .seat-odd');
+        const seats = document.querySelectorAll('.seat-row .<?php if($A['is_available'] == 'Inactive'){echo "taken";}else{echo "seat-odd";} ?>');
         const selectedSeats = []; // Danh sách ghế đã chọn
 
         seats.forEach(function(seat) {

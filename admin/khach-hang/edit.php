@@ -104,7 +104,7 @@
 
         var has_error = true;
         const emailRegex = /^[a-zA-Z0-9._%+-]+@(gmail\.(com|vn|org|gov|co)|fpt\.edu\.vn)$/;
-        const sdtRegex = /^\b(03|05|07|08|09)\d{8}\b/;
+        // const sdtRegex = /^\b(03|05|07|08|09)\d{8}\b/;
         error[0].innerHTML = '';
         error[1].innerHTML = '';
         error[2].innerHTML = '';
@@ -119,7 +119,7 @@
             has_error = false
 
         }
-        if(!sdtRegex.test(thong_tin) && !emailRegex.test(thong_tin)){
+        if( !emailRegex.test(thong_tin)){
             error[2].innerHTML = "Vui Lòng Nhập Đúng";
             has_error =false;
 
